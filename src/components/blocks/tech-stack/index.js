@@ -104,8 +104,7 @@ const TechStack = () => {
           <li>React.js</li>
           <li>Redux</li>
           <li>styled-components</li>
-          <li>Angular 4+</li>
-          <li>Vue.js</li>
+          <li>Emotion</li>
           <li>REST api</li>
           <li>Node.js</li>
           <li>GraphQL</li>

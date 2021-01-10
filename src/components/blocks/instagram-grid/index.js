@@ -1,6 +1,45 @@
 import React from "react";
 import withInstagramFeed from "origen-react-instagram-feed";
 import styled from "styled-components";
+import compose from 'recompose/compose';
+
+const InstaGrid = ({ classes, media, account = 'alexa.codes', status }) => {
+  return (
+    <InstaCarousel className="instagramHolder">
+      <div id="instagramOverflow">
+        {media &&
+          status === "completed" &&
+          media.map(({ displayImage, id, postLink, accessibilityCaption }) => (
+            <div key={id} className="singleInstaImg">
+              <a
+                href={postLink || `https://www.instagram.com/${account}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={displayImage}
+                  alt={accessibilityCaption || "Instagram picture"}
+                  className={classes && classes.image}
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          ))}
+      </div>
+      {status === 'loading' && <p>loading...</p>}
+      {status === 'failed' && <a href={`https://www.instagram.com/alexa.codes`}>Check instagram here</a>}
+    </InstaCarousel>
+  );
+};
+
+InstaGrid.defaultProps = {
+  media: undefined,
+};
+
+export default compose(
+  withInstagramFeed,
+)(InstaGrid);
+
 
 const InstaCarousel = styled.div`
   width: 100vw;
@@ -75,48 +114,3 @@ const InstaCarousel = styled.div`
     }
   }
 `;
-
-const InstaGrid = ({ classes, media, account, status }) => {
-  console.log({ classes, media, account, status });
-  return (
-    <InstaCarousel className="instagramHolder">
-      <div id="instagramOverflow">
-        {media &&
-          status === "completed" &&
-          media.map(({ displayImage, id, postLink, accessibilityCaption }) => (
-            <div key={id} className="singleInstaImg">
-              <a
-                href={postLink || `https://www.instagram.com/${account}/`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={displayImage}
-                  alt={accessibilityCaption || "Instagram picture"}
-                  className={classes && classes.image}
-                />
-              </a>
-            </div>
-          ))}
-      </div>
-    </InstaCarousel>
-  );
-};
-
-//     {status === "loading" && <p>loading...</p>}
-//     {status === "failed" && <p>Check instagram here</p>}
-//     <div id="carouselIGLink" className="singleInstaImg">
-//       <a
-//         href={`https://www.instagram.com/${account}/`}
-//         target="_blank"
-//         rel="noopener noreferrer"
-//       >
-//         see more...
-//       </a>
-//     </div>
-
-InstaGrid.defaultProps = {
-  media: undefined,
-};
-
-export default withInstagramFeed(InstaGrid);

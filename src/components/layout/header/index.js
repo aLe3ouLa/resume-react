@@ -72,7 +72,10 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="https://instagram.com/ale3.js">instagram</a>
+            <a href="https://twitter.com/aLe3ouLaa">twitter</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/alexa.codes/">instagram</a>
           </li>
         </NavList>
       </nav>
