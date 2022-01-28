@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Img1 from "../../../assets/2.png";
-import Img2 from "../../../assets/3.png";
-import Img3 from "../../../assets/4.png";
-
 import Wrapper from "../wrapper";
 
 const ImageContainer = styled.div`
@@ -19,7 +15,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Images = () => {
+const Images = ({ Img1, Img2, Img3 }) => {
   return (
     <Wrapper>
       <ImageContainer>
