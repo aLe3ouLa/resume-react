@@ -47,7 +47,7 @@ const NavList = styled.ul`
       }
 
       &:hover {
-        color: ${({ theme }) => theme.color.primary};
+        color: ${({ theme }) => theme.color.secondary};
       }
     }
   }
@@ -62,9 +62,6 @@ const Header = () => {
           <li>&nbsp;</li>
           <li>
             <a href="https://github.com/aLe3ouLa">github</a>
-          </li>
-          <li>
-            <a href="https://dribbble.com/aLe3ouLa">dribbble</a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/alexandra-barka-57075361/">
