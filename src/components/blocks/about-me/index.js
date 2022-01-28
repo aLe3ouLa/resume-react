@@ -15,10 +15,18 @@ const AboutMe = () => {
             Hello,
             <span role="img" aria-label="Hello, world">
               👋
-            </span>
+            </span> {' '}
             I'm Alexandra, a Front-end Javascript Engineer with a working
-            knowledge of UX design principles. Born in Greece and i live in the
+            knowledge of UX design principles. Borned in Greece and live in the
             Netherlands. I contrubuted to{' '}
+            <a
+              href="www.warnermedia.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Warnermedia
+            </a>
+            , {' '}
             <a
               href="www.messagebird.com"
               target="_blank"
@@ -26,21 +34,13 @@ const AboutMe = () => {
             >
               Messagebird
             </a>
-            ,{' '}
+            and {' '}
             <a
               href="https://strangelove.nl/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Strangelove Group
-            </a>{' '}
-            and{' '}
-            <a
-              href="https://yabbu.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Yabbu
             </a>
             .
           </Paragraph>
