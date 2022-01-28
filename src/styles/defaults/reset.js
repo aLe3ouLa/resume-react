@@ -29,6 +29,11 @@ export default createGlobalStyle`
         cursor: pointer;
     }
 
+    a:hover {
+        color: ${({ theme }) => theme.color.secondary};
+        text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
+    }
+
     button {
         cursor: pointer;
         border: none;
