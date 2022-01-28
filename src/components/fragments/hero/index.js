@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Profile from "../../../assets/1.png";
+import Profile from "../../../assets/1.jpeg";
 
 import Wrapper from "../wrapper";
 import CustomButton from "../custom-button";
@@ -26,6 +26,10 @@ const ColoredSpan = styled.span`
   color: ${({ theme }) => theme.color.primary};
   font-weight: 700;
   font-size: 4rem;
+  &:hover {
+    color: ${({ theme }) => theme.color.secondary};
+    text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
+  }
 `;
 
 const Quotes = styled.div`
@@ -57,9 +61,9 @@ const Hero = () => {
     <Wrapper>
       <Quotes>
         <Title>
-          <span>Hello, I’m Alexandra</span>
+          <span>Hello, I'm Alexandra</span>
           <span>
-            &amp; I’m a <ColoredSpan>Front-end engineer</ColoredSpan>
+            &amp; I'm a <ColoredSpan>Front-end</ColoredSpan> engineer
           </span>
           <CustomButton>Download CV</CustomButton>
         </Title>
