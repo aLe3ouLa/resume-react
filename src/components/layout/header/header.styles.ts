@@ -1,8 +1,6 @@
-import React from "react";
-import Logo from "../../fragments/icons/logo";
 import styled from "styled-components";
 
-const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,10 +13,10 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const NavList = styled.ul`
+export const NavList = styled.ul`
   display: flex;
   align-items: center;
-  li:first-child {
+  li:first-of-type {
     height: 2px;
     background-color: grey;
     width: 100px;
@@ -47,40 +45,8 @@ const NavList = styled.ul`
       }
 
       &:hover {
-        color: ${({ theme }) => theme.color.primary};
+        color: ${({ theme }) => theme.color.secondary};
       }
     }
   }
 `;
-
-const Header = () => {
-  return (
-    <HeaderContainer>
-      <Logo />
-      <nav>
-        <NavList>
-          <li>&nbsp;</li>
-          <li>
-            <a href="https://github.com/aLe3ouLa">github</a>
-          </li>
-          <li>
-            <a href="https://dribbble.com/aLe3ouLa">dribbble</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/alexandra-barka-57075361/">
-              linkedin
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/aLe3ouLaa">twitter</a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/alexa.codes/">instagram</a>
-          </li>
-        </NavList>
-      </nav>
-    </HeaderContainer>
-  );
-};
-
-export default Header;

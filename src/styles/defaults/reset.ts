@@ -1,4 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import * as styledComponents from "styled-components";
+import { themeTypes } from "..";
+
+const {
+    createGlobalStyle,
+  } = styledComponents as styledComponents.ThemedStyledComponentsModule<themeTypes>;
+  
 
 export default createGlobalStyle`
     *,
@@ -27,6 +33,11 @@ export default createGlobalStyle`
 
     a {
         cursor: pointer;
+    }
+
+    a:hover {
+        color: ${({ theme }) => theme.color.tertiary};
+        text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
     }
 
     button {
