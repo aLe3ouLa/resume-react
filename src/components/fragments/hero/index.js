@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-<<<<<<< HEAD
 import Profile from '../../../assets/1.jpeg'
-=======
-import Profile from "../../../assets/1.jpeg";
->>>>>>> 7c6f3e96364008788dced35116ee3081b1e15bf8
 
 import Wrapper from '../wrapper'
 import PDF from '../../../assets/cv.pdf'
@@ -30,7 +26,6 @@ const Title = styled.h1`
 `
 
 const ColoredSpan = styled.span`
-<<<<<<< HEAD
     color: ${({ theme }) => theme.color.primary};
     font-weight: 700;
     font-size: 4rem;
@@ -40,16 +35,6 @@ const ColoredSpan = styled.span`
         text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
     }
 `
-=======
-  color: ${({ theme }) => theme.color.primary};
-  font-weight: 700;
-  font-size: 4rem;
-  &:hover {
-    color: ${({ theme }) => theme.color.secondary};
-    text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
-  }
-`;
->>>>>>> 7c6f3e96364008788dced35116ee3081b1e15bf8
 
 const Quotes = styled.div`
     background-image: url(https://pluspng.com/img-png/quotation-png-file-quote-background-transparent-png-512.png);
@@ -80,47 +65,29 @@ const Quote = styled.span`
 `
 
 const handleOpenPDF = () => {
-    window.open(PDF, '_blank')
+  window.open(PDF, '_blank')
 }
 
 const Hero = () => {
-<<<<<<< HEAD
-    return (
-        <Wrapper>
-            <Quotes>
-                <Title>
-                    <span>Hello, I'm Alexandra</span>
-                    <Quote>
-                        &amp; I'm a <ColoredSpan>Front-end</ColoredSpan>{' '}
-                        engineer
-                    </Quote>
-                    <Button
-                        onClick={handleOpenPDF}
-                        variation={ButtonVariation.PRIMARY}
-                        label="Download CV"
-                    />
-                </Title>
-                <img src={Profile} alt="Alexandra profile" width="380" />
-            </Quotes>
-        </Wrapper>
-    )
-}
-=======
   return (
     <Wrapper>
       <Quotes>
         <Title>
           <span>Hello, I'm Alexandra</span>
-          <span>
-            &amp; I'm a <ColoredSpan>Front-end</ColoredSpan> engineer
-          </span>
-          <CustomButton>Download CV</CustomButton>
+          <Quote>
+            &amp; I'm a <ColoredSpan>Front-end</ColoredSpan>{' '}
+            engineer
+          </Quote>
+          <Button
+            onClick={handleOpenPDF}
+            variation={ButtonVariation.PRIMARY}
+            label="Download CV"
+          />
         </Title>
         <img src={Profile} alt="Alexandra profile" width="380" />
       </Quotes>
     </Wrapper>
-  );
-};
->>>>>>> 7c6f3e96364008788dced35116ee3081b1e15bf8
+  )
+}
 
 export default Hero
