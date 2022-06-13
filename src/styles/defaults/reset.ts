@@ -1,10 +1,8 @@
-import * as styledComponents from "styled-components";
-import { themeTypes } from "..";
+import * as styledComponents from 'styled-components';
+import { themeTypes } from '..';
 
-const {
-    createGlobalStyle,
-  } = styledComponents as styledComponents.ThemedStyledComponentsModule<themeTypes>;
-  
+const { createGlobalStyle } =
+    styledComponents as styledComponents.ThemedStyledComponentsModule<themeTypes>;
 
 export default createGlobalStyle`
     *,
