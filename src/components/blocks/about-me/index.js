@@ -15,10 +15,10 @@ const AboutMe = () => {
             Hello,
             <span role="img" aria-label="Hello, world">
               👋
-            </span> {' '}
+            </span>
             I'm Alexandra, a Front-end Javascript Engineer with a working
-            knowledge of UX design principles. Borned in Greece and live in the
-            Netherlands. I contrubuted to{' '}
+            knowledge of UX design principles. Born in Greece and live in the
+            Netherlands. I contrubuted to
             <a
               href="www.warnermedia.com/"
               target="_blank"
@@ -75,9 +75,9 @@ const AboutMe = () => {
             series on Netflix, re-reading Neil Gaiman books, travelling the
             world or taking strolls with my camera!
           </Paragraph>
-        </TwoColumn>
-      </Wrapper>
-    </section>
+        </TwoColumn >
+      </Wrapper >
+    </section >
   );
 };
 

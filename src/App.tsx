@@ -1,8 +1,4 @@
-import React from "react";
-import "./App.css";
-
-import Header from "./components/layout/header";
-
+import Header from "./components/layout/header/header";
 import Homepage from "./pages/homepage";
 
 function App() {

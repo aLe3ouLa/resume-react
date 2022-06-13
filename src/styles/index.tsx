@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Reset, Typography } from "./defaults";
 import { color } from "./variables/colors";
 import { spacing } from "./variables/spacings";
@@ -12,8 +10,11 @@ export const Defaults = () => (
   </>
 );
 
-export const theme = {
+const theme = {
   color,
   spacing,
   breakpoint,
 };
+
+export type themeTypes = typeof theme;
+export default theme;
