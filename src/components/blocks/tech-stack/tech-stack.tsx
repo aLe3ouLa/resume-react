@@ -1,6 +1,4 @@
-import React from 'react';
 import Wrapper from '../../fragments/wrapper';
-import styled from 'styled-components';
 import {
     SectionContainer,
     ColoredSpan,

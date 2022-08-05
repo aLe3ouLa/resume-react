@@ -1,9 +1,9 @@
-import styled, { css, StyledComponent } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 interface StyledButtonProps {
-    theme: any;
-    variation: ButtonVariation;
-    size: ButtonSize;
+    theme: any
+    variation: ButtonVariation
+    size: ButtonSize
 }
 
 export enum ButtonVariation {
@@ -34,7 +34,7 @@ const ButtonVariations: Record<ButtonVariation, any> = {
             background-color: ${({ theme }) => theme.color.hoverTertiary};
         }
     `,
-};
+}
 
 const ButtonSizes = {
     [ButtonSize.sm]: css`
@@ -49,7 +49,7 @@ const ButtonSizes = {
         padding: ${({ theme }) => theme.spacing.xxs}
             ${({ theme }) => theme.spacing.sm};
     `,
-};
+}
 
 export const StyledButton = styled.a<StyledButtonProps>`
     ${(props: StyledButtonProps) => css`
@@ -70,4 +70,4 @@ export const StyledButton = styled.a<StyledButtonProps>`
         color: ${({ theme }) => theme.color.white};
         text-decoration: none;
     }
-`;
+`
