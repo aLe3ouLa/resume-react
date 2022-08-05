@@ -1,3 +1,4 @@
+import moment from 'moment';
 interface Job {
     id: number;
     img: string;
@@ -17,7 +18,11 @@ const JOBS: Job[] = [
         a11y_img: 'Warner Bros Discovery logo',
         company: 'Warner Bros. Discovery',
         jobFunction: 'Frontend Engineer',
-        duration: 'Jul 2021 - Present · 1 yr',
+        duration: `Jul 2021 - Present · ${moment().diff(
+            '2021-07-01',
+            'year',
+            false
+        )} year ${moment(6, 'MM').fromNow(true)}`,
         responsibilities: (
             <>
                 As a front-end engineer in HBO max TV platform, my work revolves

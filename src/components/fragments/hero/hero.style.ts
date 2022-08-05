@@ -80,7 +80,8 @@ export const Text = styled.span`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 3vw;
+    font-size: 4rem;
+    line-height: 1;
     font-weight: 500;
 `;
 
