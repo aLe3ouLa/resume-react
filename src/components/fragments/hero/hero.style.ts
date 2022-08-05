@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
 export const Title = styled.h1`
     display: flex;
@@ -15,7 +15,7 @@ export const Title = styled.h1`
     & > span {
         font-size: 4rem;
     }
-`
+`;
 
 export const ColoredSpan = styled.span`
     color: ${({ theme }) => theme.color.primary};
@@ -26,7 +26,7 @@ export const ColoredSpan = styled.span`
         color: ${({ theme }) => theme.color.secondary};
         text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
     }
-`
+`;
 
 export const Quotes = styled.div`
     background-image: url(https://pluspng.com/img-png/quotation-png-file-quote-background-transparent-png-512.png);
@@ -50,11 +50,11 @@ export const Quotes = styled.div`
             margin-top: 40px;
         }
     }
-`
+`;
 
 export const Quote = styled.span`
     margin-bottom: ${({ theme }) => theme.spacing.sm};
-`
+`;
 
 export const Text = styled.span`
     background: linear-gradient(
@@ -82,7 +82,7 @@ export const Text = styled.span`
     color: transparent;
     font-size: 3vw;
     font-weight: 500;
-`
+`;
 
 const waveAnimation = keyframes`
     0% { transform: rotate( 0.0deg) }
@@ -93,7 +93,7 @@ const waveAnimation = keyframes`
    50% { transform: rotate(10.0deg) }
    60% { transform: rotate( 0.0deg) }
   100% { transform: rotate( 0.0deg) }
-`
+`;
 
 export const Wave = styled.span`
     animation-duration: 2s;
@@ -101,4 +101,4 @@ export const Wave = styled.span`
     animation-name: ${waveAnimation};
     display: inline-block;
     font-size: 4.2rem;
-`
+`;
