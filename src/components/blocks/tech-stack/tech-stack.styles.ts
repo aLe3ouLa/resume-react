@@ -47,16 +47,20 @@ export const StyledLink = styled.a`
 `;
 
 export const TechSkills = styled.ul`
-    column-count: 4;
+    display: grid;
+    place-items: center start;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 100px;
-    padding: 20px;
-    margin: 20px;
+
+    padding-left: 100px;
+
     li {
         list-style-type: circle;
         font-size: 1.6rem;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        column-count: 2;
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 20px;
     }
 `;
