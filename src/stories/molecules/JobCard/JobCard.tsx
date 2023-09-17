@@ -1,4 +1,12 @@
-import { Container, Paragraph, StyledLink, StyleWrapper, Subtitle, Technologies, Title } from './JobCard.styles';
+import {
+    Container,
+    Paragraph,
+    StyledLink,
+    StyleWrapper,
+    Subtitle,
+    Technologies,
+    Title,
+} from './JobCard.styles';
 
 interface JobCardProps {
     img: string;
@@ -28,7 +36,7 @@ export const JobCard = ({
                     src={img}
                     alt={a11y_img}
                     width="60"
-                    height="50"
+                    height="60"
                     style={{ marginRight: '16px' }}
                 />
                 <div>
