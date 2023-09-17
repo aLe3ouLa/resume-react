@@ -15,10 +15,26 @@ const AboutMe = () => {
                         <span role="img" aria-label="Hello, world">
                             👋
                         </span>{' '}
-                        I'm Alexandra, a Front-end Javascript Engineer with a
-                        computer science background and a working knowledge of
-                        UX design principles. Born in Greece and live in the
-                        Netherlands. I contrubuted to{' '}
+                        I'm Alexandra, a Frontend Engineer with a computer
+                        science background and a working knowledge of UX design
+                        principles. Born in Greece and live in the Netherlands.
+                        I contrubuted to{' '}
+                        <a
+                            href="www.spotify.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Spotify
+                        </a>
+                        ,{' '}
+                        <a
+                            href="www.spotify.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Spotify
+                        </a>
+                        ,{' '}
                         <a
                             href="www.spotify.com/"
                             target="_blank"
@@ -51,8 +67,8 @@ const AboutMe = () => {
                         experience working with modern frameworks.
                     </Paragraph>
                     <Paragraph>
-                        I also like content creation and as a hobby I write some
-                        articles about various JS topics on{' '}
+                        I like content creation and as a hobby I write some
+                        articles about various web programming topics on
                         <a
                             href="https://dev.to/ale3oula"
                             target="_blank"
@@ -60,9 +76,7 @@ const AboutMe = () => {
                         >
                             Dev.to
                         </a>
-                        . I also have a tech Instagram account where I create
-                        content covering a number of tech topics, e.g., code
-                        bits and frontend practices{' '}
+                        and
                         <a
                             href="https://www.instagram.com/alexa.codes/"
                             target="_blank"
@@ -73,9 +87,9 @@ const AboutMe = () => {
                     </Paragraph>
                     <Paragraph>
                         When not working, I'm likely watching sci-fi movies in
-                        cinema, being creative (pottery, drawing), re-reading
-                        Neil Gaiman books, travelling the world or taking
-                        strolls with my camera!
+                        cinema, being creative (pottery, drawing), dancing 💃,
+                        re-reading Neil Gaiman books, travelling the world or
+                        taking strolls with my camera!
                     </Paragraph>
                 </TwoColumn>
             </Wrapper>
