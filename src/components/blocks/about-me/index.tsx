@@ -20,6 +20,14 @@ const AboutMe = () => {
                         UX design principles. Born in Greece and live in the
                         Netherlands. I contrubuted to{' '}
                         <a
+                            href="www.spotify.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Spotify
+                        </a>
+                        ,{' '}
+                        <a
                             href="www.warnermedia.com/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -52,9 +60,9 @@ const AboutMe = () => {
                         >
                             Dev.to
                         </a>
-                        . I also have my tech Instagram account where I create
-                        imagery content covering a number of topics, like UIs,
-                        setup, code bits and more{' '}
+                        . I also have a tech Instagram account where I create
+                        content covering a number of tech topics, e.g., code
+                        bits and frontend practices{' '}
                         <a
                             href="https://www.instagram.com/alexa.codes/"
                             target="_blank"
@@ -64,10 +72,10 @@ const AboutMe = () => {
                         </a>
                     </Paragraph>
                     <Paragraph>
-                        When not working, I'm likely watching Superhero movies
-                        in cinema or series on HBOmax, re-reading Neil Gaiman
-                        books, travelling the world or taking strolls with my
-                        camera!
+                        When not working, I'm likely watching sci-fi movies in
+                        cinema, being creative (pottery, drawing), re-reading
+                        Neil Gaiman books, travelling the world or taking
+                        strolls with my camera!
                     </Paragraph>
                 </TwoColumn>
             </Wrapper>

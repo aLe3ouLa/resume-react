@@ -13,16 +13,27 @@ interface Job {
 
 const JOBS: Job[] = [
     {
+        id: 7,
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/991px-Spotify_icon.svg.png',
+        a11y_img: 'Spotify logo',
+        company: 'Spotify',
+        jobFunction: 'Frontend Engineer',
+        duration: `Sep 2021 - Present · ${moment().diff(
+            '2022-09-01',
+            'year',
+            false
+        )} year ${moment(9, 'MM').fromNow(true)}`,
+        responsibilities: <></>,
+        technologies: 'JSX ・ Typescript ・ Javascript ・ React.JS ・ Next.JS',
+        link: 'https://www.spotify.com',
+    },
+    {
         id: 0,
-        img: 'https://media-exp1.licdn.com/dms/image/C4D0BAQGx5RV9AvJFYg/company-logo_100_100/0/1649455844061?e=1661385600&v=beta&t=MpVDvvN9hBaovy5Parv1_-fP_OhpGHj8gxmSL_o30FQ',
+        img: 'https://companieslogo.com/img/orig/WBD-09dee705.png?t=1649700090',
         a11y_img: 'Warner Bros Discovery logo',
         company: 'Warner Bros. Discovery',
         jobFunction: 'Frontend Engineer',
-        duration: `Jul 2021 - Present · ${moment().diff(
-            '2021-07-01',
-            'year',
-            false
-        )} year ${moment(6, 'MM').fromNow(true)}`,
+        duration: 'Jul 2021 - Aug 2022 · 1 yr 2 mn',
         responsibilities: (
             <>
                 As a front-end engineer in HBO max TV platform, my work revolves
@@ -64,7 +75,7 @@ const JOBS: Job[] = [
         a11y_img: 'Messagebird logo',
         company: 'Messagebird',
         jobFunction: 'Frontend Engineer',
-        duration: 'Aug 2020 - Jul 2021 · 1 yr',
+        duration: 'Aug 2020 - Jun 2021 · 1 yr',
         responsibilities: (
             <>
                 As a React Frontend Engineer, my work revolves around helping
@@ -110,11 +121,11 @@ const JOBS: Job[] = [
     },
     {
         id: 3,
-        img: 'https://media-exp1.licdn.com/dms/image/C560BAQHmU9rDxA6bTg/company-logo_100_100/0/1614263196276?e=1661385600&v=beta&t=zBTJnvCPZ7rQOP53xO_jONh4DsNYgI-MV8jn3DX3cw8',
+        img: 'https://media-exp1.licdn.com/dms/image/C560BAQHmU9rDxA6bTg/company-logo_200_200/0/1614263196276?e=2147483647&v=beta&t=t8MVJD-1jRzavNyqv9GLK3m0X89N9zoaVfyZ0_megT0',
         a11y_img: 'Strangelove digital marketing logo',
         company: 'STRANGELOVE DIGITAL MARKETING',
         jobFunction: 'Frontend Developer',
-        duration: 'Feb 2020 - Aug 2020 · 7 mos',
+        duration: 'Feb 2020 - Jul 2020 · 6 mos',
         responsibilities: (
             <>
                 Worked as a React frontend developer and developed web
@@ -148,11 +159,11 @@ const JOBS: Job[] = [
     },
     {
         id: 4,
-        img: 'https://media-exp1.licdn.com/dms/image/C560BAQFA3UoQ6Q5RoQ/company-logo_100_100/0/1545654792613?e=1661385600&v=beta&t=OxPmLzRWMiAmfuMqaENXUBwD4PKiXSva-vJFrmy5XEM',
+        img: 'https://uploads.magnetme-images.com/8056d99c23d1cc782fbf73efb0b493a8?auto=format&bg=white&fit=fill&h=158&w=158',
         a11y_img: 'Yabbu logo',
         company: 'Yabbu',
         jobFunction: 'Frontend Engineer',
-        duration: 'Jul 2019 - Jan 2020 · 7 mos',
+        duration: 'Jul 2019 - Dec 2019 · 6 mos',
         responsibilities: (
             <>
                 Worked as a frontend developer in Yabbu, a meeting management
@@ -199,7 +210,7 @@ const JOBS: Job[] = [
     },
     {
         id: 5,
-        img: 'https://media-exp1.licdn.com/dms/image/C4E0BAQHxCTbu9lRJTA/company-logo_100_100/0/1609770725107?e=1661385600&v=beta&t=56FkjcvQvKrXtCD8ReBRJSHQsCm0zrkysZ7WVp3dD1g',
+        img: 'https://media-exp1.licdn.com/dms/image/C4E0BAQHxCTbu9lRJTA/company-logo_200_200/0/1609770725107?e=2147483647&v=beta&t=t-rhODnHm-Us9qnoJK98bNzfFCW4bIV3mK_EC3QYOp0',
         a11y_img: 'Ubitech logo',
         company: 'Ubitech',
         jobFunction: 'Frontend Engineer',
@@ -218,11 +229,11 @@ const JOBS: Job[] = [
     },
     {
         id: 6,
-        img: 'https://media-exp1.licdn.com/dms/image/C510BAQHEuqr53202Sg/company-logo_100_100/0/1519860842199?e=1661385600&v=beta&t=ULxF0EHaiPbh88HkLS-mjGt7ZMJAjfpn0bgqVSXXIUc',
+        img: 'https://www.iesl.forth.gr/sites/default/files/ICS%20logo.jpg',
         a11y_img: 'FORTH logo',
         company: 'FORTH',
         jobFunction: 'R&D - Frontend Engineer',
-        duration: 'Jul 2015 - JuN 2018 · 3 yrs',
+        duration: 'Jul 2015 - Jun 2018 · 3 yrs',
         responsibilities: (
             <>
                 Research and Developer engineer in Ambient Intelligent
