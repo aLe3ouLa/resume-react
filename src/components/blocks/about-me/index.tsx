@@ -28,14 +28,6 @@ const AboutMe = () => {
                         </a>
                         ,{' '}
                         <a
-                            href="www.spotify.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Spotify
-                        </a>
-                        ,{' '}
-                        <a
                             href="www.warnermedia.com/"
                             target="_blank"
                             rel="noopener noreferrer"
