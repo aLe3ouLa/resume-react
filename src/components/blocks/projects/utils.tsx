@@ -18,13 +18,36 @@ const JOBS: Job[] = [
         a11y_img: 'Spotify logo',
         company: 'Spotify',
         jobFunction: 'Frontend Engineer',
-        duration: `Sep 2021 - Present · ${moment().diff(
+        duration: `Sep 2022 - Present · ${moment().diff(
             '2022-09-01',
             'year',
             false
         )} year ${moment(9, 'MM').fromNow(true)}`,
-        responsibilities: <></>,
-        technologies: 'JSX ・ Typescript ・ Javascript ・ React.JS ・ Next.JS',
+        responsibilities: (
+            <>
+                As a web engineer in Spotify, my work revolves around helping
+                business users creating high-quality campaigns to promote our
+                products.
+                <ul>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Closely work with different stakeholders to optimise our
+                        users workflow
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Write and review code, develop documentation, and debug
+                        problems, on complex systems
+                    </li>
+                </ul>
+            </>
+        ),
+        technologies:
+            'Typescript ・ Javascript ・ Next.JS ・ React.JS ・ GraphQL',
         link: 'https://www.spotify.com',
     },
     {
