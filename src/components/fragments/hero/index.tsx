@@ -3,8 +3,8 @@ import Profile from '../../../assets/Profile.jpeg';
 import Wrapper from '../wrapper';
 import PDF from '../../../assets/cv.pdf';
 
-import { ButtonVariation } from '../../../stories/atoms/Button/Button.styles';
-import { Button } from '../../../stories/atoms/Button/Button';
+import { ButtonVariation } from '../Button/Button.styles';
+import { Button } from '../Button/Button';
 import {
     Quotes,
     Quote,

@@ -1,5 +1,5 @@
 import Wrapper from '../../fragments/wrapper';
-import { JobCard } from '../../../stories/molecules/JobCard/JobCard';
+import { JobCard } from '../../fragments/JobCard/JobCard';
 import { SectionContainer, ColoredSpan } from './projects.styles';
 
 import JOBS from './utils';
@@ -21,5 +21,3 @@ const TechStack = () => {
 };
 
 export default TechStack;
-
-
