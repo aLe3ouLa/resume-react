@@ -1,11 +1,19 @@
-import Profile from '../../../assets/1.jpeg';
+import Profile from '../../../assets/Profile.jpeg';
 
 import Wrapper from '../wrapper';
 import PDF from '../../../assets/cv.pdf';
 
 import { ButtonVariation } from '../../../stories/atoms/Button/Button.styles';
 import { Button } from '../../../stories/atoms/Button/Button';
-import { Quotes, Quote, Title, Wave, ColoredSpan, Text } from './hero.style';
+import {
+    Quotes,
+    Quote,
+    Title,
+    Wave,
+    ColoredSpan,
+    Text,
+    NameQuote,
+} from './hero.style';
 
 const handleOpenPDF = () => {
     window.open(PDF, '_blank');
@@ -15,15 +23,16 @@ const Hero = () => (
     <Wrapper>
         <Quotes>
             <Title>
-                <div>
+                <NameQuote>
                     Heyy
                     <Wave role="img" aria-labelledby="Hello, world!">
                         👋🏻
                     </Wave>
                     , I'm <Text>Alexandra</Text>
-                </div>
+                </NameQuote>
                 <Quote>
-                    &amp; I'm a <ColoredSpan>Front-end</ColoredSpan> engineer
+                    I'm a <ColoredSpan>Front-end</ColoredSpan> engineer &amp;
+                    amateur <ColoredSpan>Photographer</ColoredSpan>
                 </Quote>
                 <Button
                     onClick={handleOpenPDF}

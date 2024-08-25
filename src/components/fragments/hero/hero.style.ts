@@ -53,7 +53,12 @@ export const Quotes = styled.div`
 `;
 
 export const Quote = styled.span`
+    max-width: 75%;
     margin-bottom: ${({ theme }) => theme.spacing.sm};
+`;
+
+export const NameQuote = styled.span`
+    margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 export const Text = styled.span`
@@ -62,16 +67,16 @@ export const Text = styled.span`
         #186cb8 19%,
         transparent 0,
         transparent 20%,
-        #2a9a9f 0,
-        #2a9a9f 39%,
+        #186cb8 0,
+        #186cb8 39%,
         transparent 0,
         transparent 40%,
-        #f1b211 0,
-        #f1b211 59%,
+        #186cb8 0,
+        #f9002f 59%,
         transparent 0,
         transparent 60%,
-        #e83611 0,
-        #e83611 79%,
+        #f9002f 0,
+        #f9002f 79%,
         transparent 0,
         transparent 80%,
         #f9002f 0

@@ -11,36 +11,34 @@ const AboutMe = () => {
 
                 <TwoColumn>
                     <Paragraph>
-                        Hello
                         <span role="img" aria-label="Hello, world">
                             👋
                         </span>{' '}
-                        I'm Alexandra, a Frontend Engineer with a computer
-                        science background and a working knowledge of UX design
-                        principles. Born in Greece and live in the Netherlands.
-                        I contrubuted to{' '}
+                        I'm a Frontend Engineer with a computer science
+                        background and working knowledge of UX design and web
+                        accessibility principles. I contrubuted to{' '}
                         <a
-                            href="www.spotify.com/"
+                            href="//www.mews.com/"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer external"
                         >
-                            Spotify
+                            Mews
                         </a>
                         ,{' '}
                         <a
-                            href="www.warnermedia.com/"
+                            href="//www.spotify.com/"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer external"
                         >
-                            Warnermedia
+                            Spotify
                         </a>{' '}
                         and{' '}
                         <a
-                            href="www.messagebird.com"
+                            href="//www.wbd.com/"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer external"
                         >
-                            Messagebird
+                            Warner Bros. Discovery
                         </a>
                         .
                     </Paragraph>
@@ -52,15 +50,15 @@ const AboutMe = () => {
                     </Paragraph>
                     <Paragraph>
                         I like content creation and as a hobby I write some
-                        articles about various web programming topics on
+                        articles about various web programming topics on{' '}
                         <a
                             href="https://dev.to/ale3oula"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             Dev.to
-                        </a>
-                        and
+                        </a>{' '}
+                        and{' '}
                         <a
                             href="https://www.instagram.com/alexa.codes/"
                             target="_blank"
@@ -71,9 +69,8 @@ const AboutMe = () => {
                     </Paragraph>
                     <Paragraph>
                         When not working, I'm likely watching sci-fi movies in
-                        cinema, being creative (pottery, drawing), dancing 💃,
-                        re-reading Neil Gaiman books, travelling the world or
-                        taking strolls with my camera!
+                        cinema, being creative, dancing salsa 💃, travelling the
+                        world or taking strolls with my camera!
                     </Paragraph>
                 </TwoColumn>
             </Wrapper>

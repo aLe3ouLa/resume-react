@@ -13,35 +13,86 @@ interface Job {
 
 const JOBS: Job[] = [
     {
+        id: 8,
+        img: 'https://www.mews.com/hubfs/_Project_Phoenix/images/logo/Mews%20Logo.svg',
+        a11y_img: 'Mews logo',
+        company: 'Mews',
+        jobFunction: 'Software Engineer',
+        duration: `Aug 2024 - Present · ${moment().diff(
+            '2024-08-01',
+            'year',
+            false
+        )} year ${moment(8, 'MM').fromNow(true)}`,
+        responsibilities: <></>,
+        technologies: 'Typescript ・ Javascript ・ React.JS ・ .NET',
+        link: 'https://www.mews.com',
+    },
+    {
         id: 7,
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/991px-Spotify_icon.svg.png',
         a11y_img: 'Spotify logo',
         company: 'Spotify',
-        jobFunction: 'Frontend Engineer',
-        duration: `Sep 2022 - Present · ${moment().diff(
-            '2022-09-01',
-            'year',
-            false
-        )} year ${moment(9, 'MM').fromNow(true)}`,
+        jobFunction: 'Web Engineer',
+        duration: `Sep 2022 - Aug 2024 · 2 yrs`,
         responsibilities: (
             <>
-                As a web engineer in Spotify, my work revolves around helping
-                business users creating high-quality campaigns to promote our
-                products.
+                As a Web Engineer specializing in internal product development
+                at Spotify, I play a pivotal role in crafting and managing
+                campaigns aimed at driving growth while empowering marketing
+                operators for enhanced productivity. Leveraging cutting-edge
+                technologies, my team and I constructed a contemporary platform
+                to cater to our stakeholders' diverse needs.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Closely work with different stakeholders to optimise our
-                        users workflow
+                        Maintaining an up-to-date codebase using the latest
+                        technologies
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Write and review code, develop documentation, and debug
-                        problems, on complex systems
+                        Developing new features to align with the company's key
+                        results
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Leading impactful projects and guiding teams toward
+                        fulfilling the company's missions.
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Providing mentorship to junior engineers and actively
+                        participating in the training of interns.
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Enhancing application performance and orchestrating
+                        seamless transitions to the company's preferred
+                        technologies.
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Collaborating closely with stakeholders across various
+                        disciplines to align with the company's dynamic business
+                        requirements.
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Contributing to subscriber growth of Spotify by
+                        supporting the marketing teams that are using our tools
                     </li>
                 </ul>
             </>

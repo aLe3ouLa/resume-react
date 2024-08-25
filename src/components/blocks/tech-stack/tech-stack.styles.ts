@@ -51,6 +51,7 @@ export const TechSkills = styled.ul`
     place-items: center start;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 100px;
+    margin-top: 60px;
 
     padding-left: 100px;
 

@@ -19,9 +19,9 @@ const TechStack = () => {
                 <Container>
                     <Paragraph>
                         <span>
-                            I have graduated with a Bsc. in Computer Science and
-                            a Msc. in Computer Engineering. Currently I am
-                            enjoying learning more about front-end technologies.
+                            I have graduated with a Msc. in Computer
+                            Engineering. Currently I am enjoying learning more
+                            about front-end technologies.
                         </span>
                     </Paragraph>
                     <Paragraph>
@@ -46,12 +46,13 @@ const TechStack = () => {
                 </Container>
 
                 <TechSkills>
-                    <li>JavaScript</li>
                     <li>Typescript</li>
+
+                    <li>JavaScript</li>
                     <li>HTML5</li>
                     <li>CSS3 / SASS</li>
                     <li>React.js</li>
-                    <li>Redux</li>
+                    <li>Next.js</li>
                     <li>styled-components</li>
                     <li>Emotion</li>
                     <li>REST api</li>
