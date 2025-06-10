@@ -13,16 +13,35 @@ interface Job {
 
 const JOBS: Job[] = [
     {
+        id: 8,
+        img: 'https://media.licdn.com/dms/image/v2/D4D0BAQGwILNPyNMxQQ/company-logo_100_100/company-logo_100_100/0/1690382349164/mewssystems_logo?e=1755129600&v=beta&t=hF3WDiO8njSnzeMNp_a_EamTwQHa4XXKhppQUzRCMRA',
+        a11y_img: 'Mews logo',
+        company: 'Mews',
+        jobFunction: 'Software Engineer',
+        duration: `Aug 2024 - Present · ${moment().diff(
+            '2024-09-05',
+            'year',
+            false
+        )} year ${moment(9, 'MM').fromNow(true)}`,
+        responsibilities: (
+            <>
+                At Mews, I contribute to revolutionizing the hospitality
+                industry by building robust software solutions as part of the
+                Accounting Team. My work focuses on ledgers, ensuring financial
+                data is accurate, accessible, and seamlessly integrated into our
+                systems.
+            </>
+        ),
+        technologies: 'Typescript ・ Javascript ・ React.JS ・ C#',
+        link: 'https://www.mews.com',
+    },
+    {
         id: 7,
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/991px-Spotify_icon.svg.png',
         a11y_img: 'Spotify logo',
         company: 'Spotify',
-        jobFunction: 'Frontend Engineer',
-        duration: `Sep 2022 - Present · ${moment().diff(
-            '2022-09-01',
-            'year',
-            false
-        )} year ${moment(9, 'MM').fromNow(true)}`,
+        jobFunction: 'Web Engineer 2',
+        duration: `Sep 2022 - Aug 2024 · 2 yrs`,
         responsibilities: (
             <>
                 As a web engineer in Spotify, my work revolves around helping

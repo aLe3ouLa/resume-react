@@ -15,10 +15,18 @@ const AboutMe = () => {
                         <span role="img" aria-label="Hello, world">
                             👋
                         </span>{' '}
-                        I'm Alexandra, a Frontend Engineer with a computer
-                        science background and a working knowledge of UX design
+                        I'm Alexandra, a Web Engineer with a computer science
+                        background and a working knowledge of UX design
                         principles. Born in Greece and live in the Netherlands.
                         I contrubuted to{' '}
+                        <a
+                            href="www.mews.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Mews
+                        </a>
+                        ,{' '}
                         <a
                             href="www.spotify.com/"
                             target="_blank"
@@ -60,20 +68,11 @@ const AboutMe = () => {
                         >
                             Dev.to
                         </a>
-                        and
-                        <a
-                            href="https://www.instagram.com/alexa.codes/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            @alexa.codes
-                        </a>
                     </Paragraph>
                     <Paragraph>
                         When not working, I'm likely watching sci-fi movies in
-                        cinema, being creative (pottery, drawing), dancing 💃,
-                        re-reading Neil Gaiman books, travelling the world or
-                        taking strolls with my camera!
+                        cinema, dancing 💃, re-reading Neil Gaiman books,
+                        travelling the world or taking strolls with my camera!
                     </Paragraph>
                 </TwoColumn>
             </Wrapper>
