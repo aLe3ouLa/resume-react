@@ -779,6 +779,8 @@ const FloatingElement = styled.div`
     }
 `;
 
+const Image = styled.img``;
+
 export default function Photography() {
     return (
         <Wrapper>
@@ -824,7 +826,7 @@ export default function Photography() {
                         </BehindTheLensSignature>
                     </BehindTheLensText>
                     <BehindTheLensImage>
-                        <img as="img" src={Profile} alt="Alexandra Barka with camera" />
+                        <Image src={Profile} alt="Alexandra Barka with camera" />
                     </BehindTheLensImage>
                 </BehindTheLensContent>
             </BehindTheLensSection>
