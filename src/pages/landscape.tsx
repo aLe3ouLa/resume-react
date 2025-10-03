@@ -7,7 +7,7 @@ import Lisb5 from '../assets/photography/5_lisb.jpeg';
 import Lisb6 from '../assets/photography/6_lisb.jpeg';
 import Bali1 from '../assets/photography/1_bali.jpg';
 import Lisb8 from '../assets/photography/8_lisb.jpeg';
-import NY9 from '../assets/photography/9_ny.jpeg';
+import NY9 from '../assets/photography/9_ny.jpg';
 import styled from 'styled-components';
 
 const imagesArray = [

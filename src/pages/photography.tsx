@@ -5,6 +5,7 @@ import { ColoredSpan } from '../components/fragments/hero/hero.style';
 import styled, { keyframes } from 'styled-components';
 import Portraits from './portraits';
 import Wildlife from './wildlife';
+import Profile from '../assets/Profile.jpeg';
 
 // Animations
 const fadeInUp = keyframes`
@@ -823,7 +824,7 @@ export default function Photography() {
                         </BehindTheLensSignature>
                     </BehindTheLensText>
                     <BehindTheLensImage>
-                        <img src="/static/media/Profile.b52fb78a4c90e9a68729.jpeg" alt="Alexandra Barka with camera" />
+                        <img as="img" src={Profile} alt="Alexandra Barka with camera" />
                     </BehindTheLensImage>
                 </BehindTheLensContent>
             </BehindTheLensSection>
