@@ -5,32 +5,31 @@ import { HeaderContainer, NavList } from './header.styles';
 const Header = () => {
     return (
         <HeaderContainer>
-            <Link to={'/'}>
+            <Link to={'/'} style={{ textDecoration: 'none' }}>
                 <Logo />
             </Link>
 
             <nav>
                 <NavList>
-                    <li>&nbsp;</li>
                     <li>
-                        <Link to="/photography">photography</Link>
+                        <Link to="/photography">Photography</Link>
                     </li>
                     <li>
-                        <a href="https://github.com/aLe3ouLa">github</a>
-                    </li>
-                    <li>
-                        <a href="https://codepen.io/ale3oula-the-styleful">
-                            codepen
+                        <a 
+                            href="https://github.com/aLe3ouLa" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/alexandra-barka-57075361/">
-                            linkedin
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/alexa.codes/">
-                            instagram
+                        <a 
+                            href="https://www.instagram.com/ale3oula/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Instagram
                         </a>
                     </li>
                 </NavList>

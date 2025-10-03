@@ -60,14 +60,39 @@ export const StyledButton = styled.a<StyledButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 
     font-size: 1.4rem;
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
 
     &:hover {
         color: ${({ theme }) => theme.color.white};
         text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        
+        &::before {
+            left: 100%;
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 `

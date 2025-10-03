@@ -18,11 +18,15 @@ const JOBS: Job[] = [
         a11y_img: 'Mews logo',
         company: 'Mews',
         jobFunction: 'Software Engineer',
-        duration: `Aug 2024 - Present · ${moment().diff(
-            '2024-08-01',
-            'year',
-            false
-        )} year ${moment(8, 'MM').fromNow(true)}`,
+        duration: `Aug 2024 - Present · ${(() => {
+            const months = moment().diff('2024-08-01', 'months', true);
+            if (months >= 12) {
+                const years = Math.floor(months / 12);
+                const remainingMonths = Math.floor(months % 12);
+                return remainingMonths > 0 ? `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}` : `${years} year${years > 1 ? 's' : ''}`;
+            }
+            return `${months.toFixed(1)} months`;
+        })()}`,
         responsibilities: <></>,
         technologies: 'Typescript ・ Javascript ・ React.JS ・ .NET',
         link: 'https://www.mews.com',
@@ -36,63 +40,25 @@ const JOBS: Job[] = [
         duration: `Sep 2022 - Aug 2024 · 2 yrs`,
         responsibilities: (
             <>
-                As a Web Engineer specializing in internal product development
-                at Spotify, I play a pivotal role in crafting and managing
-                campaigns aimed at driving growth while empowering marketing
-                operators for enhanced productivity. Leveraging cutting-edge
-                technologies, my team and I constructed a contemporary platform
-                to cater to our stakeholders' diverse needs.
+                Web Engineer developing internal growth campaigns and marketing tools for Spotify's subscriber expansion.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Maintaining an up-to-date codebase using the latest
-                        technologies
+                        Lead impactful projects and mentor junior engineers while developing features aligned with company key results
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Developing new features to align with the company's key
-                        results
+                        Enhance performance and migrate to preferred technologies, maintaining modern codebase with latest technologies
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Leading impactful projects and guiding teams toward
-                        fulfilling the company's missions.
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Providing mentorship to junior engineers and actively
-                        participating in the training of interns.
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Enhancing application performance and orchestrating
-                        seamless transitions to the company's preferred
-                        technologies.
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Collaborating closely with stakeholders across various
-                        disciplines to align with the company's dynamic business
-                        requirements.
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Contributing to subscriber growth of Spotify by
-                        supporting the marketing teams that are using our tools
+                        Support marketing teams driving Spotify subscriber growth through stakeholder collaboration
                     </li>
                 </ul>
             </>
@@ -110,31 +76,19 @@ const JOBS: Job[] = [
         duration: 'Jul 2021 - Aug 2022 · 1 yr 2 mn',
         responsibilities: (
             <>
-                As a front-end engineer in HBO max TV platform, my work revolves
-                around helping users to enjoy the next generation of streaming
-                apps and having a direct impact on the consumer experience of
-                millions of users worldwide.
+                Frontend Engineer for HBO Max streaming platform, impacting millions of users worldwide.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Migrate the Design system to the newest version. Create
-                        style guides, and showcase the components involved.
+                        Migrate design system to latest version with style guides and create web accessible applications
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Closely work with different stakeholders to create a web
-                        accessible and pixel perfect application
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Write and review code, develop documentation, and debug
-                        problems, on complex systems
+                        Write, review code and debug complex systems for pixel-perfect user experience
                     </li>
                 </ul>
             </>
@@ -152,39 +106,25 @@ const JOBS: Job[] = [
         duration: 'Aug 2020 - Jun 2021 · 1 yr',
         responsibilities: (
             <>
-                As a React Frontend Engineer, my work revolves around helping
-                customers onboard and activate Messagebird products by providing
-                helpful and web-accessible onboarding experiences.
+                React Frontend Engineer creating web-accessible onboarding experiences for Messagebird products.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Migrate authentication to a new react micro frontend by
-                        improving performance and user experience
+                        Migrate authentication to React micro frontend and develop onboarding flows reducing setup time from days to minutes
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Development of onboarding and signup flows to give the
-                        best experience to new users, decreasing the time for
-                        our users to connect to their customers from days to
-                        minutes
+                        Integrate design system and accessibility techniques for improved user experience
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Integrating the design system and web accessibility
-                        techniques to the platform
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Be support engineer in rotation with the other team
-                        members to assist in solving client problems
+                        Provide support engineering in team rotation for client problem resolution
                     </li>
                 </ul>
             </>
@@ -202,27 +142,19 @@ const JOBS: Job[] = [
         duration: 'Feb 2020 - Jul 2020 · 6 mos',
         responsibilities: (
             <>
-                Worked as a React frontend developer and developed web
-                applications for Strangelove digital agency both for clients and
-                internal use.
+                React Frontend Developer creating web applications for Strangelove digital agency clients and internal use.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Build a fully automated tool for scan, monitor and
-                        report all types of cookie by utilising Node.js,
-                        pupeeteer and React.js
+                        Build automated cookie scanning tool using Node.js, Puppeteer and React.js
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Develop an e-commerce shop that uses state-of-the-art
-                        technologies. Setup an API mocking library and testing
-                        tools in the project and write tests. Automate the
-                        generation of the invoices resulting on speeding up the
-                        checkout process.
+                        Develop e-commerce shop with API mocking, testing tools and automated invoice generation
                     </li>
                 </ul>
             </>
@@ -240,41 +172,25 @@ const JOBS: Job[] = [
         duration: 'Jul 2019 - Dec 2019 · 6 mos',
         responsibilities: (
             <>
-                Worked as a frontend developer in Yabbu, a meeting management
-                application. Deliver clean code and pixel-perfect results to aid
-                in the target of minimizing the meeting time.
+                Frontend Developer for Yabbu meeting management application, delivering clean code to minimize meeting time.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Develop a cross-platform application that acts as a
-                        remote meeting management tool by maintaining the old
-                        codebase in Angular.js and migrating the features in
-                        Vue.js
+                        Develop cross-platform meeting management tool migrating from Angular.js to Vue.js
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Improve performance from the old UI by using the best
-                        practices in Vue.js and removing costly libraries.
+                        Improve UI performance using Vue.js best practices and removing costly libraries
                     </li>
-
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Assist in the project management to maximise the
-                        effectiveness of the team by creating estimations &
-                        organising the kanban board in 2 weeks sprints.
-                    </li>
-
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Aid in the CI/CD pipeline of the development team.
+                        Assist project management with estimations, sprint organization and CI/CD pipeline development
                     </li>
                 </ul>
             </>
@@ -291,10 +207,7 @@ const JOBS: Job[] = [
         duration: 'Jul 2018 - Jul 2019 · 1 yr 1 mo',
         responsibilities: (
             <>
-                Worked as a front-end engineer with a working knowledge of UX
-                design principles. My role was to write front-end components as
-                well as design user interfaces and assets for the company's
-                projects. Delivered clean code and pixel-perfect results.
+                Frontend Engineer with UX design knowledge, creating components, interfaces and assets with clean, pixel-perfect code.
             </>
         ),
         technologies:
@@ -310,55 +223,25 @@ const JOBS: Job[] = [
         duration: 'Jul 2015 - Jun 2018 · 3 yrs',
         responsibilities: (
             <>
-                Research and Developer engineer in Ambient Intelligent
-                environments with a focus on front-end development on web,
-                mobile and desktop applications. Outcomes from my work in FORTH
-                are:
+                R&D Frontend Engineer in Ambient Intelligent environments, developing web, mobile and desktop applications.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Participate in Student Design Competition in HCI
-                        International 2018, Las Vegas, NV, USA.
-                    </li>
-
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Design and develop an interactive full-stack application
-                        that composes web applications in real-time that
-                        aggregate the individual UIs existing in the intelligent
-                        environment by introducing new rich user interface
-                        compositions. Presented as part of my Msc. thesis,
-                        November 2018.
-                    </li>
-
-                    <li>
-                        <span role="img" aria-label="Bullet point">
-                            →
-                        </span>{' '}
-                        Co-develop an augmented interactive table that includes
-                        serious games for children. Publicly displayed in
-                        Vikelaia Library, 2017.
+                        Participated in HCI International 2018 Student Design Competition, Las Vegas
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Design and co-develop a cross-platform mobile
-                        application that aims to guide the visitor through the
-                        Rethimni Monastery via an interactive map.
+                        Designed interactive full-stack application for real-time UI composition (MSc thesis)
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Co-develop an info kiosk that exhibits the Minoan
-                        Culture and different aspects of the life in that era.
-                        Publicly displayed in the archaeological museum of
-                        Crete, 2016.
+                        Co-developed interactive applications including augmented table for children and mobile app for monastery
                     </li>
                 </ul>
             </>

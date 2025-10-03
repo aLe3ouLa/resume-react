@@ -1,65 +1,87 @@
 import Wrapper from '../../fragments/wrapper';
 import {
     SectionContainer,
+    HeaderSection,
+    SectionTitle,
+    SectionSubtitle,
     ColoredSpan,
-    Container,
+    ContentGrid,
+    AboutCard,
     Paragraph,
-    StyledLink,
+    TechSkillsCard,
+    SkillsTitle,
     TechSkills,
+    SkillItem,
 } from './tech-stack.styles';
 
 const TechStack = () => {
+    const skills = [
+        'TypeScript',
+        'JavaScript',
+        'HTML5',
+        'CSS3 / SASS',
+        'React.js',
+        'Next.js',
+        'styled-components',
+        'Emotion',
+        'REST API',
+        'Node.js',
+        'GraphQL',
+        'CSS Animations',
+    ];
+
     return (
         <SectionContainer>
             <Wrapper>
-                <h2>
-                    Tech Stack <ColoredSpan>.</ColoredSpan>
-                </h2>
+                <HeaderSection>
+                    <SectionTitle>
+                        Tech Stack <ColoredSpan>.</ColoredSpan>
+                    </SectionTitle>
+                    <SectionSubtitle>
+                        Building modern web experiences with cutting-edge technologies
+                    </SectionSubtitle>
+                </HeaderSection>
 
-                <Container>
-                    <Paragraph>
-                        <span>
-                            I have graduated with a Msc. in Computer
-                            Engineering. Currently I am enjoying learning more
-                            about front-end technologies.
-                        </span>
-                    </Paragraph>
-                    <Paragraph>
-                        My favorite online courses include
-                        <a href="https://www.udemy.com/course/the-complete-javascript-course/">
-                            The complete Javascript Course
-                        </a>
-                        ,
-                        <a href="https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/">
-                            Master the Coding Interview: Data Structures +
-                            Algorithms
-                        </a>{' '}
-                        and
-                        <a href="https://www.udemy.com/course/advanced-css-and-sass/">
-                            Advanced CSS and Sass: Flexbox, Grid, Animations and
-                            More!
-                        </a>
-                    </Paragraph>
-                    <StyledLink href="https://www.linkedin.com/in/alexandra-barka-57075361/">
-                        See my LinkedIn &rarr;
-                    </StyledLink>
-                </Container>
+                <ContentGrid>
+                    <AboutCard>
+                        <Paragraph>
+                            <span>
+                                With a Master's degree in Computer Engineering, I bring a strong 
+                                technical foundation to every project. My passion lies in crafting 
+                                exceptional user experiences through modern front-end technologies, 
+                                where I combine analytical thinking with creative problem-solving.
+                            </span>
+                        </Paragraph>
+                        <Paragraph>
+                            I'm committed to continuous learning and have completed several 
+                            comprehensive courses, including
+                            <a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank" rel="noopener noreferrer">
+                                The Complete JavaScript Course
+                            </a>
+                            ,
+                            <a href="https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/" target="_blank" rel="noopener noreferrer">
+                                Master the Coding Interview: Data Structures + Algorithms
+                            </a>{' '}
+                            and
+                            <a href="https://www.udemy.com/course/advanced-css-and-sass/" target="_blank" rel="noopener noreferrer">
+                                Advanced CSS and Sass: Flexbox, Grid, Animations and More!
+                            </a>
+                            . These courses have deepened my understanding of both fundamental 
+                            concepts and cutting-edge techniques in web development.
+                        </Paragraph>
+                    </AboutCard>
 
-                <TechSkills>
-                    <li>Typescript</li>
-
-                    <li>JavaScript</li>
-                    <li>HTML5</li>
-                    <li>CSS3 / SASS</li>
-                    <li>React.js</li>
-                    <li>Next.js</li>
-                    <li>styled-components</li>
-                    <li>Emotion</li>
-                    <li>REST api</li>
-                    <li>Node.js</li>
-                    <li>GraphQL</li>
-                    <li>CSS Animations</li>
-                </TechSkills>
+                    <TechSkillsCard>
+                        <SkillsTitle>Technical Skills</SkillsTitle>
+                        <TechSkills>
+                            {skills.map((skill, index) => (
+                                <SkillItem key={index}>
+                                    {skill}
+                                </SkillItem>
+                            ))}
+                        </TechSkills>
+                    </TechSkillsCard>
+                </ContentGrid>
             </Wrapper>
         </SectionContainer>
     );

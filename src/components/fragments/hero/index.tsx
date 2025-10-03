@@ -13,6 +13,11 @@ import {
     ColoredSpan,
     Text,
     NameQuote,
+    FloatingElement,
+    Sparkle,
+    ButtonContainer,
+    PhotographyCTA,
+    CameraIcon,
 } from './hero.style';
 
 const handleOpenPDF = () => {
@@ -22,6 +27,17 @@ const handleOpenPDF = () => {
 const Hero = () => (
     <Wrapper>
         <Quotes>
+            {/* Floating decorative elements */}
+            <FloatingElement>✨</FloatingElement>
+            <FloatingElement>💫</FloatingElement>
+            <FloatingElement>🎨</FloatingElement>
+            
+            {/* Sparkle effects */}
+            <Sparkle>✨</Sparkle>
+            <Sparkle>💎</Sparkle>
+            <Sparkle>✨</Sparkle>
+            <Sparkle>💫</Sparkle>
+            
             <Title>
                 <NameQuote>
                     Heyy
@@ -31,14 +47,20 @@ const Hero = () => (
                     , I'm <Text>Alexandra</Text>
                 </NameQuote>
                 <Quote>
-                    I'm a <ColoredSpan>Front-end</ColoredSpan> engineer &amp;
-                    amateur <ColoredSpan>Photographer</ColoredSpan>
+                    I'm a <ColoredSpan>Frontend</ColoredSpan> Developer &amp;
+                    passionate <ColoredSpan>Photographer</ColoredSpan>
                 </Quote>
-                <Button
-                    onClick={handleOpenPDF}
-                    variation={ButtonVariation.PRIMARY}
-                    label="Download CV"
-                />
+                <ButtonContainer>
+                    <Button
+                        onClick={handleOpenPDF}
+                        variation={ButtonVariation.PRIMARY}
+                        label="Download CV"
+                    />
+                    <PhotographyCTA to="/photography">
+                        <CameraIcon>📸</CameraIcon>
+                        Book Photography
+                    </PhotographyCTA>
+                </ButtonContainer>
             </Title>
             <img src={Profile} alt="Alexandra profile" width="380" />
         </Quotes>

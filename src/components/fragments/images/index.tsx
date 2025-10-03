@@ -3,7 +3,7 @@ import Wrapper from '../wrapper';
 
 const ImageContainer = styled.div`
     padding: 50px;
-    margin-top: 60px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

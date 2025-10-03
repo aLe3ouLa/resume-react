@@ -5,7 +5,11 @@ import {
     StyleWrapper,
     Subtitle,
     Technologies,
+    TechTag,
     Title,
+    TitleContainer,
+    CompanyLogo,
+    JobInfo,
 } from './JobCard.styles';
 
 interface JobCardProps {
@@ -29,28 +33,35 @@ export const JobCard = ({
     link,
     responsibilities,
 }: JobCardProps) => {
+    const techArray = technologies.split(/・|\||┃/).map(tech => tech.trim()).filter(tech => tech.length > 0);
+
     return (
         <Container>
             <StyleWrapper>
-                <img
-                    src={img}
-                    alt={a11y_img}
-                    width="60"
-                    height="60"
-                    style={{ marginRight: '16px' }}
-                />
-                <div>
-                    <Title>
-                        <strong>
+                <CompanyLogo>
+                    <img
+                        src={img}
+                        alt={a11y_img}
+                    />
+                </CompanyLogo>
+                <JobInfo>
+                    <TitleContainer>
+                        <Title>
                             {company} - {jobFunction}
-                        </strong>
-                    </Title>
+                        </Title>
+                        <StyledLink href={link} target="_blank" rel="noopener noreferrer">
+                            Visit {company}
+                        </StyledLink>
+                    </TitleContainer>
                     <Subtitle>{duration}</Subtitle>
                     <Paragraph>{responsibilities}</Paragraph>
-                    <Technologies>{technologies}</Technologies>
-                </div>
+                    <Technologies>
+                        {techArray.map((tech, index) => (
+                            <TechTag key={index}>{tech}</TechTag>
+                        ))}
+                    </Technologies>
+                </JobInfo>
             </StyleWrapper>
-            <StyledLink href={link}>See {company} &rarr;</StyledLink>
         </Container>
     );
 };
