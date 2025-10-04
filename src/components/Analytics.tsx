@@ -8,8 +8,10 @@ const Analytics = () => {
 
   useEffect(() => {
     // Track page views on route changes
-    trackPageView(location.pathname);
-  }, [location, trackPageView]);
+    if (location?.pathname) {
+      trackPageView(location?.pathname);
+    }
+  }, [location, trackPageView, location?.pathname]);
 
   return null; // This component doesn't render anything
 };

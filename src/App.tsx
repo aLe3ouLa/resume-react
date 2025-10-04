@@ -10,6 +10,7 @@ let router = createBrowserRouter([
         Component() {
             return (
                 <>
+                    <Analytics />
                     <Header />
                     <Homepage />
                     <Header />
@@ -22,6 +23,7 @@ let router = createBrowserRouter([
         Component() {
             return (
                 <>
+                    <Analytics />
                     <Header />
                     <Photography />
                     <Header />
@@ -33,10 +35,7 @@ let router = createBrowserRouter([
 
 function App() {
     return (
-        <>
-            <Analytics />
-            <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
-        </>
+        <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
     );
 }
 
