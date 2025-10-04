@@ -234,7 +234,6 @@ export const Sparkle = styled.span`
     }
 `;
 
-
 export const Title = styled.h1`
     display: flex;
     align-items: flex-start;
@@ -267,8 +266,8 @@ export const Title = styled.h1`
 export const ColoredSpan = styled.span`
     background: linear-gradient(135deg, 
         ${({ theme }) => theme.color.primary} 0%,
-        ${({ theme }) => theme.color.tertiary} 50%,
-        ${({ theme }) => theme.color.tertiary} 100%
+        ${({ theme }) => theme.color.secondary} 50%,
+        ${({ theme }) => theme.color.secondary} 100%
     );
     background-size: 200% 200%;
     background-clip: text;
@@ -289,7 +288,7 @@ export const ColoredSpan = styled.span`
         height: 3px;
         background: linear-gradient(90deg, 
             ${({ theme }) => theme.color.primary}, 
-            ${({ theme }) => theme.color.tertiary}
+            ${({ theme }) => theme.color.secondary}
         );
         transition: width 0.3s ease;
     }

@@ -28,20 +28,20 @@ const Hero = () => (
     <Wrapper>
         <Quotes>
             {/* Floating decorative elements */}
-            <FloatingElement>✨</FloatingElement>
-            <FloatingElement>💫</FloatingElement>
-            <FloatingElement>🎨</FloatingElement>
+            <FloatingElement aria-hidden="true">✨</FloatingElement>
+            <FloatingElement aria-hidden="true">💫</FloatingElement>
+            <FloatingElement aria-hidden="true">🎨</FloatingElement>
             
             {/* Sparkle effects */}
-            <Sparkle>✨</Sparkle>
-            <Sparkle>💎</Sparkle>
-            <Sparkle>✨</Sparkle>
-            <Sparkle>💫</Sparkle>
+            <Sparkle aria-hidden="true">✨</Sparkle>
+            <Sparkle aria-hidden="true">💎</Sparkle>
+            <Sparkle aria-hidden="true">✨</Sparkle>
+            <Sparkle aria-hidden="true">💫</Sparkle>
             
             <Title>
                 <NameQuote>
                     Heyy
-                    <Wave role="img" aria-labelledby="Hello, world!">
+                    <Wave role="img" aria-label="Hello, world!">
                         👋🏻
                     </Wave>
                     , I'm <Text>Alexandra</Text>
@@ -57,12 +57,18 @@ const Hero = () => (
                         label="Download CV"
                     />
                     <PhotographyCTA to="/photography">
-                        <CameraIcon>📸</CameraIcon>
+                        <CameraIcon aria-hidden="true">📸</CameraIcon>
                         Book Photography
                     </PhotographyCTA>
                 </ButtonContainer>
             </Title>
-            <img src={Profile} alt="Alexandra profile" width="380" />
+            <img 
+                src={Profile} 
+                alt="Alexandra Barka - Frontend Engineer and Photographer professional headshot" 
+                width="380" 
+                height="auto"
+                loading="eager"
+            />
         </Quotes>
     </Wrapper>
 );
