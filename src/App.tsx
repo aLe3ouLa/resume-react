@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from './components/layout/header/header';
 import Homepage from './pages/homepage';
 import Photography from './pages/photography';
+import Analytics from './components/Analytics';
 
 let router = createBrowserRouter([
     {
@@ -32,7 +33,10 @@ let router = createBrowserRouter([
 
 function App() {
     return (
-        <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+        <>
+            <Analytics />
+            <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+        </>
     );
 }
 
