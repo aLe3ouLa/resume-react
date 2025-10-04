@@ -6,10 +6,97 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
 
-        <meta
-            name="description"
-            content="Web site created using create-react-app"
-        />
+        <!-- Primary Meta Tags -->
+        <title>Alexandra Barka - Frontend Engineer & Photographer | React Developer</title>
+        <meta name="title" content="Alexandra Barka - Frontend Engineer & Photographer | React Developer" />
+        <meta name="description" content="Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design. Professional photographer offering booking services." />
+        <meta name="keywords" content="Alexandra Barka, Frontend Engineer, React Developer, TypeScript, JavaScript, UX Design, Web Developer, Photographer, Mews, Spotify, Warner Bros Discovery" />
+        <meta name="author" content="Alexandra Barka" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ale3oula.github.io/" />
+        <meta property="og:title" content="Alexandra Barka - Frontend Engineer & Photographer" />
+        <meta property="og:description" content="Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design. Professional photographer offering booking services." />
+        <meta property="og:image" content="https://ale3oula.github.io/static/media/Profile.b52fb78a4c90e9a68729.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Alexandra Barka Portfolio" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://ale3oula.github.io/" />
+        <meta property="twitter:title" content="Alexandra Barka - Frontend Engineer & Photographer" />
+        <meta property="twitter:description" content="Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design." />
+        <meta property="twitter:image" content="https://ale3oula.github.io/static/media/Profile.b52fb78a4c90e9a68729.jpeg" />
+        <meta property="twitter:creator" content="@ale3oula" />
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="geo.region" content="Amsterdam" />
+        <meta name="geo.placename" content="Amsterdam, Netherlands" />
+        <link rel="canonical" href="https://ale3oula.github.io/" />
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Alexandra Barka",
+            "jobTitle": "Frontend Engineer",
+            "description": "Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design. Professional photographer offering booking services.",
+            "url": "https://ale3oula.github.io/",
+            "image": "https://ale3oula.github.io/static/media/Profile.b52fb78a4c90e9a68729.jpeg",
+            "sameAs": [
+                "https://dev.to/ale3oula",
+                "https://www.instagram.com/ale3oula/",
+                "https://github.com/ale3oula"
+            ],
+            "knowsAbout": [
+                "JavaScript",
+                "React",
+                "TypeScript",
+                "CSS",
+                "UX Design",
+                "Web Development",
+                "Photography"
+            ],
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Frontend Engineer",
+                "skills": ["JavaScript", "React", "TypeScript", "CSS", "UX Design"]
+            },
+            "alumniOf": {
+                "@type": "Organization",
+                "name": "Computer Science"
+            },
+            "worksFor": [
+                {
+                    "@type": "Organization",
+                    "name": "Mews",
+                    "url": "https://www.mews.com/"
+                },
+                {
+                    "@type": "Organization", 
+                    "name": "Spotify",
+                    "url": "https://www.spotify.com/"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Warner Bros. Discovery", 
+                    "url": "https://www.wbd.com/"
+                }
+            ],
+            "offers": {
+                "@type": "Service",
+                "name": "Photography Services",
+                "description": "Professional photography booking services"
+            }
+        }
+        </script>
+
         <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -19,6 +106,18 @@
             href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
             rel="stylesheet"
         />
+        
+        <!-- Preload critical resources -->
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap"></noscript>
+        
+        <!-- DNS prefetch for external domains -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//www.mews.com">
+        <link rel="dns-prefetch" href="//www.spotify.com">
+        <link rel="dns-prefetch" href="//www.wbd.com">
+        <link rel="dns-prefetch" href="//dev.to">
+        <link rel="dns-prefetch" href="//www.instagram.com">
         <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,7 +127,6 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-        <title>Alexandra Barka - Frontend Engineer</title>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

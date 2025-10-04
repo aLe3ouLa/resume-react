@@ -1,10 +1,10 @@
 export const color = {
   primary: "#829e86",
-  secondary: "#FF9142",
-  tertiary: "#32557f",
+  secondary: "#ef4444",  // Red
+  tertiary: "#6b7280",   // Light gray
 
-  hoverPrimary: '#6b806e',
-  hoverTertiary: '#253f5e',
+  hoverPrimary: '#111827',  // Darker gray
+  hoverTertiary: '#4b5563', // Darker light gray
 
   text: "#191919",
   textLight: "#757576",

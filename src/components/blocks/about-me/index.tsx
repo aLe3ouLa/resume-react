@@ -20,18 +20,18 @@ const AboutMe = () => {
     return (
         <Section aria-labelledby="about-me-heading">
             {/* Floating Stars */}
-            <FloatingStar>⭐</FloatingStar>
-            <FloatingStar>✨</FloatingStar>
-            <FloatingStar>⭐</FloatingStar>
-            <FloatingStar>✨</FloatingStar>
+            <FloatingStar aria-hidden="true">⭐</FloatingStar>
+            <FloatingStar aria-hidden="true">✨</FloatingStar>
+            <FloatingStar aria-hidden="true">⭐</FloatingStar>
+            <FloatingStar aria-hidden="true">✨</FloatingStar>
             
             {/* Drifting Stars */}
-            <DriftingStar>⭐</DriftingStar>
-            <DriftingStar>✨</DriftingStar>
-            <DriftingStar>⭐</DriftingStar>
+            <DriftingStar aria-hidden="true">⭐</DriftingStar>
+            <DriftingStar aria-hidden="true">✨</DriftingStar>
+            <DriftingStar aria-hidden="true">⭐</DriftingStar>
             
             <Wrapper>
-                <Heading id="about-me-heading">
+                <Heading id="about-me-heading" as="h2">
                     About me <ColoredSpan>.</ColoredSpan>
                 </Heading>
 

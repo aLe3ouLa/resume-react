@@ -176,6 +176,8 @@ export default function Landscape() {
                         src={image.src}
                         alt={image.alt}
                         aria-describedby={image.caption}
+                        loading="lazy"
+                        decoding="async"
                     />
                     <PhotoOverlay className="photo-overlay">
                         <PhotoCaption>{image.caption}</PhotoCaption>
