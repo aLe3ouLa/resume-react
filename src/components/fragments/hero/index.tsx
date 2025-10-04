@@ -7,7 +7,6 @@ import { ButtonVariation } from '../Button/Button.styles';
 import { Button } from '../Button/Button';
 import {
     Quotes,
-    Quote,
     Title,
     Wave,
     Text,
@@ -18,6 +17,7 @@ import {
 } from './hero.style';
 import { Link } from 'react-router-dom';
 import ColoredSpan from '../../ColoredSpan';
+import { Quote } from '../../Quote';
 
 const handleOpenPDF = () => {
     window.open(PDF, '_blank');
@@ -45,7 +45,7 @@ const Hero = () => (
                     </Wave>
                     , I'm <Text>Alexandra</Text>
                 </NameQuote>
-                <Quote>
+                <Quote variant="primary">
                     I'm a <ColoredSpan variant="primary" underline hover>Frontend</ColoredSpan> Developer &amp;
                     passionate <ColoredSpan variant="primary" underline hover>Photographer</ColoredSpan>
                 </Quote>
@@ -54,6 +54,7 @@ const Hero = () => (
                         onClick={handleOpenPDF}
                         variation={ButtonVariation.PRIMARY}
                         label="Download CV"
+                        
                     />
                     <Link 
                         to="/photography"
