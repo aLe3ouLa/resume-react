@@ -40,10 +40,6 @@ export const SectionSubtitle = styled.p`
     }
 `;
 
-export const ColoredSpan = styled.span`
-    color: ${({ theme }) => theme.color.primary};
-    font-size: 7rem;
-`;
 
 export const LinkedInButton = styled.a`
     display: flex;

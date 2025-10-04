@@ -1,10 +1,10 @@
+import ColoredSpan from '../../ColoredSpan';
 import Wrapper from '../../fragments/wrapper';
 import {
     SectionContainer,
     HeaderSection,
     SectionTitle,
     SectionSubtitle,
-    ColoredSpan,
     ContentGrid,
     AboutCard,
     Paragraph,

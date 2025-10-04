@@ -1,3 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for Reusable Gradients */
+:root {
+  --gradient-primary: linear-gradient(135deg, #829e86, #ef4444);
+  --gradient-secondary: linear-gradient(135deg, #6b7280, #829e86);
+  --gradient-name: linear-gradient(135deg, #829e86, #6b7280, #6b7280, #ef4444);
+  --gradient-underline: linear-gradient(90deg, #829e86, #ef4444);
+  --gradient-background: linear-gradient(135deg, rgba(130, 158, 134, 0.1) 0%, rgba(107, 114, 128, 0.1) 50%, rgba(239, 68, 68, 0.1) 100%);
+}
+
+/* Reusable Component Classes */
+@layer components {
+  .colored-span-base {
+    @apply font-extrabold transition-all duration-300 relative;
+    font-size: 4rem;
+    cursor: none;
+    color: transparent;
+  
+  }
+  
+  .colored-span-primary {
+    background: var(--gradient-primary, linear-gradient(135deg, #829e86, #ef4444));
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+  }
+  
+  .colored-span-secondary {
+    background: var(--gradient-secondary, linear-gradient(135deg, #6b7280, #829e86));
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+  }
+  
+  .colored-span-name {
+    background: var(--gradient-name, linear-gradient(135deg, #829e86, #6b7280, #6b7280, #ef4444));
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: gradient-shift 6s ease-in-out infinite;
+  }
+  
+  .colored-span-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gradient-underline);
+    transition: width 0.3s ease;
+  }
+  
+  .colored-span-underline:hover::after {
+    width: 100%;
+  }
+  
+  .colored-span-hover:hover {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+  }
+  
+  .colored-span-name-hover:hover {
+    transform: scale(1.08) translateY(-2px);
+    animation-play-state: paused;
+  }
+  
+  .colored-span-name-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-background);
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .colored-span-name-hover:hover::before {
+    opacity: 1;
+  }
+  
+  /* Size variants */
+  .colored-span-sm {
+    font-size: 2rem;
+  }
+  
+  .colored-span-md {
+    font-size: 3rem;
+  }
+  
+  .colored-span-lg {
+    font-size: 4rem;
+  }
+  
+  .colored-span-xl {
+    font-size: 5rem;
+  }
+  
+  /* Responsive sizing */
+  @media (max-width: 640px) {
+    .colored-span-base {
+      font-size: 3rem;
+    }
+    
+    .colored-span-sm {
+      font-size: 1.5rem;
+    }
+    
+    .colored-span-md {
+      font-size: 2rem;
+    }
+    
+    .colored-span-lg {
+      font-size: 3rem;
+    }
+    
+    .colored-span-xl {
+      font-size: 4rem;
+    }
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

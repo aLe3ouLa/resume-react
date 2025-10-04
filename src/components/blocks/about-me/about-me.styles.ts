@@ -161,31 +161,6 @@ export const Heading = styled.h2`
     animation: ${fadeInUp} 0.8s ease-out;
 `;
 
-export const ColoredSpan = styled.span`
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 3rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    animation: ${gradientShift} 3s ease-in-out infinite, ${bounce} 2s ease-in-out infinite;
-
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 4rem;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
-        font-size: 5rem;
-    }
-
-    &:hover {
-        transform: scale(1.2) rotate(10deg);
-        animation: ${wiggle} 0.5s ease-in-out infinite, ${rainbow} 1s linear infinite;
-        filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
-    }
-`;
 
 export const TimelineContainer = styled.div`
     position: relative;

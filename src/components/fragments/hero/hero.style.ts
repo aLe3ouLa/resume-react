@@ -263,49 +263,6 @@ export const Title = styled.h1`
     }
 `;
 
-export const ColoredSpan = styled.span`
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.primary} 0%,
-        ${({ theme }) => theme.color.secondary} 50%,
-        ${({ theme }) => theme.color.secondary} 100%
-    );
-    background-size: 200% 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
-    font-size: 4rem;
-    cursor: none;
-    transition: all 0.3s ease;
-    position: relative;
-    
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary}, 
-            ${({ theme }) => theme.color.secondary}
-        );
-        transition: width 0.3s ease;
-    }
-    
-    &:hover {
-        background-position: 100% 0;
-        transform: translateY(-2px);
-        
-        &::after {
-            width: 100%;
-        }
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 3rem;
-    }
-`;
 
 export const ButtonContainer = styled.div`
     display: flex;
@@ -370,14 +327,6 @@ export const PhotographyCTA = styled(Link)`
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
         font-size: 1.1rem;
         padding: ${({ theme }) => theme.spacing.xxs} ${({ theme }) => theme.spacing.sm};
-    }
-`;
-
-export const CameraIcon = styled.span`
-    font-size: 1.3rem;
-    
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 1.2rem;
     }
 `;
 
