@@ -399,48 +399,6 @@ export const Quotes = styled.div`
     }
 `;
 
-export const Quote = styled.span`
-    max-width: 75%;
-    margin-bottom: ${({ theme }) => theme.spacing.lg};
-    font-size: 1.6rem;
-    line-height: 1.5;
-    font-weight: 500;
-    color: ${({ theme }) => theme.color.textLight};
-    position: relative;
-    
-    &::before {
-        content: '"';
-        font-size: 4rem;
-        color: ${({ theme }) => theme.color.primary};
-        opacity: 0.3;
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        font-family: serif;
-    }
-    
-    &::after {
-        content: '"';
-        font-size: 4rem;
-        color: ${({ theme }) => theme.color.primary};
-        opacity: 0.3;
-        position: absolute;
-        bottom: -30px;
-        right: -20px;
-        font-family: serif;
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        max-width: 100%;
-        font-size: 1.4rem;
-        text-align: center;
-        
-        &::before, &::after {
-            display: none;
-        }
-    }
-`;
-
 export const NameQuote = styled.span`
     margin-bottom: ${({ theme }) => theme.spacing.lg};
     font-size: 4rem;
