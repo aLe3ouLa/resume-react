@@ -11,14 +11,6 @@ const fadeInUp = keyframes`
     }
 `;
 
-const pulse = keyframes`
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-`;
 
 export const SectionContainer = styled.section`
     padding: ${({ theme }) => theme.spacing.xxl} 0;
@@ -77,17 +69,6 @@ export const SectionSubtitle = styled.p`
     }
 `;
 
-export const ColoredSpan = styled.span`
-    color: ${({ theme }) => theme.color.primary};
-    font-size: 4.5rem;
-    animation: ${pulse} 2s infinite;
-    display: inline-block;
-    margin-left: ${({ theme }) => theme.spacing.sm};
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 3.5rem;
-    }
-`;
 
 export const ContentGrid = styled.div`
     display: grid;

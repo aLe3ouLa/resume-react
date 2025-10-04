@@ -1,6 +1,7 @@
 import Wrapper from '../../fragments/wrapper';
 import { JobCard } from '../../fragments/JobCard/JobCard';
-import { SectionContainer, ColoredSpan, SectionTitle, SectionSubtitle, LinkedInButton } from './projects.styles';
+import { SectionContainer, SectionTitle, SectionSubtitle, LinkedInButton } from './projects.styles';
+import ColoredSpan from '../../ColoredSpan';
 
 import JOBS from './utils';
 

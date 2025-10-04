@@ -1,11 +1,11 @@
 import React from 'react';
 import Landscape from './landscape';
 import Wrapper from '../components/fragments/wrapper';
-import { ColoredSpan } from '../components/fragments/hero/hero.style';
 import styled, { keyframes } from 'styled-components';
 import Portraits from './portraits';
 import Wildlife from './wildlife';
 import Profile from '../assets/Profile.jpeg';
+import ColoredSpan from '../components/ColoredSpan';
 
 // Animations
 const fadeInUp = keyframes`

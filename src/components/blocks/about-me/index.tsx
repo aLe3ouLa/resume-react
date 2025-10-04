@@ -1,8 +1,8 @@
+import ColoredSpan from '../../ColoredSpan';
 import Wrapper from '../../fragments/wrapper';
 import { 
     Section, 
     Heading, 
-    ColoredSpan, 
     TimelineContainer, 
     TimelineItem, 
     TimelineIcon, 
