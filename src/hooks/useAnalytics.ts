@@ -51,5 +51,28 @@ export const useAnalytics = () => {
     }
   };
 
-  return { trackEvent, trackPageView };
+  const trackButtonClick = (buttonName: string, location?: string) => {
+    trackEvent('click', 'button', `${buttonName}${location ? ` - ${location}` : ''}`);
+  };
+
+  const trackSectionView = (sectionName: string, page?: string) => {
+    trackEvent('view', 'section', `${sectionName}${page ? ` - ${page}` : ''}`);
+  };
+
+  const trackNavigation = (from: string, to: string) => {
+    trackEvent('navigate', 'navigation', `${from} to ${to}`);
+  };
+
+  const trackInteraction = (elementType: string, elementName: string, action: string = 'interact') => {
+    trackEvent(action, elementType, elementName);
+  };
+
+  return { 
+    trackEvent, 
+    trackPageView, 
+    trackButtonClick, 
+    trackSectionView, 
+    trackNavigation, 
+    trackInteraction 
+  };
 };

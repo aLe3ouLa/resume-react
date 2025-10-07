@@ -6,6 +6,7 @@ import Portraits from './portraits';
 import Wildlife from './wildlife';
 import Profile from '../assets/Profile.jpeg';
 import ColoredSpan from '../components/ColoredSpan';
+import SectionTracker from '../components/SectionTracker';
 
 // Animations
 const fadeInUp = keyframes`
@@ -784,76 +785,88 @@ const Image = styled.img``;
 export default function Photography() {
     return (
         <Wrapper>
-            <PhotographyHeader>
-                <FloatingElement />
-                <FloatingElement />
-                <FloatingElement />
-                <PhotographyTitle>
-                    Photography <ColoredSpan>.</ColoredSpan>
-                </PhotographyTitle>
-                <PhotographySubtitle>
-                    Capturing moments from travels around the world. 
-                    From the bustling streets of Brooklyn to the charming alleys of Lisbon, 
-                    each photo tells a story of discovery and wonder.
-                </PhotographySubtitle>
-            </PhotographyHeader>
+            <SectionTracker sectionName="Photography Header">
+                <PhotographyHeader>
+                    <FloatingElement />
+                    <FloatingElement />
+                    <FloatingElement />
+                    <PhotographyTitle>
+                        Photography <ColoredSpan>.</ColoredSpan>
+                    </PhotographyTitle>
+                    <PhotographySubtitle>
+                        Capturing moments from travels around the world. 
+                        From the bustling streets of Brooklyn to the charming alleys of Lisbon, 
+                        each photo tells a story of discovery and wonder.
+                    </PhotographySubtitle>
+                </PhotographyHeader>
+            </SectionTracker>
             
 
-            <SectionTitle>Urban Landscapes</SectionTitle>
-            <SectionDescription>
-                Exploring the beauty found in city streets, architecture, and urban life
-            </SectionDescription>
-            <Landscape />
-            <BehindTheLensSection>
-                <BehindTheLensContent>
-                    <BehindTheLensText>
-                        <BehindTheLensTitle>Behind the Lens <ColoredSpan>.</ColoredSpan></BehindTheLensTitle>
-                        <BehindTheLensDescription>
-                            Photography isn't just about capturing images—it's about preserving emotions, 
-                            telling stories, and creating timeless memories. My journey began with a simple 
-                            curiosity about the world around me, and it has evolved into a deep passion 
-                            for documenting life's most precious moments.
-                        </BehindTheLensDescription>
-                        <BehindTheLensPhilosophy>
-                            I believe every person has a unique story worth telling, every moment has 
-                            its own beauty, and every photograph should evoke genuine emotion. Whether 
-                            I'm exploring the vibrant streets of Lisbon or capturing intimate portraits, 
-                            my goal is always the same: to create images that resonate with authenticity 
-                            and artistic vision.
-                        </BehindTheLensPhilosophy>
-                        <BehindTheLensSignature>
-                            — Alexandra Barka
-                        </BehindTheLensSignature>
-                    </BehindTheLensText>
-                    <BehindTheLensImage>
-                        <Image src={Profile} alt="Alexandra Barka with camera" />
-                    </BehindTheLensImage>
-                </BehindTheLensContent>
-            </BehindTheLensSection>
+            <SectionTracker sectionName="Urban Landscapes">
+                <SectionTitle>Urban Landscapes</SectionTitle>
+                <SectionDescription>
+                    Exploring the beauty found in city streets, architecture, and urban life
+                </SectionDescription>
+                <Landscape />
+            </SectionTracker>
+            
+            <SectionTracker sectionName="Behind the Lens">
+                <BehindTheLensSection>
+                    <BehindTheLensContent>
+                        <BehindTheLensText>
+                            <BehindTheLensTitle>Behind the Lens <ColoredSpan>.</ColoredSpan></BehindTheLensTitle>
+                            <BehindTheLensDescription>
+                                Photography isn't just about capturing images—it's about preserving emotions, 
+                                telling stories, and creating timeless memories. My journey began with a simple 
+                                curiosity about the world around me, and it has evolved into a deep passion 
+                                for documenting life's most precious moments.
+                            </BehindTheLensDescription>
+                            <BehindTheLensPhilosophy>
+                                I believe every person has a unique story worth telling, every moment has 
+                                its own beauty, and every photograph should evoke genuine emotion. Whether 
+                                I'm exploring the vibrant streets of Lisbon or capturing intimate portraits, 
+                                my goal is always the same: to create images that resonate with authenticity 
+                                and artistic vision.
+                            </BehindTheLensPhilosophy>
+                            <BehindTheLensSignature>
+                                — Alexandra Barka
+                            </BehindTheLensSignature>
+                        </BehindTheLensText>
+                        <BehindTheLensImage>
+                            <Image src={Profile} alt="Alexandra Barka with camera" />
+                        </BehindTheLensImage>
+                    </BehindTheLensContent>
+                </BehindTheLensSection>
+            </SectionTracker>
 
-            <BookingSection>
-                <BookingTitle>Ready to Book? <ColoredSpan>.</ColoredSpan></BookingTitle>
-                <BookingText>
-                    Let's capture your special moments together. Whether it's a portrait session, 
-                    event photography, or a custom project, I'm here to bring your vision to life.
-                </BookingText>
-                <EmailButton href="mailto:barka.alexandra2@gmail.com">
-                    Get In Touch
-                </EmailButton>
-            </BookingSection>
+            <SectionTracker sectionName="Booking Section">
+                <BookingSection>
+                    <BookingTitle>Ready to Book? <ColoredSpan>.</ColoredSpan></BookingTitle>
+                    <BookingText>
+                        Let's capture your special moments together. Whether it's a portrait session, 
+                        event photography, or a custom project, I'm here to bring your vision to life.
+                    </BookingText>
+                    <EmailButton href="mailto:barka.alexandra2@gmail.com">
+                        Get In Touch
+                    </EmailButton>
+                </BookingSection>
+            </SectionTracker>
         
 
-            <SectionTitle>Portraits</SectionTitle>
-            <SectionDescription>
-                Capturing authentic moments and genuine expressions that tell your unique story. 
-            </SectionDescription>
-            <Portraits />
-
-            <PricingSection>
-                <SectionTitle>Pricing</SectionTitle>
+            <SectionTracker sectionName="Portraits">
+                <SectionTitle>Portraits</SectionTitle>
                 <SectionDescription>
-                    Professional photography services tailored to your needs
+                    Capturing authentic moments and genuine expressions that tell your unique story. 
                 </SectionDescription>
+                <Portraits />
+            </SectionTracker>
+
+            <SectionTracker sectionName="Pricing">
+                <PricingSection>
+                    <SectionTitle>Pricing</SectionTitle>
+                    <SectionDescription>
+                        Professional photography services tailored to your needs
+                    </SectionDescription>
                 
                 <PricingGrid>
                     <PricingCard style={{ animationDelay: '0.1s' }}>
@@ -898,17 +911,19 @@ export default function Photography() {
                         </PricingFeatures>
                     </PricingCard>
                 </PricingGrid>
-            </PricingSection>
+                </PricingSection>
+            </SectionTracker>
 
+            <SectionTracker sectionName="Nature & Wildlife">
+                <SectionTitle>Nature & Wildlife</SectionTitle>
+                <SectionDescription>
+                    Capturing the raw beauty of wildlife in their habitats and the serene landscapes that surround us.
+                </SectionDescription>
+                <Wildlife />
+            </SectionTracker>
 
-
-            <SectionTitle>Nature & Wildlife</SectionTitle>
-            <SectionDescription>
-                Capturing the raw beauty of wildlife in their habitats and the serene landscapes that surround us.
-            </SectionDescription>
-            <Wildlife />
-
-            <ContactSection>
+            <SectionTracker sectionName="Contact & Booking Process">
+                <ContactSection>
                 <ContactTitle>Contact & Booking Process <ColoredSpan>.</ColoredSpan></ContactTitle>
                 <ContactSubtitle>
                     Ready to create beautiful memories together? Here's how we'll bring your vision to life.
@@ -1017,7 +1032,8 @@ export default function Photography() {
                         </ContactDetails>
                     </ContactMethod>
                 </ContactInfo>
-            </ContactSection>
+                </ContactSection>
+            </SectionTracker>
         </Wrapper>
     );
 }
