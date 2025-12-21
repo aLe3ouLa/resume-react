@@ -14,9 +14,11 @@ const fadeInUp = keyframes`
 
 export const SectionContainer = styled.section`
     padding: ${({ theme }) => theme.spacing.xxl} 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: ${({ theme }) => theme.color.white};
     position: relative;
     overflow: hidden;
+    background-image: var(--grain-texture);
+    background-blend-mode: overlay;
 
     &::before {
         content: '';
@@ -24,12 +26,9 @@ export const SectionContainer = styled.section`
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary} 0%, 
-            ${({ theme }) => theme.color.secondary} 50%, 
-            ${({ theme }) => theme.color.tertiary} 100%
-        );
+        height: 6px;
+        background: ${({ theme }) => theme.color.primary};
+        box-shadow: 0 2px 4px rgba(0, 168, 168, 0.2);
     }
 `;
 
@@ -41,7 +40,8 @@ export const HeaderSection = styled.div`
 
 export const SectionTitle = styled.h2`
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 700;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
     color: ${({ theme }) => theme.color.text};
     margin-bottom: ${({ theme }) => theme.spacing.sm};
     position: relative;
@@ -87,16 +87,26 @@ export const ContentGrid = styled.div`
 
 export const AboutCard = styled.div`
     background: ${({ theme }) => theme.color.white};
-    border-radius: 20px;
+    border-radius: 24px;
     padding: ${({ theme }) => theme.spacing.xl};
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(130, 158, 134, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 
+        0 6px 0 ${({ theme }) => theme.color.hoverPrimary},
+        0 8px 24px rgba(0, 168, 168, 0.15),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6);
+    border: 4px solid ${({ theme }) => theme.color.primary};
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     animation: ${fadeInUp} 0.8s ease-out 0.2s both;
+    font-family: 'Comfortaa', sans-serif;
+    background-image: var(--grain-texture);
+    background-blend-mode: overlay;
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+        border-color: ${({ theme }) => theme.color.secondary};
+        box-shadow: 
+            0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 6px 20px rgba(255, 107, 107, 0.2),
+            inset 0 2px 4px rgba(255, 255, 255, 0.6);
     }
 `;
 
@@ -133,18 +143,26 @@ export const StyledLink = styled.a`
     align-items: center;
     gap: ${({ theme }) => theme.spacing.sm};
     color: ${({ theme }) => theme.color.white};
-    background: linear-gradient(135deg, ${({ theme }) => theme.color.primary} 0%, ${({ theme }) => theme.color.hoverPrimary} 100%);
+    background: ${({ theme }) => theme.color.primary};
     padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
-    border-radius: 50px;
+    border-radius: 9999px;
     text-decoration: none;
     font-weight: 600;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
     font-size: 1.4rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(130, 158, 134, 0.3);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 4px 0 ${({ theme }) => theme.color.hoverPrimary},
+        0 6px 12px rgba(0, 168, 168, 0.25);
+    border: 3px solid ${({ theme }) => theme.color.primary};
 
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(130, 158, 134, 0.4);
+        transform: translateY(2px);
+        background: ${({ theme }) => theme.color.secondary};
+        border-color: ${({ theme }) => theme.color.secondary};
+        box-shadow: 
+            0 2px 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 4px 8px rgba(255, 107, 107, 0.3);
     }
 
     &::after {
@@ -188,38 +206,31 @@ export const TechSkills = styled.div`
 `;
 
 export const SkillItem = styled.div`
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border: 2px solid rgba(130, 158, 134, 0.2);
-    border-radius: 12px;
+    background: ${({ theme }) => theme.color.cream};
+    border: 3px solid ${({ theme }) => theme.color.primary};
+    border-radius: 16px;
     padding: ${({ theme }) => theme.spacing.md};
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
     color: ${({ theme }) => theme.color.text};
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(130, 158, 134, 0.1), transparent);
-        transition: left 0.5s ease;
-    }
+    box-shadow: 
+        0 3px 0 ${({ theme }) => theme.color.hoverPrimary},
+        0 4px 8px rgba(0, 168, 168, 0.15);
 
     &:hover {
-        border-color: ${({ theme }) => theme.color.primary};
+        border-color: ${({ theme }) => theme.color.secondary};
+        background: ${({ theme }) => theme.color.secondary};
+        color: ${({ theme }) => theme.color.white};
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(130, 158, 134, 0.2);
-    }
-
-    &:hover::before {
-        left: 100%;
+        box-shadow: 
+            0 2px 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 4px 12px rgba(255, 107, 107, 0.3);
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {

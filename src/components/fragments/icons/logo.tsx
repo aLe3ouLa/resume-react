@@ -26,27 +26,19 @@ const LogoContainer = styled.div`
 `;
 
 const LogoIcon = styled.div`
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, ${({ theme }) => theme.color.primary}, ${({ theme }) => theme.color.tertiary});
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: ${({ theme }) => theme.color.primary};
+    border: 4px solid ${({ theme }) => theme.color.primary};
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: transform 0.3s ease;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        right: 2px;
-        bottom: 2px;
-        border-radius: 8px;
-        background: linear-gradient(135deg, ${({ theme }) => theme.color.primary}, ${({ theme }) => theme.color.tertiary});
-        opacity: 0.8;
-    }
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 4px 0 ${({ theme }) => theme.color.hoverPrimary},
+        0 6px 12px rgba(0, 168, 168, 0.25);
     
     &::after {
         content: 'A';
@@ -54,8 +46,24 @@ const LogoIcon = styled.div`
         z-index: 1;
         color: white;
         font-weight: 700;
-        font-size: 18px;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 20px;
+        font-family: 'Fredoka', 'Comfortaa', sans-serif;
+    }
+    
+    &:hover {
+        background: ${({ theme }) => theme.color.secondary};
+        border-color: ${({ theme }) => theme.color.secondary};
+        transform: translateY(2px) rotate(5deg);
+        box-shadow: 
+            0 2px 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 4px 8px rgba(255, 107, 107, 0.3);
+    }
+    
+    &:active {
+        transform: translateY(4px) rotate(5deg);
+        box-shadow: 
+            0 0 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 2px 4px rgba(255, 107, 107, 0.2);
     }
 `;
 

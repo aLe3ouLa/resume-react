@@ -15,7 +15,7 @@ const TechStack = () => {
                     Work Experience <ColoredSpan>.</ColoredSpan>
                 </SectionTitle>
                 <SectionSubtitle>
-                    A journey through my professional experience, showcasing growth, innovation, and impact across various industries and technologies.
+                    Where I've been, what I've built, and the stories along the way
                 </SectionSubtitle>
 
                 {displayedJobs.map((job) => (
@@ -23,7 +23,7 @@ const TechStack = () => {
                 ))}
                 
                 <LinkedInButton href="https://www.linkedin.com/in/alexandra-barka/" target="_blank" rel="noopener noreferrer">
-                    View Full Experience on LinkedIn ↗
+                    View Full Journey on LinkedIn ↗
                 </LinkedInButton>
             </Wrapper>
         </SectionContainer>

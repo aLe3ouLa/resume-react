@@ -32,7 +32,7 @@ const AboutMe = () => {
             
             <Wrapper>
                 <Heading id="about-me-heading" as="h2">
-                    About me <ColoredSpan>.</ColoredSpan>
+                    The Story So Far <ColoredSpan>.</ColoredSpan>
                 </Heading>
 
                 <TimelineContainer>
@@ -66,8 +66,10 @@ const AboutMe = () => {
                         <TimelineIcon>💻</TimelineIcon>
                         <TimelineContent>
                             <AnimatedParagraph>
-                                I enjoy creating simple, clean and creative user
-                                interfaces using the latest web technologies.
+                                I love bringing ideas to life through clean, creative 
+                                interfaces using the latest web technologies. Whether 
+                                it's a sleek dashboard or an interactive experience, 
+                                I'm all about making it feel effortless and fun.
                             </AnimatedParagraph>
                             <SkillContainer>
                                 <SkillTag>JavaScript</SkillTag>
@@ -83,16 +85,16 @@ const AboutMe = () => {
                         <TimelineIcon>✍️</TimelineIcon>
                         <TimelineContent>
                             <AnimatedParagraph>
-                                I like content creation and as a hobby I write articles
-                                about various web programming topics on{' '}
+                                When I'm not coding, you'll find me sharing what I've 
+                                learned through articles on{' '}
                                 <CompanyLink href="https://dev.to/ale3oula" target="_blank" rel="noopener noreferrer">
                                     Dev.to
                                 </CompanyLink>
-                                {' '}and I share my photos on{' '}
+                                {' '}and capturing the world through my lens on{' '}
                                 <CompanyLink href="https://www.instagram.com/ale3oula/" target="_blank" rel="noopener noreferrer">
                                     @ale3oula
                                 </CompanyLink>
-                                .
+                                . Knowledge shared is knowledge multiplied!
                             </AnimatedParagraph>
                         </TimelineContent>
                     </TimelineItem>
@@ -101,9 +103,10 @@ const AboutMe = () => {
                         <TimelineIcon>🎬</TimelineIcon>
                         <TimelineContent>
                             <AnimatedParagraph>
-                                When not working, I'm likely watching sci-fi movies in
-                                cinema, being creative, dancing salsa 💃, travelling the
-                                world or taking strolls with my camera!
+                                Off the clock? You'll catch me at the cinema watching 
+                                sci-fi flicks, dancing salsa 💃, exploring new places 
+                                with my camera, or simply being creative. Life's too 
+                                short not to enjoy the journey!
                             </AnimatedParagraph>
                         </TimelineContent>
                     </TimelineItem>
