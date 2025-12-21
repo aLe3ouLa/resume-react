@@ -16,7 +16,6 @@ import {
     ButtonContainer,
 } from './hero.style';
 import TrackedLink from '../../TrackedLink';
-import ColoredSpan from '../../ColoredSpan';
 import { Quote } from '../../Quote';
 
 const handleOpenPDF = () => {
@@ -39,32 +38,31 @@ const Hero = () => (
             
             <Title>
                 <NameQuote>
-                    Heyy
+                    Welcome!
                     <Wave role="img" aria-label="Hello, world!">
                         👋🏻
                     </Wave>
-                    , I'm <Text>Alexandra</Text>
+                    {' '}Meet <Text>Alexandra</Text>
                 </NameQuote>
                 <Quote variant="primary">
-                    I'm a <ColoredSpan variant="primary" underline hover>Frontend</ColoredSpan> Developer &amp;
-                    passionate <ColoredSpan variant="primary" underline hover>Photographer</ColoredSpan>
+                    Building the web, one pixel at a time &amp; freezing moments in time
                 </Quote>
                 <ButtonContainer>
                     <TrackedButton
                         onClick={handleOpenPDF}
                         variation={ButtonVariation.PRIMARY}
-                        label="Download CV"
-                        trackingName="Download CV"
+                        label="Download Resume"
+                        trackingName="Download Resume"
                         trackingLocation="hero"
                     />
                     <TrackedLink 
                         to="/photography"
-                        trackingName="Book Photography"
+                        trackingName="Capture Memories"
                         trackingLocation="hero"
-                        className="inline-flex items-center justify-center gap-xs px-sm py-xs bg-gradient-to-br from-tertiary to-primary text-white no-underline rounded-lg text-[1.1rem] font-bold uppercase tracking-[0.5px] transition-all duration-300 relative overflow-hidden shadow-[0_4px_15px_rgba(255,145,66,0.3)] before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-[left] before:duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(255,145,66,0.4)] hover:text-white hover:no-underline hover:before:left-full active:-translate-y-0.5 active:scale-[1.01] tablet:text-[1rem] tablet:px-sm tablet:py-xxs"
+                        className="inline-flex items-center justify-center gap-xs px-md py-sm bg-secondary text-white no-underline rounded-full text-[1.1rem] font-retro font-semibold uppercase tracking-[0.5px] transition-all duration-200 relative overflow-hidden shadow-[0_4px_0_#E55A5A,0_6px_12px_rgba(255,107,107,0.25)] border-[3px] border-secondary hover:translate-y-[2px] hover:bg-[#E55A5A] hover:border-[#E55A5A] hover:shadow-[0_2px_0_#E55A5A,0_4px_8px_rgba(255,107,107,0.3)] hover:text-white hover:no-underline active:translate-y-[4px] active:shadow-[0_0_0_#E55A5A,0_2px_4px_rgba(255,107,107,0.2)] tablet:text-[1rem] tablet:px-sm tablet:py-xs"
                     >
                         <span className="text-[1.2rem] tablet:text-[1.2rem]" aria-hidden="true">📸</span>
-                        Book Photography
+                        Capture Memories
                     </TrackedLink>
                 </ButtonContainer>
             </Title>

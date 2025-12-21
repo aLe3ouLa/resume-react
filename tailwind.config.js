@@ -5,15 +5,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#829e86",
-        secondary: "#ef4444",
-        tertiary: "#6b7280",
-        hoverPrimary: '#111827',
-        hoverTertiary: '#4b5563',
-        text: "#191919",
-        textLight: "#757576",
-        warning: "#efb320",
-        error: "#c82c1a",
+        primary: "#00A8A8",
+        secondary: "#FF6B6B",
+        tertiary: "#FFD93D",
+        accent: "#6BCF7F",
+        coral: "#FF8A80",
+        cream: "#FFF9E6",
+        hoverPrimary: '#008A8A',
+        hoverSecondary: '#E55A5A',
+        hoverTertiary: '#E5C42D',
+        text: "#2C2C2C",
+        textLight: "#666666",
+        warning: "#FFD93D",
+        error: "#FF6B6B",
+      },
+      fontFamily: {
+        'retro': ['Fredoka', 'Comfortaa', 'sans-serif'],
+        'display': ['Fredoka', 'sans-serif'],
+        'body': ['Comfortaa', 'sans-serif'],
+      },
+      borderRadius: {
+        'retro': '20px',
+        'pill': '9999px',
+        'chunky': '16px',
       },
       spacing: {
         'xxxs': '2px',

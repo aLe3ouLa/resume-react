@@ -13,19 +13,6 @@ const waveAnimation = keyframes`
   100% { transform: rotate( 0.0deg) }
 `;
 
-const gradientShift = keyframes`
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-`;
-
-
 const floatAnimation = keyframes`
     0%, 100% {
         transform: translateY(0px) rotate(0deg);
@@ -64,29 +51,6 @@ const wiggleAnimation = keyframes`
     }
     35% {
         transform: rotate(1deg);
-    }
-`;
-
-const rainbowAnimation = keyframes`
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-`;
-
-const glowAnimation = keyframes`
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(130, 158, 134, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(130, 158, 134, 0.6), 0 0 60px rgba(130, 158, 134, 0.4);
-    }
-`;
-
-const morphingBackground = keyframes`
-    0%, 100% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-    50% {
-        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
     }
 `;
 
@@ -238,9 +202,10 @@ export const Title = styled.h1`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    font-weight: 800;
+    font-weight: 700;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     margin-bottom: 0px;
     margin-left: 0px;
     color: ${({ theme }) => theme.color.text};
@@ -281,72 +246,73 @@ export const PhotographyCTA = styled(Link)`
     align-items: center;
     justify-content: center;
     gap: ${({ theme }) => theme.spacing.xs};
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.tertiary} 0%,
-        ${({ theme }) => theme.color.primary} 100%
-    );
+    padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+    background: ${({ theme }) => theme.color.secondary};
     color: ${({ theme }) => theme.color.white};
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 9999px;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(255, 145, 66, 0.3);
+    box-shadow: 
+        0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
+        0 6px 12px rgba(255, 107, 107, 0.25);
+    border: 3px solid ${({ theme }) => theme.color.secondary};
     
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 9999px;
+        opacity: 0.1;
+        background-image: var(--grain-texture);
     }
     
     &:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 8px 25px rgba(255, 145, 66, 0.4);
+        transform: translateY(2px);
+        background: ${({ theme }) => theme.color.hoverSecondary};
+        border-color: ${({ theme }) => theme.color.hoverSecondary};
+        box-shadow: 
+            0 2px 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 4px 8px rgba(255, 107, 107, 0.3);
         color: ${({ theme }) => theme.color.white};
         text-decoration: none;
-        
-        &::before {
-            left: 100%;
-        }
     }
     
     &:active {
-        transform: translateY(-1px) scale(1.01);
+        transform: translateY(4px);
+        box-shadow: 
+            0 0 0 ${({ theme }) => theme.color.hoverSecondary},
+            0 2px 4px rgba(255, 107, 107, 0.2);
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
         font-size: 1.1rem;
-        padding: ${({ theme }) => theme.spacing.xxs} ${({ theme }) => theme.spacing.sm};
+        padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.md};
     }
 `;
 
 export const Quotes = styled.div`
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(130, 158, 134, 0.05) 25%,
-        rgba(255, 145, 66, 0.05) 50%,
-        rgba(50, 85, 127, 0.05) 75%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 24px;
+    background: ${({ theme }) => theme.color.cream};
+    border: 4px solid ${({ theme }) => theme.color.primary};
+    border-radius: 32px;
     padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
     position: relative;
     overflow: hidden;
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 8px 0 ${({ theme }) => theme.color.hoverPrimary},
+        0 12px 24px rgba(0, 168, 168, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6);
+    background-image: var(--grain-texture);
+    background-blend-mode: overlay;
 
     display: flex;
     align-items: center;
@@ -354,34 +320,22 @@ export const Quotes = styled.div`
     min-height: 600px;
     margin: ${({ theme }) => theme.spacing.sm} 0 ${({ theme }) => theme.spacing.lg} 0;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(130, 158, 134, 0.1) 0%, transparent 70%);
-        animation: ${morphingBackground} 8s ease-in-out infinite;
-        z-index: -1;
-    }
-
     img {
         border-radius: 50%;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation: ${glowAnimation} 3s ease-in-out infinite;
-        border: 3px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 5px solid ${({ theme }) => theme.color.primary};
         box-shadow: 
-            0 0 0 4px rgba(130, 158, 134, 0.2),
-            0 8px 32px rgba(0, 0, 0, 0.15);
+            0 6px 0 ${({ theme }) => theme.color.hoverPrimary},
+            0 8px 24px rgba(0, 168, 168, 0.3),
+            inset 0 2px 4px rgba(255, 255, 255, 0.5);
         
         &:hover {
-            transform: scale(1.08) rotate(8deg);
-            animation: ${rainbowAnimation} 1.5s ease-in-out infinite;
+            transform: scale(1.05) rotate(3deg);
+            border-color: ${({ theme }) => theme.color.secondary};
             box-shadow: 
-                0 0 0 8px rgba(130, 158, 134, 0.3),
-                0 0 50px rgba(130, 158, 134, 0.4),
-                0 16px 48px rgba(0, 0, 0, 0.2);
+                0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
+                0 6px 20px rgba(255, 107, 107, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.5);
         }
     }
 
@@ -406,8 +360,9 @@ export const NameQuote = styled.span`
     display: flex;
     align-items: center;
     gap: ${({ theme }) => theme.spacing.sm};
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
+    letter-spacing: -0.01em;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
         font-size: 3rem;
@@ -416,29 +371,15 @@ export const NameQuote = styled.span`
 `;
 
 export const Text = styled.span`
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.primary} 0%,
-        ${({ theme }) => theme.color.tertiary} 25%,
-        ${({ theme }) => theme.color.tertiary} 50%,
-        ${({ theme }) => theme.color.secondary} 75%,
-        ${({ theme }) => theme.color.primary} 100%
-    );
-    background-size: 400% 400%;
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: ${({ theme }) => theme.color.primary};
     font-size: 4rem;
     line-height: 1.1;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
+    letter-spacing: -0.01em;
     position: relative;
-    
-    animation: 
-        ${gradientShift} 6s ease-in-out infinite,
-    
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 2px 2px 0 rgba(0, 168, 168, 0.1);
     
     &::before {
         content: '';
@@ -447,21 +388,17 @@ export const Text = styled.span`
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(
-            135deg,
-            rgba(130, 158, 134, 0.1) 0%,
-            rgba(255, 145, 66, 0.1) 50%,
-            rgba(50, 85, 127, 0.1) 100%
-        );
-        border-radius: 8px;
+        background: rgba(0, 168, 168, 0.15);
+        border-radius: 16px;
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s ease;
     }
     
     &:hover {
-        transform: scale(1.08) translateY(-2px);
-        animation-play-state: paused;
+        transform: scale(1.05) translateY(-2px);
+        color: ${({ theme }) => theme.color.secondary};
+        text-shadow: 2px 2px 0 rgba(255, 107, 107, 0.15);
         
         &::before {
             opacity: 1;

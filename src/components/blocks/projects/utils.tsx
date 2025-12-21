@@ -27,7 +27,31 @@ const JOBS: Job[] = [
             }
             return `${months.toFixed(1)} months`;
         })()}`,
-        responsibilities: <></>,
+        responsibilities: (
+            <>
+                Software Engineer at Mews, previously working in accounting and now in Mews Events.
+                <ul>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Develop and maintain features for Mews Events platform, enabling seamless event management for hospitality businesses
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Previously contributed to accounting systems, building financial tools and integrations
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Collaborate with cross-functional teams to deliver scalable solutions using modern web technologies
+                    </li>
+                </ul>
+            </>
+        ),
         technologies: 'Typescript ・ Javascript ・ React.JS ・ .NET',
         link: 'https://www.mews.com',
     },
