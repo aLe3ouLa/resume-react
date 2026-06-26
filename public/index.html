@@ -43,57 +43,75 @@
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Alexandra Barka",
-            "jobTitle": "Frontend Engineer",
-            "description": "Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design. Professional photographer offering booking services.",
-            "url": "https://ale3oula.github.io/",
-            "image": "https://ale3oula.github.io/static/media/Profile.b52fb78a4c90e9a68729.jpeg",
-            "sameAs": [
-                "https://dev.to/ale3oula",
-                "https://www.instagram.com/ale3oula/",
-                "https://github.com/ale3oula"
-            ],
-            "knowsAbout": [
-                "JavaScript",
-                "React",
-                "TypeScript",
-                "CSS",
-                "UX Design",
-                "Web Development",
-                "Photography"
-            ],
-            "hasOccupation": {
-                "@type": "Occupation",
-                "name": "Frontend Engineer",
-                "skills": ["JavaScript", "React", "TypeScript", "CSS", "UX Design"]
-            },
-            "alumniOf": {
-                "@type": "Organization",
-                "name": "Computer Science"
-            },
-            "worksFor": [
+            "@graph": [
                 {
-                    "@type": "Organization",
-                    "name": "Mews",
-                    "url": "https://www.mews.com/"
+                    "@type": "Person",
+                    "@id": "https://ale3oula.github.io/#person",
+                    "name": "Alexandra Barka",
+                    "jobTitle": "Frontend Engineer",
+                    "description": "Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design. Professional photographer offering booking services.",
+                    "url": "https://ale3oula.github.io/",
+                    "image": "https://ale3oula.github.io/static/media/Profile.b52fb78a4c90e9a68729.jpeg",
+                    "sameAs": [
+                        "https://dev.to/ale3oula",
+                        "https://www.instagram.com/ale3oula/",
+                        "https://github.com/ale3oula"
+                    ],
+                    "knowsAbout": [
+                        "JavaScript",
+                        "React",
+                        "TypeScript",
+                        "CSS",
+                        "UX Design",
+                        "Web Development",
+                        "Photography"
+                    ],
+                    "hasOccupation": {
+                        "@type": "Occupation",
+                        "name": "Frontend Engineer",
+                        "skills": ["JavaScript", "React", "TypeScript", "CSS", "UX Design"]
+                    },
+                    "worksFor": [
+                        {
+                            "@type": "Organization",
+                            "name": "Mews",
+                            "url": "https://www.mews.com/"
+                        },
+                        {
+                            "@type": "Organization",
+                            "name": "Spotify",
+                            "url": "https://www.spotify.com/"
+                        },
+                        {
+                            "@type": "Organization",
+                            "name": "Warner Bros. Discovery",
+                            "url": "https://www.wbd.com/"
+                        }
+                    ]
                 },
                 {
-                    "@type": "Organization", 
-                    "name": "Spotify",
-                    "url": "https://www.spotify.com/"
+                    "@type": "WebSite",
+                    "@id": "https://ale3oula.github.io/#website",
+                    "name": "Alexandra Barka Portfolio",
+                    "url": "https://ale3oula.github.io/",
+                    "inLanguage": "en",
+                    "author": { "@id": "https://ale3oula.github.io/#person" },
+                    "publisher": { "@id": "https://ale3oula.github.io/#person" }
                 },
                 {
-                    "@type": "Organization",
-                    "name": "Warner Bros. Discovery", 
-                    "url": "https://www.wbd.com/"
+                    "@type": "Service",
+                    "@id": "https://ale3oula.github.io/#photography-service",
+                    "name": "Photography Services",
+                    "description": "Professional photography booking services.",
+                    "serviceType": "Photography",
+                    "url": "https://ale3oula.github.io/photography",
+                    "provider": { "@id": "https://ale3oula.github.io/#person" },
+                    "areaServed": {
+                        "@type": "Place",
+                        "name": "Amsterdam, Netherlands"
+                    }
                 }
-            ],
-            "offers": {
-                "@type": "Service",
-                "name": "Photography Services",
-                "description": "Professional photography booking services"
-            }
+            ]
         }
         </script>
 
@@ -102,13 +120,14 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+            rel="stylesheet"
+        />
         
         <!-- Preload critical resources -->
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&display=swap"></noscript>
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap"></noscript>
         
         <!-- DNS prefetch for external domains -->
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -138,7 +157,54 @@
     -->
     </head>
     <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <noscript>
+            <h1>Alexandra Barka — Frontend Engineer &amp; Photographer</h1>
+            <p>
+                I'm a Frontend Engineer based in Amsterdam, Netherlands, with a
+                computer science background and working knowledge of UX design and
+                web accessibility principles. I contributed to
+                <a href="https://www.mews.com/">Mews</a>,
+                <a href="https://www.spotify.com/">Spotify</a> and
+                <a href="https://www.wbd.com/">Warner Bros. Discovery</a>.
+            </p>
+            <p>
+                I enjoy creating simple, clean and creative user interfaces using the
+                latest web technologies.
+            </p>
+
+            <h2>Skills &amp; Tech Stack</h2>
+            <ul>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>CSS</li>
+                <li>UX Design</li>
+                <li>Web Accessibility</li>
+            </ul>
+
+            <h2>Experience</h2>
+            <ul>
+                <li>Frontend Engineer — Mews</li>
+                <li>Frontend Engineer — Spotify</li>
+                <li>Frontend Engineer — Warner Bros. Discovery</li>
+            </ul>
+
+            <h2>Writing &amp; Photography</h2>
+            <p>
+                As a hobby I write articles about web programming topics on
+                <a href="https://dev.to/ale3oula">Dev.to</a> and share my photography
+                on Instagram <a href="https://www.instagram.com/ale3oula/">@ale3oula</a>.
+                I also offer professional photography booking services — see my
+                <a href="https://ale3oula.github.io/photography">photography page</a>.
+            </p>
+
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://github.com/ale3oula">GitHub</a></li>
+                <li><a href="https://dev.to/ale3oula">Dev.to</a></li>
+                <li><a href="https://www.instagram.com/ale3oula/">Instagram</a></li>
+            </ul>
+        </noscript>
         <div id="root"></div>
         <!--
       This HTML file is a template.

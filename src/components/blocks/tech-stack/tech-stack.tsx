@@ -38,7 +38,7 @@ const TechStack = () => {
                         Tech Stack <ColoredSpan>.</ColoredSpan>
                     </SectionTitle>
                     <SectionSubtitle>
-                        The tools & tricks I use to bring ideas to life
+                        Building modern web experiences with cutting-edge technologies
                     </SectionSubtitle>
                 </HeaderSection>
 
@@ -46,23 +46,33 @@ const TechStack = () => {
                     <AboutCard>
                         <Paragraph>
                             <span>
-                                With a Master's in Computer Engineering under my belt, 
-                                I bring both technical depth and creative flair to 
-                                every project. I'm passionate about crafting 
-                                exceptional user experiences where form meets function 
-                                in the most delightful way.
+                                With a Master's degree in Computer Engineering, I bring a strong 
+                                technical foundation to every project. My passion lies in crafting 
+                                exceptional user experiences through modern front-end technologies, 
+                                where I combine analytical thinking with creative problem-solving.
                             </span>
                         </Paragraph>
                         <Paragraph>
-                            I'm always learning and have completed comprehensive 
-                            courses in JavaScript, Data Structures & Algorithms, 
-                            and Advanced CSS — because staying sharp means staying 
-                            relevant in this fast-moving field.
+                            I'm committed to continuous learning and have completed several 
+                            comprehensive courses, including
+                            <a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank" rel="noopener noreferrer">
+                                The Complete JavaScript Course
+                            </a>
+                            ,
+                            <a href="https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/" target="_blank" rel="noopener noreferrer">
+                                Master the Coding Interview: Data Structures + Algorithms
+                            </a>{' '}
+                            and
+                            <a href="https://www.udemy.com/course/advanced-css-and-sass/" target="_blank" rel="noopener noreferrer">
+                                Advanced CSS and Sass: Flexbox, Grid, Animations and More!
+                            </a>
+                            . These courses have deepened my understanding of both fundamental 
+                            concepts and cutting-edge techniques in web development.
                         </Paragraph>
                     </AboutCard>
 
                     <TechSkillsCard>
-                        <SkillsTitle>My Toolkit</SkillsTitle>
+                        <SkillsTitle>Technical Skills</SkillsTitle>
                         <TechSkills>
                             {skills.map((skill, index) => (
                                 <SkillItem key={index}>

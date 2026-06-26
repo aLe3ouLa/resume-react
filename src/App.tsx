@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from './components/layout/header/header';
 import Homepage from './pages/homepage';
 import Photography from './pages/photography';
-import DesignSystem from './pages/design-system';
 import Analytics from './components/Analytics';
 
 let router = createBrowserRouter([
@@ -28,18 +27,6 @@ let router = createBrowserRouter([
                     <Header />
                     <Photography />
                     <Header />
-                </>
-            );
-        },
-    },
-    {
-        path: '/design-system',
-        Component() {
-            return (
-                <>
-                    <Analytics />
-                    <Header />
-                    <DesignSystem />
                 </>
             );
         },
