@@ -1,22 +1,22 @@
 export const color = {
-  // Bold retro colors - 1950s-1970s palette
-  primary: "#00A8A8",      // Bold teal (Smeg/Polaroid)
-  secondary: "#FF6B6B",    // Cherry red
-  tertiary: "#FFD93D",     // Mustard yellow
-  accent: "#6BCF7F",       // Mint green
-  coral: "#FF8A80",        // Coral pink
-  cream: "#FFF9E6",        // Cream background
-  
-  hoverPrimary: '#008A8A',  // Darker teal
-  hoverSecondary: '#E55A5A', // Darker cherry
-  hoverTertiary: '#E5C42D',  // Darker mustard
+  // Candy-pop palette - bright, playful, neo-brutalist
+  primary: "#2EA84F",      // Vivid green
+  secondary: "#E0399B",    // Magenta pink
+  tertiary: "#FFCE2E",     // Golden yellow
+  accent: "#8C9EEC",       // Periwinkle blue
+  coral: "#F6A6D6",        // Light pink
+  cream: "#FBEADB",        // Peach background
 
-  text: "#2C2C2C",         // Dark charcoal (vintage text)
-  textLight: "#666666",    // Medium gray
+  hoverPrimary: '#248F42',  // Darker green
+  hoverSecondary: '#C42585', // Darker magenta
+  hoverTertiary: '#E9B412',  // Darker golden yellow
+
+  text: "#1A1A1A",         // Near-black (matches bold outlines)
+  textLight: "#5C5C5C",    // Medium gray
 
   white: "#FFFFFF",
   black: "#1A1A1A",
 
-  warning: "#FFD93D",      // Mustard
-  error: "#FF6B6B",        // Cherry red
+  warning: "#FFCE2E",      // Golden yellow
+  error: "#E8431F",        // Tomato red-orange
 };

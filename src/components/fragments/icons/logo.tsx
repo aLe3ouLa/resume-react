@@ -2,76 +2,65 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div`
-    transition: all 0.3s ease;
-    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
     &:hover {
-        transform: scale(1.05);
-        
-        .logo-text {
-            color: ${({ theme }) => theme.color.secondary};
-        }
-        
+        transform: translate(-1px, -1px);
+
         .logo-icon {
-            transform: rotate(5deg);
+            transform: rotate(-4deg);
+            box-shadow: 5px 5px 0 ${({ theme }) => theme.color.black};
         }
     }
-    
+
     &:active {
-        transform: scale(0.98);
+        transform: translate(1px, 1px);
     }
 `;
 
 const LogoIcon = styled.div`
-    width: 48px;
-    height: 48px;
-    border-radius: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     background: ${({ theme }) => theme.color.primary};
-    border: 4px solid ${({ theme }) => theme.color.primary};
+    border: 3px solid ${({ theme }) => theme.color.black};
+    box-shadow: 3px 3px 0 ${({ theme }) => theme.color.black};
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 4px 0 ${({ theme }) => theme.color.hoverPrimary},
-        0 6px 12px rgba(0, 168, 168, 0.25);
-    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
     &::after {
         content: 'A';
-        position: relative;
-        z-index: 1;
-        color: white;
-        font-weight: 700;
-        font-size: 20px;
+        color: ${({ theme }) => theme.color.white};
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 1;
         font-family: 'Fredoka', 'Comfortaa', sans-serif;
-    }
-    
-    &:hover {
-        background: ${({ theme }) => theme.color.secondary};
-        border-color: ${({ theme }) => theme.color.secondary};
-        transform: translateY(2px) rotate(5deg);
-        box-shadow: 
-            0 2px 0 ${({ theme }) => theme.color.hoverSecondary},
-            0 4px 8px rgba(255, 107, 107, 0.3);
-    }
-    
-    &:active {
-        transform: translateY(4px) rotate(5deg);
-        box-shadow: 
-            0 0 0 ${({ theme }) => theme.color.hoverSecondary},
-            0 2px 4px rgba(255, 107, 107, 0.2);
     }
 `;
 
+const LogoText = styled.span`
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    color: ${({ theme }) => theme.color.text};
+    font-family: 'Fredoka', 'Comfortaa', sans-serif;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.upToTablet}) {
+        display: none;
+    }
+`;
 
 const Logo = () => {
     return (
         <LogoContainer>
             <LogoIcon className="logo-icon" />
+            <LogoText className="logo-text">alexandra</LogoText>
         </LogoContainer>
     );
 };

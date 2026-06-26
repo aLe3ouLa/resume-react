@@ -24,17 +24,7 @@ const bounce = keyframes`
     }
 `;
 
-const wiggle = keyframes`
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(5deg);
-    }
-    75% {
-        transform: rotate(-5deg);
-    }
-`;
+
 
 const slideInLeft = keyframes`
     from {
@@ -92,8 +82,6 @@ export const Section = styled.section`
     background: ${({ theme }) => theme.color.cream};
     position: relative;
     overflow: hidden;
-    background-image: var(--grain-texture);
-    background-blend-mode: overlay;
 `;
 
 export const Heading = styled.h2`
@@ -127,13 +115,11 @@ export const TimelineContainer = styled.div`
 export const TimelineContent = styled.div`
     padding: ${({ theme }) => theme.spacing.lg};
     background: ${({ theme }) => theme.color.white};
-    border: 4px solid ${({ theme }) => theme.color.primary};
-    border-radius: 28px;
-    box-shadow: 
-        0 6px 0 ${({ theme }) => theme.color.hoverPrimary},
-        0 8px 24px rgba(0, 168, 168, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.6);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid ${({ theme }) => theme.color.black};
+    border-radius: 24px;
+    box-shadow: 8px 8px 0 ${({ theme }) => theme.color.black};
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -142,17 +128,10 @@ export const TimelineContent = styled.div`
     flex-direction: column;
     justify-content: center;
     font-family: 'Comfortaa', sans-serif;
-    background-image: var(--grain-texture);
-    background-blend-mode: overlay;
 
     &:hover {
-        transform: translateY(-4px) scale(1.02);
-        border-color: ${({ theme }) => theme.color.secondary};
-        box-shadow: 
-            0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
-            0 6px 20px rgba(255, 107, 107, 0.25),
-            inset 0 2px 4px rgba(255, 255, 255, 0.6);
-        animation: ${bounce} 0.6s ease-in-out;
+        transform: translate(-3px, -3px);
+        box-shadow: 11px 11px 0 ${({ theme }) => theme.color.secondary};
     }
 `;
 
@@ -160,7 +139,7 @@ export const TimelineIcon = styled.div`
     width: 70px;
     height: 70px;
     background: ${({ theme }) => theme.color.secondary};
-    border: 5px solid ${({ theme }) => theme.color.white};
+    border: 3px solid ${({ theme }) => theme.color.black};
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -168,16 +147,11 @@ export const TimelineIcon = styled.div`
     font-size: 2.2rem;
     margin: 0 auto ${({ theme }) => theme.spacing.md} auto;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
-        0 6px 12px rgba(255, 107, 107, 0.3);
+    box-shadow: 4px 4px 0 ${({ theme }) => theme.color.black};
 
     &:hover {
         transform: scale(1.1) rotate(5deg);
         background: ${({ theme }) => theme.color.primary};
-        box-shadow: 
-            0 4px 0 ${({ theme }) => theme.color.hoverPrimary},
-            0 6px 16px rgba(0, 168, 168, 0.4);
     }
 `;
 
@@ -302,46 +276,39 @@ export const SkillTag = styled.span`
     font-family: 'Fredoka', 'Comfortaa', sans-serif;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
-    animation: ${fadeInUp} 0.6s ease-out, ${bounce} 2s ease-in-out infinite;
+    animation: ${fadeInUp} 0.6s ease-out;
     animation-fill-mode: both;
     position: relative;
     overflow: hidden;
-    box-shadow: 
-        0 3px 0 ${({ theme }) => theme.color.hoverSecondary},
-        0 4px 12px rgba(255, 107, 107, 0.25);
-    border: 3px solid ${({ theme }) => theme.color.secondary};
+    box-shadow: 3px 3px 0 ${({ theme }) => theme.color.black};
+    border: 3px solid ${({ theme }) => theme.color.black};
 
-    &:nth-child(1) { 
-        animation-delay: 0.1s; 
+    &:nth-child(1) {
+        animation-delay: 0.1s;
         background: ${({ theme }) => theme.color.secondary};
     }
-    &:nth-child(2) { 
-        animation-delay: 0.2s; 
+    &:nth-child(2) {
+        animation-delay: 0.2s;
         background: ${({ theme }) => theme.color.primary};
-        border-color: ${({ theme }) => theme.color.primary};
     }
-    &:nth-child(3) { 
-        animation-delay: 0.3s; 
-        background: ${({ theme }) => theme.color.secondary};
+    &:nth-child(3) {
+        animation-delay: 0.3s;
+        background: ${({ theme }) => theme.color.tertiary};
+        color: ${({ theme }) => theme.color.black};
     }
-    &:nth-child(4) { 
-        animation-delay: 0.4s; 
-        background: ${({ theme }) => theme.color.primary};
-        border-color: ${({ theme }) => theme.color.primary};
+    &:nth-child(4) {
+        animation-delay: 0.4s;
+        background: ${({ theme }) => theme.color.accent};
+        color: ${({ theme }) => theme.color.black};
     }
-    &:nth-child(5) { 
-        animation-delay: 0.5s; 
-        background: ${({ theme }) => theme.color.secondary};
+    &:nth-child(5) {
+        animation-delay: 0.5s;
+        background: ${({ theme }) => theme.color.coral};
     }
 
     &:hover {
-        transform: translateY(-2px) scale(1.05) rotate(3deg);
-        box-shadow: 
-            0 2px 0 ${({ theme }) => theme.color.hoverPrimary},
-            0 4px 12px rgba(0, 168, 168, 0.3);
-        animation: ${wiggle} 0.5s ease-in-out infinite;
-        background: ${({ theme }) => theme.color.primary};
-        border-color: ${({ theme }) => theme.color.primary};
+        transform: translate(-2px, -2px) rotate(-2deg);
+        box-shadow: 5px 5px 0 ${({ theme }) => theme.color.black};
     }
 `;
 

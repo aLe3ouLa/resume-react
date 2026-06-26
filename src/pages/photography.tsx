@@ -76,14 +76,15 @@ const PhotographyHeader = styled.div`
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.primary}08, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.primary}08,
         ${({ theme }) => theme.color.secondary}08,
         ${({ theme }) => theme.color.tertiary}08
     );
     border-radius: 20px;
     animation: ${fadeInUp} 1s ease-out;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -91,9 +92,10 @@ const PhotographyHeader = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(45deg, 
-            transparent 30%, 
-            ${({ theme }) => theme.color.primary}10 50%, 
+        background: linear-gradient(
+            45deg,
+            transparent 30%,
+            ${({ theme }) => theme.color.primary}10 50%,
             transparent 70%
         );
         background-size: 200% 200%;
@@ -111,8 +113,9 @@ const PhotographyTitle = styled.h1`
     position: relative;
     z-index: 1;
     animation: ${fadeInScale} 1.2s ease-out 0.3s both;
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.text}, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.text},
         ${({ theme }) => theme.color.primary},
         ${({ theme }) => theme.color.secondary}
     );
@@ -120,7 +123,9 @@ const PhotographyTitle = styled.h1`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: ${fadeInScale} 1.2s ease-out 0.3s both, ${gradientShift} 4s ease-in-out infinite;
+    animation:
+        ${fadeInScale} 1.2s ease-out 0.3s both,
+        ${gradientShift} 4s ease-in-out infinite;
 `;
 
 const PhotographySubtitle = styled.p`
@@ -143,7 +148,7 @@ const SectionTitle = styled.h2`
     text-align: center;
     position: relative;
     animation: ${fadeInUp} 1s ease-out;
-    
+
     &::after {
         content: '';
         position: absolute;
@@ -152,8 +157,9 @@ const SectionTitle = styled.h2`
         transform: translateX(-50%);
         width: 60px;
         height: 4px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary}, 
+        background: linear-gradient(
+            90deg,
+            ${({ theme }) => theme.color.primary},
             ${({ theme }) => theme.color.secondary}
         );
         border-radius: 2px;
@@ -173,8 +179,9 @@ const SectionDescription = styled.p`
 `;
 
 const BookingSection = styled.div`
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.primary}15, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.primary}15,
         ${({ theme }) => theme.color.secondary}15,
         ${({ theme }) => theme.color.tertiary}15
     );
@@ -186,8 +193,10 @@ const BookingSection = styled.div`
     border: 2px solid ${({ theme }) => theme.color.primary}20;
     position: relative;
     overflow: hidden;
-    animation: ${fadeInScale} 1s ease-out, ${gradientShift} 8s ease-in-out infinite;
-    
+    animation:
+        ${fadeInScale} 1s ease-out,
+        ${gradientShift} 8s ease-in-out infinite;
+
     &::before {
         content: '';
         position: absolute;
@@ -195,8 +204,9 @@ const BookingSection = styled.div`
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, 
-            ${({ theme }) => theme.color.primary}05 0%, 
+        background: radial-gradient(
+            circle,
+            ${({ theme }) => theme.color.primary}05 0%,
             transparent 70%
         );
         animation: ${float} 6s ease-in-out infinite;
@@ -230,7 +240,7 @@ const EmailButton = styled.a`
     font-size: 1.1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px ${({ theme }) => theme.color.primary}30;
-    
+
     &:hover {
         background: ${({ theme }) => theme.color.hoverPrimary};
         transform: translateY(-2px);
@@ -241,15 +251,16 @@ const EmailButton = styled.a`
 const BehindTheLensSection = styled.div`
     margin: 100px 0;
     padding: 80px 0;
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.primary}05, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.primary}05,
         ${({ theme }) => theme.color.secondary}05
     );
     border-radius: 30px;
     position: relative;
     overflow: hidden;
     animation: ${fadeInUp} 1s ease-out;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -257,13 +268,17 @@ const BehindTheLensSection = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(circle at 20% 80%, 
-            ${({ theme }) => theme.color.primary}08 0%, 
-            transparent 50%
-        ), radial-gradient(circle at 80% 20%, 
-            ${({ theme }) => theme.color.secondary}08 0%, 
-            transparent 50%
-        );
+        background:
+            radial-gradient(
+                circle at 20% 80%,
+                ${({ theme }) => theme.color.primary}08 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 80% 20%,
+                ${({ theme }) => theme.color.secondary}08 0%,
+                transparent 50%
+            );
         pointer-events: none;
     }
 `;
@@ -278,7 +293,7 @@ const BehindTheLensContent = styled.div`
     padding: 0 40px;
     position: relative;
     z-index: 1;
-    
+
     @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
         grid-template-columns: 1fr 1fr;
         gap: 80px;
@@ -328,7 +343,7 @@ const BehindTheLensSignature = styled.div`
 const BehindTheLensImage = styled.div`
     position: relative;
     animation: ${fadeInScale} 1s ease-out 0.5s both;
-    
+
     img {
         width: 100%;
         height: 400px;
@@ -336,12 +351,12 @@ const BehindTheLensImage = styled.div`
         border-radius: 20px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease;
-        
+
         &:hover {
             transform: scale(1.02);
         }
     }
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -349,8 +364,9 @@ const BehindTheLensImage = styled.div`
         left: -10px;
         right: -10px;
         bottom: -10px;
-        background: linear-gradient(45deg, 
-            ${({ theme }) => theme.color.primary}20, 
+        background: linear-gradient(
+            45deg,
+            ${({ theme }) => theme.color.primary}20,
             ${({ theme }) => theme.color.secondary}20
         );
         border-radius: 30px;
@@ -362,8 +378,9 @@ const BehindTheLensImage = styled.div`
 const ContactSection = styled.div`
     margin: 100px 0;
     padding: 80px 0;
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.tertiary}08, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.tertiary}08,
         ${({ theme }) => theme.color.primary}08
     );
     border-radius: 30px;
@@ -401,7 +418,7 @@ const ProcessGrid = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding: 0 40px;
-    
+
     @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
@@ -418,7 +435,7 @@ const ProcessStep = styled.div`
     transition: all 0.3s ease;
     position: relative;
     animation: ${fadeInUp} 1s ease-out;
-    
+
     &:hover {
         transform: translateY(-8px);
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -467,7 +484,7 @@ const FAQGrid = styled.div`
     max-width: 800px;
     margin: 0 auto;
     padding: 0 40px;
-    
+
     @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
@@ -481,7 +498,7 @@ const FAQItem = styled.div`
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     animation: ${fadeInUp} 1s ease-out;
-    
+
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -508,7 +525,7 @@ const ContactInfo = styled.div`
     max-width: 800px;
     margin: 0 auto;
     padding: 0 40px;
-    
+
     @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
         flex-direction: row;
         gap: 30px;
@@ -516,8 +533,9 @@ const ContactInfo = styled.div`
 `;
 
 const ContactMethod = styled.div`
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.primary}10, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.primary}10,
         ${({ theme }) => theme.color.secondary}10
     );
     border-radius: 20px;
@@ -529,7 +547,7 @@ const ContactMethod = styled.div`
     overflow: hidden;
     animation: ${fadeInUp} 1s ease-out;
     flex: 1;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -537,8 +555,9 @@ const ContactMethod = styled.div`
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary}, 
+        background: linear-gradient(
+            90deg,
+            ${({ theme }) => theme.color.primary},
             ${({ theme }) => theme.color.secondary}
         );
         background-size: 200% 100%;
@@ -546,12 +565,12 @@ const ContactMethod = styled.div`
         opacity: 0;
         transition: opacity 0.3s ease;
     }
-    
+
     &:hover {
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0 20px 40px ${({ theme }) => theme.color.primary}20;
         border-color: ${({ theme }) => theme.color.primary}40;
-        
+
         &::before {
             opacity: 1;
         }
@@ -563,7 +582,7 @@ const ContactIcon = styled.div`
     margin-bottom: 20px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s ease;
-    
+
     ${ContactMethod}:hover & {
         transform: scale(1.1);
     }
@@ -587,8 +606,9 @@ const ContactValue = styled.div`
     font-size: 1.2rem;
     font-weight: 700;
     color: ${({ theme }) => theme.color.text};
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.text}, 
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.text},
         ${({ theme }) => theme.color.primary}
     );
     background-size: 200% 200%;
@@ -598,181 +618,33 @@ const ContactValue = styled.div`
     animation: ${gradientShift} 4s ease-in-out infinite;
 `;
 
-const PricingSection = styled.div`
-    margin: 80px 0;
-`;
-
-const PricingGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-top: 40px;
-    
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-    
-    @media (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
-    }
-`;
-
-const PricingCard = styled.div`
-    background: white;
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    animation: ${fadeInUp} 1s ease-out;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary}, 
-            ${({ theme }) => theme.color.secondary},
-            ${({ theme }) => theme.color.tertiary}
-        );
-        background-size: 200% 100%;
-        animation: ${gradientShift} 3s ease-in-out infinite;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    &:hover {
-        transform: translateY(-12px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        border-color: ${({ theme }) => theme.color.primary}40;
-        
-        &::before {
-            opacity: 1;
-        }
-    }
-    
-    &.featured {
-        border-color: ${({ theme }) => theme.color.primary};
-        transform: scale(1.05);
-        background: linear-gradient(135deg, 
-            white, 
-            ${({ theme }) => theme.color.primary}05
-        );
-        
-        &::before {
-            opacity: 1;
-        }
-        
-        &:hover {
-            transform: scale(1.05) translateY(-12px);
-            box-shadow: 0 25px 50px ${({ theme }) => theme.color.primary}20;
-        }
-    }
-`;
-
-const PricingTitle = styled.h3`
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: ${({ theme }) => theme.color.text};
-`;
-
-const PricingPrice = styled.div`
-    font-size: 3rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, 
-        ${({ theme }) => theme.color.primary}, 
-        ${({ theme }) => theme.color.secondary}
-    );
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    animation: ${gradientShift} 3s ease-in-out infinite;
-    position: relative;
-    
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary}, 
-            ${({ theme }) => theme.color.secondary}
-        );
-        transition: width 0.3s ease;
-    }
-    
-    &:hover::after {
-        width: 100%;
-    }
-`;
-
-const PricingDescription = styled.p`
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.7;
-    line-height: 1.6;
-    margin-bottom: 20px;
-`;
-
-const PricingFeatures = styled.ul`
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
-`;
-
-const PricingFeature = styled.li`
-    padding: 8px 0;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.8;
-    
-    &:before {
-        content: "✓";
-        color: ${({ theme }) => theme.color.primary};
-        font-weight: bold;
-        margin-right: 10px;
-    }
-`;
-
 // Floating decorative elements
 const FloatingElement = styled.div`
     position: absolute;
     width: 20px;
     height: 20px;
-    background: linear-gradient(45deg, 
-        ${({ theme }) => theme.color.primary}30, 
+    background: linear-gradient(
+        45deg,
+        ${({ theme }) => theme.color.primary}30,
         ${({ theme }) => theme.color.secondary}30
     );
     border-radius: 50%;
     animation: ${float} 4s ease-in-out infinite;
     pointer-events: none;
     z-index: 0;
-    
+
     &:nth-child(1) {
         top: 20%;
         left: 10%;
         animation-delay: 0s;
     }
-    
+
     &:nth-child(2) {
         top: 60%;
         right: 15%;
         animation-delay: 1s;
     }
-    
+
     &:nth-child(3) {
         bottom: 30%;
         left: 20%;
@@ -794,46 +666,57 @@ export default function Photography() {
                         Photography <ColoredSpan>.</ColoredSpan>
                     </PhotographyTitle>
                     <PhotographySubtitle>
-                        Capturing moments from travels around the world. 
-                        From the bustling streets of Brooklyn to the charming alleys of Lisbon, 
-                        each photo tells a story of discovery and wonder.
+                        Capturing moments from travels around the world. From
+                        the bustling streets of Brooklyn to the charming alleys
+                        of Lisbon, each photo tells a story of discovery and
+                        wonder.
                     </PhotographySubtitle>
                 </PhotographyHeader>
             </SectionTracker>
-            
 
             <SectionTracker sectionName="Urban Landscapes">
                 <SectionTitle>Urban Landscapes</SectionTitle>
                 <SectionDescription>
-                    Exploring the beauty found in city streets, architecture, and urban life
+                    Exploring the beauty found in city streets, architecture,
+                    and urban life
                 </SectionDescription>
                 <Landscape />
             </SectionTracker>
-            
+
             <SectionTracker sectionName="Behind the Lens">
                 <BehindTheLensSection>
                     <BehindTheLensContent>
                         <BehindTheLensText>
-                            <BehindTheLensTitle>Behind the Lens <ColoredSpan>.</ColoredSpan></BehindTheLensTitle>
+                            <BehindTheLensTitle>
+                                Behind the Lens <ColoredSpan>.</ColoredSpan>
+                            </BehindTheLensTitle>
                             <BehindTheLensDescription>
-                                Photography isn't just about capturing images—it's about preserving emotions, 
-                                telling stories, and creating timeless memories. My journey began with a simple 
-                                curiosity about the world around me, and it has evolved into a deep passion 
-                                for documenting life's most precious moments.
+                                Photography isn't just about capturing
+                                images—it's about preserving emotions, telling
+                                stories, and creating timeless memories. My
+                                journey began with a simple curiosity about the
+                                world around me, and it has evolved into a deep
+                                passion for documenting life's most precious
+                                moments.
                             </BehindTheLensDescription>
                             <BehindTheLensPhilosophy>
-                                I believe every person has a unique story worth telling, every moment has 
-                                its own beauty, and every photograph should evoke genuine emotion. Whether 
-                                I'm exploring the vibrant streets of Lisbon or capturing intimate portraits, 
-                                my goal is always the same: to create images that resonate with authenticity 
-                                and artistic vision.
+                                I believe every person has a unique story worth
+                                telling, every moment has its own beauty, and
+                                every photograph should evoke genuine emotion.
+                                Whether I'm exploring the vibrant streets of
+                                Lisbon or capturing intimate portraits, my goal
+                                is always the same: to create images that
+                                resonate with authenticity and artistic vision.
                             </BehindTheLensPhilosophy>
                             <BehindTheLensSignature>
                                 — Alexandra Barka
                             </BehindTheLensSignature>
                         </BehindTheLensText>
                         <BehindTheLensImage>
-                            <Image src={Profile} alt="Alexandra Barka with camera" />
+                            <Image
+                                src={Profile}
+                                alt="Alexandra Barka with camera"
+                            />
                         </BehindTheLensImage>
                     </BehindTheLensContent>
                 </BehindTheLensSection>
@@ -841,197 +724,170 @@ export default function Photography() {
 
             <SectionTracker sectionName="Booking Section">
                 <BookingSection>
-                    <BookingTitle>Ready to Book? <ColoredSpan>.</ColoredSpan></BookingTitle>
+                    <BookingTitle>
+                        Ready to Book? <ColoredSpan>.</ColoredSpan>
+                    </BookingTitle>
                     <BookingText>
-                        Let's capture your special moments together. Whether it's a portrait session, 
-                        event photography, or a custom project, I'm here to bring your vision to life.
+                        Let's capture your special moments together. Whether
+                        it's a portrait session, event photography, or a custom
+                        project, I'm here to bring your vision to life.
                     </BookingText>
                     <EmailButton href="mailto:barka.alexandra2@gmail.com">
                         Get In Touch
                     </EmailButton>
                 </BookingSection>
             </SectionTracker>
-        
 
             <SectionTracker sectionName="Portraits">
                 <SectionTitle>Portraits</SectionTitle>
                 <SectionDescription>
-                    Capturing authentic moments and genuine expressions that tell your unique story. 
+                    Capturing authentic moments and genuine expressions that
+                    tell your unique story.
                 </SectionDescription>
                 <Portraits />
-            </SectionTracker>
-
-            <SectionTracker sectionName="Pricing">
-                <PricingSection>
-                    <SectionTitle>Pricing</SectionTitle>
-                    <SectionDescription>
-                        Professional photography services tailored to your needs
-                    </SectionDescription>
-                
-                <PricingGrid>
-                    <PricingCard style={{ animationDelay: '0.1s' }}>
-                        <PricingTitle>Portrait Session</PricingTitle>
-                        <PricingPrice>50€</PricingPrice>
-                        <PricingDescription>
-                            Perfect for individual portraits, headshots, or personal branding photos
-                        </PricingDescription>
-                        <PricingFeatures>
-                            <PricingFeature>1 hour session</PricingFeature>
-                            <PricingFeature>10-15 edited photos</PricingFeature>
-                            <PricingFeature>Online gallery</PricingFeature>
-                            <PricingFeature>Basic retouching</PricingFeature>
-                        </PricingFeatures>
-                    </PricingCard>
-
-                    <PricingCard className="featured" style={{ animationDelay: '0.2s' }}>
-                        <PricingTitle>Lifestyle Photography</PricingTitle>
-                        <PricingPrice>100€</PricingPrice>
-                        <PricingDescription>
-                            Capture your special moments, events, or celebrations
-                        </PricingDescription>
-                        <PricingFeatures>
-                            <PricingFeature>2-3 hours</PricingFeature>
-                            <PricingFeature>50+ edited photos</PricingFeature>
-                            <PricingFeature>Online gallery</PricingFeature>
-                            <PricingFeature>Same-day preview</PricingFeature>
-                        </PricingFeatures>
-                    </PricingCard>
-
-                    <PricingCard style={{ animationDelay: '0.3s' }}>
-                        <PricingTitle>Custom Project</PricingTitle>
-                        <PricingPrice>Contact</PricingPrice>
-                        <PricingDescription>
-                            Tailored photography services for your unique needs
-                        </PricingDescription>
-                        <PricingFeatures>
-                            <PricingFeature>Flexible duration</PricingFeature>
-                            <PricingFeature>Custom deliverables</PricingFeature>
-                            <PricingFeature>Consultation included</PricingFeature>
-                            <PricingFeature>Specialized editing</PricingFeature>
-                        </PricingFeatures>
-                    </PricingCard>
-                </PricingGrid>
-                </PricingSection>
             </SectionTracker>
 
             <SectionTracker sectionName="Nature & Wildlife">
                 <SectionTitle>Nature & Wildlife</SectionTitle>
                 <SectionDescription>
-                    Capturing the raw beauty of wildlife in their habitats and the serene landscapes that surround us.
+                    Capturing the raw beauty of wildlife in their habitats and
+                    the serene landscapes that surround us.
                 </SectionDescription>
                 <Wildlife />
             </SectionTracker>
 
             <SectionTracker sectionName="Contact & Booking Process">
                 <ContactSection>
-                <ContactTitle>Contact & Booking Process <ColoredSpan>.</ColoredSpan></ContactTitle>
-                <ContactSubtitle>
-                    Ready to create beautiful memories together? Here's how we'll bring your vision to life.
-                </ContactSubtitle>
-                
-                <ProcessGrid>
-                    <ProcessStep>
-                        <StepNumber>01</StepNumber>
-                        <StepTitle>Initial Consultation</StepTitle>
-                        <StepDescription>
-                            We'll discuss your vision, preferences, and requirements. 
-                            Share your ideas, and I'll provide professional guidance 
-                            on locations, timing, and styling.
-                        </StepDescription>
-                    </ProcessStep>
+                    <ContactTitle>
+                        Contact & Booking Process <ColoredSpan>.</ColoredSpan>
+                    </ContactTitle>
+                    <ContactSubtitle>
+                        Ready to create beautiful memories together? Here's how
+                        we'll bring your vision to life.
+                    </ContactSubtitle>
 
-                    <ProcessStep>
-                        <StepNumber>02</StepNumber>
-                        <StepTitle>Planning & Preparation</StepTitle>
-                        <StepDescription>
-                            I'll create a detailed plan including location scouting, 
-                            equipment setup, and timeline. You'll receive a comprehensive 
-                            guide to help you prepare for the session.
-                        </StepDescription>
-                    </ProcessStep>
+                    <ProcessGrid>
+                        <ProcessStep>
+                            <StepNumber>01</StepNumber>
+                            <StepTitle>Initial Consultation</StepTitle>
+                            <StepDescription>
+                                We'll discuss your vision, preferences, and
+                                requirements. Share your ideas, and I'll provide
+                                professional guidance on locations, timing, and
+                                styling.
+                            </StepDescription>
+                        </ProcessStep>
 
-                    <ProcessStep>
-                        <StepNumber>03</StepNumber>
-                        <StepTitle>Photography Session</StepTitle>
-                        <StepDescription>
-                            The fun part! We'll capture authentic moments in a relaxed 
-                            environment. I'll guide you through poses while keeping 
-                            everything natural and comfortable.
-                        </StepDescription>
-                    </ProcessStep>
+                        <ProcessStep>
+                            <StepNumber>02</StepNumber>
+                            <StepTitle>Planning & Preparation</StepTitle>
+                            <StepDescription>
+                                I'll create a detailed plan including location
+                                scouting, equipment setup, and timeline. You'll
+                                receive a comprehensive guide to help you
+                                prepare for the session.
+                            </StepDescription>
+                        </ProcessStep>
 
-                    <ProcessStep>
-                        <StepNumber>04</StepNumber>
-                        <StepTitle>Editing & Delivery</StepTitle>
-                        <StepDescription>
-                            Your photos will be carefully edited to perfection. 
-                            You'll receive a private online gallery with high-resolution 
-                            images ready for download and sharing.
-                        </StepDescription>
-                    </ProcessStep>
-                </ProcessGrid>
+                        <ProcessStep>
+                            <StepNumber>03</StepNumber>
+                            <StepTitle>Photography Session</StepTitle>
+                            <StepDescription>
+                                The fun part! We'll capture authentic moments in
+                                a relaxed environment. I'll guide you through
+                                poses while keeping everything natural and
+                                comfortable.
+                            </StepDescription>
+                        </ProcessStep>
 
-                <FAQSection>
-                    <FAQTitle>Frequently Asked Questions</FAQTitle>
-                    <FAQGrid>
-                        <FAQItem>
-                            <FAQQuestion>How far in advance should I book?</FAQQuestion>
-                            <FAQAnswer>
-                                I recommend booking at least 2-3 weeks in advance, 
-                                especially for weekend sessions or special events.
-                            </FAQAnswer>
-                        </FAQItem>
+                        <ProcessStep>
+                            <StepNumber>04</StepNumber>
+                            <StepTitle>Editing & Delivery</StepTitle>
+                            <StepDescription>
+                                Your photos will be carefully edited to
+                                perfection. You'll receive a private online
+                                gallery with high-resolution images ready for
+                                download and sharing.
+                            </StepDescription>
+                        </ProcessStep>
+                    </ProcessGrid>
 
-                        <FAQItem>
-                            <FAQQuestion>What if the weather is bad?</FAQQuestion>
-                            <FAQAnswer>
-                                We can reschedule outdoor sessions due to weather. 
-                            </FAQAnswer>
-                        </FAQItem>
+                    <FAQSection>
+                        <FAQTitle>Frequently Asked Questions</FAQTitle>
+                        <FAQGrid>
+                            <FAQItem>
+                                <FAQQuestion>
+                                    How far in advance should I book?
+                                </FAQQuestion>
+                                <FAQAnswer>
+                                    I recommend booking at least 2-3 weeks in
+                                    advance, especially for weekend sessions or
+                                    special events.
+                                </FAQAnswer>
+                            </FAQItem>
 
-                        <FAQItem>
-                            <FAQQuestion>How long until I receive my photos?</FAQQuestion>
-                            <FAQAnswer>
-                                You'll receive a preview within 48 hours and your 
-                                full gallery within 1-2 weeks of the session.
-                            </FAQAnswer>
-                        </FAQItem>
+                            <FAQItem>
+                                <FAQQuestion>
+                                    What if the weather is bad?
+                                </FAQQuestion>
+                                <FAQAnswer>
+                                    We can reschedule outdoor sessions due to
+                                    weather.
+                                </FAQAnswer>
+                            </FAQItem>
 
-                        <FAQItem>
-                            <FAQQuestion>Do you travel for sessions?</FAQQuestion>
-                            <FAQAnswer>
-                                Yes! I'm available for destination photography 
-                                internationally.
-                            </FAQAnswer>
-                        </FAQItem>
-                    </FAQGrid>
-                </FAQSection>
+                            <FAQItem>
+                                <FAQQuestion>
+                                    How long until I receive my photos?
+                                </FAQQuestion>
+                                <FAQAnswer>
+                                    You'll receive a preview within 48 hours and
+                                    your full gallery within 1-2 weeks of the
+                                    session.
+                                </FAQAnswer>
+                            </FAQItem>
 
-                <ContactInfo>
-                    <ContactMethod>
-                        <ContactIcon>📧</ContactIcon>
-                        <ContactDetails>
-                            <ContactLabel>Email</ContactLabel>
-                            <ContactValue>barka.alexandra2@gmail.com</ContactValue>
-                        </ContactDetails>
-                    </ContactMethod>
+                            <FAQItem>
+                                <FAQQuestion>
+                                    Do you travel for sessions?
+                                </FAQQuestion>
+                                <FAQAnswer>
+                                    Yes! I'm available for destination
+                                    photography internationally.
+                                </FAQAnswer>
+                            </FAQItem>
+                        </FAQGrid>
+                    </FAQSection>
 
-                    <ContactMethod>
-                        <ContactIcon>📍</ContactIcon>
-                        <ContactDetails>
-                            <ContactLabel>Based in</ContactLabel>
-                            <ContactValue>Amsterdam, Netherlands</ContactValue>
-                        </ContactDetails>
-                    </ContactMethod>
+                    <ContactInfo>
+                        <ContactMethod>
+                            <ContactIcon>📧</ContactIcon>
+                            <ContactDetails>
+                                <ContactLabel>Email</ContactLabel>
+                                <ContactValue>
+                                    barka.alexandra2@gmail.com
+                                </ContactValue>
+                            </ContactDetails>
+                        </ContactMethod>
 
-                    <ContactMethod>
-                        <ContactIcon>⏰</ContactIcon>
-                        <ContactDetails>
-                            <ContactLabel>Response Time</ContactLabel>
-                            <ContactValue>Within 24 hours</ContactValue>
-                        </ContactDetails>
-                    </ContactMethod>
-                </ContactInfo>
+                        <ContactMethod>
+                            <ContactIcon>📍</ContactIcon>
+                            <ContactDetails>
+                                <ContactLabel>Based in</ContactLabel>
+                                <ContactValue>
+                                    Amsterdam, Netherlands
+                                </ContactValue>
+                            </ContactDetails>
+                        </ContactMethod>
+
+                        <ContactMethod>
+                            <ContactIcon>⏰</ContactIcon>
+                            <ContactDetails>
+                                <ContactLabel>Response Time</ContactLabel>
+                                <ContactValue>Within 24 hours</ContactValue>
+                            </ContactDetails>
+                        </ContactMethod>
+                    </ContactInfo>
                 </ContactSection>
             </SectionTracker>
         </Wrapper>

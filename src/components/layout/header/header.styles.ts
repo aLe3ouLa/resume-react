@@ -7,15 +7,11 @@ export const HeaderContainer = styled.header`
     position: sticky;
     top: 0;
     z-index: 100;
-    background: ${({ theme }) => theme.color.cream};
+
+    background: rgba(255, 249, 230, 0.82);
     backdrop-filter: blur(10px);
-    border-bottom: 4px solid ${({ theme }) => theme.color.primary};
-    transition: all 0.3s ease;
-    box-shadow: 
-        0 4px 0 ${({ theme }) => theme.color.hoverPrimary},
-        0 6px 12px rgba(0, 168, 168, 0.15);
-    background-image: var(--grain-texture);
-    background-blend-mode: overlay;
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
 
     padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.xl};
 
@@ -24,70 +20,56 @@ export const HeaderContainer = styled.header`
     }
 
     &:hover {
-        background: ${({ theme }) => theme.color.white};
-        border-bottom-color: ${({ theme }) => theme.color.secondary};
-        box-shadow: 
-            0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
-            0 6px 12px rgba(255, 107, 107, 0.15);
+        background: rgba(255, 249, 230, 0.95);
     }
 `;
 
 export const NavList = styled.ul`
     display: flex;
     align-items: center;
-    gap: ${({ theme }) => theme.spacing.lg};
+    gap: ${({ theme }) => theme.spacing.sm};
     list-style: none;
     margin: 0;
     padding: 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.upToTablet}) {
-        gap: ${({ theme }) => theme.spacing.md};
+        gap: ${({ theme }) => theme.spacing.xs};
     }
 
     li {
         position: relative;
         cursor: pointer;
-        
+
         a {
+            display: inline-block;
             color: ${({ theme }) => theme.color.text};
-            font-weight: 600;
-            font-family: 'Fredoka', 'Comfortaa', sans-serif;
+            font-weight: 700;
             font-size: 1.8rem;
             text-decoration: none;
-            position: relative;
-            transition: all 0.3s ease;
             letter-spacing: 0.3px;
-            padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
-            border-radius: 12px;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            border: 2px solid transparent;
+            transition: transform 0.2s ease, background 0.2s ease,
+                box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
             @media (max-width: ${({ theme }) => theme.breakpoint.upToTablet}) {
                 font-size: 1.5rem;
+                padding: 0.5rem 1.1rem;
             }
 
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 2px;
-                left: ${({ theme }) => theme.spacing.sm};
-                width: 0;
-                height: 3px;
-                background: ${({ theme }) => theme.color.secondary};
-                border-radius: 2px;
-                transition: width 0.3s ease;
-            }
-
+            /* Neo-brutalist sticker hover: bright fill, black outline, hard offset shadow */
             &:hover {
-                color: ${({ theme }) => theme.color.secondary};
-                background: rgba(255, 107, 107, 0.1);
-                transform: translateY(-2px);
-
-                &::after {
-                    width: calc(100% - ${({ theme }) => theme.spacing.md});
-                }
+                color: ${({ theme }) => theme.color.black};
+                background: ${({ theme }) => theme.color.tertiary};
+                border-color: ${({ theme }) => theme.color.black};
+                box-shadow: 3px 3px 0 ${({ theme }) => theme.color.black};
+                transform: translate(-1px, -1px);
             }
 
             &:active {
-                transform: translateY(0);
+                transform: translate(1px, 1px);
+                box-shadow: 1px 1px 0 ${({ theme }) => theme.color.black};
             }
         }
     }

@@ -17,37 +17,86 @@ const JOBS: Job[] = [
         img: 'https://www.mews.com/hubfs/_Project_Phoenix/images/logo/Mews%20Logo.svg',
         a11y_img: 'Mews logo',
         company: 'Mews',
-        jobFunction: 'Software Engineer',
+        jobFunction: 'Software Engineer, Operations Engineering',
         duration: `Aug 2024 - Present · ${(() => {
             const months = moment().diff('2024-08-01', 'months', true);
             if (months >= 12) {
                 const years = Math.floor(months / 12);
                 const remainingMonths = Math.floor(months % 12);
-                return remainingMonths > 0 ? `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}` : `${years} year${years > 1 ? 's' : ''}`;
+                return remainingMonths > 0
+                    ? `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`
+                    : `${years} year${years > 1 ? 's' : ''}`;
             }
             return `${months.toFixed(1)} months`;
         })()}`,
         responsibilities: (
             <>
-                Software Engineer at Mews, previously working in accounting and now in Mews Events.
+                As a Software Engineer in Operations Engineering at Mews, I work
+                across the Events Management System stack to improve the
+                usability, reliability, and maintainability of our Groups &
+                Events capabilities. My work spans frontend development, backend
+                contributions, refactoring, and operational hardening, with the
+                goal of making Events at Mews more robust, predictable, and
+                easier to operate so hospitality teams can focus on guests and
+                business outcomes instead of fighting their tools.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Develop and maintain features for Mews Events platform, enabling seamless event management for hospitality businesses
+                        Build, maintain, and improve core Events functionality,
+                        helping hotels manage group bookings, event spaces, and
+                        quotation flows more reliably
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Previously contributed to accounting systems, building financial tools and integrations
+                        Contribute across both frontend and backend parts of
+                        EMS, improving how features are built, integrated, and
+                        maintained end to end
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Collaborate with cross-functional teams to deliver scalable solutions using modern web technologies
+                        Drive frontend improvements across the EMS experience,
+                        including quote details and email template redesigns,
+                        with a strong focus on usability, responsiveness, and
+                        consistency
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Collaborate closely with product, design, backend, and
+                        QA teams to ship features that support high-volume
+                        operations, PMS integrations, and accounting and tax
+                        workflows
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Take ownership of complex bugs and edge cases across
+                        Groups &amp; Events and adjacent accounting flows,
+                        turning vague symptoms into clear fixes, stronger
+                        safeguards, and long-term improvements
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Improve code quality through refactoring, stronger
+                        validation patterns, and better unit test coverage to
+                        make the product easier to evolve safely
+                    </li>
+                    <li>
+                        <span role="img" aria-label="Bullet point">
+                            →
+                        </span>{' '}
+                        Use AI tools such as Claude Code to accelerate
+                        implementation, debugging, and engineering workflows
                     </li>
                 </ul>
             </>
@@ -64,25 +113,31 @@ const JOBS: Job[] = [
         duration: `Sep 2022 - Aug 2024 · 2 yrs`,
         responsibilities: (
             <>
-                Web Engineer developing internal growth campaigns and marketing tools for Spotify's subscriber expansion.
+                Web Engineer developing internal growth campaigns and marketing
+                tools for Spotify's subscriber expansion.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Lead impactful projects and mentor junior engineers while developing features aligned with company key results
+                        Lead impactful projects and mentor junior engineers
+                        while developing features aligned with company key
+                        results
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Enhance performance and migrate to preferred technologies, maintaining modern codebase with latest technologies
+                        Enhance performance and migrate to preferred
+                        technologies, maintaining modern codebase with latest
+                        technologies
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Support marketing teams driving Spotify subscriber growth through stakeholder collaboration
+                        Support marketing teams driving Spotify subscriber
+                        growth through stakeholder collaboration
                     </li>
                 </ul>
             </>
@@ -100,19 +155,22 @@ const JOBS: Job[] = [
         duration: 'Jul 2021 - Aug 2022 · 1 yr 2 mn',
         responsibilities: (
             <>
-                Frontend Engineer for HBO Max streaming platform, impacting millions of users worldwide.
+                Frontend Engineer for HBO Max streaming platform, impacting
+                millions of users worldwide.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Migrate design system to latest version with style guides and create web accessible applications
+                        Migrate design system to latest version with style
+                        guides and create web accessible applications
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Write, review code and debug complex systems for pixel-perfect user experience
+                        Write, review code and debug complex systems for
+                        pixel-perfect user experience
                     </li>
                 </ul>
             </>
@@ -130,25 +188,30 @@ const JOBS: Job[] = [
         duration: 'Aug 2020 - Jun 2021 · 1 yr',
         responsibilities: (
             <>
-                React Frontend Engineer creating web-accessible onboarding experiences for Messagebird products.
+                React Frontend Engineer creating web-accessible onboarding
+                experiences for Messagebird products.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Migrate authentication to React micro frontend and develop onboarding flows reducing setup time from days to minutes
+                        Migrate authentication to React micro frontend and
+                        develop onboarding flows reducing setup time from days
+                        to minutes
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Integrate design system and accessibility techniques for improved user experience
+                        Integrate design system and accessibility techniques for
+                        improved user experience
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Provide support engineering in team rotation for client problem resolution
+                        Provide support engineering in team rotation for client
+                        problem resolution
                     </li>
                 </ul>
             </>
@@ -166,19 +229,22 @@ const JOBS: Job[] = [
         duration: 'Feb 2020 - Jul 2020 · 6 mos',
         responsibilities: (
             <>
-                React Frontend Developer creating web applications for Strangelove digital agency clients and internal use.
+                React Frontend Developer creating web applications for
+                Strangelove digital agency clients and internal use.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Build automated cookie scanning tool using Node.js, Puppeteer and React.js
+                        Build automated cookie scanning tool using Node.js,
+                        Puppeteer and React.js
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Develop e-commerce shop with API mocking, testing tools and automated invoice generation
+                        Develop e-commerce shop with API mocking, testing tools
+                        and automated invoice generation
                     </li>
                 </ul>
             </>
@@ -196,25 +262,29 @@ const JOBS: Job[] = [
         duration: 'Jul 2019 - Dec 2019 · 6 mos',
         responsibilities: (
             <>
-                Frontend Developer for Yabbu meeting management application, delivering clean code to minimize meeting time.
+                Frontend Developer for Yabbu meeting management application,
+                delivering clean code to minimize meeting time.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Develop cross-platform meeting management tool migrating from Angular.js to Vue.js
+                        Develop cross-platform meeting management tool migrating
+                        from Angular.js to Vue.js
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Improve UI performance using Vue.js best practices and removing costly libraries
+                        Improve UI performance using Vue.js best practices and
+                        removing costly libraries
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Assist project management with estimations, sprint organization and CI/CD pipeline development
+                        Assist project management with estimations, sprint
+                        organization and CI/CD pipeline development
                     </li>
                 </ul>
             </>
@@ -231,7 +301,8 @@ const JOBS: Job[] = [
         duration: 'Jul 2018 - Jul 2019 · 1 yr 1 mo',
         responsibilities: (
             <>
-                Frontend Engineer with UX design knowledge, creating components, interfaces and assets with clean, pixel-perfect code.
+                Frontend Engineer with UX design knowledge, creating components,
+                interfaces and assets with clean, pixel-perfect code.
             </>
         ),
         technologies:
@@ -247,25 +318,30 @@ const JOBS: Job[] = [
         duration: 'Jul 2015 - Jun 2018 · 3 yrs',
         responsibilities: (
             <>
-                R&D Frontend Engineer in Ambient Intelligent environments, developing web, mobile and desktop applications.
+                R&D Frontend Engineer in Ambient Intelligent environments,
+                developing web, mobile and desktop applications.
                 <ul>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Participated in HCI International 2018 Student Design Competition, Las Vegas
+                        Participated in HCI International 2018 Student Design
+                        Competition, Las Vegas
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Designed interactive full-stack application for real-time UI composition (MSc thesis)
+                        Designed interactive full-stack application for
+                        real-time UI composition (MSc thesis)
                     </li>
                     <li>
                         <span role="img" aria-label="Bullet point">
                             →
                         </span>{' '}
-                        Co-developed interactive applications including augmented table for children and mobile app for monastery
+                        Co-developed interactive applications including
+                        augmented table for children and mobile app for
+                        monastery
                     </li>
                 </ul>
             </>

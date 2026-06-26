@@ -21,51 +21,17 @@ const ButtonVariations: Record<ButtonVariation, any> = {
     [ButtonVariation.PRIMARY]: css`
         color: ${({ theme }) => theme.color.white};
         background-color: ${({ theme }) => theme.color.primary};
-        font-family: 'Fredoka', 'Comfortaa', sans-serif;
-        font-weight: 600;
-        border: 3px solid ${({ theme }) => theme.color.primary};
-        box-shadow: 
-            0 4px 0 ${({ theme }) => theme.color.hoverPrimary},
-            0 6px 12px rgba(0, 168, 168, 0.25);
 
         &:hover {
             background-color: ${({ theme }) => theme.color.hoverPrimary};
-            transform: translateY(2px);
-            box-shadow: 
-                0 2px 0 ${({ theme }) => theme.color.hoverPrimary},
-                0 4px 8px rgba(0, 168, 168, 0.3);
-        }
-        
-        &:active {
-            transform: translateY(4px);
-            box-shadow: 
-                0 0 0 ${({ theme }) => theme.color.hoverPrimary},
-                0 2px 4px rgba(0, 168, 168, 0.2);
         }
     `,
     [ButtonVariation.SECONDARY]: css`
-        color: ${({ theme }) => theme.color.white};
-        background-color: ${({ theme }) => theme.color.secondary};
-        font-family: 'Fredoka', 'Comfortaa', sans-serif;
-        font-weight: 600;
-        border: 3px solid ${({ theme }) => theme.color.secondary};
-        box-shadow: 
-            0 4px 0 ${({ theme }) => theme.color.hoverSecondary},
-            0 6px 12px rgba(255, 107, 107, 0.25);
+        color: ${({ theme }) => theme.color.black};
+        background-color: ${({ theme }) => theme.color.tertiary};
 
         &:hover {
-            background-color: ${({ theme }) => theme.color.hoverSecondary};
-            transform: translateY(2px);
-            box-shadow: 
-                0 2px 0 ${({ theme }) => theme.color.hoverSecondary},
-                0 4px 8px rgba(255, 107, 107, 0.3);
-        }
-        
-        &:active {
-            transform: translateY(4px);
-            box-shadow: 
-                0 0 0 ${({ theme }) => theme.color.hoverSecondary},
-                0 2px 4px rgba(255, 107, 107, 0.2);
+            background-color: ${({ theme }) => theme.color.hoverTertiary};
         }
     `,
 }
@@ -98,32 +64,40 @@ export const StyledButton = styled.a<StyledButtonProps>`
     overflow: hidden;
 
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 9999px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Chunky neo-brutalist: thick black outline + hard offset shadow */
+    border: 3px solid ${({ theme }) => theme.color.black};
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 ${({ theme }) => theme.color.black};
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+        background-color 0.3s ease;
     cursor: pointer;
-    position: relative;
-    
+
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 9999px;
-        opacity: 0.1;
-        background-image: var(--grain-texture);
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
     }
 
     &:hover {
-        color: ${({ theme }) => theme.color.white};
         text-decoration: none;
+        transform: translate(-2px, -2px);
+        box-shadow: 7px 7px 0 ${({ theme }) => theme.color.black};
+
+        &::before {
+            left: 100%;
+        }
     }
 
     &:active {
-        transition: all 0.1s ease;
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 ${({ theme }) => theme.color.black};
     }
 `
