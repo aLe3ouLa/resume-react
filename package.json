@@ -20,7 +20,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "postbuild": "react-snap",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
     },
     "reactSnap": {
         "include": [
@@ -61,6 +63,7 @@
         "@types/styled-components": "^5.1.25",
         "autoprefixer": "^10.4.21",
         "babel-plugin-named-exports-order": "0.0.2",
+        "gh-pages": "^6.3.0",
         "postcss": "^8.5.6",
         "prop-types": "^15.8.1",
         "react-snap": "^1.23.0",
