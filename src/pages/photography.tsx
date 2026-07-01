@@ -766,7 +766,7 @@ export default function Photography() {
                         we'll bring your vision to life.
                     </ContactSubtitle>
 
-                    <ProcessGrid>
+                    {/* <ProcessGrid>
                         <ProcessStep>
                             <StepNumber>01</StepNumber>
                             <StepTitle>Initial Consultation</StepTitle>
@@ -810,22 +810,11 @@ export default function Photography() {
                                 download and sharing.
                             </StepDescription>
                         </ProcessStep>
-                    </ProcessGrid>
+                    </ProcessGrid> */}
 
                     <FAQSection>
                         <FAQTitle>Frequently Asked Questions</FAQTitle>
                         <FAQGrid>
-                            <FAQItem>
-                                <FAQQuestion>
-                                    How far in advance should I book?
-                                </FAQQuestion>
-                                <FAQAnswer>
-                                    I recommend booking at least 2-3 weeks in
-                                    advance, especially for weekend sessions or
-                                    special events.
-                                </FAQAnswer>
-                            </FAQItem>
-
                             <FAQItem>
                                 <FAQQuestion>
                                     What if the weather is bad?
