@@ -366,6 +366,38 @@ export const Content = styled.div`
         margin: ${({ theme }) => theme.spacing.md} 0;
     }
 
+    .demo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: ${({ theme }) => theme.spacing.xl};
+        background: ${({ theme }) => theme.color.white};
+        border: 3px solid ${({ theme }) => theme.color.black};
+        border-radius: 12px;
+        box-shadow: 6px 6px 0 ${({ theme }) => theme.color.black};
+        padding: ${({ theme }) => theme.spacing.lg};
+        margin-bottom: ${({ theme }) => theme.spacing.lg};
+        align-items: center;
+        justify-content: center;
+    }
+
+    .demo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: ${({ theme }) => theme.spacing.sm};
+    }
+
+    .demo-label {
+        font-family: 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: ${({ theme }) => theme.color.textLight};
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
     blockquote {
         margin: 0 0 ${({ theme }) => theme.spacing.md};
         padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};

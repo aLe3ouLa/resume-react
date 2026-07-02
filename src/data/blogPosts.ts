@@ -11,6 +11,21 @@ export interface BlogPost {
 
 // Newest first — this order drives the /blog grid and prerendering.
 export const BLOG_POSTS: BlogPost[] = [
+    {
+        slug: 'css-drop-shadow',
+        title: 'filter: drop-shadow()',
+        date: '2026-07-01',
+        tags: ['CSS', 'Filters'],
+        excerpt: 'box-shadow only knows rectangles. drop-shadow follows the actual shape of your element.',
+        language: 'css',
+        snippet: `/* shadow hugs the real shape, not the box */
+.icon { filter: drop-shadow(4px 4px 8px crimson); }
+
+/* stack them too */
+filter:
+  drop-shadow(1px 1px 0 navy)
+  drop-shadow(-1px -1px 0 navy);`,
+    },
     //     {
 //         slug: 'array-flat',
 //         title: 'Array.flat()',

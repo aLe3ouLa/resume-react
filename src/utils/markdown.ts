@@ -3,7 +3,7 @@ import hljs from 'highlight.js';
 
 // Configured markdown renderer with highlight.js syntax highlighting.
 const md: MarkdownIt = new MarkdownIt({
-    html: false,
+    html: true,
     linkify: true,
     typographer: true,
     highlight(str, lang) {
