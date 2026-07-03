@@ -3,7 +3,7 @@ import Logo from '../../fragments/icons/logo';
 
 const navLinkClass =
     'inline-block font-bold text-text ' +
-    'text-[2rem] py-[1em] px-[2rem] ' +
+    'text-[1.8rem] py-[0.6rem] px-[1.4rem] ' +
     'rounded-full border-2 border-transparent ' +
     'transition-all duration-200 ' +
     'hover:text-black hover:bg-tertiary hover:border-black hover:shadow-[3px_3px_0_#1A1A1A] hover:-translate-x-px hover:-translate-y-px ' +

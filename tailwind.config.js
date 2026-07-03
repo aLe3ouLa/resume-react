@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
@@ -102,9 +102,6 @@ module.exports = {
         '1000': '1000ms',
         '1600': '1600ms',
         '2400': '2400ms',
-      },
-      backgroundImage: {
-        'radial-gradient': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },
     },
   },
