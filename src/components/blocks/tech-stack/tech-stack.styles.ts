@@ -1,16 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-
-const fadeInUp = keyframes`
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
+import styled from 'styled-components';
+import { fadeInUp } from '../../../styles/keyframes';
+import { neoCard, hardOutline } from '../../../styles/mixins';
 
 export const SectionContainer = styled.section`
     padding: ${({ theme }) => theme.spacing.xxl} 0;
@@ -25,9 +15,10 @@ export const SectionContainer = styled.section`
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, 
-            ${({ theme }) => theme.color.primary} 0%, 
-            ${({ theme }) => theme.color.secondary} 50%, 
+        background: linear-gradient(
+            90deg,
+            ${({ theme }) => theme.color.primary} 0%,
+            ${({ theme }) => theme.color.secondary} 50%,
             ${({ theme }) => theme.color.tertiary} 100%
         );
     }
@@ -38,37 +29,6 @@ export const HeaderSection = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing.xxl};
     animation: ${fadeInUp} 0.8s ease-out;
 `;
-
-export const SectionTitle = styled.h2`
-    font-size: 4rem;
-    font-weight: 800;
-    color: ${({ theme }) => theme.color.text};
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-    position: relative;
-    display: inline-block;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 3rem;
-    }
-`;
-
-export const SectionSubtitle = styled.p`
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: ${({ theme }) => theme.color.textLight};
-    margin-bottom: ${({ theme }) => theme.spacing.md};
-    font-style: italic;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 1.6rem;
-        margin-bottom: ${({ theme }) => theme.spacing.lg};
-    }
-`;
-
 
 export const ContentGrid = styled.div`
     display: grid;
@@ -85,18 +45,20 @@ export const ContentGrid = styled.div`
     }
 `;
 
-export const AboutCard = styled.div`
-    background: ${({ theme }) => theme.color.white};
-    border-radius: 20px;
+// Shared neo-brutalist card used for both the intro copy and the skills grid.
+// `$hoverAccent` picks the hover shadow colour; `$delay` staggers the entrance.
+export const Card = styled.div<{
+    $hoverAccent?: 'primary' | 'secondary';
+    $delay?: string;
+}>`
+    ${neoCard}
     padding: ${({ theme }) => theme.spacing.xl};
-    border: 3px solid ${({ theme }) => theme.color.black};
-    box-shadow: 8px 8px 0 ${({ theme }) => theme.color.black};
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: ${fadeInUp} 0.8s ease-out 0.2s both;
+    animation: ${fadeInUp} 0.8s ease-out ${({ $delay = '0.2s' }) => $delay} both;
 
     &:hover {
         transform: translate(-3px, -3px);
-        box-shadow: 11px 11px 0 ${({ theme }) => theme.color.primary};
+        box-shadow: 11px 11px 0
+            ${({ theme, $hoverAccent = 'primary' }) => theme.color[$hoverAccent]};
     }
 `;
 
@@ -133,8 +95,13 @@ export const StyledLink = styled.a`
     align-items: center;
     gap: ${({ theme }) => theme.spacing.sm};
     color: ${({ theme }) => theme.color.white};
-    background: linear-gradient(135deg, ${({ theme }) => theme.color.primary} 0%, ${({ theme }) => theme.color.hoverPrimary} 100%);
-    padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
+    background: linear-gradient(
+        135deg,
+        ${({ theme }) => theme.color.primary} 0%,
+        ${({ theme }) => theme.color.hoverPrimary} 100%
+    );
+    padding: ${({ theme }) => theme.spacing.md}
+        ${({ theme }) => theme.spacing.lg};
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -158,21 +125,6 @@ export const StyledLink = styled.a`
     }
 `;
 
-export const TechSkillsCard = styled.div`
-    background: ${({ theme }) => theme.color.white};
-    border-radius: 20px;
-    padding: ${({ theme }) => theme.spacing.xl};
-    border: 3px solid ${({ theme }) => theme.color.black};
-    box-shadow: 8px 8px 0 ${({ theme }) => theme.color.black};
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: ${fadeInUp} 0.8s ease-out 0.4s both;
-
-    &:hover {
-        transform: translate(-3px, -3px);
-        box-shadow: 11px 11px 0 ${({ theme }) => theme.color.secondary};
-    }
-`;
-
 export const SkillsTitle = styled.h3`
     font-size: 2.4rem;
     font-weight: 700;
@@ -189,15 +141,17 @@ export const TechSkills = styled.div`
 
 export const SkillItem = styled.div`
     background: ${({ theme }) => theme.color.white};
-    border: 3px solid ${({ theme }) => theme.color.black};
+    ${hardOutline(3, 4)}
     border-radius: 12px;
     padding: ${({ theme }) => theme.spacing.md};
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
     color: ${({ theme }) => theme.color.text};
-    box-shadow: 4px 4px 0 ${({ theme }) => theme.color.black};
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;

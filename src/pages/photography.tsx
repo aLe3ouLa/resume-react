@@ -1,25 +1,14 @@
-import React from 'react';
 import Landscape from './landscape';
 import Wrapper from '../components/fragments/wrapper';
 import styled, { keyframes } from 'styled-components';
 import Portraits from './portraits';
 import Wildlife from './wildlife';
 import Profile from '../assets/Profile.jpeg';
-import ColoredSpan from '../components/ColoredSpan';
 import SectionTracker from '../components/SectionTracker';
+import { SectionHeader } from '../design-system/components/SectionHeader/SectionHeader';
+import { fadeInUp } from '../styles/keyframes';
 
 // Animations
-const fadeInUp = keyframes`
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
 const fadeInScale = keyframes`
     from {
         opacity: 0;
@@ -102,30 +91,6 @@ const PhotographyHeader = styled.div`
         animation: ${shimmer} 3s ease-in-out infinite;
         pointer-events: none;
     }
-`;
-
-const PhotographyTitle = styled.h1`
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: ${({ theme }) => theme.color.text};
-    line-height: 1.2;
-    position: relative;
-    z-index: 1;
-    animation: ${fadeInScale} 1.2s ease-out 0.3s both;
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.text},
-        ${({ theme }) => theme.color.primary},
-        ${({ theme }) => theme.color.secondary}
-    );
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation:
-        ${fadeInScale} 1.2s ease-out 0.3s both,
-        ${gradientShift} 4s ease-in-out infinite;
 `;
 
 const PhotographySubtitle = styled.p`
@@ -214,13 +179,6 @@ const BookingSection = styled.div`
     }
 `;
 
-const BookingTitle = styled.h2`
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: ${({ theme }) => theme.color.text};
-`;
-
 const BookingText = styled.p`
     font-size: 1.2rem;
     color: ${({ theme }) => theme.color.text};
@@ -304,15 +262,6 @@ const BehindTheLensText = styled.div`
     text-align: left;
 `;
 
-const BehindTheLensTitle = styled.h2`
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: ${({ theme }) => theme.color.text};
-    line-height: 1.2;
-    animation: ${fadeInUp} 1s ease-out 0.2s both;
-`;
-
 const BehindTheLensDescription = styled.p`
     font-size: 1.2rem;
     color: ${({ theme }) => theme.color.text};
@@ -389,15 +338,6 @@ const ContactSection = styled.div`
     animation: ${fadeInUp} 1s ease-out;
 `;
 
-const ContactTitle = styled.h2`
-    font-size: 2.8rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    color: ${({ theme }) => theme.color.text};
-    animation: ${fadeInUp} 1s ease-out 0.2s both;
-`;
-
 const ContactSubtitle = styled.p`
     font-size: 1.2rem;
     color: ${({ theme }) => theme.color.text};
@@ -407,60 +347,6 @@ const ContactSubtitle = styled.p`
     margin: 0 auto 60px auto;
     line-height: 1.6;
     animation: ${fadeInUp} 1s ease-out 0.4s both;
-`;
-
-const FAQSection = styled.div`
-    margin-bottom: 60px;
-`;
-
-const FAQTitle = styled.h3`
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 40px;
-    color: ${({ theme }) => theme.color.text};
-    animation: ${fadeInUp} 1s ease-out 0.6s both;
-`;
-
-const FAQGrid = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 40px;
-
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-`;
-
-const FAQItem = styled.div`
-    background: white;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    animation: ${fadeInUp} 1s ease-out;
-
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-`;
-
-const FAQQuestion = styled.h4`
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: ${({ theme }) => theme.color.text};
-`;
-
-const FAQAnswer = styled.p`
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.7;
-    line-height: 1.6;
 `;
 
 const ContactInfo = styled.div`
@@ -607,9 +493,10 @@ export default function Photography() {
                     <FloatingElement />
                     <FloatingElement />
                     <FloatingElement />
-                    <PhotographyTitle>
-                        Photography <ColoredSpan>.</ColoredSpan>
-                    </PhotographyTitle>
+                    <SectionHeader
+                        id="photography-heading"
+                        text="Photography"
+                    />
                     <PhotographySubtitle>
                         Capturing moments from travels around the world. From
                         the bustling streets of Brooklyn to the charming alleys
@@ -632,9 +519,11 @@ export default function Photography() {
                 <BehindTheLensSection>
                     <BehindTheLensContent>
                         <BehindTheLensText>
-                            <BehindTheLensTitle>
-                                Behind the Lens <ColoredSpan>.</ColoredSpan>
-                            </BehindTheLensTitle>
+                            <SectionHeader
+                                id="behind-the-lens-heading"
+                                text="Behind the Lens"
+                            />
+
                             <BehindTheLensDescription>
                                 Photography isn't just about capturing
                                 images—it's about preserving emotions, telling
@@ -669,9 +558,10 @@ export default function Photography() {
 
             <SectionTracker sectionName="Booking Section">
                 <BookingSection>
-                    <BookingTitle>
-                        Ready to Book? <ColoredSpan>.</ColoredSpan>
-                    </BookingTitle>
+                    <SectionHeader
+                        id="booking-section-heading"
+                        text="Booking & Contact"
+                    />
                     <BookingText>
                         Let's capture your special moments together. Whether
                         it's a portrait session, event photography, or a custom
@@ -703,95 +593,14 @@ export default function Photography() {
 
             <SectionTracker sectionName="Contact & Booking Process">
                 <ContactSection>
-                    <ContactTitle>
-                        Contact & Booking Process <ColoredSpan>.</ColoredSpan>
-                    </ContactTitle>
+                    <SectionHeader
+                        id="contact-section-heading"
+                        text="Contact & Booking Process"
+                    />
                     <ContactSubtitle>
                         Ready to create beautiful memories together? Here's how
                         we'll bring your vision to life.
                     </ContactSubtitle>
-
-                    {/* <ProcessGrid>
-                        <ProcessStep>
-                            <StepNumber>01</StepNumber>
-                            <StepTitle>Initial Consultation</StepTitle>
-                            <StepDescription>
-                                We'll discuss your vision, preferences, and
-                                requirements. Share your ideas, and I'll provide
-                                professional guidance on locations, timing, and
-                                styling.
-                            </StepDescription>
-                        </ProcessStep>
-
-                        <ProcessStep>
-                            <StepNumber>02</StepNumber>
-                            <StepTitle>Planning & Preparation</StepTitle>
-                            <StepDescription>
-                                I'll create a detailed plan including location
-                                scouting, equipment setup, and timeline. You'll
-                                receive a comprehensive guide to help you
-                                prepare for the session.
-                            </StepDescription>
-                        </ProcessStep>
-
-                        <ProcessStep>
-                            <StepNumber>03</StepNumber>
-                            <StepTitle>Photography Session</StepTitle>
-                            <StepDescription>
-                                The fun part! We'll capture authentic moments in
-                                a relaxed environment. I'll guide you through
-                                poses while keeping everything natural and
-                                comfortable.
-                            </StepDescription>
-                        </ProcessStep>
-
-                        <ProcessStep>
-                            <StepNumber>04</StepNumber>
-                            <StepTitle>Editing & Delivery</StepTitle>
-                            <StepDescription>
-                                Your photos will be carefully edited to
-                                perfection. You'll receive a private online
-                                gallery with high-resolution images ready for
-                                download and sharing.
-                            </StepDescription>
-                        </ProcessStep>
-                    </ProcessGrid> */}
-
-                    <FAQSection>
-                        <FAQTitle>Frequently Asked Questions</FAQTitle>
-                        <FAQGrid>
-                            <FAQItem>
-                                <FAQQuestion>
-                                    What if the weather is bad?
-                                </FAQQuestion>
-                                <FAQAnswer>
-                                    We can reschedule outdoor sessions due to
-                                    weather.
-                                </FAQAnswer>
-                            </FAQItem>
-
-                            <FAQItem>
-                                <FAQQuestion>
-                                    How long until I receive my photos?
-                                </FAQQuestion>
-                                <FAQAnswer>
-                                    You'll receive a preview within 48 hours and
-                                    your full gallery within 1-2 weeks of the
-                                    session.
-                                </FAQAnswer>
-                            </FAQItem>
-
-                            <FAQItem>
-                                <FAQQuestion>
-                                    Do you travel for sessions?
-                                </FAQQuestion>
-                                <FAQAnswer>
-                                    Yes! I'm available for destination
-                                    photography internationally.
-                                </FAQAnswer>
-                            </FAQItem>
-                        </FAQGrid>
-                    </FAQSection>
 
                     <ContactInfo>
                         <ContactMethod>

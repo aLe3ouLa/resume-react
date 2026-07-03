@@ -1,20 +1,14 @@
 import styled from 'styled-components';
+import { neoCard, cardLift, hardOutline } from '../../../styles/mixins';
 
 export const Container = styled.div`
-    background: ${({ theme }) => theme.color.white};
-    border-radius: 20px;
+    ${neoCard}
     padding: 24px;
     margin-bottom: 28px;
-    border: 3px solid ${({ theme }) => theme.color.black};
-    box-shadow: 8px 8px 0 ${({ theme }) => theme.color.black};
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 
-    &:hover {
-        transform: translate(-3px, -3px);
-        box-shadow: 11px 11px 0 ${({ theme }) => theme.color.primary};
-    }
+    ${cardLift()}
 
     &::before {
         content: '';
@@ -163,9 +157,8 @@ export const TechTag = styled.span`
     background: ${({ theme }) => theme.color.white};
     color: ${({ theme }) => theme.color.black};
     padding: 5px 10px;
-    border: 2px solid ${({ theme }) => theme.color.black};
     border-radius: 8px;
-    box-shadow: 2px 2px 0 ${({ theme }) => theme.color.black};
+    ${hardOutline(2, 2)}
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: none;

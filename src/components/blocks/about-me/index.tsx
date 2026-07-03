@@ -1,4 +1,4 @@
-import ColoredSpan from '../../ColoredSpan';
+import { SectionHeader } from '../../../design-system/components/SectionHeader/SectionHeader';
 import Wrapper from '../../fragments/wrapper';
 import {
     Section,
@@ -17,12 +17,7 @@ const AboutMe = () => {
     return (
         <Section aria-labelledby="about-me-heading">
             <Wrapper>
-                <h2
-                    id="about-me-heading"
-                    className="text-center text-[2.4rem] font-bold mb-[3rem] md:text-[3rem]"
-                >
-                    About me <ColoredSpan>.</ColoredSpan>
-                </h2>
+                <SectionHeader id="about-me-heading" text="About me" />
 
                 <TimelineContainer>
                     <TimelineItem>

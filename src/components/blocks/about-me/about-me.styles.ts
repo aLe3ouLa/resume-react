@@ -1,17 +1,8 @@
 import styled, { keyframes } from 'styled-components';
+import { fadeInUp } from '../../../styles/keyframes';
+import { hardOutline, cardLift } from '../../../styles/mixins';
 
 // Playful Animations
-const fadeInUp = keyframes`
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
 const bounce = keyframes`
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -77,9 +68,8 @@ export const TimelineContainer = styled.div`
 export const TimelineContent = styled.div`
     padding: ${({ theme }) => theme.spacing.lg};
     background: ${({ theme }) => theme.color.white};
-    border: 3px solid ${({ theme }) => theme.color.black};
+    ${hardOutline(3, 8)}
     border-radius: 24px;
-    box-shadow: 8px 8px 0 ${({ theme }) => theme.color.black};
     transition:
         transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,10 +82,7 @@ export const TimelineContent = styled.div`
     justify-content: center;
     font-family: 'Comfortaa', sans-serif;
 
-    &:hover {
-        transform: translate(-3px, -3px);
-        box-shadow: 11px 11px 0 ${({ theme }) => theme.color.secondary};
-    }
+    ${cardLift(({ theme }: { theme: any }) => theme.color.secondary)}
 `;
 
 export const TimelineIcon = styled.div`
@@ -248,8 +235,7 @@ export const SkillTag = styled.span`
     animation-fill-mode: both;
     position: relative;
     overflow: hidden;
-    box-shadow: 3px 3px 0 ${({ theme }) => theme.color.black};
-    border: 3px solid ${({ theme }) => theme.color.black};
+    ${hardOutline(3, 3)}
 
     &:nth-child(1) {
         animation-delay: 0.1s;

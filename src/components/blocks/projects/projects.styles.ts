@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SectionContainer = styled.section`
     padding: 60px 0;
@@ -8,38 +8,6 @@ export const SectionContainer = styled.section`
         padding: 40px 0;
     }
 `;
-
-export const SectionTitle = styled.h2`
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 4rem;
-    font-weight: 700;
-    color: #191919;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 3rem;
-        margin-bottom: 40px;
-    }
-`;
-
-export const SectionSubtitle = styled.p`
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1.8rem;
-    color: ${({ theme }) => theme.color.textLight};
-    font-weight: 400;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        font-size: 1.6rem;
-        margin-bottom: 30px;
-        padding: 0 20px;
-    }
-`;
-
 
 export const LinkedInButton = styled.a`
     display: flex;
@@ -57,7 +25,10 @@ export const LinkedInButton = styled.a`
     border-radius: 12px;
     border: 3px solid ${({ theme }) => theme.color.black};
     box-shadow: 5px 5px 0 ${({ theme }) => theme.color.black};
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.3s ease;
     margin: 30px auto 0 auto;
     width: fit-content;
 
