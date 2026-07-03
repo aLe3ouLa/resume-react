@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import Logo from '../../fragments/icons/logo';
 
 const navLinkClass =
-    'inline-block no-underline font-bold tracking-[0.3px] text-text ' +
-    'text-[1.5rem] py-[0.5rem] px-[1.1rem] ' +
-    'sm:text-[1.8rem] sm:py-[0.6rem] sm:px-[1.4rem] ' +
+    'inline-block font-bold text-text ' +
+    'text-[1.8rem] py-[0.6rem] px-[1.4rem] ' +
     'rounded-full border-2 border-transparent ' +
     'transition-all duration-200 ' +
     'hover:text-black hover:bg-tertiary hover:border-black hover:shadow-[3px_3px_0_#1A1A1A] hover:-translate-x-px hover:-translate-y-px ' +
