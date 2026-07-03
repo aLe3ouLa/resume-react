@@ -409,61 +409,6 @@ const ContactSubtitle = styled.p`
     animation: ${fadeInUp} 1s ease-out 0.4s both;
 `;
 
-const ProcessGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 80px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 40px;
-
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
-    }
-`;
-
-const ProcessStep = styled.div`
-    background: white;
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-    animation: ${fadeInUp} 1s ease-out;
-
-    &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        border-color: ${({ theme }) => theme.color.primary}30;
-    }
-`;
-
-const StepNumber = styled.div`
-    font-size: 3rem;
-    font-weight: 700;
-    color: ${({ theme }) => theme.color.primary};
-    margin-bottom: 20px;
-    opacity: 0.3;
-`;
-
-const StepTitle = styled.h3`
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: ${({ theme }) => theme.color.text};
-`;
-
-const StepDescription = styled.p`
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.7;
-    line-height: 1.6;
-`;
-
 const FAQSection = styled.div`
     margin-bottom: 60px;
 `;
