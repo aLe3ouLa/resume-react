@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Header from './components/layout/header/header';
+import Header from './components/blocks/header/header';
 import Homepage from './pages/homepage';
 import Photography from './pages/photography';
 import Blog from './pages/blog';

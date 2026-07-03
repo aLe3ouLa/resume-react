@@ -2,7 +2,6 @@ import ColoredSpan from '../../ColoredSpan';
 import Wrapper from '../../fragments/wrapper';
 import {
     Section,
-    Heading,
     TimelineContainer,
     TimelineItem,
     TimelineIcon,
@@ -12,28 +11,18 @@ import {
     SkillContainer,
     GradientText,
     AnimatedParagraph,
-    FloatingStar,
-    DriftingStar,
 } from './about-me.styles';
 
 const AboutMe = () => {
     return (
         <Section aria-labelledby="about-me-heading">
-            {/* Floating Stars */}
-            <FloatingStar aria-hidden="true">⭐</FloatingStar>
-            <FloatingStar aria-hidden="true">✨</FloatingStar>
-            <FloatingStar aria-hidden="true">⭐</FloatingStar>
-            <FloatingStar aria-hidden="true">✨</FloatingStar>
-
-            {/* Drifting Stars */}
-            <DriftingStar aria-hidden="true">⭐</DriftingStar>
-            <DriftingStar aria-hidden="true">✨</DriftingStar>
-            <DriftingStar aria-hidden="true">⭐</DriftingStar>
-
             <Wrapper>
-                <Heading id="about-me-heading" as="h2">
+                <h2
+                    id="about-me-heading"
+                    className="text-center text-[2.4rem] font-bold mb-[3rem] md:text-[3rem]"
+                >
                     About me <ColoredSpan>.</ColoredSpan>
-                </Heading>
+                </h2>
 
                 <TimelineContainer>
                     <TimelineItem>

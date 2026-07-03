@@ -24,8 +24,6 @@ const bounce = keyframes`
     }
 `;
 
-
-
 const slideInLeft = keyframes`
     from {
         opacity: 0;
@@ -48,48 +46,12 @@ const sparkle = keyframes`
     }
 `;
 
-const twinkle = keyframes`
-    0%, 100% {
-        opacity: 0.3;
-        transform: scale(0.8) rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2) rotate(180deg);
-    }
-`;
-
-const drift = keyframes`
-    0% {
-        transform: translateX(-100px) translateY(0px);
-    }
-    25% {
-        transform: translateX(25vw) translateY(-20px);
-    }
-    50% {
-        transform: translateX(50vw) translateY(10px);
-    }
-    75% {
-        transform: translateX(75vw) translateY(-15px);
-    }
-    100% {
-        transform: translateX(100vw) translateY(0px);
-    }
-`;
-
 export const Section = styled.section`
     padding: ${({ theme }) => theme.spacing.xl} 0;
     background: ${({ theme }) => theme.color.cream};
     position: relative;
     overflow: hidden;
 `;
-
-export const Heading = styled.h2`
-    text-align: center;
-    margin-bottom: ${({ theme }) => theme.spacing.xl};
-    animation: ${fadeInUp} 0.8s ease-out;
-`;
-
 
 export const TimelineContainer = styled.div`
     position: relative;
@@ -118,7 +80,8 @@ export const TimelineContent = styled.div`
     border: 3px solid ${({ theme }) => theme.color.black};
     border-radius: 24px;
     box-shadow: 8px 8px 0 ${({ theme }) => theme.color.black};
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -163,15 +126,19 @@ export const TimelineItem = styled.div`
     flex-direction: column;
     height: 100%;
 
-    &:nth-child(1) { animation-delay: 0.1s; }
-    &:nth-child(2) { animation-delay: 0.2s; }
-    &:nth-child(3) { animation-delay: 0.3s; }
-    &:nth-child(4) { animation-delay: 0.4s; }
+    &:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    &:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    &:nth-child(4) {
+        animation-delay: 0.4s;
+    }
 `;
-
-
-
-
 
 export const AnimatedParagraph = styled.p`
     color: ${({ theme }) => theme.color.text};
@@ -269,7 +236,8 @@ export const SkillContainer = styled.div`
 export const SkillTag = styled.span`
     background: ${({ theme }) => theme.color.secondary};
     color: ${({ theme }) => theme.color.white};
-    padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.md};
+    padding: ${({ theme }) => theme.spacing.xs}
+        ${({ theme }) => theme.spacing.md};
     border-radius: 9999px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -309,81 +277,5 @@ export const SkillTag = styled.span`
     &:hover {
         transform: translate(-2px, -2px) rotate(-2deg);
         box-shadow: 5px 5px 0 ${({ theme }) => theme.color.black};
-    }
-`;
-
-// Floating Stars Components
-export const FloatingStar = styled.div`
-    position: absolute;
-    font-size: 1.2rem;
-    color: rgba(255, 107, 107, 0.6);
-    pointer-events: none;
-    z-index: 1;
-    animation: ${twinkle} 3s ease-in-out infinite;
-    
-    &:nth-child(1) {
-        top: 10%;
-        left: 10%;
-        animation-delay: 0s;
-        animation-duration: 4s;
-    }
-    
-    &:nth-child(2) {
-        top: 20%;
-        right: 15%;
-        animation-delay: 1s;
-        animation-duration: 3.5s;
-    }
-    
-    &:nth-child(3) {
-        top: 60%;
-        left: 5%;
-        animation-delay: 2s;
-        animation-duration: 4.5s;
-    }
-    
-    &:nth-child(4) {
-        top: 70%;
-        right: 10%;
-        animation-delay: 0.5s;
-        animation-duration: 3s;
-    }
-    
-    &:nth-child(5) {
-        top: 40%;
-        left: 20%;
-        animation-delay: 1.5s;
-        animation-duration: 4s;
-    }
-    
-    &:nth-child(6) {
-        top: 30%;
-        right: 25%;
-        animation-delay: 2.5s;
-        animation-duration: 3.5s;
-    }
-`;
-
-export const DriftingStar = styled.div`
-    position: absolute;
-    font-size: 1rem;
-    color: rgba(78, 205, 196, 0.5);
-    pointer-events: none;
-    z-index: 1;
-    animation: ${drift} 15s linear infinite;
-    
-    &:nth-child(1) {
-        top: 15%;
-        animation-delay: 0s;
-    }
-    
-    &:nth-child(2) {
-        top: 45%;
-        animation-delay: 5s;
-    }
-    
-    &:nth-child(3) {
-        top: 75%;
-        animation-delay: 10s;
     }
 `;
