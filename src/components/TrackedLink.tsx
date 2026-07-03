@@ -1,44 +1,56 @@
 import React from 'react';
-import { Link, LinkProps } from 'react-router-dom';
 import { useAnalytics } from '../hooks/useAnalytics';
-import { useLocation } from 'react-router-dom';
+import { LinkProps, useLocation } from 'react-router-dom';
+import { Link } from '../design-system/components/Link/Link';
 
 interface TrackedLinkProps extends LinkProps {
-  trackingName: string; // Name for analytics tracking
-  trackingLocation?: string; // Optional location context
+    label: string; // Link contents
+    icon?: React.ReactNode; // Optional leading icon (e.g. an emoji or icon element)
+    trackingName: string; // Name for analytics tracking
+    trackingLocation?: string; // Optional location context
 }
 
 const TrackedLink: React.FC<TrackedLinkProps> = ({
-  trackingName,
-  trackingLocation,
-  onClick,
-  to,
-  ...linkProps
+    label,
+    icon,
+    trackingName,
+    trackingLocation,
+    onClick,
+    to,
+    ...linkProps
 }) => {
-  const { trackNavigation } = useAnalytics();
-  const location = useLocation();
+    const { trackNavigation } = useAnalytics();
+    const location = useLocation();
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    // Track the navigation
-    const fromPage = location.pathname === '/' ? 'homepage' : location.pathname.slice(1);
-    const toPage = typeof to === 'string' ? (to === '/' ? 'homepage' : to.slice(1)) : 'unknown';
-    const locationContext = trackingLocation || fromPage;
-    
-    trackNavigation(`${locationContext} - ${trackingName}`, toPage);
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        // Track the navigation
+        const fromPage =
+            location.pathname === '/' ? 'homepage' : location.pathname.slice(1);
+        const toPage =
+            typeof to === 'string'
+                ? to === '/'
+                    ? 'homepage'
+                    : to.slice(1)
+                : 'unknown';
+        const locationContext = trackingLocation || fromPage;
 
-    // Call the original onClick handler if provided
-    if (onClick) {
-      onClick(event);
-    }
-  };
+        trackNavigation(`${locationContext} - ${trackingName}`, toPage);
 
-  return (
-    <Link
-      {...linkProps}
-      to={to}
-      onClick={handleClick}
-    />
-  );
+        // Call the original onClick handler if provided
+        if (onClick) {
+            onClick(event);
+        }
+    };
+
+    return (
+        <Link
+            {...linkProps}
+            to={to}
+            onClick={handleClick}
+            label={label}
+            icon={icon}
+        />
+    );
 };
 
 export default TrackedLink;

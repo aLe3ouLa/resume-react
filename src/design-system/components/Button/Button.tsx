@@ -1,41 +1,40 @@
-import { ButtonSize, ButtonVariation, StyledButton } from './Button.styles'
+import { ButtonSize, ButtonVariation, getButtonClasses } from './Button.styles';
 
 export interface ButtonProps {
     /**
      * Is this the principal call to action on the page?
      */
-    variation?: ButtonVariation
+    variation?: ButtonVariation;
     /**
      * How large should the button be?
      */
-    size?: ButtonSize
+    size?: ButtonSize;
     /**
      * Button contents
      */
-    label: string
+    label: string;
     /**
      * Optional click handler
      */
-    onClick?: () => void
+    onClick?: () => void;
 }
 
 /**
  * Button UI component
  */
-export const Button:React.FC <ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
     variation = ButtonVariation.PRIMARY,
     size = ButtonSize.md,
     label,
     ...props
 }) => {
     return (
-        <StyledButton
+        <button
             type="button"
-            variation={variation}
-            size={size}
+            className={getButtonClasses(variation, size)}
             {...props}
         >
             {label}
-        </StyledButton>
-    )
-}
+        </button>
+    );
+};
