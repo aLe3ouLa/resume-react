@@ -35,7 +35,6 @@ export default createGlobalStyle`
 
     a:hover {
         color: ${({ theme }) => theme.color.tertiary};
-        text-decoration: underline ${({ theme }) => theme.color.tertiary} wavy;
     }
 
     button {

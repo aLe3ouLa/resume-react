@@ -1,6 +1,6 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",  // make sure src is included
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -105,58 +105,6 @@ module.exports = {
       },
       backgroundImage: {
         'radial-gradient': 'radial-gradient(circle, var(--tw-gradient-stops))',
-      },
-      components: {
-        '.colored-span': {
-          '@apply bg-gradient-to-br from-primary via-secondary to-secondary bg-[length:200%_200%] bg-clip-text text-transparent font-extrabold text-[4rem] cursor-none transition-all duration-300 relative': {},
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            bottom: '-4px',
-            left: '0',
-            width: '0',
-            height: '3px',
-            background: 'linear-gradient(90deg, var(--tw-gradient-stops))',
-            backgroundImage: 'linear-gradient(90deg, #2EA84F, #E0399B)',
-            transition: 'width 0.3s ease',
-          },
-          '&:hover': {
-            backgroundPosition: '100% 0',
-            transform: 'translateY(-2px)',
-            '&::after': {
-              width: '100%',
-            },
-          },
-          '@media (max-width: 640px)': {
-            fontSize: '3rem',
-          },
-        },
-        '.colored-span-name': {
-          '@apply bg-gradient-to-br from-primary via-tertiary via-tertiary to-secondary bg-[length:400%_400%] bg-clip-text text-transparent text-[4rem] leading-[1.1] font-extrabold tracking-[-0.02em] relative animate-gradient-shift transition-all duration-300': {},
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            right: '0',
-            bottom: '0',
-            background: 'linear-gradient(135deg, rgba(46, 168, 79, 0.1) 0%, rgba(255, 206, 46, 0.1) 50%, rgba(224, 57, 155, 0.1) 100%)',
-            borderRadius: '8px',
-            zIndex: '-1',
-            opacity: '0',
-            transition: 'opacity 0.3s ease',
-          },
-          '&:hover': {
-            transform: 'scale(1.08) translateY(-2px)',
-            animationPlayState: 'paused',
-            '&::before': {
-              opacity: '1',
-            },
-          },
-          '@media (max-width: 640px)': {
-            fontSize: '3rem',
-          },
-        },
       },
     },
   },
