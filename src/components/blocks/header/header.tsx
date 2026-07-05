@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../fragments/icons/logo';
+import Logo from '../../../design-system/components/icons/logo';
 
 const navLinkClass =
     'inline-block font-bold text-text  text-[1.8rem] py-[0.6rem] px-[1.4rem] ' +

@@ -17,7 +17,7 @@ export interface LinkProps extends RouterLinkProps {
 }
 
 /**
- * Link UI component — a styled call-to-action wrapping react-router's Link.
+ * Link UI component — a  call-to-action wrapping react-router's Link.
  */
 export const Link: React.FC<LinkProps> = ({
     label,

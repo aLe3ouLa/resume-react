@@ -4,6 +4,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: { display: ['Fredoka', 'Comfortaa', 'sans-serif'] },
       colors: {
         primary: "#2EA84F",
         secondary: "#E0399B",
