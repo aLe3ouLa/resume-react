@@ -19,6 +19,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "server": "json-server --port 4000 src/data/db.json",
         "build": "react-scripts build",
         "postbuild": "react-snap",
         "eject": "react-scripts eject",
@@ -69,6 +70,7 @@
         "autoprefixer": "^10.4.21",
         "babel-plugin-named-exports-order": "0.0.2",
         "gh-pages": "^6.3.0",
+        "json-server": "^1.0.0-beta.15",
         "postcss": "^8.5.6",
         "prop-types": "^15.8.1",
         "react-snap": "^1.23.0",

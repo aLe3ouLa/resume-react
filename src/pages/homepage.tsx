@@ -4,6 +4,8 @@ import Images from '../components/fragments/images';
 import TechStack from '../components/blocks/tech-stack/tech-stack';
 import Page from '../components/fragments/page';
 import Projects from '../components/blocks/projects/projects';
+import Spotify from '../components/blocks/spotify/spotify';
+import Comments from '../components/blocks/comments/comments';
 import SectionTracker from '../components/SectionTracker';
 
 import Img1 from '../assets/2.png';
@@ -34,6 +36,12 @@ const Homepage = () => {
             </SectionTracker>
             <SectionTracker sectionName="Portfolio Images 2">
                 <Images Img1={Img4} Img2={Img5} Img3={Img6} />
+            </SectionTracker>
+            <SectionTracker sectionName="Spotify">
+                <Spotify />
+            </SectionTracker>
+            <SectionTracker sectionName="Guestbook">
+                <Comments />
             </SectionTracker>
         </Page>
     );
