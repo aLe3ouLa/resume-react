@@ -141,6 +141,7 @@ const Hero = () => (
                 width="380"
                 height="auto"
                 loading="eager"
+                className="relative z-[2] rounded-[24px] transition-[transform,box-shadow] duration-300 ease-in-out border-[3px] border-black shadow-[12px_12px_0_#E0399B] animate-[pop-float_6s_ease-in-out_infinite] hover:-translate-x-[4px] hover:-translate-y-[4px] hover:rotate-[-1deg] hover:shadow-[16px_16px_0_#2EA84F] max-tablet:w-[200px] max-tablet:mt-md max-tablet:shadow-[8px_8px_0_#E0399B]"
             />
         </Quotes>
     </Wrapper>

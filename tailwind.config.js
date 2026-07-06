@@ -4,7 +4,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: { display: ['Fredoka', 'Comfortaa', 'sans-serif'] },
+      fontFamily: {
+        display: ['Fredoka', 'Comfortaa', 'sans-serif'],
+        body: ['Comfortaa', 'sans-serif'],
+        mono: ['Fira Code', 'SF Mono', 'Menlo', 'Consolas', 'monospace'],
+      },
       colors: {
         primary: "#2EA84F",
         secondary: "#E0399B",
@@ -48,6 +52,7 @@ module.exports = {
         'rainbow': 'rainbow 1.5s ease-in-out infinite',
         'glow': 'glow 3s ease-in-out infinite',
         'morphing-bg': 'morphing-bg 8s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.8s ease-out',
       },
       keyframes: {
         'wave': {
@@ -92,6 +97,39 @@ module.exports = {
         'morphing-bg': {
           '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
           '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+        },
+        'fade-in-up': {
+          'from': { opacity: '0', transform: 'translateY(30px)' },
+          'to': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-scale': {
+          'from': { opacity: '0', transform: 'scale(0.9)' },
+          'to': { opacity: '1', transform: 'scale(1)' },
+        },
+        'slide-in-left': {
+          'from': { opacity: '0', transform: 'translateX(-50px)' },
+          'to': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'bounce-soft': {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-10px)' },
+          '60%': { transform: 'translateY(-5px)' },
+        },
+        'pop-float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        'float-soft': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-scale': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+        'shimmer': {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
       },
       backgroundSize: {

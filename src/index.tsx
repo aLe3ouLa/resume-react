@@ -2,17 +2,12 @@ import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
-import theme, { Defaults } from './styles';
-import { ThemeProvider } from 'styled-components';
 
 const container = document.getElementById('root')!;
 
 const reactRoot: React.ReactNode = (
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <Defaults />
-            <App />
-        </ThemeProvider>
+        <App />
     </React.StrictMode>
 );
 

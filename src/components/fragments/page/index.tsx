@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import React from 'react';
 
-const Page = styled.main`
-    margin-top: 10px; /* menu height */
+type PageProps = React.HTMLAttributes<HTMLElement>;
 
-    @media (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
-        margin-top: 20px; /* menu height */
-    }
-`;
+const Page = ({ className = '', children, ...props }: PageProps) => (
+    <main className={`mt-2.5 desktop:mt-5 ${className}`} {...props}>
+        {children}
+    </main>
+);
 
 export default Page;

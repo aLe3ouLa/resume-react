@@ -1,498 +1,324 @@
+import React from 'react';
 import Landscape from './landscape';
 import Wrapper from '../components/fragments/wrapper';
-import styled, { keyframes } from 'styled-components';
 import Portraits from './portraits';
 import Wildlife from './wildlife';
 import Profile from '../assets/Profile.jpeg';
 import SectionTracker from '../components/SectionTracker';
 import { SectionHeader } from '../design-system/components/SectionHeader/SectionHeader';
-import { fadeInUp } from '../styles/keyframes';
 
-// Animations
-const fadeInScale = keyframes`
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-`;
+const PhotographyHeader = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`text-center mb-[80px] py-[80px] relative overflow-hidden rounded-[20px] bg-[linear-gradient(135deg,#2EA84F08,#E0399B08,#FFCE2E08)] animate-[fade-in-up_1s_ease-out] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(45deg,transparent_30%,#2EA84F10_50%,transparent_70%)] before:bg-[length:200%_200%] before:animate-[shimmer_3s_ease-in-out_infinite] before:pointer-events-none ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const shimmer = keyframes`
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-`;
+const PhotographySubtitle = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`text-[1.2rem] text-text/80 max-w-[600px] mx-auto leading-[1.6] relative z-[1] animate-[fade-in-up_1.4s_ease-out_0.6s_both] ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
 
-const float = keyframes`
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-`;
+const SectionTitle = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h2
+        className={`text-[2.5rem] font-semibold mt-[80px] mx-0 mb-[40px] text-text text-center relative animate-[fade-in-up_1s_ease-out] after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-[4px] after:bg-gradient-to-r after:from-primary after:to-secondary after:rounded-[2px] after:animate-[pulse-scale_2s_ease-in-out_infinite] ${className}`}
+        {...props}
+    >
+        {children}
+    </h2>
+);
 
-const pulse = keyframes`
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-`;
+const SectionDescription = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`text-center text-text/70 mb-[60px] text-[1.3rem] max-w-[500px] mx-auto ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
 
-const gradientShift = keyframes`
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-`;
+const BookingSection = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`bg-[linear-gradient(135deg,#2EA84F15,#E0399B15,#FFCE2E15)] bg-[length:200%_200%] rounded-[20px] py-[60px] px-[40px] my-[80px] text-center border-2 border-[#2EA84F20] relative overflow-hidden animate-[fade-in-scale_1s_ease-out,gradient-shift_8s_ease-in-out_infinite] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-[radial-gradient(circle,#2EA84F05_0%,transparent_70%)] before:animate-[float-soft_6s_ease-in-out_infinite] before:pointer-events-none ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const PhotographyHeader = styled.div`
-    text-align: center;
-    margin-bottom: 80px;
-    padding: 80px 0;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.primary}08,
-        ${({ theme }) => theme.color.secondary}08,
-        ${({ theme }) => theme.color.tertiary}08
-    );
-    border-radius: 20px;
-    animation: ${fadeInUp} 1s ease-out;
+const BookingText = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`text-[1.2rem] text-text/80 mb-[30px] leading-[1.6] ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            45deg,
-            transparent 30%,
-            ${({ theme }) => theme.color.primary}10 50%,
-            transparent 70%
-        );
-        background-size: 200% 200%;
-        animation: ${shimmer} 3s ease-in-out infinite;
-        pointer-events: none;
-    }
-`;
+const EmailButton = ({
+    className = '',
+    children,
+    ...props
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a
+        className={`inline-block bg-primary text-white py-[18px] px-[40px] rounded-[50px] no-underline font-semibold text-[1.1rem] transition-all duration-300 ease-out shadow-[0_4px_15px_#2EA84F30] hover:bg-hoverPrimary hover:-translate-y-[2px] hover:shadow-[0_6px_20px_#2EA84F40] ${className}`}
+        {...props}
+    >
+        {children}
+    </a>
+);
 
-const PhotographySubtitle = styled.p`
-    font-size: 1.2rem;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.8;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    position: relative;
-    z-index: 1;
-    animation: ${fadeInUp} 1.4s ease-out 0.6s both;
-`;
+const BehindTheLensSection = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`my-[100px] py-[80px] bg-[linear-gradient(135deg,#2EA84F05,#E0399B05)] rounded-[30px] relative overflow-hidden animate-[fade-in-up_1s_ease-out] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_20%_80%,#2EA84F08_0%,transparent_50%),radial-gradient(circle_at_80%_20%,#E0399B08_0%,transparent_50%)] before:pointer-events-none ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const SectionTitle = styled.h2`
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin: 80px 0 40px 0;
-    color: ${({ theme }) => theme.color.text};
-    text-align: center;
-    position: relative;
-    animation: ${fadeInUp} 1s ease-out;
+const BehindTheLensContent = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`grid grid-cols-1 gap-[60px] items-center max-w-[1200px] mx-auto px-[40px] relative z-[1] tablet:grid-cols-2 tablet:gap-[80px] ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(
-            90deg,
-            ${({ theme }) => theme.color.primary},
-            ${({ theme }) => theme.color.secondary}
-        );
-        border-radius: 2px;
-        animation: ${pulse} 2s ease-in-out infinite;
-    }
-`;
+const BehindTheLensText = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div className={`text-left ${className}`} {...props}>
+        {children}
+    </div>
+);
 
-const SectionDescription = styled.p`
-    text-align: center;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.7;
-    margin-bottom: 60px;
-    font-size: 1.3rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-`;
+const BehindTheLensDescription = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`text-[1.2rem] text-text/80 leading-[1.7] mb-[25px] animate-[fade-in-up_1s_ease-out_0.4s_both] ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
 
-const BookingSection = styled.div`
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.primary}15,
-        ${({ theme }) => theme.color.secondary}15,
-        ${({ theme }) => theme.color.tertiary}15
-    );
-    background-size: 200% 200%;
-    border-radius: 20px;
-    padding: 60px 40px;
-    margin: 80px 0;
-    text-align: center;
-    border: 2px solid ${({ theme }) => theme.color.primary}20;
-    position: relative;
-    overflow: hidden;
-    animation:
-        ${fadeInScale} 1s ease-out,
-        ${gradientShift} 8s ease-in-out infinite;
+const BehindTheLensPhilosophy = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`text-[1.1rem] text-text/70 leading-[1.6] mb-[30px] italic animate-[fade-in-up_1s_ease-out_0.6s_both] ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-            circle,
-            ${({ theme }) => theme.color.primary}05 0%,
-            transparent 70%
-        );
-        animation: ${float} 6s ease-in-out infinite;
-        pointer-events: none;
-    }
-`;
+const BehindTheLensSignature = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`text-[1.1rem] text-primary font-semibold text-right animate-[fade-in-up_1s_ease-out_0.8s_both] ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const BookingText = styled.p`
-    font-size: 1.2rem;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.8;
-    margin-bottom: 30px;
-    line-height: 1.6;
-`;
+const BehindTheLensImage = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`relative animate-[fade-in-scale_1s_ease-out_0.5s_both] before:content-[''] before:absolute before:top-[-10px] before:left-[-10px] before:right-[-10px] before:bottom-[-10px] before:bg-[linear-gradient(45deg,#2EA84F20,#E0399B20)] before:rounded-[30px] before:-z-[1] before:animate-[pulse-scale_3s_ease-in-out_infinite] ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const EmailButton = styled.a`
-    display: inline-block;
-    background: ${({ theme }) => theme.color.primary};
-    color: white;
-    padding: 18px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px ${({ theme }) => theme.color.primary}30;
+const Image = ({
+    className = '',
+    alt = '',
+    ...props
+}: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <img
+        alt={alt}
+        className={`w-full h-[400px] object-cover rounded-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-transform duration-300 ease-out hover:scale-[1.02] ${className}`}
+        {...props}
+    />
+);
 
-    &:hover {
-        background: ${({ theme }) => theme.color.hoverPrimary};
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px ${({ theme }) => theme.color.primary}40;
-    }
-`;
+const ContactSection = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`my-[100px] py-[80px] bg-[linear-gradient(135deg,#FFCE2E08,#2EA84F08)] rounded-[30px] relative overflow-hidden animate-[fade-in-up_1s_ease-out] ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const BehindTheLensSection = styled.div`
-    margin: 100px 0;
-    padding: 80px 0;
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.primary}05,
-        ${({ theme }) => theme.color.secondary}05
-    );
-    border-radius: 30px;
-    position: relative;
-    overflow: hidden;
-    animation: ${fadeInUp} 1s ease-out;
+const ContactSubtitle = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`text-[1.2rem] text-text/80 text-center max-w-[600px] mx-auto mb-[60px] leading-[1.6] animate-[fade-in-up_1s_ease-out_0.4s_both] ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background:
-            radial-gradient(
-                circle at 20% 80%,
-                ${({ theme }) => theme.color.primary}08 0%,
-                transparent 50%
-            ),
-            radial-gradient(
-                circle at 80% 20%,
-                ${({ theme }) => theme.color.secondary}08 0%,
-                transparent 50%
-            );
-        pointer-events: none;
-    }
-`;
+const ContactInfo = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`flex flex-col gap-[20px] max-w-[800px] mx-auto px-[40px] tablet:flex-row tablet:gap-[30px] ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const BehindTheLensContent = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 1;
+const ContactMethod = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`group relative flex-1 overflow-hidden text-center rounded-[20px] py-[40px] px-[30px] border-2 border-[#2EA84F20] bg-[linear-gradient(135deg,#2EA84F10,#E0399B10)] transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] animate-[fade-in-up_1s_ease-out] hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_#2EA84F20] hover:border-[#2EA84F40] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[4px] before:bg-gradient-to-r before:from-primary before:to-secondary before:bg-[length:200%_100%] before:animate-[gradient-shift_3s_ease-in-out_infinite] before:opacity-0 before:transition-opacity before:duration-300 before:ease-out hover:before:opacity-100 ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-    }
-`;
+const ContactIcon = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`text-[3rem] mb-[20px] [filter:drop-shadow(0_4px_8px_rgba(0,0,0,0.1))] transition-transform duration-300 ease-out group-hover:scale-110 ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const BehindTheLensText = styled.div`
-    text-align: left;
-`;
+const ContactDetails = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div className={`text-center ${className}`} {...props}>
+        {children}
+    </div>
+);
 
-const BehindTheLensDescription = styled.p`
-    font-size: 1.2rem;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.8;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    animation: ${fadeInUp} 1s ease-out 0.4s both;
-`;
+const ContactLabel = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`text-[0.9rem] text-text/70 mb-[8px] uppercase tracking-[1.5px] font-medium ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const BehindTheLensPhilosophy = styled.p`
-    font-size: 1.1rem;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.7;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    font-style: italic;
-    animation: ${fadeInUp} 1s ease-out 0.6s both;
-`;
+const ContactValue = ({
+    className = '',
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`text-[1.2rem] font-bold text-text bg-[linear-gradient(135deg,#1A1A1A,#2EA84F)] bg-[length:200%_200%] [-webkit-background-clip:text] [background-clip:text] [-webkit-text-fill-color:transparent] animate-[gradient-shift_4s_ease-in-out_infinite] ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
-const BehindTheLensSignature = styled.div`
-    font-size: 1.1rem;
-    color: ${({ theme }) => theme.color.primary};
-    font-weight: 600;
-    text-align: right;
-    animation: ${fadeInUp} 1s ease-out 0.8s both;
-`;
-
-const BehindTheLensImage = styled.div`
-    position: relative;
-    animation: ${fadeInScale} 1s ease-out 0.5s both;
-
-    img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        transition: transform 0.3s ease;
-
-        &:hover {
-            transform: scale(1.02);
-        }
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        right: -10px;
-        bottom: -10px;
-        background: linear-gradient(
-            45deg,
-            ${({ theme }) => theme.color.primary}20,
-            ${({ theme }) => theme.color.secondary}20
-        );
-        border-radius: 30px;
-        z-index: -1;
-        animation: ${pulse} 3s ease-in-out infinite;
-    }
-`;
-
-const ContactSection = styled.div`
-    margin: 100px 0;
-    padding: 80px 0;
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.tertiary}08,
-        ${({ theme }) => theme.color.primary}08
-    );
-    border-radius: 30px;
-    position: relative;
-    overflow: hidden;
-    animation: ${fadeInUp} 1s ease-out;
-`;
-
-const ContactSubtitle = styled.p`
-    font-size: 1.2rem;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.8;
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 60px auto;
-    line-height: 1.6;
-    animation: ${fadeInUp} 1s ease-out 0.4s both;
-`;
-
-const ContactInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 40px;
-
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        flex-direction: row;
-        gap: 30px;
-    }
-`;
-
-const ContactMethod = styled.div`
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.primary}10,
-        ${({ theme }) => theme.color.secondary}10
-    );
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    border: 2px solid ${({ theme }) => theme.color.primary}20;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    animation: ${fadeInUp} 1s ease-out;
-    flex: 1;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(
-            90deg,
-            ${({ theme }) => theme.color.primary},
-            ${({ theme }) => theme.color.secondary}
-        );
-        background-size: 200% 100%;
-        animation: ${gradientShift} 3s ease-in-out infinite;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    &:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px ${({ theme }) => theme.color.primary}20;
-        border-color: ${({ theme }) => theme.color.primary}40;
-
-        &::before {
-            opacity: 1;
-        }
-    }
-`;
-
-const ContactIcon = styled.div`
-    font-size: 3rem;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-
-    ${ContactMethod}:hover & {
-        transform: scale(1.1);
-    }
-`;
-
-const ContactDetails = styled.div`
-    text-align: center;
-`;
-
-const ContactLabel = styled.div`
-    font-size: 0.9rem;
-    color: ${({ theme }) => theme.color.text};
-    opacity: 0.7;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 500;
-`;
-
-const ContactValue = styled.div`
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: ${({ theme }) => theme.color.text};
-    background: linear-gradient(
-        135deg,
-        ${({ theme }) => theme.color.text},
-        ${({ theme }) => theme.color.primary}
-    );
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: ${gradientShift} 4s ease-in-out infinite;
-`;
-
-// Floating decorative elements
-const FloatingElement = styled.div`
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(
-        45deg,
-        ${({ theme }) => theme.color.primary}30,
-        ${({ theme }) => theme.color.secondary}30
-    );
-    border-radius: 50%;
-    animation: ${float} 4s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-
-    &:nth-child(1) {
-        top: 20%;
-        left: 10%;
-        animation-delay: 0s;
-    }
-
-    &:nth-child(2) {
-        top: 60%;
-        right: 15%;
-        animation-delay: 1s;
-    }
-
-    &:nth-child(3) {
-        bottom: 30%;
-        left: 20%;
-        animation-delay: 2s;
-    }
-`;
-
-const Image = styled.img``;
+// Floating decorative elements. The styled version positioned each instance via
+// :nth-child; positions/delays are now passed per instance through className.
+const FloatingElement = ({
+    className = '',
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`absolute w-[20px] h-[20px] bg-[linear-gradient(45deg,#2EA84F30,#E0399B30)] rounded-full animate-[float-soft_4s_ease-in-out_infinite] pointer-events-none z-0 ${className}`}
+        {...props}
+    />
+);
 
 export default function Photography() {
     return (
         <Wrapper>
             <SectionTracker sectionName="Photography Header">
                 <PhotographyHeader>
-                    <FloatingElement />
-                    <FloatingElement />
-                    <FloatingElement />
+                    <FloatingElement className="top-[20%] left-[10%]" />
+                    <FloatingElement className="top-[60%] right-[15%] [animation-delay:1s]" />
+                    <FloatingElement className="bottom-[30%] left-[20%] [animation-delay:2s]" />
                     <SectionHeader
                         id="photography-heading"
                         text="Photography"

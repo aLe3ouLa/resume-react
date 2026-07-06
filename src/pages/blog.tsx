@@ -1,4 +1,3 @@
-import 'highlight.js/styles/github-dark.css';
 import { useEffect } from 'react';
 import Page from '../components/fragments/page';
 import Wrapper from '../components/fragments/wrapper';
@@ -63,45 +62,49 @@ const Blog = () => {
                         {BLOG_POSTS.map((post, i) => {
                             const meta = metaFor(post.language);
                             return (
-                            <Card
-                                key={post.slug}
-                                to={`/blog/${post.slug}`}
-                                $accent={CARD_COLORS[i % CARD_COLORS.length]}
-                            >
-                                <LangBadge className="lang-badge">
-                                    {meta.label}
-                                </LangBadge>
-                                <CodeWindow>
-                                    <WindowBar>
-                                        <span />
-                                        <span />
-                                        <span />
-                                        <FileName>{meta.file}</FileName>
-                                    </WindowBar>
-                                    <Snippet>
-                                        <code
-                                            dangerouslySetInnerHTML={{
-                                                __html: highlightCode(
-                                                    post.snippet,
-                                                    post.language,
-                                                ),
-                                            }}
-                                        />
-                                    </Snippet>
-                                </CodeWindow>
-                                <CardBody>
-                                    <CardTitle>{post.title}</CardTitle>
-                                    <CardExcerpt>{post.excerpt}</CardExcerpt>
-                                    <TagRow>
-                                        {post.tags.map((t) => (
-                                            <Tag key={t}>{t}</Tag>
-                                        ))}
-                                    </TagRow>
-                                    <DateText dateTime={post.date}>
-                                        {formatDate(post.date)}
-                                    </DateText>
-                                </CardBody>
-                            </Card>
+                                <Card
+                                    key={post.slug}
+                                    to={`/blog/${post.slug}`}
+                                    $accent={
+                                        CARD_COLORS[i % CARD_COLORS.length]
+                                    }
+                                >
+                                    <LangBadge className="lang-badge">
+                                        {meta.label}
+                                    </LangBadge>
+                                    <CodeWindow>
+                                        <WindowBar>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <FileName>{meta.file}</FileName>
+                                        </WindowBar>
+                                        <Snippet>
+                                            <code
+                                                dangerouslySetInnerHTML={{
+                                                    __html: highlightCode(
+                                                        post.snippet,
+                                                        post.language
+                                                    ),
+                                                }}
+                                            />
+                                        </Snippet>
+                                    </CodeWindow>
+                                    <CardBody>
+                                        <CardTitle>{post.title}</CardTitle>
+                                        <CardExcerpt>
+                                            {post.excerpt}
+                                        </CardExcerpt>
+                                        <TagRow>
+                                            {post.tags.map((t) => (
+                                                <Tag key={t}>{t}</Tag>
+                                            ))}
+                                        </TagRow>
+                                        <DateText dateTime={post.date}>
+                                            {formatDate(post.date)}
+                                        </DateText>
+                                    </CardBody>
+                                </Card>
                             );
                         })}
                     </Grid>
