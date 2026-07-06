@@ -12,6 +12,17 @@ export interface BlogPost {
 // Newest first — this order drives the /blog grid and prerendering.
 export const BLOG_POSTS: BlogPost[] = [
     {
+        slug: 'array-flat',
+        title: 'Array.flat()',
+        date: '2026-07-06',
+        tags: ['JavaScript', 'Arrays'],
+        excerpt: 'Flatten nested arrays with one call — no reduce gymnastics.',
+        language: 'javascript',
+        snippet: `const nested = [1, [2, [3, [4]]]];
+nested.flat();       
+// [1, 2, [3, [4]]]`,
+    },
+    {
         slug: 'html-details-summary',
         title: '<details> and <summary>',
         date: '2026-07-03',
