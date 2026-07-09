@@ -12,6 +12,17 @@ export interface BlogPost {
 // Newest first — this order drives the /blog grid and prerendering.
 export const BLOG_POSTS: BlogPost[] = [
     {
+        slug: 'a11y-form-error',
+        title: 'Accessible Form Errors',
+        date: '2026-07-09',
+        tags: ['Accessibility', 'HTML', 'ARIA'],
+        excerpt:
+            'Make validation errors understandable for everyone. Not just visible users.',
+        language: 'html',
+        snippet: `<input aria-invalid="true" aria-describedby="email-error" />
+<p id="email-error"> Enter a valid email address.</p>`,
+    },
+    {
         slug: 'array-flat',
         title: 'Array.flat()',
         date: '2026-07-06',
