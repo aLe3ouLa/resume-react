@@ -27,7 +27,7 @@
         "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
     },
     "reactSnap": {
-        "port": 45679,
+        "port": 45675,
         "include": [
             "/",
             "/photography",

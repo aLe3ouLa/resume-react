@@ -10,6 +10,11 @@ if (redirect) {
     window.history.replaceState(null, '', redirect);
 }
 
+if (window.location.pathname.endsWith('.md')) {
+    const blogRoute = window.location.pathname.replace(/\.md$/, '');
+    window.history.replaceState(null, '', blogRoute);
+}
+
 const reactRoot: React.ReactNode = (
     <React.StrictMode>
         <App />
