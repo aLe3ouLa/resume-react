@@ -5,6 +5,11 @@ import App from './App';
 
 const container = document.getElementById('root')!;
 
+const redirect = new URLSearchParams(window.location.search).get('redirect');
+if (redirect) {
+    window.history.replaceState(null, '', redirect);
+}
+
 const reactRoot: React.ReactNode = (
     <React.StrictMode>
         <App />
