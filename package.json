@@ -33,7 +33,8 @@
             "/blog",
             "/blog/optional-chaining",
             "/blog/array-flat",
-            "/blog/css-clamp"
+            "/blog/css-clamp",
+            "/blog/a11y-form-error"
         ]
     },
     "eslintConfig": {

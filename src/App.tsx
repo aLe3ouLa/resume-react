@@ -4,6 +4,7 @@ import Homepage from './pages/homepage';
 import Photography from './pages/photography';
 import Blog from './pages/blog';
 import BlogPost from './pages/blog-post';
+import NotFoundPage from './pages/not-found';
 import Analytics from './components/Analytics';
 
 let router = createBrowserRouter([
@@ -54,6 +55,19 @@ let router = createBrowserRouter([
                     <Analytics />
                     <Header />
                     <BlogPost />
+                    <Header />
+                </>
+            );
+        },
+    },
+    {
+        path: '*',
+        Component() {
+            return (
+                <>
+                    <Analytics />
+                    <Header />
+                    <NotFoundPage />
                     <Header />
                 </>
             );
