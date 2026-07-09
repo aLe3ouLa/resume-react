@@ -20,7 +20,9 @@ export const BLOG_POSTS: BlogPost[] = [
             'Make validation errors understandable for everyone. Not just visible users.',
         language: 'html',
         snippet: `<input aria-invalid="true" aria-describedby="email-error" />
-<p id="email-error"> Enter a valid email address.</p>`,
+<p id="email-error"> 
+    Enter a valid email address.
+</p>`,
     },
     {
         slug: 'array-flat',
@@ -59,18 +61,6 @@ nested.flat();
 filter:
   drop-shadow(1px 1px 0 navy);`,
     },
-    //     {
-    //         slug: 'array-flat',
-    //         title: 'Array.flat()',
-    //         date: '2026-06-18',
-    //         tags: ['JavaScript', 'Arrays'],
-    //         excerpt: 'Flatten nested arrays with one call — no reduce gymnastics.',
-    //         language: 'javascript',
-    //         snippet: `const nested = [1, [2, [3, [4]]]];
-
-    // nested.flat();       // [1, 2, [3, [4]]]
-    // nested.flat(Infinity); // [1, 2, 3, 4]`,
-    //     },
     {
         slug: 'optional-chaining',
         title: 'Optional Chaining',
