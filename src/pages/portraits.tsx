@@ -6,8 +6,6 @@ import Portraits5 from '../assets/portraits/5_portraits.jpg';
 import Portraits6 from '../assets/portraits/6_portraits.jpg';
 import Portraits7 from '../assets/portraits/7_portraits.jpg';
 
-import styled from 'styled-components';
-
 const imagesArray = [
     {
         alt: 'Portraits',
@@ -53,116 +51,35 @@ const imagesArray = [
     },
 ];
 
-const Gallery = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-    
-    @media (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
-    }
-`;
-
-const PhotoCard = styled.div`
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    
-    &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        
-        img {
-            transform: scale(1.05);
-        }
-        
-        .photo-overlay {
-            opacity: 1;
-        }
-    }
-`;
-
-const PhotoImage = styled.img`
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        height: 350px;
-    }
-`;
-
-const PhotoOverlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(0, 0, 0, 0.7) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-`;
-
-const PhotoCaption = styled.h3`
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 8px 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-`;
-
-const PhotoLocation = styled.p`
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
-    margin: 0 0 4px 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-`;
-
-const PhotoDate = styled.p`
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-    margin: 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-`;
-
 export default function Portraits() {
     return (
-        <Gallery>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[30px] mt-[40px] tablet:grid-cols-2 tablet:gap-[40px] desktop:grid-cols-3 desktop:gap-[50px]">
             {imagesArray.map((image, index) => (
-                <PhotoCard key={index}>
-                    <PhotoImage
+                <div
+                    key={index}
+                    className="group relative overflow-hidden rounded-[12px] shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-all duration-300 ease-out cursor-pointer hover:-translate-y-[8px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]"
+                >
+                    <img
                         src={image.src}
                         alt={image.alt}
                         aria-describedby={image.caption}
                         loading="lazy"
                         decoding="async"
+                        className="w-full h-[300px] object-cover transition-transform duration-300 ease-out group-hover:scale-105 tablet:h-[350px]"
                     />
-                    <PhotoOverlay className="photo-overlay">
-                        <PhotoCaption>{image.caption}</PhotoCaption>
-                        <PhotoLocation>{image.location}</PhotoLocation>
-                        <PhotoDate>{image.date}</PhotoDate>
-                    </PhotoOverlay>
-                </PhotoCard>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-0 transition-opacity duration-300 ease-out flex flex-col justify-end p-[20px] group-hover:opacity-100">
+                        <h3 className="text-white text-[1.1rem] font-semibold m-0 mb-[8px] [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
+                            {image.caption}
+                        </h3>
+                        <p className="text-white/90 text-[0.9rem] m-0 mb-[4px] [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+                            {image.location}
+                        </p>
+                        <p className="text-white/70 text-[0.8rem] m-0 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+                            {image.date}
+                        </p>
+                    </div>
+                </div>
             ))}
-        </Gallery>
+        </div>
     );
 }

@@ -1,22 +1,14 @@
-import styled from 'styled-components';
+import React from 'react';
 
-const Wrapper = styled.div`
-    margin: 0 auto;
-    padding-left: ${({ theme }) => theme.spacing.xs};
-    padding-right: ${({ theme }) => theme.spacing.xs};
-    max-width: ${({ theme }) => theme.spacing.siteWidth};
-    @media (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        padding-left: ${({ theme }) => theme.spacing.sm};
-        padding-right: ${({ theme }) => theme.spacing.sm};
-    }
-    @media (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
-        padding-left: ${({ theme }) => theme.spacing.md};
-        padding-right: ${({ theme }) => theme.spacing.md};
-    }
-    @media (min-width: ${({ theme }) => theme.breakpoint.xlarge}) {
-        padding-left: ${({ theme }) => theme.spacing.lg};
-        padding-right: ${({ theme }) => theme.spacing.lg};
-    }
-`;
+type WrapperProps = React.HTMLAttributes<HTMLDivElement>;
+
+const Wrapper = ({ className = '', children, ...props }: WrapperProps) => (
+    <div
+        className={`mx-auto max-w-siteWidth px-xs tablet:px-sm desktop:px-md xlarge:px-lg ${className}`}
+        {...props}
+    >
+        {children}
+    </div>
+);
 
 export default Wrapper;

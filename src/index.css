@@ -132,8 +132,31 @@
   }
 }
 
+/* Global element styles (migrated from styled-components Reset + Typography defaults) */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-size: 1em;
+  overflow-x: hidden;
   font-family: 'Comfortaa', 'Fredoka', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -142,4 +165,102 @@ body {
   background-color: #FFF9E6;
   background-image: var(--grain-texture);
   background-attachment: fixed;
+}
+
+body.locked {
+  overflow-y: hidden;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+span,
+strong {
+  color: #1A1A1A;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+h5 {
+  font-size: 1.6rem;
+}
+h6 {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+p,
+textarea,
+a,
+span {
+  font-size: 1.4rem;
+}
+
+input {
+  font-size: 1.4rem;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #2EA84F;
+  font-weight: 900;
+}
+a:hover {
+  color: #FFCE2E;
+}
+
+blockquote {
+  margin: 0;
+  font-size: 1.6rem;
+}
+cite {
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  h1 { font-size: 3.4rem; }
+  h2 { font-size: 3.4rem; }
+  h3 { font-size: 2.6rem; }
+  h4 { font-size: 2.2rem; }
+  h5 { font-size: 2rem; }
+  h6 { font-size: 1.9rem; }
+  blockquote { font-size: 1.8rem; }
+  cite { font-size: 1.2rem; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 3.8rem; }
+  h2 { font-size: 3.8rem; }
+  h3 { font-size: 3rem; }
+  h4 { font-size: 2.5rem; }
+  p, textarea, a, span { font-size: 1.6rem; }
+  blockquote { font-size: 2rem; }
+  cite { font-size: 1.4rem; }
 }
