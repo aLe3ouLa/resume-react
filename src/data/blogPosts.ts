@@ -12,6 +12,19 @@ export interface BlogPost {
 // Newest first — this order drives the /blog grid and prerendering.
 export const BLOG_POSTS: BlogPost[] = [
     {
+        slug: 'a11y-focus-management',
+        title: 'Accessible Focus Management',
+        date: '2026-07-10',
+        tags: ['Accessibility', 'HTML', 'ARIA'],
+        excerpt:
+            'Managing focus correctly keeps keyboard and screen reader users oriented.',
+        language: 'html',
+        snippet: `<dialog open>
+  <h2>Confirm deletion</h2>
+  <button>Delete</button>
+</dialog>`,
+    },
+    {
         slug: 'a11y-form-error',
         title: 'Accessible Form Errors',
         date: '2026-07-09',
@@ -20,7 +33,7 @@ export const BLOG_POSTS: BlogPost[] = [
             'Make validation errors understandable for everyone. Not just visible users.',
         language: 'html',
         snippet: `<input aria-invalid="true" aria-describedby="email-error" />
-<p id="email-error"> 
+<p id="email-error">
     Enter a valid email address.
 </p>`,
     },
@@ -32,7 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
         excerpt: 'Flatten nested arrays with one call — no reduce gymnastics.',
         language: 'javascript',
         snippet: `const nested = [1, [2, [3, [4]]]];
-nested.flat();       
+nested.flat();
 // [1, 2, [3, [4]]]`,
     },
     {
