@@ -1,25 +1,42 @@
 import Wrapper from '../../fragments/wrapper';
-import { JobCard } from '../../../stories/molecules/JobCard/JobCard';
-import { SectionContainer, ColoredSpan } from './projects.styles';
+import { JobCard } from '../../fragments/JobCard/JobCard';
+import { SectionContainer, LinkedInButton } from './projects.styles';
 
 import JOBS from './utils';
+import { SectionHeader } from '../../../design-system/components/SectionHeader/SectionHeader';
+import { SectionSubtitle } from '../../../design-system/components/SectionSubtitle/SectionSubtitle';
 
 const TechStack = () => {
+    const displayedJobs = JOBS.slice(0, 3);
+
     return (
         <SectionContainer>
             <Wrapper>
-                <h2>
-                    Work Experience <ColoredSpan>.</ColoredSpan>
-                </h2>
+                <SectionHeader
+                    id="work-experience-heading"
+                    text="Work Experience"
+                />
 
-                {JOBS.map((job) => (
+                <SectionSubtitle className="mb-[30px] tablet:mb-[40px] leading-[1.6] px-md tablet:px-0">
+                    A journey through my professional experience, showcasing
+                    growth, innovation, and impact across various industries and
+                    technologies.
+                </SectionSubtitle>
+
+                {displayedJobs.map((job) => (
                     <JobCard key={job.id} {...job} />
                 ))}
+
+                <LinkedInButton
+                    href="https://www.linkedin.com/in/alexandra-barka/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Full Experience on LinkedIn ↗
+                </LinkedInButton>
             </Wrapper>
         </SectionContainer>
     );
 };
 
 export default TechStack;
-
-

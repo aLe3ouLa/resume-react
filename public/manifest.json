@@ -1,6 +1,7 @@
 {
-    "short_name": "Resume",
-    "name": "Create React App Sample",
+    "short_name": "Alexandra Barka",
+    "name": "Alexandra Barka - Frontend Engineer & Photographer",
+    "description": "Frontend Engineer with experience at Mews, Spotify, and Warner Bros. Discovery. Specializing in React, TypeScript, and UX design. Professional photographer offering booking services.",
     "icons": [
         {
             "src": "favicon.ico",
@@ -8,8 +9,11 @@
             "type": "image/x-icon"
         }
     ],
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#000000",
-    "background_color": "#ffffff"
+    "background_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "categories": ["portfolio", "photography", "technology"],
+    "lang": "en"
 }

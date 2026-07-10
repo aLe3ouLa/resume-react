@@ -1,82 +1,124 @@
+import { SectionHeader } from '../../../design-system/components/SectionHeader/SectionHeader';
 import Wrapper from '../../fragments/wrapper';
-import { ColoredSpan, TwoColumn, Paragraph } from './about-me.styles';
+import {
+    Section,
+    TimelineContainer,
+    TimelineItem,
+    TimelineIcon,
+    TimelineContent,
+    CompanyLink,
+    SkillTag,
+    SkillContainer,
+    GradientText,
+    AnimatedParagraph,
+} from './about-me.styles';
 
 const AboutMe = () => {
     return (
-        <section>
+        <Section aria-labelledby="about-me-heading">
             <Wrapper>
-                <h2>
-                    About me <ColoredSpan>.</ColoredSpan>
-                </h2>
+                <SectionHeader id="about-me-heading" text="About me" />
 
-                <TwoColumn>
-                    <Paragraph>
-                        Hello
-                        <span role="img" aria-label="Hello, world">
-                            👋
-                        </span>{' '}
-                        I'm Alexandra, a Web Engineer with a computer science
-                        background and a working knowledge of UX design
-                        principles. Born in Greece and live in the Netherlands.
-                        I contrubuted to{' '}
-                        <a
-                            href="www.mews.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Mews
-                        </a>
-                        ,{' '}
-                        <a
-                            href="www.spotify.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Spotify
-                        </a>
-                        ,{' '}
-                        <a
-                            href="www.warnermedia.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Warnermedia
-                        </a>{' '}
-                        and{' '}
-                        <a
-                            href="www.messagebird.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Messagebird
-                        </a>
-                        .
-                    </Paragraph>
-                    <Paragraph>
-                        I enjoy creating simple, clean and creative user
-                        interfaces using the latest web technologies. I
-                        specialize in JavaScript and have professional
-                        experience working with modern frameworks.
-                    </Paragraph>
-                    <Paragraph>
-                        I like content creation and as a hobby I write some
-                        articles about various web programming topics on
-                        <a
-                            href="https://dev.to/ale3oula"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Dev.to
-                        </a>
-                    </Paragraph>
-                    <Paragraph>
-                        When not working, I'm likely watching sci-fi movies in
-                        cinema, dancing 💃, re-reading Neil Gaiman books,
-                        travelling the world or taking strolls with my camera!
-                    </Paragraph>
-                </TwoColumn>
+                <TimelineContainer>
+                    <TimelineItem>
+                        <TimelineIcon>👋</TimelineIcon>
+                        <TimelineContent>
+                            <AnimatedParagraph>
+                                I'm a{' '}
+                                <GradientText>Frontend Engineer</GradientText>{' '}
+                                with a computer science background and working
+                                knowledge of UX design and web accessibility
+                                principles.
+                            </AnimatedParagraph>
+                            <AnimatedParagraph>
+                                I contributed to{' '}
+                                <CompanyLink
+                                    href="https://www.mews.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer external"
+                                >
+                                    Mews
+                                </CompanyLink>
+                                ,{' '}
+                                <CompanyLink
+                                    href="https://www.spotify.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer external"
+                                >
+                                    Spotify
+                                </CompanyLink>{' '}
+                                and{' '}
+                                <CompanyLink
+                                    href="https://www.wbd.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer external"
+                                >
+                                    Warner Bros. Discovery
+                                </CompanyLink>
+                                .
+                            </AnimatedParagraph>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineIcon>💻</TimelineIcon>
+                        <TimelineContent>
+                            <AnimatedParagraph>
+                                I enjoy creating simple, clean and creative user
+                                interfaces using the latest web technologies.
+                            </AnimatedParagraph>
+                            <SkillContainer>
+                                <SkillTag>JavaScript</SkillTag>
+                                <SkillTag>React</SkillTag>
+                                <SkillTag>TypeScript</SkillTag>
+                                <SkillTag>CSS</SkillTag>
+                                <SkillTag>UX Design</SkillTag>
+                                <SkillTag>Web Accessibility</SkillTag>
+                            </SkillContainer>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineIcon>✍️</TimelineIcon>
+                        <TimelineContent>
+                            <AnimatedParagraph>
+                                I like content creation and as a hobby I write
+                                articles about various web programming topics on{' '}
+                                <CompanyLink
+                                    href="https://dev.to/ale3oula"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Dev.to
+                                </CompanyLink>{' '}
+                                and I share my photos on{' '}
+                                <CompanyLink
+                                    href="https://www.instagram.com/ale3oula/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    @ale3oula
+                                </CompanyLink>
+                                .
+                            </AnimatedParagraph>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineIcon>🎬</TimelineIcon>
+                        <TimelineContent>
+                            <AnimatedParagraph>
+                                Off the clock? You'll catch me at the cinema
+                                watching sci-fi flicks, dancing salsa 💃,
+                                exploring new places with my camera, or simply
+                                being creative. Life's too short not to enjoy
+                                the journey!
+                            </AnimatedParagraph>
+                        </TimelineContent>
+                    </TimelineItem>
+                </TimelineContainer>
             </Wrapper>
-        </section>
+        </Section>
     );
 };
 

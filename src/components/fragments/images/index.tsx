@@ -1,18 +1,4 @@
-import styled from 'styled-components';
 import Wrapper from '../wrapper';
-
-const ImageContainer = styled.div`
-    padding: 50px;
-    margin-top: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}) {
-        padding: 0;
-        flex-direction: column;
-    }
-`;
 
 const Images = ({
     Img1,
@@ -25,7 +11,7 @@ const Images = ({
 }) => {
     return (
         <Wrapper>
-            <ImageContainer>
+            <div className="flex items-center justify-evenly mt-3 gap-4 tablet:flex-col tablet:gap-6    ">
                 <img
                     src={Img1}
                     alt="Alexandra profile"
@@ -44,7 +30,7 @@ const Images = ({
                     width="350"
                     height="350"
                 />
-            </ImageContainer>
+            </div>
         </Wrapper>
     );
 };
