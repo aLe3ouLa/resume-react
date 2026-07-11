@@ -1,6 +1,6 @@
 The scenario is simple: You got a modal that looks perfect but traps keyboard users in the wrong place? Oh well, your focus management might be missing.
 
-> > When a dialog opens, moving focus is not optional.
+> When a dialog opens, moving focus is not optional.
 
 A mouse user can click inside the modal. A keyboard user needs the browser to know where they are.
 

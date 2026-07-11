@@ -24,7 +24,7 @@
         "postbuild": "react-snap",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
+        "deploy": "gh-pages -b master -r git@github.com:aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
     },
     "reactSnap": {
         "port": 45675,
