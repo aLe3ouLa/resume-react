@@ -24,7 +24,7 @@
         "postbuild": "react-snap",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -b master -r git@github.com:aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
+        "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
     },
     "reactSnap": {
         "port": 45675,
@@ -36,7 +36,9 @@
             "/blog/array-flat",
             "/blog/css-clamp",
             "/blog/a11y-form-error",
-            "/blog/a11y-focus-management"
+            "/blog/a11y-focus-management",
+            "/blog/css-specificity",
+            "/blog/tree-shaking"
         ]
     },
     "eslintConfig": {

@@ -12,6 +12,30 @@ export interface BlogPost {
 // Newest first — this order drives the /blog grid and prerendering.
 export const BLOG_POSTS: BlogPost[] = [
     {
+    slug: 'tree-shaking',
+    title: 'Tree Shaking',
+    date: '2026-07-16',
+    tags: ['JavaScript', 'Bundling', 'Performance'],
+    excerpt:
+        'Learn how bundlers remove unused JavaScript and why side effects and module formats matter.',
+    language: 'javascript',
+    snippet: `import { formatDate } from './utils';
+// Unused exports are removed
+// from the production bundle.`,
+},
+    {
+        slug: 'css-specificity',
+        title: 'CSS Specificity',
+        date: '2026-07-15',
+        tags: ['CSS', 'Selectors', 'Cascade'],
+        excerpt:
+            'Learn how browsers compare selectors and decide which CSS declaration wins.',
+        language: 'css',
+        snippet: `#checkout .button:hover { /* 1-2-0 */ }
+.card button            { /* 0-1-1 */ }
+button                   { /* 0-0-1 */ }`,
+    },
+    {
         slug: 'a11y-focus-management',
         title: 'Accessible Focus Management',
         date: '2026-07-10',
