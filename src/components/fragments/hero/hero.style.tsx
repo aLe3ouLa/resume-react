@@ -14,7 +14,7 @@ export const Wave = ({ className = '', children, ...props }: HTMLAttributes<HTML
 // Small intro line that sits above the big headline for a bold size contrast.
 export const Eyebrow = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
     <span
-        className={`flex items-center gap-xs text-[1.8rem] font-semibold text-textLight font-body tracking-[0.5px] mb-sm max-tablet:text-[1.5rem] max-tablet:justify-center ${className}`}
+        className={`flex items-center gap-xs text-[1.3rem] uppercase font-semibold text-textLight font-body tracking-[0.5px] mb-sm max-tablet:text-[1.5rem] max-tablet:justify-center ${className}`}
         {...props}
     >
         {children}
@@ -23,7 +23,7 @@ export const Eyebrow = ({ className = '', children, ...props }: HTMLAttributes<H
 
 export const FloatingElement = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
     <div
-        className={`absolute w-[76px] h-[76px] pointer-events-none z-[1] drop-shadow-[6px_6px_0_#1A1A1A] [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&:nth-of-type(1)]:top-[6%] [&:nth-of-type(1)]:left-[5%] [&:nth-of-type(1)]:animate-[float_5s_ease-in-out_0s_infinite] [&:nth-of-type(2)]:top-[14%] [&:nth-of-type(2)]:right-[4%] [&:nth-of-type(2)]:animate-[float_5s_ease-in-out_1.2s_infinite] [&:nth-of-type(3)]:bottom-[12%] [&:nth-of-type(3)]:left-[4%] [&:nth-of-type(3)]:animate-[float_5s_ease-in-out_2.1s_infinite] max-tablet:w-[50px] max-tablet:h-[50px] max-tablet:drop-shadow-[4px_4px_0_#1A1A1A] max-tablet:[&:nth-of-type(1)]:top-[3%] max-tablet:[&:nth-of-type(1)]:left-[3%] max-tablet:[&:nth-of-type(2)]:top-[6%] max-tablet:[&:nth-of-type(2)]:right-[4%] max-tablet:[&:nth-of-type(3)]:bottom-[6%] max-tablet:[&:nth-of-type(3)]:left-[5%] ${className}`}
+        className={`absolute w-[70px] h-[70px] pointer-events-none z-[1] drop-shadow-[6px_6px_0_#1A1A1A] [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&:nth-of-type(1)]:top-[6%] [&:nth-of-type(1)]:left-[-5%] [&:nth-of-type(1)]:animate-[float_5s_ease-in-out_0s_infinite] [&:nth-of-type(2)]:top-[14%] [&:nth-of-type(2)]:right-[4%] [&:nth-of-type(2)]:animate-[float_5s_ease-in-out_1.2s_infinite] [&:nth-of-type(3)]:bottom-[12%] [&:nth-of-type(3)]:left-[4%] [&:nth-of-type(3)]:animate-[float_5s_ease-in-out_2.1s_infinite] max-tablet:w-[50px] max-tablet:h-[50px] max-tablet:drop-shadow-[4px_4px_0_#1A1A1A] max-tablet:[&:nth-of-type(1)]:top-[3%] max-tablet:[&:nth-of-type(1)]:left-[3%] max-tablet:[&:nth-of-type(2)]:top-[6%] max-tablet:[&:nth-of-type(2)]:right-[4%] max-tablet:[&:nth-of-type(3)]:bottom-[6%] max-tablet:[&:nth-of-type(3)]:left-[5%] ${className}`}
         {...props}
     >
         {children}
@@ -32,7 +32,7 @@ export const FloatingElement = ({ className = '', children, ...props }: HTMLAttr
 
 export const Sparkle = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
     <span
-        className={`absolute w-[34px] h-[34px] pointer-events-none z-[1] drop-shadow-[4px_4px_0_#1A1A1A] [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&:nth-of-type(1)]:top-[10%] [&:nth-of-type(1)]:right-[12%] [&:nth-of-type(1)]:animate-[float_6s_ease-in-out_0.4s_infinite] [&:nth-of-type(2)]:top-[52%] [&:nth-of-type(2)]:left-[52%] [&:nth-of-type(2)]:animate-[float_6s_ease-in-out_1.1s_infinite] [&:nth-of-type(3)]:bottom-[24%] [&:nth-of-type(3)]:right-[6%] [&:nth-of-type(3)]:animate-[float_6s_ease-in-out_1.9s_infinite] [&:nth-of-type(4)]:bottom-[6%] [&:nth-of-type(4)]:right-[32%] [&:nth-of-type(4)]:animate-[float_6s_ease-in-out_2.6s_infinite] max-tablet:w-[26px] max-tablet:h-[26px] max-tablet:drop-shadow-[3px_3px_0_#1A1A1A] max-tablet:[&:nth-of-type(1)]:top-[7%] max-tablet:[&:nth-of-type(1)]:right-[8%] max-tablet:[&:nth-of-type(2)]:top-[42%] max-tablet:[&:nth-of-type(2)]:left-[2%] max-tablet:[&:nth-of-type(3)]:bottom-[28%] max-tablet:[&:nth-of-type(3)]:right-[4%] max-tablet:[&:nth-of-type(4)]:bottom-[4%] max-tablet:[&:nth-of-type(4)]:right-[30%] ${className}`}
+        className={`absolute w-[28px] h-[28px] pointer-events-none z-[1] drop-shadow-[4px_4px_0_#1A1A1A] [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&:nth-of-type(1)]:top-[4%] [&:nth-of-type(1)]:right-[12%] [&:nth-of-type(1)]:animate-[float_6s_ease-in-out_0.4s_infinite] [&:nth-of-type(2)]:top-[62%] [&:nth-of-type(2)]:left-[42%] [&:nth-of-type(2)]:animate-[float_6s_ease-in-out_1.1s_infinite] [&:nth-of-type(3)]:bottom-[24%] [&:nth-of-type(3)]:right-[6%] [&:nth-of-type(3)]:animate-[float_6s_ease-in-out_1.9s_infinite] [&:nth-of-type(4)]:bottom-[6%] [&:nth-of-type(4)]:right-[32%] [&:nth-of-type(4)]:animate-[float_6s_ease-in-out_2.6s_infinite] max-tablet:w-[26px] max-tablet:h-[26px] max-tablet:drop-shadow-[3px_3px_0_#1A1A1A] max-tablet:[&:nth-of-type(1)]:top-[7%] max-tablet:[&:nth-of-type(1)]:right-[8%] max-tablet:[&:nth-of-type(2)]:top-[42%] max-tablet:[&:nth-of-type(2)]:left-[2%] max-tablet:[&:nth-of-type(3)]:bottom-[28%] max-tablet:[&:nth-of-type(3)]:right-[4%] max-tablet:[&:nth-of-type(4)]:bottom-[4%] max-tablet:[&:nth-of-type(4)]:right-[30%] ${className}`}
         {...props}
     >
         {children}
@@ -86,7 +86,7 @@ export const NameQuote = ({ className = '', children, ...props }: HTMLAttributes
 
 export const Text = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
     <span
-        className={`inline-block [font-size:inherit] leading-none font-extrabold font-display tracking-[-0.02em] text-white bg-secondary border-[3px] border-black rounded-[14px] px-sm py-0 shadow-[5px_5px_0_#1A1A1A] rotate-[-2deg] transition-[transform,box-shadow] duration-300 ease-in-out hover:rotate-[-2deg] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[7px_7px_0_#1A1A1A] ${className}`}
+        className={`inline-block [font-size:inherit] leading-none font-extrabold font-display tracking-[-0.02em] text-white bg-secondary border-[3px] border-black rounded-[14px] px-sm py-sm shadow-[5px_5px_0_#1A1A1A] rotate-[-2deg] transition-[transform,box-shadow] duration-300 ease-in-out hover:rotate-[-2deg] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[7px_7px_0_#1A1A1A] ${className}`}
         {...props}
     >
         {children}

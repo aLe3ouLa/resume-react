@@ -10,7 +10,7 @@ export const Quote = ({
   variant = 'primary',
 }: QuoteProps) => {
   // Base classes for all quote variants
-  const baseClasses = "max-w-[75%] mb-lg text-[1.4rem] leading-[1.5] font-medium text-textLight relative";
+  const baseClasses = "max-w-[75%] mb-lg text-[1.8rem] leading-[1.58] font-medium text-textLight relative";
   
   // Variant-specific classes
   const variantClasses = {

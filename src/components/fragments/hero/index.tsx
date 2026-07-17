@@ -25,7 +25,6 @@ const handleOpenPDF = () => {
 
 const STROKE = '#1A1A1A';
 
-// Outlined geometric shapes — fill via prop, black outline, sized by their wrapper.
 const PacMan = ({ color }: { color: string }) => (
     <svg viewBox="0 0 100 100">
         <path
@@ -78,30 +77,20 @@ const Circle = ({ color }: { color: string }) => (
 const Hero = () => (
     <Wrapper>
         <Quotes>
-            {/* Floating outlined shapes */}
+             <Sparkle aria-hidden="true">
+                <Triangle color="#F6A6D6" />
+            </Sparkle>
             <FloatingElement aria-hidden="true">
                 <PacMan color="#2EA84F" />
             </FloatingElement>
-            <FloatingElement aria-hidden="true">
-                <Triangle color="#E0399B" />
-            </FloatingElement>
-            <FloatingElement aria-hidden="true">
-                <SemiCircle color="#FFCE2E" />
-            </FloatingElement>
-
-            {/* Smaller scattered shapes */}
-            <Sparkle aria-hidden="true">
-                <Circle color="#8C9EEC" />
-            </Sparkle>
-            <Sparkle aria-hidden="true">
-                <Triangle color="#F6A6D6" />
-            </Sparkle>
-            <Sparkle aria-hidden="true">
-                <SemiCircle color="#E0399B" />
-            </Sparkle>
+        
             <Sparkle aria-hidden="true">
                 <Circle color="#FFCE2E" />
             </Sparkle>
+           
+            <FloatingElement aria-hidden="true">
+                <SemiCircle color="#FFCE2E" />
+            </FloatingElement>
 
             <Title>
                 <Eyebrow>
@@ -111,11 +100,10 @@ const Hero = () => (
                     </Wave>
                 </Eyebrow>
                 <NameQuote>
-                    Meet the <Text>Developer</Text>
+                    Meet the <Text>Engineer</Text>
                 </NameQuote>
                 <Quote variant="primary">
-                    Building the web, one pixel at a time &amp; freezing moments
-                    in time
+                    Making the web a little faster, a little more accessible, and a lot more enjoyable. Senior Software Engineer passionate about React, TypeScript, modern web technologies, and solving problems that make a real difference.
                 </Quote>
                 <ButtonContainer>
                     <TrackedButton
@@ -140,7 +128,7 @@ const Hero = () => (
                 alt="Alexandra Barka - Frontend Engineer and Photographer professional headshot"
                 width="380"
                 height="auto"
-                loading="eager"
+                loading="lazy"
                 className="relative z-[2] rounded-[24px] transition-[transform,box-shadow] duration-300 ease-in-out border-[3px] border-black shadow-[12px_12px_0_#E0399B] animate-[pop-float_6s_ease-in-out_infinite] hover:-translate-x-[4px] hover:-translate-y-[4px] hover:rotate-[-1deg] hover:shadow-[16px_16px_0_#2EA84F] max-tablet:w-[200px] max-tablet:mt-md max-tablet:shadow-[8px_8px_0_#E0399B]"
             />
         </Quotes>
