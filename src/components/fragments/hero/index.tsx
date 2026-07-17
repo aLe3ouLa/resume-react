@@ -16,7 +16,6 @@ import {
     Sparkle,
     ButtonContainer,
 } from './hero.style';
-import TrackedLink from '../../TrackedLink';
 import { Quote } from '../../Quote';
 
 const handleOpenPDF = () => {
@@ -112,14 +111,6 @@ const Hero = () => (
                         label="Download Resume"
                         trackingName="Download Resume"
                         trackingLocation="hero"
-                    />
-                    <TrackedLink
-                        to="/photography"
-                        label="Photography"
-                        icon={<span aria-hidden="true">📸</span>}
-                        trackingName="Capture Memories"
-                        trackingLocation="hero"
-                        className="inline-flex items-center justify-center gap-xs px-md py-sm bg-secondary text-white no-underline rounded-[12px] text-[1.1rem] font-retro font-bold uppercase tracking-[0.5px] transition-all duration-200 relative overflow-hidden border-[3px] border-black shadow-[5px_5px_0_#1A1A1A] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[7px_7px_0_#1A1A1A] hover:text-white hover:no-underline active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0_#1A1A1A] tablet:text-[1rem] tablet:px-sm tablet:py-xs"
                     />
                 </ButtonContainer>
             </Title>

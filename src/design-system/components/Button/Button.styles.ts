@@ -23,7 +23,7 @@ export const buttonSizeClasses: Record<ButtonSize, string> = {
 
 export const buttonBaseClasses = [
     'flex items-center justify-center relative overflow-hidden',
-    'text-[1.3rem] font-black uppercase',
+    'text-[1.3rem] font-white uppercase',
     'border-[3px] border-black rounded-[12px] shadow-[5px_5px_0_#1A1A1A]',
     'transition-all duration-200 cursor-pointer',
 ].join(' ');
