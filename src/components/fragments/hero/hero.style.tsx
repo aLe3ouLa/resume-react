@@ -1,94 +1,92 @@
-import { Link } from 'react-router-dom';
-import type { LinkProps } from 'react-router-dom';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ImgHTMLAttributes } from 'react';
 
-export const Wave = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`animate-wave inline-block text-[2rem] ml-xxs cursor-pointer hover:animate-wiggle max-tablet:text-[1.6rem] ${className}`}
+export const HeroLayout = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <section
+        className={`grid grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] items-center gap-xl min-h-[620px] py-xl mb-xl max-tablet:grid-cols-1 max-tablet:min-h-0 max-tablet:gap-xl max-tablet:py-lg ${className}`}
         {...props}
     >
         {children}
-    </span>
+    </section>
 );
 
-// Small intro line that sits above the big headline for a bold size contrast.
-export const Eyebrow = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`flex items-center gap-xs text-[1.3rem] uppercase font-semibold text-textLight font-body tracking-[0.5px] mb-sm max-tablet:text-[1.5rem] max-tablet:justify-center ${className}`}
-        {...props}
-    >
-        {children}
-    </span>
-);
-
-export const FloatingElement = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`absolute w-[70px] h-[70px] pointer-events-none z-[1] drop-shadow-[6px_6px_0_#1A1A1A] [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&:nth-of-type(1)]:top-[6%] [&:nth-of-type(1)]:left-[-5%] [&:nth-of-type(1)]:animate-[float_5s_ease-in-out_0s_infinite] [&:nth-of-type(2)]:bottom-[1%] [&:nth-of-type(2)]:right-[-7%] [&:nth-of-type(2)]:animate-[float_5s_ease-in-out_1.2s_infinite] max-tablet:w-[50px] max-tablet:h-[50px] max-tablet:drop-shadow-[4px_4px_0_#1A1A1A] max-tablet:[&:nth-of-type(1)]:top-[3%] max-tablet:[&:nth-of-type(1)]:left-[3%] max-tablet:[&:nth-of-type(2)]:top-[6%] max-tablet:[&:nth-of-type(2)]:right-[4%]  ${className}`}
-        {...props}
-    >
+export const HeroContent = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`relative z-[2] max-w-[780px] max-tablet:text-center ${className}`} {...props}>
         {children}
     </div>
 );
 
-export const Sparkle = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`absolute w-[28px] h-[28px] pointer-events-none z-[1] drop-shadow-[4px_4px_0_#1A1A1A] [&_svg]:block [&_svg]:w-full [&_svg]:h-full [&:nth-of-type(1)]:top-[4%] [&:nth-of-type(1)]:right-[12%] [&:nth-of-type(1)]:animate-[float_6s_ease-in-out_0.4s_infinite] [&:nth-of-type(2)]:top-[62%] [&:nth-of-type(2)]:left-[42%] [&:nth-of-type(2)]:animate-[float_6s_ease-in-out_1.1s_infinite] max-tablet:w-[26px] max-tablet:h-[26px] max-tablet:drop-shadow-[3px_3px_0_#1A1A1A] max-tablet:[&:nth-of-type(1)]:top-[7%] max-tablet:[&:nth-of-type(1)]:right-[8%] max-tablet:[&:nth-of-type(2)]:top-[42%] max-tablet:[&:nth-of-type(2)]:left-[2%] ${className}`}
+export const Eyebrow = ({ className = '', children, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`flex items-center gap-sm mb-md text-[1.2rem] font-bold font-body uppercase tracking-[1.2px] text-textLight max-tablet:justify-center [&>span]:block [&>span]:size-[12px] [&>span]:rounded-full [&>span]:bg-primary [&>span]:border-2 [&>span]:border-black ${className}`}
         {...props}
     >
         {children}
-    </span>
+    </p>
 );
 
-export const Title = ({ className = '', children, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
+export const HeroTitle = ({ className = '', children, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-        className={`flex items-start flex-col font-bold font-display leading-[1.1] tracking-[-0.01em] mb-0 ml-0 text-text cursor-none gap-md relative z-[2] max-tablet:items-center max-tablet:text-center ${className}`}
+        className={`flex flex-col items-start text-[7.4rem] leading-[0.95] font-extrabold font-display uppercase tracking-[-0.035em] text-text mb-lg max-desktop:text-[6.2rem] max-tablet:items-center max-tablet:text-[4.2rem] ${className}`}
         {...props}
     >
         {children}
     </h1>
 );
 
+export const TitleAccent = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
+    <span
+        className={`inline-block mt-md px-lg py-sm bg-secondary !text-white text-[0.68em] leading-[1.08] text-center border-[3px] border-black rounded-[14px] shadow-[6px_6px_0_#1A1A1A] rotate-[-1deg] max-tablet:max-w-[340px] max-tablet:text-[0.72em] ${className}`}
+        {...props}
+    >
+        {children}
+    </span>
+);
+
+export const Summary = ({ className = '', children, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
+    <p
+        className={`max-w-[650px] mb-lg text-[1.7rem] leading-[1.65] font-medium text-textLight max-tablet:mx-auto max-tablet:text-[1.5rem] ${className}`}
+        {...props}
+    >
+        {children}
+    </p>
+);
+
 export const ButtonContainer = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`flex gap-md max-tablet:justify-center ${className}`} {...props}>
+        {children}
+    </div>
+);
+
+export const PortraitStage = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
     <div
-        className={`flex gap-md flex-wrap mt-sm max-tablet:justify-center max-tablet:gap-sm ${className}`}
+        className={`hero-portrait-stage relative flex justify-center p-lg max-tablet:mx-auto max-tablet:w-full max-tablet:max-w-[360px] ${className}`}
         {...props}
     >
         {children}
     </div>
 );
 
-export const PhotographyCTA = ({ className = '', children, ...props }: LinkProps) => (
-    <Link
-        className={`inline-flex items-center justify-center gap-xs py-sm px-lg bg-secondary text-white no-underline rounded-full text-[1.2rem] font-semibold font-display uppercase tracking-[0.5px] transition-all duration-200 ease-in-out relative overflow-hidden shadow-[0_4px_0_#C42585,0_6px_12px_rgba(255,107,107,0.25)] border-[3px] border-secondary before:content-[''] before:absolute before:inset-0 before:rounded-full before:opacity-10 before:[background-image:var(--grain-texture)] hover:translate-y-[2px] hover:bg-hoverSecondary hover:border-hoverSecondary hover:shadow-[0_2px_0_#C42585,0_4px_8px_rgba(255,107,107,0.3)] hover:text-white hover:no-underline active:translate-y-[4px] active:shadow-[0_0_0_#C42585,0_2px_4px_rgba(255,107,107,0.2)] max-tablet:text-[1.1rem] max-tablet:py-xs max-tablet:px-md ${className}`}
-        {...props}
-    >
-        {children}
-    </Link>
-);
-
-export const Quotes = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+export const PortraitCard = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
     <div
-        className={`relative overflow-visible py-xl flex items-center justify-between min-h-[600px] mt-sm mb-xl max-tablet:py-lg max-tablet:flex-col max-tablet:text-center max-tablet:min-h-0 ${className}`}
+        className={`hero-portrait-card relative z-[2] w-full max-w-[380px] border-[3px] border-black rounded-[24px] bg-tertiary p-sm shadow-[14px_14px_0_#1A1A1A] transition-transform duration-300 ease-out ${className}`}
         {...props}
     >
         {children}
     </div>
 );
 
-export const NameQuote = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`mb-lg text-[6.4rem] leading-none flex flex-wrap items-center gap-sm font-extrabold font-display tracking-[-0.02em] uppercase max-tablet:text-[3.4rem] max-tablet:justify-center ${className}`}
+export const Portrait = ({ className = '', ...props }: ImgHTMLAttributes<HTMLImageElement>) => (
+    <img
+        className={`block w-full aspect-[4/5] object-cover rounded-[14px] border-[3px] border-black ${className}`}
         {...props}
-    >
-        {children}
-    </span>
+    />
 );
 
-export const Text = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`inline-block [font-size:inherit] leading-none font-extrabold font-display tracking-[-0.02em] text-white bg-secondary border-[3px] border-black rounded-[14px] px-sm py-sm shadow-[5px_5px_0_#1A1A1A] rotate-[-2deg] transition-[transform,box-shadow] duration-300 ease-in-out hover:rotate-[-2deg] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[7px_7px_0_#1A1A1A] ${className}`}
+export const PortraitLabel = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div
+        className={`absolute -left-[24px] bottom-[28px] flex items-center gap-xs bg-white border-[3px] border-black rounded-[10px] px-sm py-xs shadow-[5px_5px_0_#E0399B] text-[1.2rem] font-bold uppercase tracking-[0.5px] max-tablet:left-[-10px] ${className}`}
         {...props}
     >
         {children}
-    </span>
+    </div>
 );

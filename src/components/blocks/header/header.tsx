@@ -11,7 +11,11 @@ const navLinkClass =
 const Header = () => {
     return (
         <header className="flex items-center justify-between sticky top-0 z-50 bg-[#fff9e6] bg-opacity-[0.82] backdrop-blur-md transition-colors duration-300 ease-in-out p-4 md:p-6">
-            <Link to={'/'} style={{ textDecoration: 'none' }}>
+            <Link
+                to="/"
+                aria-label="Alexandra Barka, home"
+                style={{ textDecoration: 'none' }}
+            >
                 <Logo />
             </Link>
 

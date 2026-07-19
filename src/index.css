@@ -171,6 +171,241 @@ body.locked {
   overflow-y: hidden;
 }
 
+/* A single, restrained 3D interaction for the hero. */
+.hero-portrait-stage::before,
+.hero-portrait-stage::after {
+  content: '';
+  position: absolute;
+  border: 3px solid #1A1A1A;
+  border-radius: 22px;
+}
+
+.hero-portrait-stage::before {
+  inset: 6px 38px 42px 0;
+  background: #8C9EEC;
+  transform: rotate(-6deg);
+}
+
+.hero-portrait-stage::after {
+  width: 78px;
+  height: 78px;
+  right: 2px;
+  top: 0;
+  border-radius: 50%;
+  background: #2EA84F;
+  box-shadow: 5px 5px 0 #1A1A1A;
+}
+
+.hero-portrait-card {
+  transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
+  transform-style: preserve-3d;
+}
+
+.hero-portrait-card:hover {
+  transform: perspective(900px) rotateY(0) rotateX(0) translate(-3px, -3px);
+}
+
+.hero-portrait-card img,
+.hero-portrait-card > div {
+  transform: translateZ(18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait-card {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* About-me evidence viewfinder */
+.about-frame-corners span {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-color: #FFFFFF;
+}
+
+.about-frame-corners span:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-top: 3px solid #FFFFFF;
+  border-left: 3px solid #FFFFFF;
+}
+
+.about-frame-corners span:nth-child(2) {
+  top: 0;
+  right: 0;
+  border-top: 3px solid #FFFFFF;
+  border-right: 3px solid #FFFFFF;
+}
+
+.about-frame-corners span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #FFFFFF;
+  border-left: 3px solid #FFFFFF;
+}
+
+.about-frame-corners span:nth-child(4) {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
+}
+
+.about-evidence-board .about-companies {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 3px solid #1A1A1A;
+}
+
+.about-evidence-board .about-companies > span,
+.about-evidence-board > div:first-child span {
+  font-family: 'Fira Code', 'SF Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.about-evidence-board .about-companies > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Solid-color workbench pegboard, with no gradient effects. */
+.tech-pegboard {
+  background-color: #FFCE2E;
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='2' fill='%231A1A1A' fill-opacity='.22'/%3E%3C/svg%3E");
+}
+
+.tech-pegboard .bench-rail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 14px;
+  border: 3px solid #1A1A1A;
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 0 #1A1A1A;
+}
+
+.tech-pegboard .bench-rail span {
+  font-family: 'Fira Code', 'SF Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.tech-tool.tool-secondary .tech-tool-icon { background: #E0399B; color: #FFFFFF; }
+.tech-tool.tool-tertiary .tech-tool-icon { background: #FFCE2E; }
+.tech-tool.tool-primary .tech-tool-icon { background: #2EA84F; color: #FFFFFF; }
+.tech-tool.tool-accent .tech-tool-icon { background: #8C9EEC; }
+.tech-tool.tool-coral .tech-tool-icon { background: #F6A6D6; }
+
+/* Career archive */
+.career-timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 54px;
+  width: 3px;
+  background: #1A1A1A;
+}
+
+.career-entry:nth-child(2) .career-stamp { background: #2EA84F; }
+.career-entry:nth-child(3) .career-stamp { background: #8C9EEC; }
+
+.career-entry > div:last-child {
+  padding: 28px;
+  border: 3px solid #1A1A1A;
+  border-radius: 18px;
+  background: #FFFFFF;
+  box-shadow: 7px 7px 0 #1A1A1A;
+}
+
+.career-entry .job-period {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #5C5C5C;
+  font-family: 'Fira Code', 'SF Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.career-entry .job-period span {
+  padding: 3px 8px;
+  border: 2px solid #1A1A1A;
+  border-radius: 999px;
+  background: #FFCE2E;
+  color: #1A1A1A;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.career-details summary {
+  position: relative;
+  padding: 14px 34px 0 0;
+  color: #1A1A1A;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.career-details summary::-webkit-details-marker { display: none; }
+
+.career-details summary::after {
+  content: '+';
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 2px solid #1A1A1A;
+  border-radius: 50%;
+  background: #F6A6D6;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.career-details[open] summary::after { content: '−'; }
+
+@media (max-width: 640px) {
+  .about-evidence-board .about-companies {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about-evidence-board .about-companies > div {
+    justify-content: flex-start;
+  }
+
+  .tech-pegboard .bench-rail span:last-child {
+    text-align: right;
+  }
+
+  .career-timeline::before {
+    left: 26px;
+  }
+
+  .career-entry > div:last-child {
+    padding: 18px;
+  }
+}
+
 li {
   list-style-type: none;
 }

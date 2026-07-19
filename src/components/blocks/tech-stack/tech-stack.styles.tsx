@@ -1,143 +1,33 @@
-import React from 'react';
+import type { HTMLAttributes } from 'react';
 
-// neoCard mixin (inlined): white bg, radius 20px, hardOutline(3,8), transition transform+box-shadow.
-const neoCard =
-    'bg-white rounded-[20px] border-[3px] border-black shadow-[8px_8px_0_#1A1A1A] transition-[transform,box-shadow] duration-300 ease-out';
-
-export const SectionContainer = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLElement>) => (
-    <section
-        className={`relative overflow-hidden py-xxl bg-[linear-gradient(135deg,#f8f9fa_0%,#ffffff_100%)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-[linear-gradient(90deg,#2EA84F_0%,#E0399B_50%,#FFCE2E_100%)] ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </section>
+export const SectionContainer = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <section className={`relative py-xxl bg-cream ${className}`} {...props}>{children}</section>
 );
 
-export const HeaderSection = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`text-center mb-xxl animate-fade-in-up ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </div>
+export const BenchHeader = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`max-w-[1160px] mx-auto mb-xl grid grid-cols-[0.9fr_1.1fr] items-end gap-xl border-b-[3px] border-black pb-lg max-tablet:grid-cols-1 max-tablet:gap-md [&>div>span]:block [&>div>span]:mb-sm [&>div>span]:text-[1.1rem] [&>div>span]:font-mono [&>div>span]:font-bold [&>div>span]:uppercase [&>div>span]:tracking-[1.4px] [&>div>span]:text-primary [&_h2]:text-[6.4rem] [&_h2]:leading-[0.9] [&_h2]:font-display [&_h2]:font-extrabold [&_h2]:uppercase [&_h2]:tracking-[-0.04em] [&_h2>span]:!text-secondary [&_h2>span]:text-[inherit] max-tablet:[&_h2]:text-[4.6rem] ${className}`} {...props}>{children}</div>
 );
 
-export const ContentGrid = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`grid grid-cols-2 gap-xxl max-w-[1200px] mx-auto px-xl max-tablet:grid-cols-1 max-tablet:gap-xl max-tablet:px-lg ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </div>
+export const BenchIntro = ({ className = '', children, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
+    <p className={`max-w-[620px] justify-self-end text-[2rem] leading-[1.5] font-display font-medium text-textLight max-tablet:justify-self-start max-tablet:text-[1.7rem] ${className}`} {...props}>{children}</p>
 );
 
-// Shared neo-brutalist card used for both the intro copy and the skills grid.
-// `$hoverAccent` picks the hover shadow colour; `$delay` staggers the entrance.
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-    $hoverAccent?: 'primary' | 'secondary';
-    $delay?: string;
-}
-
-export const Card = ({
-    className = '',
-    children,
-    $hoverAccent = 'primary',
-    $delay = '0.2s',
-    style,
-    ...props
-}: CardProps) => {
-    const hoverShadow =
-        $hoverAccent === 'secondary'
-            ? 'hover:shadow-[11px_11px_0_#E0399B]'
-            : 'hover:shadow-[11px_11px_0_#2EA84F]';
-
-    return (
-        <div
-            className={`${neoCard} p-xl hover:-translate-x-[3px] hover:-translate-y-[3px] ${hoverShadow} ${className}`.trim()}
-            style={{
-                animation: `fade-in-up 0.8s ease-out ${$delay} both`,
-                ...style,
-            }}
-            {...props}
-        >
-            {children}
-        </div>
-    );
-};
-
-export const Paragraph = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p
-        className={`text-text mb-lg text-[2rem] leading-[1.6] [&>span]:text-[2rem] [&>span]:block [&>span]:mb-md [&>a]:text-[2rem] [&>a]:text-primary [&>a]:no-underline [&>a]:font-semibold [&>a]:border-b-2 [&>a]:border-transparent [&>a]:transition-all [&>a]:duration-300 [&>a]:ease-out [&>a]:mx-xs [&>a:hover]:border-primary [&>a:hover]:text-hoverPrimary ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </p>
+export const Pegboard = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`tech-pegboard max-w-[1160px] mx-auto p-lg border-[3px] border-black rounded-[24px] bg-tertiary shadow-[12px_12px_0_#1A1A1A] max-tablet:p-md max-tablet:shadow-[7px_7px_0_#1A1A1A] ${className}`} {...props}>{children}</div>
 );
 
-export const StyledLink = ({
-    className = '',
-    children,
-    ...props
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-        className={`inline-flex items-center gap-sm text-white bg-[linear-gradient(135deg,#2EA84F_0%,#248F42_100%)] py-md px-lg rounded-[50px] no-underline font-semibold text-[1.4rem] transition-all duration-300 ease-out shadow-[0_4px_15px_rgba(130,158,134,0.3)] hover:-translate-y-[2px] hover:shadow-[0_8px_25px_rgba(130,158,134,0.4)] after:content-['→'] after:text-[1.6rem] after:transition-transform after:duration-300 after:ease-out hover:after:translate-x-[4px] ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </a>
+export const Tools = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`grid grid-cols-5 gap-md py-xl max-desktop:grid-cols-3 max-tablet:grid-cols-1 ${className}`} {...props}>{children}</div>
 );
 
-export const SkillsTitle = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3
-        className={`text-[2.4rem] font-bold text-text mb-lg text-center ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </h3>
+export const Tool = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <article className={`tech-tool relative flex flex-col gap-md min-h-[280px] p-md bg-white border-[3px] border-black rounded-[16px] shadow-[5px_5px_0_#1A1A1A] transition-transform duration-200 ease-out hover:-translate-y-[3px] [&>div:last-child>span]:font-mono [&>div:last-child>span]:text-[1rem] [&>div:last-child>span]:font-bold [&_h3]:mt-xs [&_h3]:mb-md [&_h3]:text-[2.2rem] [&_h3]:font-display [&_h3]:font-extrabold [&_p]:text-[1.3rem] [&_p]:leading-[1.65] max-tablet:min-h-0 max-tablet:flex-row ${className}`} {...props}>{children}</article>
 );
 
-export const TechSkills = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-md ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </div>
+export const ToolIcon = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`tech-tool-icon flex items-center justify-center size-[62px] shrink-0 border-[3px] border-black rounded-[14px] text-[2.6rem] font-bold shadow-[3px_3px_0_#1A1A1A] ${className}`} {...props}>{children}</div>
 );
 
-export const SkillItem = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`bg-white border-[3px] border-black shadow-[4px_4px_0_#1A1A1A] rounded-[12px] p-md text-center text-[1.8rem] font-bold text-text transition-[transform,box-shadow,background] duration-200 cursor-pointer relative overflow-hidden hover:bg-tertiary hover:text-black hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0_#1A1A1A] max-tablet:text-[1.6rem] max-tablet:p-sm ${className}`.trim()}
-        {...props}
-    >
-        {children}
-    </div>
+export const Materials = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`grid grid-cols-[0.45fr_1.55fr] gap-lg items-center p-md bg-white border-[3px] border-black rounded-[16px] shadow-[5px_5px_0_#E0399B] [&>div>span]:text-[1.3rem] [&>div>span]:font-display [&>div>span]:font-extrabold [&>div>span]:uppercase [&>div>p]:mt-xs [&>div>p]:text-[1.15rem] [&>div>p]:leading-relaxed [&>ul]:flex [&>ul]:flex-wrap [&>ul]:gap-xs [&>ul]:m-0 [&>ul]:p-0 [&_li]:px-sm [&_li]:py-xs [&_li]:border-2 [&_li]:border-black [&_li]:rounded-full [&_li]:bg-cream [&_li]:text-[1.05rem] [&_li]:font-bold max-tablet:grid-cols-1 ${className}`} {...props}>{children}</div>
 );

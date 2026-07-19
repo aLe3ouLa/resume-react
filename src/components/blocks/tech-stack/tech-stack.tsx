@@ -1,103 +1,111 @@
-import { SectionHeader } from '../../../design-system/components/SectionHeader/SectionHeader';
-import { SectionSubtitle } from '../../../design-system/components/SectionSubtitle/SectionSubtitle';
 import Wrapper from '../../fragments/wrapper';
 import {
+    BenchHeader,
+    BenchIntro,
+    Materials,
+    Pegboard,
     SectionContainer,
-    HeaderSection,
-    ContentGrid,
-    Card,
-    Paragraph,
-    SkillsTitle,
-    TechSkills,
-    SkillItem,
+    Tool,
+    ToolIcon,
+    Tools,
 } from './tech-stack.styles';
 
-const TechStack = () => {
-    const skills = [
-        'TypeScript',
-        'JavaScript',
-        'HTML5',
-        'CSS3 / SASS',
-        'React.js',
-        'Next.js',
-        'styled-components',
-        'Emotion',
-        'REST API',
-        'Node.js',
-        'GraphQL',
-        'CSS Animations',
-    ];
+const tools = [
+    {
+        number: '01',
+        name: 'Shape',
+        description: 'Turn ideas and user needs into clear, useful interfaces.',
+        color: 'secondary',
+        symbol: '◒',
+    },
+    {
+        number: '02',
+        name: 'Measure',
+        description: 'Check accessibility, usability, performance, and quality.',
+        color: 'tertiary',
+        symbol: '↔',
+    },
+    {
+        number: '03',
+        name: 'Build',
+        description: 'Create resilient systems that are readable and ready to evolve.',
+        color: 'primary',
+        symbol: '⌘',
+    },
+    {
+        number: '04',
+        name: 'Refine',
+        description: 'Test assumptions, remove friction, and improve the details.',
+        color: 'accent',
+        symbol: '✦',
+    },
+    {
+        number: '05',
+        name: 'Connect',
+        description: 'Collaborate openly and bring different disciplines together.',
+        color: 'coral',
+        symbol: '◎',
+    },
+] as const;
 
-    return (
-        <SectionContainer>
-            <Wrapper>
-                <HeaderSection>
-                    <SectionHeader id="tech-stack-heading" text="Tech Stack" />
+const materials = [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'HTML',
+    'CSS',
+    'Node.js',
+    'APIs',
+    'GraphQL',
+    'Testing',
+    'Design systems',
+];
 
-                    <SectionSubtitle className="italic leading-[1.5] mb-lg tablet:mb-md">
-                        Building modern web experiences with cutting-edge
-                        technologies
-                    </SectionSubtitle>
-                </HeaderSection>
+const TechStack = () => (
+    <SectionContainer aria-labelledby="workbench-heading">
+        <Wrapper>
+            <BenchHeader>
+                <div>
+                    <span>My working kit</span>
+                    <h2 id="workbench-heading">The workbench<span>.</span></h2>
+                </div>
+                <BenchIntro>
+                    Good work is not defined by one tool. It comes from knowing
+                    what to use, what to question, and what to improve.
+                </BenchIntro>
+            </BenchHeader>
 
-                <ContentGrid>
-                    <Card>
-                        <Paragraph>
-                            <span>
-                                With a Master's degree in Computer Engineering,
-                                I bring a strong technical foundation to every
-                                project. My passion lies in crafting exceptional
-                                user experiences through modern front-end
-                                technologies, where I combine analytical
-                                thinking with creative problem-solving.
-                            </span>
-                        </Paragraph>
-                        <Paragraph>
-                            I'm committed to continuous learning and have
-                            completed several comprehensive courses, including
-                            <a
-                                href="https://www.udemy.com/course/the-complete-javascript-course/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                The Complete JavaScript Course
-                            </a>
-                            ,
-                            <a
-                                href="https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Master the Coding Interview: Data Structures +
-                                Algorithms
-                            </a>{' '}
-                            and
-                            <a
-                                href="https://www.udemy.com/course/advanced-css-and-sass/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Advanced CSS and Sass: Flexbox, Grid, Animations
-                                and More!
-                            </a>
-                            . These courses have deepened my understanding of
-                            both fundamental concepts and cutting-edge
-                            techniques in web development.
-                        </Paragraph>
-                    </Card>
+            <Pegboard>
+                <div className="bench-rail" aria-hidden="true">
+                    <span>AB</span>
+                    <span>TOOLS FOR THOUGHTFUL DIGITAL WORK</span>
+                </div>
 
-                    <Card $hoverAccent="secondary" $delay="0.4s">
-                        <SkillsTitle>Technical Skills</SkillsTitle>
-                        <TechSkills>
-                            {skills.map((skill, index) => (
-                                <SkillItem key={index}>{skill}</SkillItem>
-                            ))}
-                        </TechSkills>
-                    </Card>
-                </ContentGrid>
-            </Wrapper>
-        </SectionContainer>
-    );
-};
+                <Tools>
+                    {tools.map((tool) => (
+                        <Tool key={tool.name} className={`tool-${tool.color}`}>
+                            <ToolIcon aria-hidden="true">{tool.symbol}</ToolIcon>
+                            <div>
+                                <span>{tool.number}</span>
+                                <h3>{tool.name}</h3>
+                                <p>{tool.description}</p>
+                            </div>
+                        </Tool>
+                    ))}
+                </Tools>
+
+                <Materials>
+                    <div>
+                        <span>Materials drawer</span>
+                        <p>A flexible toolkit, chosen to suit the work.</p>
+                    </div>
+                    <ul>
+                        {materials.map((material) => <li key={material}>{material}</li>)}
+                    </ul>
+                </Materials>
+            </Pegboard>
+        </Wrapper>
+    </SectionContainer>
+);
 
 export default TechStack;

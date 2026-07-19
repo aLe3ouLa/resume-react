@@ -1,128 +1,67 @@
-import React from 'react';
+import type { AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
-export const Section = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLElement>) => (
-    <section
-        className={`py-xl bg-cream relative overflow-hidden ${className}`}
-        {...props}
-    >
-        {children}
-    </section>
+export const Section = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <section className={`py-xl bg-cream relative ${className}`} {...props}>{children}</section>
 );
 
-export const TimelineContainer = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`relative max-w-[1000px] mx-auto py-lg grid grid-cols-1 gap-lg items-stretch tablet:grid-cols-2 tablet:gap-xl desktop:grid-cols-2 desktop:gap-xl ${className}`}
-        {...props}
-    >
+export const AboutIntro = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`max-w-[1160px] mx-auto mb-xl grid grid-cols-[0.8fr_1.2fr] items-end gap-xl border-b-[3px] border-black pb-lg max-tablet:grid-cols-1 max-tablet:gap-md ${className}`} {...props}>
         {children}
     </div>
 );
 
-export const TimelineContent = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`p-lg bg-white border-[3px] border-black shadow-[8px_8px_0_#1A1A1A] rounded-[24px] transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] relative overflow-hidden text-center flex-1 flex flex-col justify-center font-body hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[11px_11px_0_#E0399B] ${className}`}
-        {...props}
-    >
-        {children}
-    </div>
-);
-
-export const TimelineIcon = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`w-[70px] h-[70px] bg-secondary border-[3px] border-black rounded-full flex items-center justify-center text-[2.2rem] mx-auto mb-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[4px_4px_0_#1A1A1A] hover:scale-110 hover:rotate-[5deg] hover:bg-primary ${className}`}
-        {...props}
-    >
-        {children}
-    </div>
-);
-
-export const TimelineItem = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={`relative flex flex-col h-full animate-[slide-in-left_0.6s_ease-out_both] [&:nth-child(1)]:[animation-delay:0.1s] [&:nth-child(2)]:[animation-delay:0.2s] [&:nth-child(3)]:[animation-delay:0.3s] [&:nth-child(4)]:[animation-delay:0.4s] ${className}`}
-        {...props}
-    >
-        {children}
-    </div>
-);
-
-export const AnimatedParagraph = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p
-        className={`text-text text-[1.4rem] leading-[1.6] mb-md transition-all duration-300 ease-[ease] tablet:text-[1.5rem] desktop:text-[1.6rem] last:mb-0 ${className}`}
-        {...props}
-    >
+export const AboutKicker = ({ className = '', children, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
+    <p className={`mb-sm text-[1.1rem] font-mono font-bold uppercase tracking-[1.4px] text-secondary ${className}`} {...props}>
         {children}
     </p>
 );
 
-export const GradientText = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`text-primary font-semibold font-display ${className}`}
-        {...props}
-    >
+export const AboutHeading = ({ className = '', children, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
+    <h2 className={`text-[6.4rem] leading-[0.9] font-display font-extrabold uppercase tracking-[-0.04em] text-text [&>span]:!text-secondary [&>span]:text-[inherit] max-tablet:text-[4.6rem] ${className}`} {...props}>
         {children}
-    </span>
+    </h2>
 );
 
-export const CompanyLink = ({
-    className = '',
-    children,
-    ...props
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-        className={`text-secondary font-bold no-underline relative inline-block border-2 border-transparent px-3 py-1 rounded-[15px] transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] before:content-[''] before:absolute before:inset-0 before:bg-secondary before:rounded-[15px] before:opacity-0 before:transition-opacity before:duration-300 before:-z-10 after:content-['✨'] after:absolute after:right-[-20px] after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition-all after:duration-300 after:text-[1rem] hover:text-white hover:-translate-y-[3px] hover:scale-105 hover:shadow-[0_8px_20px_rgba(212,165,165,0.4)] hover:animate-[bounce-soft_0.6s_ease-in-out] hover:before:opacity-100 hover:after:opacity-100 hover:after:right-[-25px] hover:after:animate-[sparkle_1s_ease-in-out_infinite] focus:outline focus:outline-[3px] focus:outline-secondary focus:outline-offset-[3px] ${className}`}
-        {...props}
-    >
+export const Statement = ({ className = '', children, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
+    <p className={`max-w-[660px] justify-self-end text-[2.2rem] leading-[1.45] font-display font-medium tracking-[-0.015em] text-textLight max-tablet:justify-self-start max-tablet:text-[1.8rem] ${className}`} {...props}>
         {children}
-    </a>
+    </p>
 );
 
-export const SkillContainer = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-    <div className={`flex flex-wrap gap-sm mt-md ${className}`} {...props}>
+export const EvidenceBoard = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`about-evidence-board relative max-w-[1160px] mx-auto grid grid-cols-[0.9fr_1.25fr_0.85fr] grid-rows-[auto_1fr_auto] gap-md p-lg bg-white border-[3px] border-black rounded-[26px] shadow-[12px_12px_0_#1A1A1A] max-desktop:grid-cols-[0.9fr_1.1fr] max-tablet:grid-cols-1 max-tablet:p-md max-tablet:shadow-[7px_7px_0_#1A1A1A] ${className}`} {...props}>
         {children}
     </div>
 );
 
-export const SkillTag = ({
-    className = '',
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => (
-    <span
-        className={`bg-secondary text-white py-xs px-md rounded-full text-[1.2rem] font-semibold font-display transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-default animate-[fade-in-up_0.6s_ease-out_both] relative overflow-hidden border-[3px] border-black shadow-[3px_3px_0_#1A1A1A] [&:nth-child(1)]:[animation-delay:0.1s] [&:nth-child(1)]:bg-secondary [&:nth-child(2)]:[animation-delay:0.2s] [&:nth-child(2)]:bg-primary [&:nth-child(3)]:[animation-delay:0.3s] [&:nth-child(3)]:bg-tertiary [&:nth-child(3)]:text-black [&:nth-child(4)]:[animation-delay:0.4s] [&:nth-child(4)]:bg-accent [&:nth-child(4)]:text-black [&:nth-child(5)]:[animation-delay:0.5s] [&:nth-child(5)]:bg-coral hover:-translate-x-[2px] hover:-translate-y-[2px] hover:rotate-[-2deg] hover:shadow-[5px_5px_0_#1A1A1A] ${className}`}
-        {...props}
-    >
-        {children}
-    </span>
+export const FrameMeta = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`col-span-3 flex items-center justify-between pb-sm border-b-[3px] border-black font-mono text-[1.1rem] font-bold tracking-[1px] max-desktop:col-span-2 max-tablet:col-span-1 ${className}`} {...props}>{children}</div>
+);
+
+export const EvidenceTag = ({ className = '', children, ...props }: HTMLAttributes<HTMLSpanElement>) => (
+    <span className={`inline-block mb-md px-sm py-xs rounded-full border-2 border-black bg-tertiary text-[1.05rem] font-bold uppercase tracking-[0.8px] ${className}`} {...props}>{children}</span>
+);
+
+export const ApproachNote = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <article className={`self-start p-lg bg-coral border-[3px] border-black rounded-[18px] rotate-[-1deg] shadow-[6px_6px_0_#1A1A1A] [&_h3]:mb-md [&_h3]:text-[2.2rem] [&_h3]:leading-tight [&_h3]:font-display [&_h3]:font-bold [&_p]:text-[1.45rem] [&_p]:leading-[1.7] max-tablet:rotate-0 ${className}`} {...props}>{children}</article>
+);
+
+export const FocusFrame = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <figure className={`relative row-span-2 m-0 p-sm bg-black border-[3px] border-black rounded-[18px] overflow-hidden [&>img]:block [&>img]:w-full [&>img]:h-[460px] [&>img]:object-cover [&>img]:rounded-[9px] max-desktop:[&>img]:h-[420px] max-tablet:row-span-1 max-tablet:[&>img]:h-[420px] ${className}`} {...props}>{children}</figure>
+);
+
+export const FrameCorners = ({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) => (
+    <div className={`about-frame-corners absolute inset-lg pointer-events-none ${className}`} {...props}>{children}</div>
+);
+
+export const FrameCaption = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <figcaption className={`absolute left-md right-md bottom-md flex items-center justify-between gap-sm px-sm py-xs bg-cream border-[3px] border-black rounded-[9px] text-[1.15rem] font-mono uppercase [&_strong]:text-[1.15rem] [&_strong]:font-bold max-tablet:flex-col max-tablet:items-start ${className}`} {...props}>{children}</figcaption>
+);
+
+export const PersonalNote = ({ className = '', children, ...props }: HTMLAttributes<HTMLElement>) => (
+    <aside className={`self-end p-lg bg-accent border-[3px] border-black rounded-[18px] rotate-[1.5deg] shadow-[6px_6px_0_#E0399B] [&_p]:mb-md [&_p]:text-[1.45rem] [&_p]:leading-[1.7] [&>span:last-child]:font-mono [&>span:last-child]:text-[1rem] [&>span:last-child]:font-bold [&>span:last-child]:tracking-[0.7px] max-desktop:col-start-1 max-tablet:col-start-auto max-tablet:rotate-0 ${className}`} {...props}>{children}</aside>
+);
+
+export const CompanyLink = ({ className = '', children, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a className={`inline-block px-sm py-xs text-text text-[1.2rem] font-bold no-underline border-2 border-black rounded-full bg-white transition-[transform,background-color] duration-200 hover:-translate-y-[2px] hover:bg-tertiary focus:outline focus:outline-[3px] focus:outline-secondary focus:outline-offset-2 ${className}`} {...props}>{children}</a>
 );

@@ -25,14 +25,14 @@ const Homepage = () => {
             <SectionTracker sectionName="About Me">
                 <AboutMe />
             </SectionTracker>
-            <SectionTracker sectionName="Portfolio Images 1">
-                <Images Img1={Img1} Img2={Img2} Img3={Img3} />
-            </SectionTracker>
             <SectionTracker sectionName="Tech Stack">
                 <TechStack />
             </SectionTracker>
             <SectionTracker sectionName="Projects">
                 <Projects />
+            </SectionTracker>
+            <SectionTracker sectionName="Portfolio Images 1">
+                <Images Img1={Img1} Img2={Img2} Img3={Img3} />
             </SectionTracker>
             <SectionTracker sectionName="Portfolio Images 2">
                 <Images Img1={Img4} Img2={Img5} Img3={Img6} />

@@ -1,125 +1,89 @@
-import { SectionHeader } from '../../../design-system/components/SectionHeader/SectionHeader';
+import DeskPhoto from '../../../assets/8.png';
 import Wrapper from '../../fragments/wrapper';
 import {
-    Section,
-    TimelineContainer,
-    TimelineItem,
-    TimelineIcon,
-    TimelineContent,
+    AboutHeading,
+    AboutIntro,
+    AboutKicker,
+    ApproachNote,
     CompanyLink,
-    SkillTag,
-    SkillContainer,
-    GradientText,
-    AnimatedParagraph,
+    EvidenceBoard,
+    EvidenceTag,
+    FocusFrame,
+    FrameCaption,
+    FrameCorners,
+    FrameMeta,
+    PersonalNote,
+    Section,
+    Statement,
 } from './about-me.styles';
 
-const AboutMe = () => {
-    return (
-        <Section aria-labelledby="about-me-heading">
-            <Wrapper>
-                <SectionHeader id="about-me-heading" text="About me" />
+const AboutMe = () => (
+    <Section aria-labelledby="about-me-heading">
+        <Wrapper>
+            <AboutIntro>
+                <div>
+                    <AboutKicker>Behind the work</AboutKicker>
+                    <AboutHeading id="about-me-heading">About me<span>.</span></AboutHeading>
+                </div>
+                <Statement>
+                    I care about the details people notice and the ones they
+                    should never have to think about.
+                </Statement>
+            </AboutIntro>
 
-                <TimelineContainer>
-                    <TimelineItem>
-                        <TimelineIcon>👋</TimelineIcon>
-                        <TimelineContent>
-                            <AnimatedParagraph>
-                                I'm a{' '}
-                                <GradientText>Frontend Engineer</GradientText>{' '}
-                                with a computer science background and working
-                                knowledge of UX design and web accessibility
-                                principles.
-                            </AnimatedParagraph>
-                            <AnimatedParagraph>
-                                I contributed to{' '}
-                                <CompanyLink
-                                    href="https://www.mews.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer external"
-                                >
-                                    Mews
-                                </CompanyLink>
-                                ,{' '}
-                                <CompanyLink
-                                    href="https://www.spotify.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer external"
-                                >
-                                    Spotify
-                                </CompanyLink>{' '}
-                                and{' '}
-                                <CompanyLink
-                                    href="https://www.wbd.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer external"
-                                >
-                                    Warner Bros. Discovery
-                                </CompanyLink>
-                                .
-                            </AnimatedParagraph>
-                        </TimelineContent>
-                    </TimelineItem>
+            <EvidenceBoard>
+                <FrameMeta aria-hidden="true">
+                    <span>AB / 01</span>
+                    <span>IN FOCUS</span>
+                    <span>2026</span>
+                </FrameMeta>
 
-                    <TimelineItem>
-                        <TimelineIcon>💻</TimelineIcon>
-                        <TimelineContent>
-                            <AnimatedParagraph>
-                                I enjoy creating simple, clean and creative user
-                                interfaces using the latest web technologies.
-                            </AnimatedParagraph>
-                            <SkillContainer>
-                                <SkillTag>JavaScript</SkillTag>
-                                <SkillTag>React</SkillTag>
-                                <SkillTag>TypeScript</SkillTag>
-                                <SkillTag>CSS</SkillTag>
-                                <SkillTag>UX Design</SkillTag>
-                                <SkillTag>Web Accessibility</SkillTag>
-                            </SkillContainer>
-                        </TimelineContent>
-                    </TimelineItem>
+                <ApproachNote>
+                    <EvidenceTag>How I work</EvidenceTag>
+                    <h3>Curiosity, clarity, and care.</h3>
+                    <p>
+                        I turn complex problems into thoughtful, accessible
+                        experiences. My computer science background is balanced
+                        by an eye for design and the people using what I build.
+                    </p>
+                </ApproachNote>
 
-                    <TimelineItem>
-                        <TimelineIcon>✍️</TimelineIcon>
-                        <TimelineContent>
-                            <AnimatedParagraph>
-                                I like content creation and as a hobby I write
-                                articles about various web programming topics on{' '}
-                                <CompanyLink
-                                    href="https://dev.to/ale3oula"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Dev.to
-                                </CompanyLink>{' '}
-                                and I share my photos on{' '}
-                                <CompanyLink
-                                    href="https://www.instagram.com/ale3oula/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    @ale3oula
-                                </CompanyLink>
-                                .
-                            </AnimatedParagraph>
-                        </TimelineContent>
-                    </TimelineItem>
+                <FocusFrame>
+                    <img
+                        src={DeskPhoto}
+                        alt="Alexandra's desk with interface sketches, a laptop, stationery, and a small stormtrooper helmet"
+                        loading="lazy"
+                    />
+                    <FrameCorners aria-hidden="true">
+                        <span /><span /><span /><span />
+                    </FrameCorners>
+                    <FrameCaption>
+                        <strong>Observe closely.</strong>
+                        Make thoughtfully.
+                    </FrameCaption>
+                </FocusFrame>
 
-                    <TimelineItem>
-                        <TimelineIcon>🎬</TimelineIcon>
-                        <TimelineContent>
-                            <AnimatedParagraph>
-                                Off the clock? You'll catch me at the cinema
-                                watching sci-fi flicks, dancing salsa 💃,
-                                exploring new places with my camera, or simply
-                                being creative. Life's too short not to enjoy
-                                the journey!
-                            </AnimatedParagraph>
-                        </TimelineContent>
-                    </TimelineItem>
-                </TimelineContainer>
-            </Wrapper>
-        </Section>
-    );
-};
+                <PersonalNote>
+                    <EvidenceTag>Beyond the screen</EvidenceTag>
+                    <p>
+                        Usually found with a camera, at the cinema, dancing
+                        salsa, writing, exploring somewhere new, or 3D printing
+                        and painting the pieces I make.
+                    </p>
+                    <span aria-hidden="true">PHOTO · FILM · WORDS · PLACES · MAKING</span>
+                </PersonalNote>
+
+                <div className="about-companies">
+                    <span>Selected chapters</span>
+                    <div>
+                        <CompanyLink href="https://www.mews.com/" target="_blank" rel="noopener noreferrer external">Mews</CompanyLink>
+                        <CompanyLink href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer external">Spotify</CompanyLink>
+                        <CompanyLink href="https://www.wbd.com/" target="_blank" rel="noopener noreferrer external">Warner Bros. Discovery</CompanyLink>
+                    </div>
+                </div>
+            </EvidenceBoard>
+        </Wrapper>
+    </Section>
+);
 
 export default AboutMe;

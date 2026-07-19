@@ -1,15 +1,12 @@
 import {
-    Container,
-    Paragraph,
-    StyledLink,
-    StyleWrapper,
-    Subtitle,
-    Technologies,
-    TechTag,
-    Title,
-    TitleContainer,
-    CompanyLogo,
-    JobInfo,
+    CompanyStamp,
+    Details,
+    JobArticle,
+    JobHeader,
+    JobMeta,
+    Notes,
+    Role,
+    TechnologyList,
 } from './JobCard.styles';
 
 interface JobCardProps {
@@ -21,47 +18,58 @@ interface JobCardProps {
     technologies: string;
     link: string;
     responsibilities: JSX.Element;
+    index?: number;
 }
 
 export const JobCard = ({
-    img,
-    a11y_img,
     company,
     jobFunction,
     duration,
     technologies,
     link,
     responsibilities,
+    index = 0,
 }: JobCardProps) => {
-    const techArray = technologies.split(/・|\||┃/).map(tech => tech.trim()).filter(tech => tech.length > 0);
+    const techArray = technologies
+        .split(/・|\||┃/)
+        .map((tech) => tech.trim())
+        .filter(Boolean);
+    const isCurrent = duration.includes('Present');
 
     return (
-        <Container>
-            <StyleWrapper>
-                <CompanyLogo>
-                    <img
-                        src={img}
-                        alt={a11y_img}
-                    />
-                </CompanyLogo>
-                <JobInfo>
-                    <TitleContainer>
-                        <Title>
-                            {company} - {jobFunction}
-                        </Title>
-                        <StyledLink href={link} target="_blank" rel="noopener noreferrer">
-                            Visit {company}
-                        </StyledLink>
-                    </TitleContainer>
-                    <Subtitle>{duration}</Subtitle>
-                    <Paragraph>{responsibilities}</Paragraph>
-                    <Technologies>
-                        {techArray.map((tech, index) => (
-                            <TechTag key={index}>{tech}</TechTag>
-                        ))}
-                    </Technologies>
-                </JobInfo>
-            </StyleWrapper>
-        </Container>
+        <JobArticle>
+            <JobMeta>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <CompanyStamp aria-hidden="true">
+                    {company.split(/\s+/).map((word) => word[0]).join('').slice(0, 3)}
+                </CompanyStamp>
+            </JobMeta>
+
+            <div>
+                <JobHeader>
+                    <div>
+                        <span>{company}</span>
+                        <Role>{jobFunction}</Role>
+                    </div>
+                    <a href={link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${company}`}>
+                        Visit ↗
+                    </a>
+                </JobHeader>
+
+                <div className="job-period">
+                    {duration}
+                    {isCurrent && <span>Current</span>}
+                </div>
+
+                <Details open={isCurrent}>
+                    <summary>{isCurrent ? 'Current focus and selected work' : 'Selected work and impact'}</summary>
+                    <Notes>{responsibilities}</Notes>
+                </Details>
+
+                <TechnologyList aria-label="Technologies used">
+                    {techArray.map((tech) => <li key={tech}>{tech}</li>)}
+                </TechnologyList>
+            </div>
+        </JobArticle>
     );
 };
