@@ -75,8 +75,9 @@ export const PortraitCard = ({ className = '', children, ...props }: HTMLAttribu
     </div>
 );
 
-export const Portrait = ({ className = '', ...props }: ImgHTMLAttributes<HTMLImageElement>) => (
+export const Portrait = ({ className = '', alt = '', ...props }: ImgHTMLAttributes<HTMLImageElement>) => (
     <img
+        alt={alt}
         className={`block w-full aspect-[4/5] object-cover rounded-[14px] border-[3px] border-black ${className}`}
         {...props}
     />

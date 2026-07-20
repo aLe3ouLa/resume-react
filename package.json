@@ -15,31 +15,15 @@
         "react-is": "^19.2.7",
         "react-router-dom": "^6.26.1",
         "react-scripts": "^5.0.1",
+        "three": "^0.178.0",
         "typescript": "^4.6.4"
     },
     "scripts": {
         "start": "react-scripts start",
-        "server": "json-server --port 4000 src/data/db.json",
         "build": "react-scripts build",
-        "postbuild": "react-snap",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
-    },
-    "reactSnap": {
-        "port": 45675,
-        "include": [
-            "/",
-            "/photography",
-            "/blog",
-            "/blog/optional-chaining",
-            "/blog/array-flat",
-            "/blog/css-clamp",
-            "/blog/a11y-form-error",
-            "/blog/a11y-focus-management",
-            "/blog/css-specificity",
-            "/blog/tree-shaking"
-        ]
     },
     "eslintConfig": {
         "extends": "react-app",
@@ -72,13 +56,12 @@
         "@types/react": "^18.0.9",
         "@types/react-dom": "^18.0.4",
         "@types/requirejs": "^2.1.34",
+        "@types/three": "^0.178.1",
         "autoprefixer": "^10.4.21",
         "babel-plugin-named-exports-order": "0.0.2",
         "gh-pages": "^6.3.0",
-        "json-server": "^1.0.0-beta.15",
         "postcss": "^8.5.6",
         "prop-types": "^15.8.1",
-        "react-snap": "^1.23.0",
         "tailwindcss": "^3.4.19",
         "webpack": "^5.76.0"
     },
