@@ -12,6 +12,18 @@ export interface BlogPost {
 // Newest first — this order drives the /blog grid and prerendering.
 export const BLOG_POSTS: BlogPost[] = [
     {
+        slug: 'text-box',
+        title: 'text-box',
+        date: '2026-08-20',
+        tags: ['CSS', 'Typography'],
+        excerpt:
+            'Trim the leading above and below text using font metrics — no more negative-margin hacks.',
+        language: 'css',
+        snippet: `.heading {
+  text-box: trim-both cap alphabetic;
+}`,
+    },
+    {
     slug: 'tree-shaking',
     title: 'Tree Shaking',
     date: '2026-07-16',
