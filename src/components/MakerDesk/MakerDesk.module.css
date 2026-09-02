@@ -132,29 +132,6 @@
 }
 @media (max-width: 640px) {
     .section {
-        padding: 5rem 0;
-    }
-    .wrapper {
-        width: min(100% - 2.4rem, 1160px);
-    }
-    .header {
-        grid-template-columns: 1fr;
-        gap: 1.6rem;
-    }
-    .header > p {
-        justify-self: start;
-        font-size: 1.7rem;
-    }
-    .canvas {
-        min-height: 0;
-    }
-    .panel {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        margin: 1.6rem;
-    }
-    .menu {
-        grid-template-columns: repeat(2, 1fr);
+        display: none;
     }
 }

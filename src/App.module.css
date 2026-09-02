@@ -1,5 +1,5 @@
 .container {
-    width: min(1160px, calc(100% - 4rem));
+    width: min(1160px, calc(100% - 3rem));
     margin: auto;
 }
 .header {
@@ -523,22 +523,34 @@ h1 span {
     .sectionHeader p {
         text-align: center;
         justify-self: center;
+        max-width: 320px;
     }
     .eyebrow {
         justify-content: center;
     }
+
+    .eyebrow i {
+        display: none;
+    }
+
     .portrait {
-        max-width: 42rem;
+        max-width: 320px;
         margin: auto;
     }
+
     .about {
         grid-template-columns: 1fr 1fr;
+        box-shadow: 1px 1px #1a1a1a;
     }
     .toolGrid {
         grid-template-columns: repeat(3, 1fr);
     }
     .gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bench {
+        box-shadow: 1px 1px #1a1a1a;
     }
 }
 @media (max-width: 620px) {
@@ -630,250 +642,4 @@ h1 span {
         flex-direction: column;
         padding: 2.4rem;
     }
-}
-
-/* Original career archive treatment */
-.careerSection {
-    padding: 9rem 0;
-    background: #fff;
-}
-.careerWrap {
-    width: min(1060px, calc(100% - 4rem));
-    margin: auto;
-}
-.careerWrap .sectionHeader {
-    max-width: 1060px;
-    margin-inline: auto;
-}
-.careerWrap .sectionHeader h2 span {
-    color: #00a8a8;
-}
-.careerTimeline {
-    position: relative;
-    max-width: 960px;
-    margin: auto;
-}
-.careerTimeline:before {
-    position: absolute;
-    top: 2.4rem;
-    bottom: 2.4rem;
-    left: 5.4rem;
-    width: 3px;
-    background: #1a1a1a;
-    content: '';
-}
-.careerEntry {
-    position: relative;
-    display: grid;
-    grid-template-columns: 11rem 1fr;
-    gap: 2.4rem;
-    padding-bottom: 4.8rem;
-}
-.careerEntry:last-child {
-    padding-bottom: 0;
-}
-.careerEntry aside {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.6rem;
-    font:
-        700 1rem 'Space Mono',
-        monospace;
-}
-.careerEntry aside i {
-    display: grid;
-    width: 7.6rem;
-    height: 7.6rem;
-    place-items: center;
-    border: 3px solid #1a1a1a;
-    border-radius: 1.6rem;
-    background: #e84f70;
-    box-shadow: 5px 5px #1a1a1a;
-    color: #fff;
-    font:
-        700 1.8rem Fredoka,
-        sans-serif;
-    font-style: normal;
-}
-.careerEntry:nth-child(2) aside i {
-    background: #2ea84f;
-}
-.careerEntry:nth-child(3) aside i {
-    background: #8c9eec;
-}
-.careerCard {
-    padding: 2.8rem;
-    border: 3px solid #1a1a1a;
-    border-radius: 1.8rem;
-    background: #fff;
-    box-shadow: 7px 7px #1a1a1a;
-}
-.careerCard header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1.6rem;
-    margin-bottom: 0.8rem;
-}
-.careerCard header small {
-    display: block;
-    margin-bottom: 0.6rem;
-    font-family: Comfortaa, sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-}
-.careerCard header h3 {
-    margin: 0;
-    font-size: 2.8rem;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-}
-.careerCard header > a {
-    flex-shrink: 0;
-    padding: 0.5rem 0.8rem;
-    border: 2px solid #1a1a1a;
-    border-radius: 999px;
-    background: #fff;
-    font-size: 1.05rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-.careerCard header > a:hover {
-    background: #ffcf3f;
-}
-.period {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    align-items: center;
-    margin: 0.8rem 0 0;
-    color: #5c5c5c;
-    font:
-        700 1.1rem 'Space Mono',
-        monospace;
-}
-.period span {
-    padding: 0.3rem 0.8rem;
-    border: 2px solid #1a1a1a;
-    border-radius: 999px;
-    background: #ffcf3f;
-    color: #1a1a1a;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-}
-.careerCard details {
-    margin-top: 1.6rem;
-    border-top: 2px solid #1a1a1a;
-}
-.careerCard summary {
-    position: relative;
-    padding: 1.4rem 3.4rem 0 0;
-    list-style: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-.careerCard summary::-webkit-details-marker {
-    display: none;
-}
-.careerCard summary:after {
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    display: grid;
-    width: 2.4rem;
-    height: 2.4rem;
-    place-items: center;
-    border: 2px solid #1a1a1a;
-    border-radius: 50%;
-    background: #f6a6d6;
-    content: '+';
-    font-size: 1.6rem;
-}
-.careerCard details[open] summary:after {
-    content: '−';
-}
-.careerCard details p {
-    margin: 1.6rem 0 0;
-    font-size: 1.4rem;
-    line-height: 1.7;
-}
-.careerCard ul {
-    margin-top: 1.6rem;
-}
-.careerCard li {
-    background: #fff9e6;
-    font-size: 1rem;
-}
-.careerButton {
-    display: flex;
-    width: max-content;
-    gap: 0.6rem;
-    align-items: center;
-    justify-content: center;
-    margin: 4.8rem 8rem 0 auto;
-    padding: 1.2rem 1.6rem;
-    border: 3px solid #1a1a1a;
-    border-radius: 1.2rem;
-    background: #00a8a8;
-    box-shadow: 5px 5px #1a1a1a;
-    color: #fff;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.careerButton:hover {
-    transform: translateY(-2px);
-}
-@media (max-width: 620px) {
-    .careerSection {
-        padding-block: 5rem;
-    }
-    .careerWrap {
-        width: min(100% - 2.4rem, 1060px);
-    }
-    .careerTimeline:before {
-        left: 2.6rem;
-    }
-    .careerEntry {
-        grid-template-columns: 6.4rem 1fr;
-        gap: 1.2rem;
-    }
-    .careerEntry aside i {
-        width: 5.4rem;
-        height: 5.4rem;
-        border-radius: 1.2rem;
-        font-size: 1.35rem;
-    }
-    .careerCard {
-        padding: 1.8rem;
-    }
-    .careerCard header {
-        flex-direction: column;
-    }
-    .careerCard header h3 {
-        font-size: 2.1rem;
-    }
-    .careerButton {
-        margin-inline: auto;
-    }
-}
-.careerCard .responsibilities {
-    display: block;
-    margin: 1.6rem 0 0;
-    padding: 0;
-    list-style: none;
-}
-.careerCard .responsibilities li {
-    margin-bottom: 0.8rem;
-    padding: 0;
-    background: transparent;
-    font-size: 1.35rem;
-    line-height: 1.65;
 }

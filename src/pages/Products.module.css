@@ -1,13 +1,83 @@
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:3rem;max-width:110rem;margin:auto}
-.card{display:flex;flex-direction:column;padding:2.4rem;border:3px solid #1a1a1a;border-radius:1.8rem;background:#fff;box-shadow:7px 7px #1a1a1a;transition:transform .2s ease,box-shadow .2s ease}
-.card:hover{transform:translate(-3px,-3px);box-shadow:10px 10px #1a1a1a}
-.icon{display:grid;width:5.6rem;height:5.6rem;place-items:center;margin-bottom:1.8rem;border:3px solid #1a1a1a;border-radius:1.4rem;box-shadow:3px 3px #1a1a1a;font-size:2.4rem;font-weight:700}
-.icon.pink{background:#e84f70;color:#fff}
-.icon.teal{background:#00a8a8;color:#fff}
-.card h3{margin:0 0 .8rem;font-size:2.4rem}
-.card p{margin:0 0 1.6rem;color:#555;font-size:1.4rem;line-height:1.65}
-.tech{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 2rem;padding:0;list-style:none}
-.tech li{padding:.4rem .9rem;border:2px solid #1a1a1a;border-radius:999px;background:#fff9e6;font-size:1.1rem;font-weight:700}
-.card a{margin-top:auto;font-weight:700;text-decoration:none}
-.card a:hover{text-decoration:underline}
-@media(max-width:620px){.grid{grid-template-columns:1fr;gap:2.4rem}}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 110rem;
+    margin: auto;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem;
+    border: 3px solid #1a1a1a;
+    border-radius: 1.8rem;
+    background: #fff;
+    box-shadow: 7px 7px #1a1a1a;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px #1a1a1a;
+}
+.icon {
+    display: grid;
+    width: 5.6rem;
+    height: 5.6rem;
+    place-items: center;
+    margin-bottom: 1.8rem;
+    border: 3px solid #1a1a1a;
+    border-radius: 1.4rem;
+    box-shadow: 3px 3px #1a1a1a;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+.icon.pink {
+    background: #e84f70;
+    color: #fff;
+}
+.icon.teal {
+    background: #00a8a8;
+    color: #fff;
+}
+.card h3 {
+    margin: 0 0 0.8rem;
+    font-size: 2.4rem;
+}
+.card p {
+    margin: 0 0 1.6rem;
+    color: #555;
+    font-size: 1.4rem;
+    line-height: 1.65;
+}
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+}
+.tech li {
+    padding: 0.4rem 0.9rem;
+    border: 2px solid #1a1a1a;
+    border-radius: 999px;
+    background: #fff9e6;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.card a {
+    margin-top: auto;
+    font-weight: 700;
+    text-decoration: none;
+}
+.card a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 620px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2.4rem;
+    }
+}
