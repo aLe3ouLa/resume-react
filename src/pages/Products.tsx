@@ -7,7 +7,7 @@ const PRODUCTS = [
     name: 'Passion Lens',
     symbol: '◈',
     color: 'pink',
-    description: 'Discover the passion hidden in your photographs — an AI photo analysis tool built for dev.to’s Weekend Challenge: Passion Edition.',
+    description: 'Discover the passion hidden in your photographs, an AI photo analysis tool built for dev.to’s Weekend Challenge: Passion Edition.',
     tech: ['React', 'TypeScript', 'Vite', 'Express', 'Google GenAI', 'Framer Motion'],
     link: 'https://github.com/aLe3ouLa/passion-lens',
   },
@@ -15,14 +15,14 @@ const PRODUCTS = [
     name: 'The Comfort Atlas',
     symbol: '◎',
     color: 'teal',
-    description: 'An interactive 3D globe of comfort food traditions from around the world — spin it, pick a country, and download a personalized comfort-food stamp.',
+    description: 'An interactive 3D globe of comfort food traditions from around the world. Spin it, pick a country, and download a personalized comfort-food stamp.',
     tech: ['React', 'TypeScript', 'Vite', 'WebGL'],
     link: 'https://github.com/aLe3ouLa/comfort-atlas',
   },
 ] as const;
 
 export default function Products() {
-  useEffect(() => { document.title = 'Products — Alexandra Barka'; }, []);
+  useEffect(() => { document.title = 'Products · Alexandra Barka'; }, []);
 
   return <main className={`${appStyles.section} ${appStyles.container}`}>
     <header className={appStyles.sectionHeader}><div><small>Made for fun</small><h2>Products<span>.</span></h2></div><p>Small tools and experiments I build outside of work, usually for a weekend challenge or just to see if an idea holds up.</p></header>
