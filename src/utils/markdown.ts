@@ -2,7 +2,7 @@ import MarkdownIt from 'markdown-it';
 import hljs from 'highlight.js';
 
 // Configured markdown renderer with highlight.js syntax highlighting.
-const md: MarkdownIt = new MarkdownIt({
+const md: InstanceType<typeof MarkdownIt> = new MarkdownIt({
     html: true,
     linkify: true,
     typographer: true,

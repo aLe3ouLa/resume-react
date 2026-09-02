@@ -1,6 +1,6 @@
 # Alexandra Barka’s portfolio
 
-Personal portfolio for Alexandra Barka, a senior software engineer, photographer, writer, and maker based in Amsterdam.
+Personal portfolio for Alexandra Barka, a senior product engineer, photographer, writer, and maker based in Amsterdam.
 
 **Live site:** [ale3oula.github.io](https://ale3oula.github.io/)
 
@@ -9,36 +9,34 @@ The site combines professional experience with photography, articles, and creati
 ## Highlights
 
 - Editorial hero and personal introduction
-- Evidence-viewfinder About Me section
+- About Me section with curated notes
 - Capability-focused engineer’s workbench
-- Expandable career archive
+- Expandable career timeline
 - Interactive low-poly 3D maker’s desk built with Three.js
-- Photography galleries for landscapes, portraits, and wildlife
-- Markdown-powered technical blog
+- Photography gallery
+- Markdown-powered technical blog ("Tidbits") with syntax-highlighted code
 - Downloadable résumé
-- Responsive layouts and reduced-motion support
-- Page, section, navigation, and CTA analytics
+- Responsive layouts
 
 ## Technology
 
-- React 18
+- React 19
 - TypeScript
+- Vite
 - React Router
 - Three.js
-- Tailwind CSS
-- Create React App
+- CSS Modules
 - Markdown-It and Highlight.js
-- Google Analytics
 - GitHub Pages
 
-The 3D maker’s desk is generated procedurally in the browser. It does not depend on external model files or textures. An accessible HTML control list mirrors every selectable object in the WebGL scene.
+The 3D maker’s desk is generated procedurally in the browser. It does not depend on external model files or textures. An accessible HTML object menu mirrors every selectable object in the WebGL scene.
 
 ## Getting started
 
 ### Requirements
 
 - Node.js
-- npm, or Yarn 1.x through Corepack
+- npm
 
 ### Installation
 
@@ -49,16 +47,18 @@ npm install
 ### Development
 
 ```bash
-npm start
+npm run dev
 ```
 
-The development server opens at [http://localhost:3000](http://localhost:3000).
+Vite prints the local dev server URL (defaults to [http://localhost:5173](http://localhost:5173)).
 
 ### Type checking
 
 ```bash
-npx tsc --noEmit
+npx tsc -b
 ```
+
+Plain `tsc --noEmit -p .` is not sufficient here — the root `tsconfig.json` only references the app and node sub-projects, so it type-checks nothing on its own. `tsc -b` (which `npm run build` also runs) follows those references and actually checks the code.
 
 ### Production build
 
@@ -66,17 +66,13 @@ npx tsc --noEmit
 npm run build
 ```
 
-The optimized application is written to `build/`.
+The optimized application is written to `dist/`.
 
-## Environment variables
+### Preview a production build
 
-Create a `.env.local` file to use a different Google Analytics property:
-
-```env
-REACT_APP_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```bash
+npm run preview
 ```
-
-If the variable is omitted, the portfolio uses the measurement ID configured in `src/hooks/useAnalytics.ts`.
 
 ## Project structure
 
@@ -84,49 +80,42 @@ If the variable is omitted, the portfolio uses the measurement ID configured in 
 src/
 ├── assets/                 Images, photography, and résumé PDF
 ├── components/
-│   ├── blocks/             Homepage sections and larger features
-│   │   ├── about-me/       Evidence-viewfinder biography
-│   │   ├── maker-desk/     Three.js scene and accessible controls
-│   │   ├── projects/       Work-experience archive
-│   │   └── tech-stack/     Engineer’s workbench
-│   └── fragments/          Reusable page-level compositions
-├── data/                   Blog metadata
-├── design-system/          Components, tokens, and shared styles
-├── hooks/                  Analytics hooks
-├── pages/                  Route-level components
-├── utils/                  Markdown utilities
-├── App.tsx                 Router configuration
-└── index.css               Tailwind layers and global styling
+│   ├── Layout/              Shared header, nav, and footer (wraps every route)
+│   ├── MakerDesk/            Three.js scene and accessible controls
+│   └── WorkExperience/       Career timeline
+├── data/                    Blog post metadata
+├── pages/                    Route-level components (Home, Blog, BlogPost, NotFound)
+├── utils/                    Markdown rendering utilities
+├── App.tsx                   Router configuration
+├── App.module.css            Shared homepage/layout styles
+└── global.css                Global styling and font imports
 ```
 
 ## Main routes
 
 | Route | Content |
 | --- | --- |
-| `/` | Portfolio homepage |
-| `/photography` | Photography landing page |
-| `/blog` | Technical articles |
+| `/` | Portfolio homepage (hero, about, workbench, work experience, maker's desk, photography) |
+| `/blog` | Technical articles ("Tidbits") |
 | `/blog/:slug` | Individual Markdown article |
+| `*` | Not found page |
 
-Additional portrait, landscape, and wildlife views are implemented as route-level page components.
+Photography and work experience are homepage sections (`#photography`, `#work`), not separate routes.
 
 ## Content updates
 
 ### Work experience
 
-Experience entries live in:
+Entries live in:
 
 ```text
-src/components/blocks/projects/utils.tsx
+src/components/WorkExperience/WorkExperience.tsx
 ```
-
-The homepage currently displays the first three entries. Older roles remain in the data file and the complete career history is linked through LinkedIn.
 
 ### Blog posts
 
 1. Add the Markdown file to `public/blog/`.
 2. Add its metadata to `src/data/blogPosts.ts`.
-3. Add the route to `public/sitemap.xml` when appropriate.
 
 ### Photography
 
@@ -140,14 +129,14 @@ src/assets/wildlife/
 
 ### Résumé
 
-Replace `src/assets/cv.pdf` while keeping the same filename, or update the import in the hero component.
+Replace `src/assets/cv.pdf` while keeping the same filename, or update the import in `src/pages/Home.tsx`.
 
 ## 3D maker’s desk
 
 The scene is defined in:
 
 ```text
-src/components/blocks/maker-desk/MakerDesk.tsx
+src/components/MakerDesk/MakerDesk.tsx
 ```
 
 Each desk object is assembled from lightweight Three.js primitives with solid-color materials and outlined geometry. To add another object:
@@ -155,20 +144,9 @@ Each desk object is assembled from lightweight Three.js primitives with solid-co
 1. Add its metadata to `deskItems`.
 2. Create a named `THREE.Group` in `createDeskScene`.
 3. Set `group.userData.itemId` to the metadata ID.
-4. Add the group to the scene.
+4. Add the group to the scene, and give it a padded hit area with `addHitArea`.
 
-Mouse selection uses raycasting. Keyboard and assistive-technology access is provided by the HTML object menu below the canvas.
-
-## Analytics
-
-The site tracks:
-
-- Route changes
-- Section visibility
-- CTA clicks
-- Tracked navigation
-
-Reusable analytics components include `SectionTracker`, `TrackedButton`, and `TrackedLink`. More implementation details are available in `src/components/README-Analytics.md`.
+Mouse selection uses raycasting, with an invisible padded hit box per object so clicking near an item (not just exactly on it) still selects it. Keyboard and assistive-technology access is provided by the HTML object menu below the canvas.
 
 ## Deployment
 
@@ -178,26 +156,24 @@ The portfolio is published to the `master` branch of the separate `aLe3ouLa/aLe3
 npm run deploy
 ```
 
-The deployment command builds the application and publishes the contents of `build/` with `gh-pages`.
+This builds the application and publishes the contents of `dist/` with `gh-pages`.
 
 To publish an already verified build without rebuilding:
 
 ```bash
 npx gh-pages -b master \
   -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git \
-  -d build --dotfiles
+  -d dist --dotfiles
 ```
 
-Always confirm that `build/index.html` contains the application before using the direct command.
+Always confirm that `dist/index.html` contains the application before using the direct command.
 
-## Accessibility and motion
+## Accessibility
 
 - Interactive elements remain keyboard accessible.
 - The 3D scene has equivalent HTML controls.
 - Semantic headings organize each section.
 - Images include alternative text.
-- Motion is interaction-driven rather than continuous.
-- Reduced-motion preferences disable nonessential transitions.
 
 ## License
 

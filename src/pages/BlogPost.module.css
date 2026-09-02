@@ -1,0 +1,23 @@
+.article{max-width:88rem;margin:auto}
+.back{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:2.4rem;padding:.6rem 1.4rem;border:2px solid #1a1a1a;border-radius:999px;background:#fff;box-shadow:3px 3px #1a1a1a;font-size:1.4rem;font-weight:700;text-decoration:none;color:#1a1a1a;transition:transform .2s ease,box-shadow .2s ease}
+.back:hover{transform:translate(-2px,-2px);box-shadow:5px 5px #1a1a1a}
+.title{margin:0;font:700 clamp(3.2rem,5vw,4.4rem)/1.05 Fredoka,sans-serif;letter-spacing:-.02em;text-transform:uppercase}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin:1.2rem 0 4rem}
+.tag{padding:.3rem .8rem;border:2px solid #1a1a1a;border-radius:999px;background:#ffcf3f;font-size:1.1rem;font-weight:700}
+.date{font-size:1.3rem;font-weight:600;color:#666}
+.content{font-family:Comfortaa,sans-serif}
+.content :global(h2){margin:4rem 0 1.2rem;font-size:2.4rem;font-weight:700;color:#1a1a1a}
+.content :global(h3){margin:3rem 0 1.2rem;font-size:1.9rem;font-weight:700;color:#1a1a1a}
+.content :global(p){margin:0 0 1.6rem;font-size:1.6rem;line-height:1.75;color:#1a1a1a}
+.content :global(ul),.content :global(ol){margin:0 0 1.6rem;padding-left:2.8rem}
+.content :global(li){margin-bottom:.8rem;font-size:1.6rem;line-height:1.7}
+.content :global(li)::marker{color:#00a8a8;font-weight:700;font-family:'Space Mono',monospace}
+.content :global(a){color:#00a8a8;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.content :global(:not(pre)>code){padding:.1rem .5rem;border:2px solid #1a1a1a;border-radius:6px;background:#fff9e6;font-family:'Space Mono',monospace;font-size:.9em}
+.content :global(pre.hljs){margin:0 0 2.4rem;padding:1.6rem;border:3px solid #1a1a1a;border-radius:1.2rem;box-shadow:6px 6px #1a1a1a;font-size:1.4rem;line-height:1.6;overflow-x:auto}
+.content :global(img){max-width:100%;height:auto;margin:1.6rem 0;border:3px solid #1a1a1a;border-radius:1.2rem;box-shadow:6px 6px #1a1a1a}
+.content :global(blockquote){margin:0 0 1.6rem;padding:1rem 1.6rem;border:3px solid #1a1a1a;border-radius:1.2rem;background:#ffcf3f}
+.content :global(blockquote p){margin:0;font-size:1.5rem}
+.notFound{padding:8rem 0;text-align:center;font:700 2rem Fredoka,sans-serif}
+.replyNote{margin:4rem 0 0;padding-top:2.4rem;border-top:3px solid #1a1a1a;font-size:1.4rem;color:#555}
+.replyNote a{color:#00a8a8;font-weight:700;text-decoration:underline;text-underline-offset:3px}

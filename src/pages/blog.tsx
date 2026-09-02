@@ -1,117 +1,43 @@
 import { useEffect } from 'react';
-import Page from '../components/fragments/page';
-import Wrapper from '../components/fragments/wrapper';
+import { Link } from 'react-router-dom';
+import 'highlight.js/styles/github-dark.css';
+import appStyles from '../App.module.css';
+import styles from './Blog.module.css';
 import { BLOG_POSTS } from '../data/blogPosts';
 import { highlightCode } from '../utils/markdown';
-import {
-    CARD_COLORS,
-    BlogSection,
-    HeaderBlock,
-    BlogTitle,
-    BlogSubtitle,
-    Grid,
-    Card,
-    LangBadge,
-    CodeWindow,
-    WindowBar,
-    FileName,
-    Snippet,
-    CardBody,
-    CardTitle,
-    CardExcerpt,
-    TagRow,
-    Tag,
-    DateText,
-} from '../components/blocks/blog/blog.styles';
 
-const formatDate = (iso: string) =>
-    new Date(iso).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-    });
-
-// Fun label + filename per language for the card's "code image".
+const CARD_COLORS = ['#8c9eec', '#f6a6d6', '#ffce2e', '#2ea84f', '#e0399b'];
 const LANG_META: Record<string, { label: string; file: string }> = {
-    javascript: { label: 'JS', file: 'tidbit.js' },
-    typescript: { label: 'TS', file: 'tidbit.ts' },
-    css: { label: 'CSS', file: 'styles.css' },
-    html: { label: 'HTML', file: 'index.html' },
+  javascript: { label: 'JS', file: 'tidbit.js' },
+  typescript: { label: 'TS', file: 'tidbit.ts' },
+  css: { label: 'CSS', file: 'styles.css' },
+  html: { label: 'HTML', file: 'index.html' },
 };
+const metaFor = (lang: string) => LANG_META[lang] ?? { label: lang.toUpperCase(), file: `snippet.${lang}` };
+const formatDate = (iso: string) => new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
-const metaFor = (lang: string) =>
-    LANG_META[lang] ?? { label: lang.toUpperCase(), file: `snippet.${lang}` };
+export default function Blog() {
+  useEffect(() => { document.title = 'Tidbits — Alexandra Barka'; }, []);
 
-const Blog = () => {
-    useEffect(() => {
-        document.title = 'Tidbits — Alexandra Barka';
-    }, []);
-
-    return (
-        <Page>
-            <BlogSection>
-                <Wrapper>
-                    <HeaderBlock>
-                        <BlogTitle>Tidbits</BlogTitle>
-                        <BlogSubtitle>
-                            Bite-sized dev notes on JavaScript, CSS &amp; more.
-                        </BlogSubtitle>
-                    </HeaderBlock>
-
-                    <Grid>
-                        {BLOG_POSTS.map((post, i) => {
-                            const meta = metaFor(post.language);
-                            return (
-                                <Card
-                                    key={post.slug}
-                                    to={`/blog/${post.slug}`}
-                                    $accent={
-                                        CARD_COLORS[i % CARD_COLORS.length]
-                                    }
-                                >
-                                    <LangBadge className="lang-badge">
-                                        {meta.label}
-                                    </LangBadge>
-                                    <CodeWindow>
-                                        <WindowBar>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <FileName>{meta.file}</FileName>
-                                        </WindowBar>
-                                        <Snippet>
-                                            <code
-                                                dangerouslySetInnerHTML={{
-                                                    __html: highlightCode(
-                                                        post.snippet,
-                                                        post.language
-                                                    ),
-                                                }}
-                                            />
-                                        </Snippet>
-                                    </CodeWindow>
-                                    <CardBody>
-                                        <CardTitle>{post.title}</CardTitle>
-                                        <CardExcerpt>
-                                            {post.excerpt}
-                                        </CardExcerpt>
-                                        <TagRow>
-                                            {post.tags.map((t) => (
-                                                <Tag key={t}>{t}</Tag>
-                                            ))}
-                                        </TagRow>
-                                        <DateText dateTime={post.date}>
-                                            {formatDate(post.date)}
-                                        </DateText>
-                                    </CardBody>
-                                </Card>
-                            );
-                        })}
-                    </Grid>
-                </Wrapper>
-            </BlogSection>
-        </Page>
-    );
-};
-
-export default Blog;
+  return <main className={`${appStyles.section} ${appStyles.container}`}>
+    <header className={appStyles.sectionHeader}><div><small>Bite-sized dev notes</small><h2>Tidbits<span>.</span></h2></div><p>Bite-sized dev notes on JavaScript, CSS &amp; more.</p></header>
+    <div className={styles.grid}>
+      {BLOG_POSTS.map((post, i) => {
+        const meta = metaFor(post.language);
+        return <Link key={post.slug} to={`/blog/${post.slug}`} className={styles.card} style={{ background: CARD_COLORS[i % CARD_COLORS.length] }}>
+          <span className={styles.badge}>{meta.label}</span>
+          <div className={styles.window}>
+            <div className={styles.windowBar}><span /><span /><span /><span className={styles.fileName}>{meta.file}</span></div>
+            <pre className={styles.snippet}><code dangerouslySetInnerHTML={{ __html: highlightCode(post.snippet, post.language) }} /></pre>
+          </div>
+          <div className={styles.body}>
+            <h2>{post.title}</h2>
+            <p className={styles.excerpt}>{post.excerpt}</p>
+            <ul className={styles.tags}>{post.tags.map(t => <li key={t} className={styles.tag}>{t}</li>)}</ul>
+            <time className={styles.date} dateTime={post.date}>{formatDate(post.date)}</time>
+          </div>
+        </Link>;
+      })}
+    </div>
+  </main>;
+}

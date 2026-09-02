@@ -41,10 +41,10 @@ Otherwise users may suddenly find themselves back at the top of a page, with no 
 
 ## A good dialog should handle:
 
-✅ Move focus into the dialog
-✅ Keep focus inside while open
-✅ Close with `Escape`
-✅ Return focus to the trigger
+- ✅ Move focus into the dialog
+- ✅ Keep focus inside while open
+- ✅ Close with `Escape`
+- ✅ Return focus to the trigger
 
 ## Use native HTML when possible
 
@@ -77,6 +77,6 @@ useEffect(() => {
 <button ref={buttonRef}>
   Confirm
 </button>
+```
 
 > Accessibility is not only about what users can see. It is also about where the browser puts them.
-```

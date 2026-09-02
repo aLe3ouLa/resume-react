@@ -1,84 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Header from './components/blocks/header/header';
-import Homepage from './pages/homepage';
-import Photography from './pages/photography';
-import Blog from './pages/blog';
-import BlogPost from './pages/blog-post';
-import NotFoundPage from './pages/not-found';
-import Analytics from './components/Analytics';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import Home from './pages/Home';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import NotFound from './pages/NotFound';
 
-let router = createBrowserRouter([
-    {
-        path: '/',
-        Component() {
-            return (
-                <>
-                    <Analytics />
-                    <Header />
-                    <Homepage />
-                    <Header />
-                </>
-            );
-        },
-    },
-    {
-        path: '/photography',
-        Component() {
-            return (
-                <>
-                    <Analytics />
-                    <Header />
-                    <Photography />
-                    <Header />
-                </>
-            );
-        },
-    },
-    {
-        path: '/blog',
-        Component() {
-            return (
-                <>
-                    <Analytics />
-                    <Header />
-                    <Blog />
-                    <Header />
-                </>
-            );
-        },
-    },
-    {
-        path: '/blog/:slug',
-        Component() {
-            return (
-                <>
-                    <Analytics />
-                    <Header />
-                    <BlogPost />
-                    <Header />
-                </>
-            );
-        },
-    },
-    {
-        path: '*',
-        Component() {
-            return (
-                <>
-                    <Analytics />
-                    <Header />
-                    <NotFoundPage />
-                    <Header />
-                </>
-            );
-        },
-    },
-]);
-
-function App() {
-    return (
-        <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
-    );
+export default function App() {
+  return <BrowserRouter><Routes><Route element={<Layout />}><Route index element={<Home />} /><Route path="blog" element={<Blog />} /><Route path="blog/:slug" element={<BlogPost />} /><Route path="*" element={<NotFound />} /></Route></Routes></BrowserRouter>;
 }
-
-export default App;

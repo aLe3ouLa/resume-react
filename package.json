@@ -1,69 +1,31 @@
 {
-    "name": "resume",
-    "version": "0.1.0",
-    "private": true,
-    "homepage": "https://ale3oula.github.io",
-    "dependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-preset-react-app": "^3.1.2",
-        "highlight.js": "^11.11.1",
-        "markdown-it": "^14.2.0",
-        "moment": "^2.29.4",
-        "postcss-normalize": "^13.0.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.1.0",
-        "react-is": "^19.2.7",
-        "react-router-dom": "^6.26.1",
-        "react-scripts": "^5.0.1",
-        "three": "^0.178.0",
-        "typescript": "^4.6.4"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "eject": "react-scripts eject",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d build --dotfiles"
-    },
-    "eslintConfig": {
-        "extends": "react-app",
-        "overrides": [
-            {
-                "files": [
-                    "**/*.stories.*"
-                ],
-                "rules": {
-                    "import/no-anonymous-default-export": "off"
-                }
-            }
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@types/markdown-it": "^14.1.2",
-        "@types/node": "^17.0.35",
-        "@types/react": "^18.0.9",
-        "@types/react-dom": "^18.0.4",
-        "@types/requirejs": "^2.1.34",
-        "@types/three": "^0.178.1",
-        "autoprefixer": "^10.4.21",
-        "babel-plugin-named-exports-order": "0.0.2",
-        "gh-pages": "^6.3.0",
-        "postcss": "^8.5.23",
-        "prop-types": "^15.8.1",
-        "tailwindcss": "^3.4.19",
-        "webpack": "^5.76.0"
-    },
-    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "name": "alexandra-barka-modern-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d dist --dotfiles"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "highlight.js": "^11.12.0",
+    "markdown-it": "^15.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.18.3",
+    "three": "^0.185.1",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.185.4",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.7.0"
+  }
 }
