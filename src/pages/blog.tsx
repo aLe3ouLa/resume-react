@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import 'highlight.js/styles/github-dark.css';
 import appStyles from '../App.module.css';
 import styles from './Blog.module.css';
@@ -24,7 +24,7 @@ export default function Blog() {
     <div className={styles.grid}>
       {BLOG_POSTS.map((post, i) => {
         const meta = metaFor(post.language);
-        return <Link key={post.slug} to={`/blog/${post.slug}`} className={styles.card} style={{ background: CARD_COLORS[i % CARD_COLORS.length] }}>
+        return <Link key={post.slug} to="/blog/$slug" params={{ slug: post.slug }} className={styles.card} style={{ background: CARD_COLORS[i % CARD_COLORS.length] }}>
           <span className={styles.badge}>{meta.label}</span>
           <div className={styles.window}>
             <div className={styles.windowBar}><span /><span /><span /><span className={styles.fileName}>{meta.file}</span></div>

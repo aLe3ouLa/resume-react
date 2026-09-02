@@ -11,12 +11,12 @@
     "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d dist --dotfiles"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.170.32",
     "@vitejs/plugin-react": "latest",
     "highlight.js": "^11.12.0",
     "markdown-it": "^15.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.18.3",
     "three": "^0.185.1",
     "vite": "latest"
   },

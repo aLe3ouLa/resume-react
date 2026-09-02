@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from '@tanstack/react-router';
 import styles from '../../App.module.css';
 
 export default function Layout() {
