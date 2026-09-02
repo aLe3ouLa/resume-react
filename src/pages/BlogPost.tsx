@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import 'highlight.js/styles/github-dark.css';
 import appStyles from '../App.module.css';
 import styles from './BlogPost.module.css';
 import { getPostBySlug } from '../data/blogPosts';
 import { renderMarkdown } from '../utils/markdown';
+import { blogPostRoute } from '../router';
 
 const formatDate = (iso: string) => new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
 export default function BlogPost() {
-  const { slug } = useParams<{ slug: string }>();
-  const post = slug ? getPostBySlug(slug) : undefined;
+  const { slug } = blogPostRoute.useParams();
+  const post = getPostBySlug(slug);
   const [html, setHtml] = useState('');
 
   useEffect(() => {

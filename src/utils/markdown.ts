@@ -11,8 +11,10 @@ const md: InstanceType<typeof MarkdownIt> = new MarkdownIt({
             try {
                 return (
                     '<pre class="hljs"><code>' +
-                    hljs.highlight(str, { language: lang, ignoreIllegals: true })
-                        .value +
+                    hljs.highlight(str, {
+                        language: lang,
+                        ignoreIllegals: true,
+                    }).value +
                     '</code></pre>'
                 );
             } catch (_) {
@@ -20,7 +22,9 @@ const md: InstanceType<typeof MarkdownIt> = new MarkdownIt({
             }
         }
         return (
-            '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
+            '<pre class="hljs"><code>' +
+            md.utils.escapeHtml(str) +
+            '</code></pre>'
         );
     },
 });
@@ -31,8 +35,10 @@ export const renderMarkdown = (source: string): string => md.render(source);
 export const highlightCode = (code: string, lang: string): string => {
     if (lang && hljs.getLanguage(lang)) {
         try {
-            return hljs.highlight(code, { language: lang, ignoreIllegals: true })
-                .value;
+            return hljs.highlight(code, {
+                language: lang,
+                ignoreIllegals: true,
+            }).value;
         } catch (_) {
             /* fall through */
         }
