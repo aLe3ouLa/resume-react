@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import profile from '../assets/Profile.jpeg';
 import desk from '../assets/8.png';
 import cv from '../assets/cv.pdf';
+import { trackEvent } from '../lib/analytics';
 import lisbon from '../assets/photography/5_lisb.jpeg';
 import bali from '../assets/photography/1_bali.jpg';
 import wildlife from '../assets/wildlife/wildlife_1.jpg';
@@ -143,6 +144,7 @@ export default function Home() {
                         href={cv}
                         target="_blank"
                         rel="noreferrer"
+                        onClick={() => trackEvent('resume_download_click')}
                     >
                         Download résumé ↓
                     </a>

@@ -1,4 +1,5 @@
 import styles from './WorkExperience.module.css';
+import { trackEvent } from '../../lib/analytics';
 
 const currentMewsDuration = () => {
     const months = Math.floor(
@@ -157,6 +158,7 @@ export default function WorkExperience() {
                     href="https://www.linkedin.com/in/alexandra-barka/"
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackEvent('linkedin_click')}
                 >
                     Full career archive <span>↗</span>
                 </a>

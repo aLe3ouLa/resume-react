@@ -1,9 +1,18 @@
-import { useState } from 'react';
-import { Link, Outlet } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+import { Link, Outlet, useRouter } from '@tanstack/react-router';
 import styles from '../../App.module.css';
+import { trackPageView } from '../../lib/analytics';
 
 export default function Layout() {
     const [open, setOpen] = useState(false);
+    const router = useRouter();
+
+    useEffect(() => {
+        return router.subscribe('onResolved', (event) => {
+            trackPageView(event.toLocation.pathname);
+        });
+    }, [router]);
+
     return (
         <>
             <header className={styles.header}>
