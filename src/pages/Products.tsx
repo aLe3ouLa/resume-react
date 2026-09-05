@@ -25,7 +25,15 @@ const PRODUCTS = [
         color: 'teal',
         description:
             'An interactive 3D globe of comfort food traditions from around the world. Spin it, pick a country, and download a personalized comfort-food stamp.',
-        tech: ['React', 'TypeScript', 'Vite', 'WebGL'],
+        tech: [
+            'React',
+            'TypeScript',
+            'Vite',
+            'WebGL',
+            'Three.js',
+            'Framer Motion',
+            'Claude code',
+        ],
         link: 'https://github.com/aLe3ouLa/comfort-atlas',
     },
 ] as const;

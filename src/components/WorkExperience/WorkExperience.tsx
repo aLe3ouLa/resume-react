@@ -18,7 +18,13 @@ const jobs = [
         company: 'Mews',
         role: 'Software Engineer, Operations Engineering',
         duration: `Aug 2024 - Present · ${currentMewsDuration()}`,
-        technologies: ['Typescript', 'Javascript', 'React.JS', '.NET'],
+        technologies: [
+            'Typescript',
+            'Javascript',
+            'React.JS',
+            'Claude code',
+            'Claude Skills',
+        ],
         link: 'https://www.mews.com',
         intro: 'As a Software Engineer in Operations Engineering at Mews, I work across the Events Management System stack to improve the usability, reliability, and maintainability of our Groups & Events capabilities. My work spans frontend development, backend contributions, refactoring, and operational hardening, with the goal of making Events at Mews more robust, predictable, and easier to operate so hospitality teams can focus on guests and business outcomes instead of fighting their tools.',
         bullets: [

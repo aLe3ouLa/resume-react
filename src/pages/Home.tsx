@@ -135,9 +135,11 @@ export default function Home() {
                         Making the web <span>a little better each day.</span>
                     </h1>
                     <p className={styles.lead}>
-                        I create nice, accessible, and thoughtful digital
-                        experiences, with curiosity, care, and a focus on
-                        solving problems that make a difference.
+                        I help SaaS, startups, and scale-ups build accessible
+                        products and turn their components into reusable
+                        design systems, drawing on ten years of frontend
+                        engineering. Currently open to full-time roles and
+                        freelance collaborations.
                     </p>
                     <a
                         className={styles.button}
@@ -172,7 +174,7 @@ export default function Home() {
                         color="pink"
                         tag="How I work"
                         title="Curiosity, clarity, and care."
-                        text="I turn complex problems into thoughtful, accessible experiences. My computer science background is balanced by an eye for design and the people using what I build."
+                        text="I turn complex problems into accessible, maintainable interfaces: from modernizing legacy platforms to building design systems that scale across teams. Lately, that includes AI: building custom agent skills and MCP servers to help teams modernize their own frontends."
                     />
                     <figure>
                         <img
@@ -234,13 +236,14 @@ export default function Home() {
                             {[
                                 'JavaScript',
                                 'TypeScript',
-                                'React',
                                 'HTML',
                                 'CSS',
                                 'Node.js',
                                 'APIs',
                                 'GraphQL',
                                 'Testing',
+                                'Accessibility',
+                                'AI tools',
                                 'Design systems',
                             ].map((x) => (
                                 <li key={x}>{x}</li>

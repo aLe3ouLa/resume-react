@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useRouter } from '@tanstack/react-router';
-import styles from '../../App.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import styles from './Layout.module.css';
 import { trackPageView } from '../../lib/analytics';
 
 export default function Layout() {
@@ -39,15 +41,25 @@ export default function Layout() {
                         href="https://github.com/aLe3ouLa"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="GitHub"
                     >
-                        GitHub
+                        <FontAwesomeIcon
+                            icon={faGithub}
+                            size="lg"
+                            aria-hidden="true"
+                        />
                     </a>
                     <a
                         href="https://www.instagram.com/the.coding.diaries/"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Instagram"
                     >
-                        Instagram
+                        <FontAwesomeIcon
+                            icon={faInstagram}
+                            size="lg"
+                            aria-hidden="true"
+                        />
                     </a>
                 </nav>
             </header>

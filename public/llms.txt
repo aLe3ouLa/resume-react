@@ -1,0 +1,22 @@
+# Alexandra Barka
+
+> Senior Product Engineer building accessible, full-stack products with React and Node.js. Currently open to full-time roles and freelance collaborations with SaaS, startups, and scale-ups.
+
+Ten years of frontend-focused engineering experience, specializing in web accessibility (WCAG), design systems, and modernizing legacy frontend platforms. Recent work includes building AI agent skills and MCP servers to help teams modernize their own frontends. This site is a client-rendered React application; this file summarizes its content for tools that can't execute JavaScript.
+
+## Links
+
+- [Site](https://ale3oula.github.io): résumé is available for download via the "Download résumé" button on the homepage
+- [GitHub](https://github.com/aLe3ouLa)
+- [LinkedIn](https://www.linkedin.com/in/alexandra-barka/)
+
+## Experience
+
+- Mews — Software Engineer (Aug 2024 – Present, Amsterdam, Remote): Groups & Events functionality, Accounts Receivable, design-system-led modernization of the Events platform.
+- Spotify — Web Engineer II (Sep 2022 – Aug 2024, Amsterdam, Remote): internal marketing tooling on React, Next.js, GraphQL, TypeScript.
+- WarnerMedia (HBO Max) — Frontend Engineer (Jul 2021 – Aug 2022, Amsterdam, Remote): HBO Max TV experience, accessibility-led design system adoption.
+- MessageBird — Frontend Engineer (Aug 2020 – Jul 2021, Amsterdam, Remote): onboarding and activation flows.
+
+## Skills
+
+React, Next.js, TypeScript, JavaScript, Node.js, GraphQL, REST APIs, web accessibility (WCAG), design systems, Storybook, frontend architecture and performance, mentoring and cross-functional delivery.

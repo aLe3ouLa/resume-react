@@ -11,6 +11,9 @@
     "deploy": "gh-pages -b master -r https://github.com/aLe3ouLa/aLe3ouLa.github.io.git -d dist --dotfiles"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
+    "@fortawesome/react-fontawesome": "^3.5.0",
     "@tanstack/react-router": "^1.170.32",
     "@vitejs/plugin-react": "latest",
     "highlight.js": "^11.12.0",

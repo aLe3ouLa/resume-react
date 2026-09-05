@@ -1,52 +1,125 @@
-# Alexandra Barka’s portfolio
+<div align="center">
 
-Personal portfolio for Alexandra Barka, a senior product engineer, photographer, writer, and maker based in Amsterdam.
+# Alexandra Barka · Portfolio
 
-**Live site:** [ale3oula.github.io](https://ale3oula.github.io/)
+<p>
+  <em>Senior product engineer, photographer, writer, and maker, based in Amsterdam.</em>
+</p>
 
-The site combines professional experience with photography, articles, and creative work. Its visual language uses solid colors, bold outlines, tactile shadows, and restrained interaction. It does not use gradients or continuous decorative motion.
+<p>
+  <a href="https://ale3oula.github.io/"><img src="https://img.shields.io/badge/Live%20Site-ale3oula.github.io-1a1a1a?style=for-the-badge&labelColor=fff9e6" alt="Live site" /></a>
+</p>
 
-## Highlights
+<p>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-latest-646CFF?logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/TanStack%20Router-1.170-FF4154?logo=react-router&logoColor=white" alt="TanStack Router" />
+  <img src="https://img.shields.io/badge/Three.js-0.185-000000?logo=three.js&logoColor=white" alt="Three.js" />
+  <img src="https://img.shields.io/badge/GitHub%20Pages-deployed-222222?logo=github&logoColor=white" alt="GitHub Pages" />
+</p>
 
-- Editorial hero and personal introduction
-- About Me section with curated notes
-- Capability-focused engineer’s workbench
-- Expandable career timeline
-- Interactive low-poly 3D maker’s desk built with Three.js
-- Photography gallery
-- Markdown-powered technical blog ("Tidbits") with syntax-highlighted code
-- Downloadable résumé
-- Responsive layouts
+</div>
 
-## Technology
+---
 
+## ✦ About
+
+This repository is the source for [Alexandra Barka's personal portfolio](https://ale3oula.github.io/). It combines professional experience with photography, articles, and creative work.
+
+The visual language leans into solid colors, bold outlines, and tactile shadows rather than gradients or continuous decorative motion. Every interactive element, including the 3D scene, stays keyboard and screen reader accessible.
+
+## ✦ Highlights
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### 🧑‍💻 Editorial homepage
+Hero introduction, an About Me section with curated notes, and a capability focused engineer's workbench.
+
+</td>
+<td width="50%" valign="top">
+
+#### 🕰 Expandable career timeline
+Work history rendered from a single source of truth, with details that expand in place.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 🪑 Procedural 3D maker's desk
+A low-poly scene built with Three.js, generated entirely in the browser with no external model or texture files. An accessible HTML menu mirrors every selectable object.
+
+</td>
+<td width="50%" valign="top">
+
+#### 📸 Photography gallery
+A curated set of portraits and wildlife photography, organized as a homepage section.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### ✍️ Markdown powered blog
+"Tidbits", a technical blog rendered from Markdown with syntax highlighted code via Markdown-It and Highlight.js.
+
+</td>
+<td width="50%" valign="top">
+
+#### 🧪 Side projects showcase
+A dedicated page highlighting independent builds, each with its own stack and link.
+
+</td>
+</tr>
+</table>
+
+## ✦ Tech stack
+
+<table>
+<tr>
+<td valign="top">
+
+**Core**
 - React 19
 - TypeScript
 - Vite
-- React Router
+- TanStack Router
 - Three.js
 - CSS Modules
-- Markdown-It and Highlight.js
+
+</td>
+<td valign="top">
+
+**Content**
+- Markdown-It
+- Highlight.js
+- Downloadable resume (PDF)
+
+</td>
+<td valign="top">
+
+**Deployment**
 - GitHub Pages
+- gh-pages CLI
 
-The 3D maker’s desk is generated procedurally in the browser. It does not depend on external model files or textures. An accessible HTML object menu mirrors every selectable object in the WebGL scene.
+</td>
+</tr>
+</table>
 
-## Getting started
+## ✦ Getting started
 
 ### Requirements
 
 - Node.js
 - npm
 
-### Installation
+### Install and run
 
 ```bash
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
@@ -58,7 +131,7 @@ Vite prints the local dev server URL (defaults to [http://localhost:5173](http:/
 npx tsc -b
 ```
 
-Plain `tsc --noEmit -p .` is not sufficient here — the root `tsconfig.json` only references the app and node sub-projects, so it type-checks nothing on its own. `tsc -b` (which `npm run build` also runs) follows those references and actually checks the code.
+Plain `tsc --noEmit -p .` is not sufficient here. The root `tsconfig.json` only references the app and node sub-projects, so it type-checks nothing on its own. `tsc -b`, which `npm run build` also runs, follows those references and actually checks the code.
 
 ### Production build
 
@@ -74,81 +147,93 @@ The optimized application is written to `dist/`.
 npm run preview
 ```
 
-## Project structure
+## ✦ Project structure
+
+<details>
+<summary><strong>Click to expand</strong></summary>
 
 ```text
 src/
-├── assets/                 Images, photography, and résumé PDF
+├── assets/                   Images, photography, and resume PDF
 ├── components/
-│   ├── Layout/              Shared header, nav, and footer (wraps every route)
-│   ├── MakerDesk/            Three.js scene and accessible controls
-│   └── WorkExperience/       Career timeline
-├── data/                    Blog post metadata
-├── pages/                    Route-level components (Home, Blog, BlogPost, NotFound)
-├── utils/                    Markdown rendering utilities
-├── App.tsx                   Router configuration
-├── App.module.css            Shared homepage/layout styles
-└── global.css                Global styling and font imports
+│   ├── Layout/                Shared header, nav, and footer (wraps every route)
+│   ├── MakerDesk/              Three.js scene and accessible controls
+│   └── WorkExperience/         Career timeline
+├── data/                      Blog post metadata
+├── pages/                      Route-level components (Home, Blog, BlogPost, Products, NotFound)
+├── utils/                      Markdown rendering utilities
+├── router.tsx                  TanStack Router route tree and router instance
+├── App.tsx                     Renders the RouterProvider
+├── App.module.css              Shared homepage/layout styles
+└── global.css                  Global styling and font imports
 ```
 
-## Main routes
+</details>
+
+## ✦ Routes
 
 | Route | Content |
 | --- | --- |
 | `/` | Portfolio homepage (hero, about, workbench, work experience, maker's desk, photography) |
 | `/blog` | Technical articles ("Tidbits") |
-| `/blog/:slug` | Individual Markdown article |
+| `/blog/$slug` | Individual Markdown article |
+| `/products` | Side projects showcase |
 | `*` | Not found page |
 
 Photography and work experience are homepage sections (`#photography`, `#work`), not separate routes.
 
-## Content updates
+## ✦ Content updates
 
-### Work experience
+<table>
+<tr>
+<td valign="top">
 
-Entries live in:
+**Work experience**
 
-```text
-src/components/WorkExperience/WorkExperience.tsx
-```
+Entries live in `src/components/WorkExperience/WorkExperience.tsx`.
 
-### Blog posts
+</td>
+<td valign="top">
+
+**Blog posts**
 
 1. Add the Markdown file to `public/blog/`.
 2. Add its metadata to `src/data/blogPosts.ts`.
 
-### Photography
+</td>
+</tr>
+<tr>
+<td valign="top">
 
-Photography assets are organized under:
+**Photography**
 
-```text
-src/assets/photography/
-src/assets/portraits/
-src/assets/wildlife/
-```
+Assets live under `src/assets/photography/`, `src/assets/portraits/`, and `src/assets/wildlife/`.
 
-### Résumé
+</td>
+<td valign="top">
+
+**Resume**
 
 Replace `src/assets/cv.pdf` while keeping the same filename, or update the import in `src/pages/Home.tsx`.
 
-## 3D maker’s desk
+</td>
+</tr>
+</table>
 
-The scene is defined in:
+## ✦ The 3D maker's desk
 
-```text
-src/components/MakerDesk/MakerDesk.tsx
-```
+The scene is defined in `src/components/MakerDesk/MakerDesk.tsx`. Each desk object is assembled from lightweight Three.js primitives with solid-color materials and outlined geometry.
 
-Each desk object is assembled from lightweight Three.js primitives with solid-color materials and outlined geometry. To add another object:
+To add another object:
 
 1. Add its metadata to `deskItems`.
 2. Create a named `THREE.Group` in `createDeskScene`.
 3. Set `group.userData.itemId` to the metadata ID.
 4. Add the group to the scene, and give it a padded hit area with `addHitArea`.
 
-Mouse selection uses raycasting, with an invisible padded hit box per object so clicking near an item (not just exactly on it) still selects it. Keyboard and assistive-technology access is provided by the HTML object menu below the canvas.
+Mouse selection uses raycasting, with an invisible padded hit box per object so clicking near an item (not just exactly on it) still selects it. Keyboard and assistive technology access is provided by the HTML object menu below the canvas.
 
-## Deployment
+## ✦ Deployment
 
 The portfolio is published to the `master` branch of the separate `aLe3ouLa/aLe3ouLa.github.io` repository.
 
@@ -168,13 +253,19 @@ npx gh-pages -b master \
 
 Always confirm that `dist/index.html` contains the application before using the direct command.
 
-## Accessibility
+## ✦ Accessibility
 
 - Interactive elements remain keyboard accessible.
 - The 3D scene has equivalent HTML controls.
 - Semantic headings organize each section.
 - Images include alternative text.
 
-## License
+## ✦ License
 
 The source code is provided for reference. Photography, writing, personal information, and visual assets remain the property of Alexandra Barka and may not be reused without permission.
+
+<div align="center">
+<br />
+<sub>Built with React, TypeScript, and Three.js in Amsterdam.</sub>
+</div>
+</content>

@@ -1,0 +1,94 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem max(2rem, calc((100vw - 1160px) / 2));
+    background: #fff9e6e8;
+    backdrop-filter: blur(12px);
+}
+.logo {
+    font:
+        700 3rem Fredoka,
+        sans-serif;
+    text-decoration: none;
+    letter-spacing: -0.08em;
+}
+.logo span,
+h2 span {
+    color: #e84f70;
+}
+
+.nav {
+    display: flex;
+    gap: 0.4rem;
+}
+.nav a,
+.menu {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.nav a:hover,
+.menu:hover {
+    border-color: #1a1a1a;
+    background: #ffcf3f;
+    box-shadow: 3px 3px #1a1a1a;
+}
+.menu {
+    display: none;
+    background: transparent;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem max(2rem, calc((100vw - 1160px) / 2));
+    border-top: 3px solid #1a1a1a;
+    font:
+        1.1rem 'Space Mono',
+        monospace;
+}
+.footer a {
+    font-weight: 700;
+}
+
+@media (max-width: 620px) {
+    .header {
+        padding: 1.4rem 2rem;
+    }
+    .menu {
+        display: block;
+    }
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        padding: 0.8rem;
+        border: 3px solid #1a1a1a;
+        border-radius: 1.2rem;
+        background: #fff9e6;
+        box-shadow: 5px 5px #1a1a1a;
+    }
+    .open {
+        display: flex;
+    }
+
+    h1 {
+        font-size: clamp(4.5rem, 16vw, 6rem);
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 2.4rem;
+    }
+}
