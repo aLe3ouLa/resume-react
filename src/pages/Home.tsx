@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import profile from '../assets/Profile.jpeg';
 import desk from '../assets/8.png';
 import cv from '../assets/cv.pdf';
@@ -9,7 +9,8 @@ import wildlife from '../assets/wildlife/wildlife_1.jpg';
 import portrait from '../assets/portraits/4_portraits.jpg';
 import styles from '../App.module.css';
 import WorkExperience from '../components/WorkExperience/WorkExperience';
-import MakerDesk from '../components/MakerDesk/MakerDesk';
+
+const MakerDesk = lazy(() => import('../components/MakerDesk/MakerDesk'));
 
 const tools = [
     [
@@ -253,7 +254,9 @@ export default function Home() {
                 </div>
             </section>
             <WorkExperience />
-            <MakerDesk />
+            <Suspense fallback={null}>
+                <MakerDesk />
+            </Suspense>
             <section
                 id="photography"
                 className={`${styles.section} ${styles.container}`}

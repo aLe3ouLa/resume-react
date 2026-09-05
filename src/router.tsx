@@ -2,12 +2,10 @@ import {
     createRootRoute,
     createRoute,
     createRouter,
+    lazyRouteComponent,
 } from '@tanstack/react-router';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import Products from './pages/Products';
 import NotFound from './pages/NotFound';
 
 const rootRoute = createRootRoute({
@@ -22,17 +20,17 @@ const indexRoute = createRoute({
 const blogRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: '/blog',
-    component: Blog,
+    component: lazyRouteComponent(() => import('./pages/Blog')),
 });
 const blogPostRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: '/blog/$slug',
-    component: BlogPost,
+    component: lazyRouteComponent(() => import('./pages/BlogPost')),
 });
 const productsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: '/products',
-    component: Products,
+    component: lazyRouteComponent(() => import('./pages/Products')),
 });
 
 const routeTree = rootRoute.addChildren([
