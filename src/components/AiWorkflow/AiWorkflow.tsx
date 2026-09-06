@@ -76,8 +76,7 @@ export default function AiWorkflow() {
                         </h2>
                         <p className={styles.lead}>
                             AI is part of my tools but not a replacement for
-                            judgment. Here is how I actually use it day to
-                            day.
+                            judgment. Here is how I actually use it day to day.
                         </p>
                         <ul className={styles.log}>
                             {practices.map(
@@ -101,7 +100,7 @@ export default function AiWorkflow() {
                                                 {symbol}
                                             </span>
                                             <div>
-                                                <b>{title}</b>
+                                                <strong>{title}</strong>
                                                 <p>{text}</p>
                                             </div>
                                         </div>
