@@ -61,14 +61,14 @@ const aiPractices = [
         '02',
         '⚙',
         'Debug & refactor',
-        'Pair with AI to trace tricky bugs, untangle legacy code, and add test coverage without losing time to boilerplate.',
+        'Pair with AI to trace tricky bugs, untangle legacy code, or add test coverage without losing time to boilerplate.',
         'yellow',
     ],
     [
         '03',
         '⌕',
         'Learn & explore',
-        'Get up to speed on unfamiliar codebases and APIs quickly, then verify what I learn against docs and real behavior.',
+        'Get up to speed on unfamiliar codebases and APIs quickly.',
         'teal',
     ],
     [
@@ -86,7 +86,7 @@ const aiPractices = [
         'green',
     ],
 ] as const;
-const aiTools = ['Claude Code', 'Codex', 'Cursor'];
+const aiTools = ['Claude Code', 'Codex', 'Cursor', 'SKILLS', 'mcp'];
 const monthsAtMews = Math.floor(
     (Date.now() - new Date('2024-08-01').getTime()) /
         (1000 * 60 * 60 * 24 * 30.4375)
