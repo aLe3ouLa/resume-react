@@ -1,0 +1,255 @@
+.section {
+    padding: 10rem 0;
+    background: #fff;
+}
+.wrapper {
+    width: min(1060px, calc(100% - 4rem));
+    margin: auto;
+}
+.terminal {
+    overflow: hidden;
+    border: 3px solid #1a1a1a;
+    border-radius: 20px;
+    background: #fffaf0;
+    box-shadow: 12px 12px #1a1a1a;
+}
+.titlebar {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.1rem 1.6rem;
+    border-bottom: 3px solid #1a1a1a;
+    background: #1a1a1a;
+}
+.dots {
+    display: flex;
+    gap: 0.5rem;
+}
+.dots span {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #1a1a1a;
+    border-radius: 50%;
+}
+.dotPink {
+    background: #e84f70;
+}
+.dotYellow {
+    background: #ffcf3f;
+}
+.dotGreen {
+    background: #6bcf7f;
+}
+.filename {
+    color: #f4f0e6;
+    font:
+        700 1.05rem 'Space Mono',
+        monospace;
+    letter-spacing: 0.04em;
+}
+.status {
+    margin-left: auto;
+    color: #6bcf7f;
+    font:
+        700 0.95rem 'Space Mono',
+        monospace;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.body {
+    padding: 3rem clamp(1.6rem, 4vw, 3.4rem) 3.4rem;
+}
+.comment {
+    margin: 0;
+    color: #00a8a8;
+    font:
+        700 1.1rem 'Space Mono',
+        monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.title {
+    margin: 0.8rem 0 1.2rem;
+    font:
+        700 clamp(4rem, 5.4vw, 5.6rem)/0.95 Fredoka,
+        sans-serif;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+.title span {
+    color: #e84f70;
+}
+.lead {
+    max-width: 640px;
+    margin: 0 0 2.8rem;
+    color: #555;
+    font:
+        500 1.6rem/1.6 Fredoka,
+        sans-serif;
+}
+.log {
+    display: grid;
+    gap: 1.4rem;
+    padding: 0;
+    margin: 0 0 2.6rem;
+    list-style: none;
+}
+.entry {
+    border-top: 2px dashed #c9c2ae;
+    padding-top: 1.4rem;
+}
+.entry:first-child {
+    border-top: 2px dashed #c9c2ae;
+}
+.prompt {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 0.9rem;
+    font:
+        700 1.15rem 'Space Mono',
+        monospace;
+}
+.chevron {
+    color: #e84f70;
+}
+.command {
+    color: #1a1a1a;
+}
+.index {
+    margin-left: auto;
+    color: #999;
+    font-size: 1rem;
+}
+.output {
+    display: flex;
+    gap: 1.4rem;
+    align-items: flex-start;
+    padding: 1.6rem;
+    border: 3px solid #1a1a1a;
+    border-left-width: 8px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 4px 4px #1a1a1a;
+}
+.output b {
+    display: block;
+    margin-bottom: 0.4rem;
+    font:
+        700 1.6rem Fredoka,
+        sans-serif;
+}
+.output p {
+    margin: 0;
+    color: #444;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.symbol {
+    display: grid;
+    flex-shrink: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    place-items: center;
+    border: 2px solid #1a1a1a;
+    border-radius: 0.9rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.pink {
+    border-left-color: #e84f70;
+}
+.pink .symbol {
+    background: #e84f70;
+    color: #fff;
+}
+.yellow {
+    border-left-color: #ffcf3f;
+}
+.yellow .symbol {
+    background: #ffcf3f;
+}
+.teal {
+    border-left-color: #00a8a8;
+}
+.teal .symbol {
+    background: #00a8a8;
+    color: #fff;
+}
+.coral {
+    border-left-color: #ff8a80;
+}
+.coral .symbol {
+    background: #ff8a80;
+}
+.green {
+    border-left-color: #6bcf7f;
+}
+.green .symbol {
+    background: #6bcf7f;
+}
+.toolsPrompt {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    padding-top: 1.4rem;
+    border-top: 2px dashed #c9c2ae;
+    font:
+        700 1.15rem 'Space Mono',
+        monospace;
+}
+.cursor {
+    display: inline-block;
+    width: 0.75rem;
+    height: 1.2rem;
+    background: #1a1a1a;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 1.4rem 0 0;
+    list-style: none;
+}
+.tools li {
+    padding: 0.5rem 0.9rem;
+    border: 2px solid #1a1a1a;
+    border-radius: 999px;
+    background: #f4f0e6;
+    font:
+        700 1.05rem 'Space Mono',
+        monospace;
+}
+@media (max-width: 640px) {
+    .section {
+        padding: 5rem 0;
+    }
+    .wrapper {
+        width: min(100% - 2.4rem, 1060px);
+    }
+    .terminal {
+        box-shadow: 6px 6px #1a1a1a;
+    }
+    .body {
+        padding: 2rem 1.4rem 2.4rem;
+    }
+    .filename {
+        font-size: 0.9rem;
+    }
+    .status {
+        display: none;
+    }
+    .output {
+        flex-direction: column;
+    }
+    .index {
+        display: none;
+    }
+}

@@ -9,6 +9,7 @@ import wildlife from '../assets/wildlife/wildlife_1.jpg';
 import portrait from '../assets/portraits/4_portraits.jpg';
 import styles from '../App.module.css';
 import WorkExperience from '../components/WorkExperience/WorkExperience';
+import AiWorkflow from '../components/AiWorkflow/AiWorkflow';
 
 const MakerDesk = lazy(() => import('../components/MakerDesk/MakerDesk'));
 
@@ -49,44 +50,6 @@ const tools = [
         'coral',
     ],
 ] as const;
-const aiPractices = [
-    [
-        '01',
-        '✎',
-        'Draft & prototype',
-        'Turn a rough idea or ticket into a first fast pass, so I can spend my time refining instead of starting from a blank page.',
-        'pink',
-    ],
-    [
-        '02',
-        '⚙',
-        'Debug & refactor',
-        'Pair with AI to trace tricky bugs, untangle legacy code, or add test coverage without losing time to boilerplate.',
-        'yellow',
-    ],
-    [
-        '03',
-        '⌕',
-        'Learn & explore',
-        'Get up to speed on unfamiliar codebases and APIs quickly.',
-        'teal',
-    ],
-    [
-        '04',
-        '⬡',
-        'Build & reuse',
-        'Package repeatable workflows into custom skills and MCP servers, so a good process is available next time instead of rebuilt from scratch.',
-        'coral',
-    ],
-    [
-        '05',
-        '✓',
-        'Review & decide',
-        'Every suggestion gets read, questioned, and rewritten if needed. I stay accountable for what ships, AI or not.',
-        'green',
-    ],
-] as const;
-const aiTools = ['Claude Code', 'Codex', 'Cursor', 'SKILLS', 'mcp'];
 const monthsAtMews = Math.floor(
     (Date.now() - new Date('2024-08-01').getTime()) /
         (1000 * 60 * 60 * 24 * 30.4375)
@@ -291,49 +254,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className={`${styles.section} ${styles.container}`}>
-                <SectionHeader
-                    kicker="In my process"
-                    title="Working with AI"
-                    text="AI is part of my tools but not a replacement for judgment. Here is how I actually use it day to day."
-                />
-                <div className={styles.bench}>
-                    <div className={styles.rail}>
-                        <b>AB</b>
-                        <span>AI IN MY ENGINEERING WORKFLOW</span>
-                    </div>
-                    <div className={styles.toolGrid}>
-                        {aiPractices.map(
-                            ([number, symbol, title, text, color]) => (
-                                <article className={styles.tool} key={title}>
-                                    <div
-                                        className={`${styles.icon} ${styles[color]}`}
-                                    >
-                                        {symbol}
-                                    </div>
-                                    <small>{number}</small>
-                                    <h3>{title}</h3>
-                                    <p>{text}</p>
-                                </article>
-                            )
-                        )}
-                    </div>
-                    <div className={styles.materials}>
-                        <div>
-                            <b>Tools in rotation</b>
-                            <p>
-                                Chosen per task, always with a human reading the
-                                diff.
-                            </p>
-                        </div>
-                        <ul>
-                            {aiTools.map((x) => (
-                                <li key={x}>{x}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <AiWorkflow />
             <WorkExperience />
             <Suspense fallback={null}>
                 <MakerDesk />
