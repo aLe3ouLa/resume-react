@@ -1,3 +1,20 @@
+.skipLink {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 10;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #1a1a1a;
+    border-radius: 999px;
+    background: #ffcf3f;
+    font-weight: 700;
+    text-decoration: none;
+    color: #1a1a1a;
+}
+.skipLink:focus {
+    top: 1rem;
+}
+
 .header {
     position: sticky;
     top: 0;
@@ -21,9 +38,10 @@ h2 span {
     color: #e84f70;
 }
 
-.nav {
+.nav menu {
     display: flex;
     gap: 0.4rem;
+    list-style: none;
 }
 .nav a,
 .menu {

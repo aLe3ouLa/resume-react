@@ -17,6 +17,9 @@ export default function Layout() {
 
     return (
         <>
+            <a className={styles.skipLink} href="#main-content">
+                Skip to content
+            </a>
             <header className={styles.header}>
                 <a className={styles.logo} href="/#top">
                     AB<span>.</span>
@@ -29,41 +32,57 @@ export default function Layout() {
                     Menu
                 </button>
                 <nav className={`${styles.nav} ${open ? styles.open : ''}`}>
-                    <Link to="/blog" onClick={() => setOpen(false)}>
-                        Blog
-                    </Link>
-                    <Link to="/products" onClick={() => setOpen(false)}>
-                        Products
-                    </Link>
-                    <a href="/#work">Work</a>
-                    <a href="/#photography">Photography</a>
-                    <a
-                        href="https://github.com/aLe3ouLa"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="GitHub"
-                    >
-                        <FontAwesomeIcon
-                            icon={faGithub}
-                            size="lg"
-                            aria-hidden="true"
-                        />
-                    </a>
-                    <a
-                        href="https://www.instagram.com/the.coding.diaries/"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <FontAwesomeIcon
-                            icon={faInstagram}
-                            size="lg"
-                            aria-hidden="true"
-                        />
-                    </a>
+                    <menu>
+                        <li>
+                            <Link to="/blog" onClick={() => setOpen(false)}>
+                                Blog
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/products" onClick={() => setOpen(false)}>
+                                Products
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="/#work">Work</a>
+                        </li>
+                        <li>
+                            <a href="/#photography">Photography</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/aLe3ouLa"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="GitHub"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faGithub}
+                                    size="lg"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/the.coding.diaries/"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="Instagram"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faInstagram}
+                                    size="lg"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </li>
+                    </menu>
                 </nav>
             </header>
-            <Outlet />
+            <div id="main-content" tabIndex={-1}>
+                <Outlet />
+            </div>
             <footer className={styles.footer}>
                 <span>© {new Date().getFullYear()} Alexandra Barka</span>
                 <a href="/#top">Back to top ↑</a>

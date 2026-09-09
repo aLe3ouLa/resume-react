@@ -241,24 +241,16 @@
 .button {
     display: flex;
     width: max-content;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    margin: 4.8rem 8rem 0 auto;
-    padding: 1.2rem 1.6rem;
-    border: 3px solid #1a1a1a;
-    border-radius: 12px;
-    background: #00a8a8;
-    box-shadow: 5px 5px #1a1a1a;
-    color: #fff;
-    font-size: 1.15rem;
-    font-weight: 700;
+    margin: 4.8rem 5rem 0 auto;
+    color: var(--accent);
+    font-size: 1.6rem;
+    font-weight: 900;
     letter-spacing: 0.05em;
-    text-decoration: none;
+    text-decoration: underline;
     text-transform: uppercase;
 }
 .button:hover {
-    transform: translateY(-2px);
+    color: #1a1a1a;
 }
 @media (max-width: 640px) {
     .section {
