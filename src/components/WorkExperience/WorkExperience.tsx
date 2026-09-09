@@ -160,7 +160,7 @@ export default function WorkExperience() {
                     ))}
                 </div>
                 <a
-                    className={styles.button}
+                    className={styles.link}
                     href="https://www.linkedin.com/in/alexandra-barka/"
                     target="_blank"
                     rel="noreferrer"

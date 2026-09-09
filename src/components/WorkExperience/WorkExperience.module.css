@@ -238,7 +238,7 @@
     font-size: 1rem;
     font-weight: 700;
 }
-.button {
+.link {
     display: flex;
     width: max-content;
     margin: 4.8rem 5rem 0 auto;
@@ -249,8 +249,9 @@
     text-decoration: underline;
     text-transform: uppercase;
 }
-.button:hover {
+.link:hover {
     color: #1a1a1a;
+    outline: 2px solid var(--accent);
 }
 @media (max-width: 640px) {
     .section {
