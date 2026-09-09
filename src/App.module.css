@@ -3,14 +3,6 @@
     margin: auto;
 }
 
-.hero {
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
-    align-items: center;
-    min-height: 64rem;
-    gap: 6rem;
-    padding-block: 8rem;
-}
 .eyebrow,
 small {
     font:
@@ -32,17 +24,7 @@ small {
     border-radius: 50%;
     background: #00a8a8;
 }
-h1,
-h2,
-h3,
-p {
-    margin-top: 0;
-}
-h1,
-h2,
-h3 {
-    font-family: Fredoka, sans-serif;
-}
+
 h1 {
     margin: 2rem 0 2.8rem;
     font-size: clamp(5rem, 7.2vw, 8rem);
@@ -64,12 +46,7 @@ h1 span {
     font-size: 0.65em;
     transform: rotate(-1deg);
 }
-.lead {
-    max-width: 62rem;
-    color: #555;
-    font-size: 1.7rem;
-    line-height: 1.7;
-}
+
 .button,
 .outline {
     display: inline-block;
@@ -88,47 +65,7 @@ h1 span {
     transform: translate(-2px, -2px);
     box-shadow: 7px 7px #1a1a1a;
 }
-.portrait {
-    position: relative;
-    padding: 3rem;
-}
-.portrait:before {
-    position: absolute;
-    inset: 3rem 7rem 8rem 0;
-    border: 3px solid #1a1a1a;
-    border-radius: 2rem;
-    background: #8c9eec;
-    content: '';
-    transform: rotate(-6deg);
-}
-.portrait > div {
-    position: relative;
-    padding: 1rem;
-    border: 3px solid #1a1a1a;
-    border-radius: 2.4rem;
-    background: #ffcf3f;
-    box-shadow: 12px 12px #1a1a1a;
-}
-.portrait img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4/5;
-    border: 3px solid #1a1a1a;
-    border-radius: 1.4rem;
-    object-fit: cover;
-}
-.portrait strong {
-    position: absolute;
-    bottom: 2.6rem;
-    left: -2.5rem;
-    padding: 0.9rem;
-    border: 3px solid #1a1a1a;
-    border-radius: 1rem;
-    background: #fff;
-    box-shadow: 4px 4px #e0399b;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-}
+
 .section {
     padding-block: 9rem;
 }

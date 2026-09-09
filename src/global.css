@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap');
 :root {
+    --bg: #fff9e6;
+
+    --accent: #00a8a8;
+
+    --color-text: #1a1a1a;
+
     font-family: Comfortaa, system-ui, sans-serif;
-    color: #1a1a1a;
-    background: #fff9e6;
     font-synthesis: none;
 }
 
@@ -16,11 +20,12 @@
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
+    color: var(--color-text);
 }
 
 body {
     font-size: 1.6rem;
-    background-color: #fff9e6;
+    background-color: var(--bg);
 }
 
 a {
@@ -29,4 +34,16 @@ a {
 
 button {
     font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+h1,
+h2,
+h3 {
+    font-family: Fredoka, sans-serif;
 }

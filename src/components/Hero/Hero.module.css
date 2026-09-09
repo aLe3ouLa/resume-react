@@ -1,0 +1,82 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    min-height: 64rem;
+    gap: 6rem;
+    padding-block: 8rem;
+}
+
+.lead {
+    max-width: 62rem;
+    font-size: 1.7rem;
+    line-height: 1.7;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 1.8rem;
+    color: var(--accent);
+    font-weight: 900;
+    text-decoration: underline;
+}
+.link:hover,
+.link:focus-visible {
+    outline: 2px solid var(--accent);
+}
+
+.link:hover {
+    color: var(--color-text);
+}
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+}
+
+.portrait {
+    position: relative;
+    padding: 3rem;
+}
+.portrait:before {
+    position: absolute;
+    inset: 3rem 7rem 8rem 0;
+    border: 3px solid #1a1a1a;
+    border-radius: 2rem;
+    background: #8c9eec;
+    content: '';
+    transform: rotate(-6deg);
+}
+.portrait > div {
+    position: relative;
+    padding: 1rem;
+    border: 3px solid #1a1a1a;
+    border-radius: 2.4rem;
+    background: #ffcf3f;
+    box-shadow: 12px 12px #1a1a1a;
+}
+.portrait img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border: 3px solid #1a1a1a;
+    border-radius: 1.4rem;
+    object-fit: cover;
+}
+.portrait strong {
+    position: absolute;
+    bottom: 2.6rem;
+    left: -2.5rem;
+    padding: 0.9rem;
+    border: 3px solid #1a1a1a;
+    border-radius: 1rem;
+    background: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
