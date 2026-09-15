@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="0" />
+        <title>Alexandra Barka - Senior Product Engineer</title>
+        <script>
+            // GitHub Pages has no server-side routing, so a refresh on a
+            // deep link (e.g. /blog/text-box) 404s before React Router
+            // ever sees it. Encode the path here and decode it back in
+            // index.html so the client-side router can take over.
+            var path = location.pathname + location.search + location.hash;
+            sessionStorage.redirect = path;
+            location.replace(location.origin + '/');
+        </script>
+    </head>
+    <body></body>
+</html>

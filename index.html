@@ -45,6 +45,16 @@
     </head>
     <body>
         <div id="root"></div>
+        <script>
+            // Restore the deep link 404.html saved before redirecting here.
+            (function () {
+                var redirect = sessionStorage.redirect;
+                delete sessionStorage.redirect;
+                if (redirect && redirect !== location.pathname) {
+                    history.replaceState(null, '', redirect);
+                }
+            })();
+        </script>
         <script type="module" src="/src/main.tsx"></script>
     </body>
 </html>
