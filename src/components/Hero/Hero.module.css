@@ -44,6 +44,7 @@
     position: relative;
     padding: 3rem;
 }
+
 .portrait:before {
     position: absolute;
     inset: 3rem 7rem 8rem 0;
@@ -77,8 +78,10 @@
     border: 3px solid var(--border-color);
     border-radius: 1rem;
     background: var(--color-text);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
+    color: #8c9eec;
+    font-weight: 600;
 }
 
 @media (max-width: 900px) {

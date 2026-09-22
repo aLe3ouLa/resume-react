@@ -40,7 +40,7 @@ export const Hero = () => {
                         src={profile}
                         alt="Photo of Alexandra Barka in Lisbon"
                     />
-                    <strong>✦ Engineer / maker</strong>
+                    <strong>Engineer / maker</strong>
                 </div>
             </div>
         </section>
