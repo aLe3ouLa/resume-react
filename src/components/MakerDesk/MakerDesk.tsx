@@ -367,12 +367,10 @@ export default function MakerDesk() {
             <div className={styles.wrapper}>
                 <header className={styles.header}>
                     <div>
-                        <span>One desk, many interests</span>
                         <h2 id="maker-desk-heading">
                             The maker&apos;s desk<span>.</span>
                         </h2>
                     </div>
-                    <p>A map of what I build, collect, and keep learning.</p>
                 </header>
 
                 <div className={styles.shell}>

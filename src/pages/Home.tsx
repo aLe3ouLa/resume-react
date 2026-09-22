@@ -66,10 +66,7 @@ export default function Home() {
         <main id="top">
             <Hero />
             <section className={`${styles.section} ${styles.container}`}>
-                <SectionHeader
-                    title="About me"
-                    text="I care about the details people never have to think about."
-                />
+                <SectionHeader title="About me" />
                 <div className={styles.about}>
                     <div className={styles.meta}>
                         <span>AB / 01</span>
@@ -99,10 +96,7 @@ export default function Home() {
                 </div>
             </section>
             <section className={`${styles.section} ${styles.container}`}>
-                <SectionHeader
-                    title="The workbench"
-                    text="Good work is not defined by one tool. It comes from knowing what to use, what to question, and what to improve."
-                />
+                <SectionHeader title="The workbench" />
                 <div className={styles.bench}>
                     <div className={styles.rail}>
                         <b>AB</b>
@@ -156,10 +150,7 @@ export default function Home() {
                 id="photography"
                 className={`${styles.section} ${styles.container}`}
             >
-                <SectionHeader
-                    title="Photography"
-                    text="Small scenes, faraway places, and people worth looking twice at."
-                />
+                <SectionHeader title="Photography" />
                 <div className={styles.gallery}>
                     {photos.map(([src, alt]) => (
                         <figure key={alt}>
@@ -173,7 +164,7 @@ export default function Home() {
     );
 }
 
-function SectionHeader({ title, text }: { title: string; text: string }) {
+function SectionHeader({ title }: { title: string }) {
     return (
         <div className={styles.sectionHeader}>
             <div>
@@ -182,7 +173,6 @@ function SectionHeader({ title, text }: { title: string; text: string }) {
                     <span>.</span>
                 </h2>
             </div>
-            <p>{text}</p>
         </div>
     );
 }
