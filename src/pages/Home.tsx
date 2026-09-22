@@ -96,16 +96,6 @@ export default function Home() {
                         tag="Beyond the screen"
                         text="Usually found with a camera, at the cinema, dancing salsa, writing, exploring somewhere new, or 3D printing and painting the pieces I make."
                     />
-                    <div className={styles.companies}>
-                        <small>Selected chapters</small>
-                        <span>
-                            <a href="https://www.mews.com/">Mews</a>
-                            <a href="https://www.spotify.com/">Spotify</a>
-                            <a href="https://www.wbd.com/">
-                                Warner Bros. Discovery
-                            </a>
-                        </span>
-                    </div>
                 </div>
             </section>
             <section className={`${styles.section} ${styles.container}`}>
