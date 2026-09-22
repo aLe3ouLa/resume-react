@@ -3,7 +3,7 @@
 # Alexandra Barka · Portfolio
 
 <p>
-  <em>Senior product engineer, photographer, writer, and maker, based in Amsterdam.</em>
+  <em>Senior Frontend engineer, photographer, writer, and maker, based in Amsterdam.</em>
 </p>
 
 <p>

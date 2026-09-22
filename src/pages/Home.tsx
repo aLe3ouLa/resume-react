@@ -67,7 +67,6 @@ export default function Home() {
             <Hero />
             <section className={`${styles.section} ${styles.container}`}>
                 <SectionHeader
-                    kicker="Behind the work"
                     title="About me"
                     text="I care about the details people never have to think about."
                 />
@@ -111,7 +110,6 @@ export default function Home() {
             </section>
             <section className={`${styles.section} ${styles.container}`}>
                 <SectionHeader
-                    kicker="My working kit"
                     title="The workbench"
                     text="Good work is not defined by one tool. It comes from knowing what to use, what to question, and what to improve."
                 />
@@ -169,7 +167,6 @@ export default function Home() {
                 className={`${styles.section} ${styles.container}`}
             >
                 <SectionHeader
-                    kicker="Off screen"
                     title="Photography"
                     text="Small scenes, faraway places, and people worth looking twice at."
                 />
@@ -186,19 +183,10 @@ export default function Home() {
     );
 }
 
-function SectionHeader({
-    kicker,
-    title,
-    text,
-}: {
-    kicker: string;
-    title: string;
-    text: string;
-}) {
+function SectionHeader({ title, text }: { title: string; text: string }) {
     return (
         <div className={styles.sectionHeader}>
             <div>
-                <small>{kicker}</small>
                 <h2>
                     {title}
                     <span>.</span>
@@ -208,6 +196,7 @@ function SectionHeader({
         </div>
     );
 }
+
 function Note({
     color,
     tag,

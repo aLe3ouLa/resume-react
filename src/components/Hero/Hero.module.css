@@ -80,3 +80,32 @@
     font-size: 1.1rem;
     text-transform: uppercase;
 }
+
+@media (max-width: 900px) {
+    .hero,
+    .sectionHeader {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        gap: 3rem;
+        min-height: auto;
+    }
+    .hero > div:first-child,
+    .sectionHeader p {
+        text-align: center;
+        justify-self: center;
+        max-width: 320px;
+    }
+}
+@media (max-width: 620px) {
+    .container {
+        width: min(100% - 2.4rem, 1160px);
+    }
+    .hero,
+    .section {
+        padding-block: 5rem;
+    }
+    h1 {
+        font-size: clamp(4.5rem, 16vw, 6rem);
+    }
+}

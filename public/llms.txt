@@ -1,6 +1,6 @@
 # Alexandra Barka
 
-> Senior Product Engineer building accessible, full-stack products with React and Node.js. Currently open to full-time roles and freelance collaborations with SaaS, startups, and scale-ups.
+> Senior Frontend Engineer building accessible, full-stack products with React and Node.js. Currently open to full-time roles and freelance collaborations with SaaS, startups, and scale-ups.
 
 Ten years of frontend-focused engineering experience, specializing in web accessibility (WCAG), design systems, and modernizing legacy frontend platforms. Recent work includes building AI agent skills and MCP servers to help teams modernize their own frontends. This site is a client-rendered React application; this file summarizes its content for tools that can't execute JavaScript.
 

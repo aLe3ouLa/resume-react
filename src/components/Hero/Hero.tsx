@@ -10,7 +10,7 @@ export const Hero = () => {
         <section className={`${styles.hero} ${common.container}`}>
             <div>
                 <p className={common.eyebrow}>
-                    <i /> Alexandra Barka · Senior Product Engineer
+                    <i /> Alexandra Barka · Senior Frontend Engineer
                 </p>
                 <h1>
                     Making the web <span>a little better each day.</span>

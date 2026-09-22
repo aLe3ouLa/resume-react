@@ -31,12 +31,11 @@ export default function Blog() {
         <main className={`${appStyles.section} ${appStyles.container}`}>
             <header className={appStyles.sectionHeader}>
                 <div>
-                    <small>Bite-sized dev notes</small>
                     <h2>
                         Tidbits<span>.</span>
                     </h2>
                 </div>
-                <p>Bite-sized dev notes on JavaScript, CSS &amp; more.</p>
+                <p>Bite-sized dev notes on web &amp; more.</p>
             </header>
             <div className={styles.grid}>
                 {BLOG_POSTS.map((post, i) => {

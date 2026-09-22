@@ -16,7 +16,7 @@ const currentMewsDuration = () => {
 const jobs = [
     {
         company: 'Mews',
-        role: 'Software Engineer, Operations Engineering',
+        role: 'Software Engineer',
         duration: `Aug 2024 - Present · ${currentMewsDuration()}`,
         technologies: [
             'Typescript',
@@ -28,7 +28,7 @@ const jobs = [
         link: 'https://www.mews.com',
         intro: 'As a Software Engineer in Operations Engineering at Mews, I work across the Events Management System stack to improve the usability, reliability, and maintainability of our Groups & Events capabilities. My work spans frontend development, backend contributions, refactoring, and operational hardening, with the goal of making Events at Mews more robust, predictable, and easier to operate so hospitality teams can focus on guests and business outcomes instead of fighting their tools.',
         bullets: [
-            'Build, maintain, and improve core Events functionality, helping hotels manage group bookings, event spaces, and quotation flows more reliably',
+            'Build, maintain and improve core Groups & Events functionality supporting group bookings, event spaces, quotations and operational workflows. Previously delivered end‑to‑end Accounts Receivable functionality within the Accounting domain',
             'Contribute across both frontend and backend parts of EMS, improving how features are built, integrated, and maintained end to end',
             'Drive frontend improvements across the EMS experience, including quote details and email template redesigns, with a strong focus on usability, responsiveness, and consistency',
             'Collaborate closely with product, design, backend, and QA teams to ship features that support high-volume operations, PMS integrations, and accounting and tax workflows',
@@ -39,7 +39,7 @@ const jobs = [
     },
     {
         company: 'Spotify',
-        role: 'Web Engineer',
+        role: 'Web Engineer II',
         duration: 'Sep 2022 - Aug 2024 · 2 yrs',
         technologies: [
             'Typescript',
@@ -88,14 +88,13 @@ export default function WorkExperience() {
             <div className={styles.wrapper}>
                 <header className={styles.heading}>
                     <div>
-                        <span>Selected chapters</span>
                         <h2 id="work-experience-heading">
                             Work, over time<span>.</span>
                         </h2>
                     </div>
                     <p>
-                        A record of building useful products, improving systems,
-                        and growing alongside thoughtful teams.
+                        A record of building products, improving systems, and
+                        growing alongside thoughtful teams.
                     </p>
                 </header>
                 <div className={styles.timeline}>
