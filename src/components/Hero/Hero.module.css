@@ -56,16 +56,16 @@
 .portrait > div {
     position: relative;
     padding: 1rem;
-    border: 3px solid #1a1a1a;
+    border: 3px solid var(--border-color);
     border-radius: 2.4rem;
     background: #ffcf3f;
-    box-shadow: 12px 12px #1a1a1a;
+    box-shadow: 12px 12px var(--border-color);
 }
 .portrait img {
     display: block;
     width: 100%;
     aspect-ratio: 4/5;
-    border: 3px solid #1a1a1a;
+    border: 3px solid var(--border-color);
     border-radius: 1.4rem;
     object-fit: cover;
 }
@@ -74,9 +74,9 @@
     bottom: 2.6rem;
     left: -2.5rem;
     padding: 0.9rem;
-    border: 3px solid #1a1a1a;
+    border: 3px solid var(--border-color);
     border-radius: 1rem;
-    background: #fff;
+    background: var(--color-text);
     font-size: 1.1rem;
     text-transform: uppercase;
 }

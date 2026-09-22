@@ -9,7 +9,7 @@
     background: #ffcf3f;
     font-weight: 700;
     text-decoration: none;
-    color: #1a1a1a;
+    color: var(--border-color);
 }
 .skipLink:focus {
     top: 1rem;
@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem max(2rem, calc((100vw - 1160px) / 2));
-    background: #fff9e6e8;
+    background: var(--bg);
     backdrop-filter: blur(12px);
 }
 .logo {
@@ -55,9 +55,9 @@ h2 span {
 }
 .nav a:hover,
 .menu:hover {
-    border-color: #1a1a1a;
+    border-color: var(--border-color);
     background: #ffcf3f;
-    box-shadow: 3px 3px #1a1a1a;
+    box-shadow: 3px 3px var(--border-color);
 }
 .menu {
     display: none;
@@ -69,7 +69,7 @@ h2 span {
     justify-content: space-between;
     gap: 2rem;
     padding: 3rem max(2rem, calc((100vw - 1160px) / 2));
-    border-top: 3px solid #1a1a1a;
+    border-top: 3px solid var(--border-color);
     font:
         1.1rem 'Space Mono',
         monospace;
@@ -92,10 +92,9 @@ h2 span {
         display: none;
         flex-direction: column;
         padding: 0.8rem;
-        border: 3px solid #1a1a1a;
+        border: 3px solid var(--border-color);
         border-radius: 1.2rem;
-        background: #fff9e6;
-        box-shadow: 5px 5px #1a1a1a;
+        box-shadow: 5px 5px var(--border-color);
     }
     .open {
         display: flex;
