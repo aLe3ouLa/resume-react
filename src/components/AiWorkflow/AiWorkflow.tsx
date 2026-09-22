@@ -68,7 +68,6 @@ export default function AiWorkflow() {
                         <span className={styles.status}>human in the loop</span>
                     </div>
                     <div className={styles.body}>
-                        <p className={styles.comment}># In my process</p>
                         <h2 id="ai-workflow-heading" className={styles.title}>
                             Working with AI<span>.</span>
                         </h2>
