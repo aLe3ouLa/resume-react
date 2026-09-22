@@ -16,11 +16,10 @@ export const Hero = () => {
                     Making the web <span>a little better each day.</span>
                 </h1>
                 <p className={styles.lead}>
-                    I help SaaS, startups, and scale-ups build accessible
-                    products and turn their components into reusable design
-                    systems, drawing on ten years of frontend engineering.
-                    Currently open to full-time roles and freelance
-                    collaborations.
+                    I help companies build accessible products and turn their
+                    components into reusable design systems, drawing on ten
+                    years of frontend engineering. Currently open to full-time
+                    roles and freelance collaborations.
                 </p>
                 <a
                     className={styles.link}

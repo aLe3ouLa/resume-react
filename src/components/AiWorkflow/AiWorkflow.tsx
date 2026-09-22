@@ -65,9 +65,7 @@ export default function AiWorkflow() {
                         <span className={styles.filename}>
                             working-with-ai.sh
                         </span>
-                        <span className={styles.status}>
-                            ● human in the loop
-                        </span>
+                        <span className={styles.status}>human in the loop</span>
                     </div>
                     <div className={styles.body}>
                         <p className={styles.comment}># In my process</p>
@@ -76,7 +74,7 @@ export default function AiWorkflow() {
                         </h2>
                         <p className={styles.lead}>
                             AI is part of my tools but not a replacement for
-                            judgment. Here is how I actually use it day to day.
+                            human judgment.
                         </p>
                         <ul className={styles.log}>
                             {practices.map(
