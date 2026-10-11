@@ -15,9 +15,25 @@ const currentMewsDuration = () => {
 
 const jobs = [
     {
+        company: 'Rentman',
+        role: 'Design System Engineer',
+        duration: 'Oct 2026 - Present · Current',
+        technologies: [
+            'Typescript',
+            'Javascript',
+            'Angular',
+            'Design Systems',
+            'Web accessibility',
+            'Storybook',
+        ],
+        link: 'https://www.rentman.io',
+        intro: 'As a Design System Engineer at Rentman, I work on building and maintaining the design system that powers our event management software. My role involves collaborating with designers and developers to ensure a consistent and accessible user experience across our platform.',
+        bullets: [],
+    },
+    {
         company: 'Mews',
         role: 'Software Engineer',
-        duration: `Aug 2024 - Present · ${currentMewsDuration()}`,
+        duration: `Aug 2024 - Sep 2026 · 2 yrs 1 mn`,
         technologies: [
             'Typescript',
             'Javascript',
