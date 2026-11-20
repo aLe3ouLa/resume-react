@@ -17,7 +17,7 @@ const jobs = [
     {
         company: 'Mews',
         role: 'Software Engineer',
-        duration: `Aug 2024 - Present · ${currentMewsDuration()}`,
+        duration: `Aug 2024 - Sep 2026 · 2 yrs 1 mn`,
         technologies: [
             'Typescript',
             'Javascript',
